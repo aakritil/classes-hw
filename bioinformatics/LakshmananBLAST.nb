@@ -1,0 +1,1752 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     82951,       1744]
+NotebookOptionsPosition[     76303,       1614]
+NotebookOutlinePosition[     78889,       1677]
+CellTagsIndexPosition[     78846,       1674]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[StyleBox["Genez, Inc.\n9617 Black Watch Court\nCharlotte, NC \
+28277",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "Text",
+ CellChangeTimes->{{3.7889741914236603`*^9, 3.7889742182836437`*^9}},
+ TextAlignment->Right,ExpressionUUID->"9cae76f1-ab34-4cd1-a628-1663f50b823e"],
+
+Cell[TextData[StyleBox["March 10, 2020\n\nTo: Chief Scientist, Center for \
+Bioinformatics\nFrom: Aakriti Lakshmanan\nSubj: Analysis of Sequences ",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "Text",
+ CellChangeTimes->{{3.78897427781083*^9, 3.788974370688476*^9}, 
+   3.788974905689847*^9, {3.789217211251758*^9, 3.7892172116547117`*^9}, {
+   3.789217251071721*^9, 3.7892172542205963`*^9}, 3.7892487914446507`*^9, {
+   3.789248840285433*^9, 3.7892488499890747`*^9}, {3.792786632310807*^9, 
+   3.7927866426193323`*^9}, {3.79278729336171*^9, 3.7927872981901903`*^9}, {
+   3.792871484747343*^9, 
+   3.792871490041741*^9}},ExpressionUUID->"7c9ac64e-9d2f-4141-a798-\
+b3ccd5b39d55"],
+
+Cell[CellGroupData[{
+
+Cell["Summary and Introduction", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.788974884231689*^9, 3.788974888896441*^9}, {
+  3.788974977132062*^9, 
+  3.788974994670714*^9}},ExpressionUUID->"c0b381ed-f3b4-4f01-af92-\
+ae8b5753cdcd"],
+
+Cell[CellGroupData[{
+
+Cell["Abstract:", "Subsection",
+ CellChangeTimes->{{3.788975012471572*^9, 3.78897501488365*^9}, {
+  3.788975112222271*^9, 
+  3.788975125905067*^9}},ExpressionUUID->"8b4bb4d0-5f47-409f-bad8-\
+cc58ee2970ce"],
+
+Cell["\<\
+As requested in the Scope of Work of March 5th, 2014, we have conducted an \
+analysis on 10 different amino acid sequences, of varying length. Each \
+sequence was inputted into BLAST to find related genes (if possible), and the \
+resultant genes were profiled. \
+\>", "Text",
+ CellChangeTimes->{{3.788975137351959*^9, 3.7889751574128733`*^9}, {
+   3.7892370310566483`*^9, 3.789237066589622*^9}, {3.789237119247281*^9, 
+   3.789237254703236*^9}, {3.789237334288628*^9, 3.7892373472460537`*^9}, {
+   3.789247541420328*^9, 3.789247576454586*^9}, {3.789664700810429*^9, 
+   3.78966481271723*^9}, 3.789685953273097*^9, {3.789840989866272*^9, 
+   3.789841027515491*^9}, {3.7927873001907463`*^9, 3.792787310928953*^9}, {
+   3.792871643430429*^9, 
+   3.792871697768161*^9}},ExpressionUUID->"e5e66d67-f637-40b2-a0d9-\
+d75be1cc3735"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Introduction/Background Information:", "Subsection",
+ CellChangeTimes->{{3.788975173310213*^9, 
+  3.788975182315978*^9}},ExpressionUUID->"63b971b7-87d3-4fda-8e6e-\
+91604e85fefe"],
+
+Cell["\<\
+BLAST, otherwise know as basic local alignment search tool, is an online tool \
+for comparing a nucleotide sequences or amino acid sequences. Scientists can \
+use it to compare a protein or nucleotide sequence to thousands of others to \
+see where there is a high similarity. This allows scientists to identify \
+sequences to the best of their ability. There are different kinds of BLASTs \
+that can be used, to se the similarity between different items. The first \
+type of BLAST, know as blast, find the most similar DNA sequence with the \
+import also being a DNA sequence. BLASTp is the protein-protein BLAST, and \
+finds the most similar protein sequence given a protein. Another type of \
+BLAST, known as blastpgp, is able to find loosely related relatives of a \
+protein. BLASTx, tBLASTx, and and tBLASTn all deal with the six-frame \
+translation of nucleotide inputs. [1]
+
+It is also important to understand how exactly BLAST works. First, BLAST \
+breaks your sequence down into smaller sequences consisting of only three \
+letters. These are known as query words. Then, BLAST analyzes how many times \
+and where this word appears as well as for other words that are related. \
+Based on this query word, BLAST can figure out what area to look fr similar \
+sequences. This process narrows down the sequences that the software must \
+look through, and therefore leads to a result faster. [2]
+
+The sequences analyzed in this lab are sequences of amino acids. Amino acids \
+are the building blocks of proteins, and are coded from sets of three \
+nucleotides. Different sets will code for different amino acids. Therefore, \
+there are many different amino acids. In fact, there are 20 amino acids that \
+can be coded for by nucleotides in our DNA. Another word that is used to \
+refer to amino acids is residues. Humans can produce 10 of these amino acids, \
+while the other are obtained through food. [3]
+
+Many organisms have descended from a shared ancestor. This is the main cause \
+of similarities in their genomes. Homolog is a term used to refer to when two \
+organisms have the same or similar gene. These homologous sequences can also \
+be orthologous if the reason for separation was a speciation event. For \
+example, when a species splits into two different species, the similar gene \
+that is still present in both organism is orthologous. While they may not be \
+exact replicas, they are still homologs. However, if the organisms were \
+separated by a gene duplication event, they are known as paralogous \
+sequences. An example of paralogous sequences are the four different classes \
+of hemoglobins. [4]
+
+Cytolocation of genes allows scientists to figure out where specific genes \
+are located on a chromosome. The most common way to name the location is to \
+use a combination of numbers and letters. One number represents the \
+chromosome where the gene is found. A letter, specifically either p or q, is \
+used to represent which are the gene is located on. The final number is the \
+position on the arm, which is determined by straining chromosomes and \
+analyzing the different bands that form. [5]\
+\>", "Text",
+ CellChangeTimes->{{3.788975209667451*^9, 3.78897524395109*^9}, {
+   3.789238459531528*^9, 3.7892384605242558`*^9}, {3.789238758073579*^9, 
+   3.789238760373383*^9}, {3.7892394617053957`*^9, 3.789239521530864*^9}, {
+   3.789239581564006*^9, 3.789239975788505*^9}, {3.7892420427093697`*^9, 
+   3.789242097104473*^9}, {3.7892468285215197`*^9, 3.789246834832388*^9}, {
+   3.789247372503846*^9, 3.789247400416703*^9}, {3.789247438296692*^9, 
+   3.789247464387105*^9}, {3.789248468352271*^9, 3.789248502701426*^9}, {
+   3.789664831288693*^9, 3.789664841182987*^9}, {3.78966666230958*^9, 
+   3.789666680408114*^9}, {3.789670625445136*^9, 3.789670647878334*^9}, 
+   3.789670904946435*^9, 3.7896745341602583`*^9, {3.789766144591722*^9, 
+   3.789766184240261*^9}, {3.7928715722649727`*^9, 
+   3.792871612787443*^9}},ExpressionUUID->"0647f906-efc0-40d6-8f34-\
+4d5bf54ce16c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Methodology", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.788975448064522*^9, 
+  3.788975471823615*^9}},ExpressionUUID->"d3f9c95f-6921-4641-ac0a-\
+7b5e45aad5f9"],
+
+Cell["\<\
+For this study, data was collected from the NCSSM Canvas website. The \
+following analyses were conducted:\
+\>", "Text",
+ CellChangeTimes->{{3.788975478796629*^9, 3.788975482688313*^9}, {
+   3.789217279557188*^9, 3.7892173525695963`*^9}, {3.7892174516736603`*^9, 
+   3.789217464505946*^9}, 3.7892382693185368`*^9, {3.789670922817335*^9, 
+   3.789670943409995*^9}, {3.792871495633679*^9, 3.792871503914997*^9}, 
+   3.792871555684013*^9},ExpressionUUID->"ef4f7138-acbf-4c53-8e4f-\
+5e5d69025135"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sequences were downloaded.",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9},ExpressionUUID->"b9d8317e-c991-4f64-8b41-\
+1986c2351307"],
+
+Cell[TextData[StyleBox["Sequence were inputted into BLAST to find related \
+genes. ",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.788975520332529*^9}, {
+  3.789238281463563*^9, 3.789238307114318*^9}, {3.789238340494112*^9, 
+  3.7892383441076927`*^9}, {3.789670959143276*^9, 3.7896709756175337`*^9}, {
+  3.789675446550476*^9, 3.789675447036963*^9}, {3.7928715233812838`*^9, 
+  3.792871553667924*^9}},ExpressionUUID->"9a82fb30-6d6c-4e5d-a6d9-\
+bcbbad8dd168"],
+
+Cell[TextData[StyleBox["Related genes were profiled.",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897552988211*^9}, {
+  3.7892384299176273`*^9, 3.789238431792481*^9}, {3.789247502092857*^9, 
+  3.78924750565837*^9}, {3.789670988916486*^9, 3.789670989250772*^9}, {
+  3.792787536201047*^9, 3.792787536202037*^9}, {3.792871540215247*^9, 
+  3.7928715447498493`*^9}},ExpressionUUID->"002f00bb-30e1-40bb-bbef-\
+7be70aedf468"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.789247518574786*^9, 
+  3.789247520215665*^9}},ExpressionUUID->"83e6fbc6-e3e4-46d7-970a-\
+09b8901b8222"],
+
+Cell["\<\
+The results of our analysis are described and displayed as follows:\
+\>", "Text",
+ CellChangeTimes->{{3.789247677511694*^9, 
+  3.7892477314704657`*^9}},ExpressionUUID->"3ba4efb2-e1b1-44f5-9eeb-\
+06b985fa31f0"],
+
+Cell[CellGroupData[{
+
+Cell["Sequence 1:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 
+  3.792871752577079*^9}},ExpressionUUID->"0525448d-13f9-4c21-842e-\
+0f8cce437caa"],
+
+Cell[TextData[{
+ "The sequence provided was inputted into BLAST, and had a 100 percent \
+identity with the protein \[OpenCurlyDoubleQuote]Retinoid X Receptor Alpha\
+\[CloseCurlyDoubleQuote], which is created by the RXRA gene. [6] [7] \n\n",
+ Cell[BoxData[GridBox[{
+    {
+     RowBox[{"Gene", " ", "Symbol"}], "RXRA"},
+    {
+     RowBox[{"Official", " ", "Name"}], 
+     RowBox[{"Retinoid", " ", "X", " ", "Receptor", " ", "Alpha"}]},
+    {
+     RowBox[{"Gene", " ", "Type"}], 
+     RowBox[{"Protein", " ", "Coding"}]},
+    {"Organism", 
+     RowBox[{"Homo", " ", "Sapiens"}]},
+    {"Function", 
+     RowBox[{
+      RowBox[{
+      "This", " ", "gene", " ", "creates", " ", "a", " ", "protein", " ", 
+       "that", " ", "functions", " ", "by", " ", "as", " ", "a", " ", 
+       "nuclear", " ", 
+       RowBox[{"receptor", ".", " ", "It"}], " ", "works", " ", "by", " ", 
+       "reducing", " ", "the"}], "\[IndentingNewLine]", 
+      RowBox[{
+      "impact", " ", "that", " ", "reinoids", " ", "biologically", " ", 
+       "have", " ", "by", " ", "reducing", " ", "their", " ", "activity", " ",
+        "in", " ", "retioic", " ", "acid", " ", "gene", " ", 
+       RowBox[{"activation", "."}]}]}]},
+    {"Location", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Chromosome", " ", "9"}], ":", "134"}], ",", "317", ",", 
+      RowBox[{"098", "-", "134"}], ",", "440", ",", "585"}]},
+    {"Length", 
+     RowBox[{"462", " ", "amino", " ", "acids"}]},
+    {
+     RowBox[{"Accession", " ", "Number"}], 
+     RowBox[{"4", "ZO1_B"}]},
+    {"Homologs", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "gene", " ", "is", " ", "also", " ", "found", " ", "in", 
+        " ", "mice"}], ",", " ", "chicken", ",", " ", "lizards", ",", " ", 
+       RowBox[{
+       "african", " ", "clawed", " ", "frogs", " ", "and", " ", "zebrafish", 
+        " ", "as", " ", "well"}]}], "\[IndentingNewLine]", 
+      RowBox[{
+      "as", " ", "other", " ", "organims", " ", "for", " ", "a", " ", "total",
+        " ", "of", " ", "264", " ", "orthologues", " ", "and", " ", "11", " ", 
+       RowBox[{"paralogues", "."}]}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "gene", " ", "is", " ", "located", " ", "in", " ", "the", 
+        " ", "2", "nd", " ", "chromosome", " ", "in", " ", "mice"}], ",", " ", 
+       RowBox[{
+       "and", " ", "play", " ", "a", " ", "large", " ", "role", " ", "in", 
+        " ", "controlling", " ", "gene"}]}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"expression", ".", " ", "It"}], " ", "is", " ", "found", " ", 
+        "in", " ", "nuclear", " ", "chromatin"}], ",", " ", 
+       RowBox[{"as", " ", "well", " ", "as", " ", "in", " ", "the", " ", 
+        RowBox[{"nucleus", ".", " "}]}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"b8d1897e-79a8-404c-ad30-0929190654cf"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+  3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+  3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+  3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+  3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+  3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+  3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+  3.792873131976508*^9, 3.7928731559847593`*^9}, {3.792873223034686*^9, 
+  3.792873232680492*^9}},ExpressionUUID->"e8654dbe-405b-4937-ba07-\
+cf195a0476e0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sequence 2:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+  3.792873180937357*^9, 
+  3.792873181084237*^9}},ExpressionUUID->"3af313e0-9faf-4c34-bf87-\
+7caf06fa8b28"],
+
+Cell[TextData[{
+ "The sequence provided was inputted into BLAST, and had a 100 percent \
+identity with the protein \[OpenCurlyDoubleQuote]glucose-6-phosphate \
+dehydrogenase\[CloseCurlyDoubleQuote], which is created by the G6PD gene. [8] \
+[9] [10] \n\n",
+ Cell[BoxData[GridBox[{
+    {
+     RowBox[{"Gene", " ", "Symbol"}], "G6PD"},
+    {
+     RowBox[{"Official", " ", "Name"}], 
+     RowBox[{"glucose", "-", "6", "-", 
+      RowBox[{"phosphate", " ", "dehydrogenase"}]}]},
+    {
+     RowBox[{"Gene", " ", "Type"}], 
+     RowBox[{"Protein", " ", "Coding"}]},
+    {"Organism", 
+     RowBox[{"Homo", " ", "Sapiens"}]},
+    {"Location", 
+     RowBox[{
+      RowBox[{"Chromosome", " ", 
+       RowBox[{"X", ":", "154"}]}], ",", "531", ",", 
+      RowBox[{"391", "-", "154"}], ",", "547", ",", "572"}]},
+    {"Function", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "gene", " ", "creates", " ", "a", " ", "protien", " ", 
+        "that", " ", "acts", " ", "as", " ", "an", " ", 
+        RowBox[{"enzyme", ".", " ", "It"}], " ", "is", " ", "very", " ", 
+        "imporatn", " ", "in", " ", "red", " ", "blood", " ", "cells"}], ",", 
+       " ", 
+       RowBox[{"ande", " ", "deals", " ", "with", " ", "the", " ", "the"}]}], 
+      " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"processing", " ", "of", " ", 
+        RowBox[{"carbohydrates", ".", " ", "It"}], " ", "plays", " ", "a", 
+        " ", "major", " ", "role", " ", "in", " ", "the", " ", "first", " ", 
+        "part", " ", "of", " ", "a", " ", "series", " ", "of", " ", 
+        "processes", " ", "known", " ", "as", " ", "the", " ", 
+        RowBox[{"\"\<pentose \nphosphate pathway\>\"", ".", " ", "This"}], 
+        " ", "process", " ", "is", " ", "responsible", " ", "for", " ", 
+        "converting", " ", "glucose", " ", "to", " ", "another", " ", "sugar",
+         " ", "known", " ", "as", " ", "ribose"}], "-", "5", "-", 
+       "phosphate"}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "as", " ", "well", " ", "as", " ", "the", " ", "production", " ", "of",
+         " ", "NADPH"}], ",", " ", 
+       RowBox[{
+       "which", " ", "helps", " ", "protect", " ", "cells", " ", "from", " ", 
+        "harmful", " ", "reactive", " ", 
+        RowBox[{"molecules", ".", " ", "In"}], " ", "red", " ", "blood", " ", 
+        "cells"}], ",", " ", "this"}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "protien", " ", "is", " ", "one", " ", "of", " ", "the", " ", "main", 
+        " ", "producers", " ", "of", " ", "NADPH"}], ",", " ", 
+       RowBox[{
+       "which", " ", "makes", " ", "it", " ", "even", " ", "more", " ", 
+        "important", " ", "in", " ", "these", " ", 
+        RowBox[{"cells", ".", " "}]}]}]}]},
+    {"Length", 
+     RowBox[{"515", " ", "amino", " ", "acids"}]},
+    {
+     RowBox[{"Accession", " ", "Number"}], 
+     RowBox[{"ABH03569", ".1"}]},
+    {"Homologs", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "gene", " ", "is", " ", "also", " ", "found", " ", "in", 
+        " ", "mice"}], ",", " ", "chicken", ",", " ", 
+       RowBox[{"and", " ", "zebrafish", " ", "as", " ", "well"}]}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+      "as", " ", "other", " ", "organims", " ", "for", " ", "a", " ", "total",
+        " ", "of", " ", "287", " ", "orthologues", " ", "and", " ", "1", " ", 
+       
+       RowBox[{"paralog", "."}]}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+      "Mutations", " ", "in", " ", "this", " ", "gene", " ", "can", " ", 
+       "actually", " ", "lead", " ", "to", " ", "medical", " ", "problems", 
+       " ", "due", " ", "to", " ", 
+       RowBox[{"it", "'"}], "s", " ", "importance", " ", "in", " ", "red", 
+       " ", "blood", " ", 
+       RowBox[{"cells", ".", " ", "When"}], " ", "an"}], " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "SNP", " ", "messes", " ", "up", " ", "the", " ", "amino", " ", "acid",
+         " ", "sequence"}], ",", " ", 
+       RowBox[{
+       "this", " ", "can", " ", "cause", " ", "either", " ", "less", " ", 
+        "enzyme", " ", "to", " ", "be", " ", "created", " ", "or", " ", 
+        "reduce", " ", "the", " ", "efficiency", " ", "of"}]}], " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"the", " ", 
+        RowBox[{"enzyme", ".", " ", "When"}], " ", "this", " ", "occurs"}], 
+       ",", " ", 
+       RowBox[{
+       "red", " ", "blood", " ", "cells", " ", "can", " ", "go", " ", 
+        "through", " ", "hemolysis", " ", "which", " ", "is", " ", "when", 
+        " ", "they", " ", "break", " ", 
+        RowBox[{"down", ".", " ", "When"}], " ", "the", " ", "amount"}]}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "of", " ", "harmful", " ", "reactive", " ", "molecules", " ", "is", 
+        " ", "increased"}], ",", " ", 
+       RowBox[{
+       "this", " ", "can", " ", "make", " ", "the", " ", "condition", " ", 
+        "even", " ", "more", " ", 
+        RowBox[{"serious", ".", " "}]}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"1a753f3c-bb58-44f4-aba9-f6ba39463fb8"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.792874508506832*^9, 
+   3.792874514190156*^9}},ExpressionUUID->"866dab4c-2a51-4e7b-bd97-\
+814c3181d397"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sequence 3:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+  3.792873180937357*^9, 3.792873181084237*^9}, {3.7928741418821774`*^9, 
+  3.792874141997891*^9}},ExpressionUUID->"7609dda7-8539-4aad-8055-\
+8c27cb3b7ab2"],
+
+Cell[TextData[{
+ "The sequence provided was inputted into BLAST, and had a 100 percent \
+identity with the protein \[OpenCurlyDoubleQuote]myosin VA (heavy polypeptide \
+12, myoxin)\[CloseCurlyDoubleQuote], which is created by the MYO5A gene. [11] \
+[12]  \n\n",
+ Cell[BoxData[GridBox[{
+    {
+     RowBox[{"Gene", " ", "Symbol"}], "MYO5A"},
+    {
+     RowBox[{"Official", " ", "Name"}], 
+     RowBox[{"myosin", " ", "VA"}]},
+    {
+     RowBox[{"Gene", " ", "Type"}], 
+     RowBox[{"Protein", " ", "Coding"}]},
+    {"Organism", 
+     RowBox[{"Homo", " ", "Sapiens"}]},
+    {"Function", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "gene", " ", "creates", " ", "a", " ", "protien", " ", 
+        "that", " ", "is", " ", "classified", " ", "as", " ", "a", " ", 
+        RowBox[{"myosin", ".", " ", "A"}], " ", "mysoin", " ", "is", " ", "a",
+         " ", "motor", " ", "protien"}], ",", " ", 
+       RowBox[{
+       "and", " ", "plays", " ", "a", " ", "large", " ", "role", " ", 
+        "in"}]}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "transporting", " ", "molecules", " ", "like", " ", "ATP", " ", 
+        "around", " ", "different", " ", "part", " ", "of", " ", "a", " ", 
+        RowBox[{"cell", ".", " ", "This"}], " ", "specific", " ", "protien", 
+        " ", "is", " ", "found", " ", "in", " ", "melanocytes"}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{"and", " ", "transports", " ", "melanosomes"}], ",", " ", 
+       RowBox[{
+       "which", " ", "in", " ", "turn", " ", "produce", " ", "melanin", " ", 
+        "which", " ", "is", " ", "responsible", " ", "for", " ", "producing", 
+        " ", 
+        RowBox[{"pigment", ".", " ", "In"}], " ", "order", " ", "to"}]}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "make", " ", "sure", " ", "that", " ", "this", " ", "pigment", " ", 
+        "is", " ", "produced", " ", "in", " ", "the", " ", "right", " ", 
+        "place"}], ",", " ", 
+       RowBox[{
+       "myosin", " ", "VA", " ", "transports", " ", "melanosomes", " ", "to", 
+        " ", "the", " ", "outer", " ", "edge", " ", "of", " ", "the"}]}], " ",
+       "\[IndentingNewLine]", 
+      RowBox[{
+      "cell", " ", "where", " ", "they", " ", "then", " ", "travel", " ", 
+       "outside", " ", "to", " ", "other", " ", "cells", " ", "aided", " ", 
+       "by", " ", "other", " ", 
+       RowBox[{"protiens", ".", " "}]}]}]},
+    {"Location", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Chromosome", " ", "15"}], ":", "52"}], ",", "307", ",", 
+      RowBox[{"283", "-", "52"}], ",", "529", ",", "050"}]},
+    {"Length", 
+     RowBox[{"1855", " ", "amino", " ", "acids"}]},
+    {
+     RowBox[{"Accession", " ", "Number"}], 
+     RowBox[{"EAW77451", ".1"}]},
+    {"Homologs", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "gene", " ", "is", " ", "also", " ", "found", " ", "in", 
+        " ", "mice"}], ",", " ", "chicken", ",", " ", "lizards", ",", " ", 
+       RowBox[{
+       "african", " ", "clawed", " ", "frogs", " ", "and", " ", "zebrafish", 
+        " ", "as", " ", "well"}]}], "\[IndentingNewLine]", 
+      RowBox[{
+      "as", " ", "other", " ", "organims", " ", "for", " ", "a", " ", "total",
+        " ", "of", " ", "251", " ", "orthologues", " ", "and", " ", "44", 
+       RowBox[{"paralogues", "."}]}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+       RowBox[{"As", " ", "one", " ", "would", " ", "expect"}], ",", " ", 
+       RowBox[{
+       "mutations", " ", "in", " ", "this", " ", "gene", " ", "can", " ", 
+        "lead", " ", "to", " ", "problems", " ", "with", " ", "pigmentation", 
+        " ", "due", " ", "to", " ", "the", " ", "role", " ", "that", " ", 
+        "this", " ", "protein"}]}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"plays", " ", "directly", " ", "with", " ", 
+        RowBox[{"melainin", ".", " ", "One"}], " ", "such", " ", "disorder", 
+        " ", "is", " ", "known", " ", "as", " ", "Griscelli", " ", 
+        "syndrome"}], ",", " ", 
+       RowBox[{
+       "which", " ", "is", " ", "characterized", " ", "by", " ", "light"}]}], 
+      " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"skin", " ", "and", " ", 
+        RowBox[{"hair", ".", " ", "Additionally"}]}], ",", " ", 
+       RowBox[{
+       "this", " ", "gene", " ", "plays", " ", "a", " ", "role", " ", "in", 
+        " ", "neurons"}], ",", " ", 
+       RowBox[{
+       "which", " ", "results", " ", "in", " ", "nuerological", " ", 
+        "problems", " ", "in", " ", "people"}]}], "\[IndentingNewLine]", 
+      RowBox[{"with", " ", "this", " ", 
+       RowBox[{"syndrome", ".", " "}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"7e718a8c-5d45-4314-a76d-d14b48b0c187"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.7928742461871433`*^9, 3.792874246187689*^9}, {3.7928742978093367`*^9, 
+   3.79287433504847*^9}, {3.7928743659486113`*^9, 3.792874371791943*^9}, {
+   3.792874501123835*^9, 3.792874528727113*^9}, {3.792874571166079*^9, 
+   3.7928747730096893`*^9}, {3.792874819996871*^9, 3.792874938654256*^9}, {
+   3.792874973471182*^9, 
+   3.7928750160414333`*^9}},ExpressionUUID->"fffb9a7f-3202-426c-a081-\
+ffb03c1931ff"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sequence 4:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+  3.792873180937357*^9, 3.792873181084237*^9}, {3.7928741418821774`*^9, 
+  3.792874141997891*^9}, {3.7928750840415173`*^9, 
+  3.792875084141561*^9}},ExpressionUUID->"9325e13a-30aa-4b16-b651-\
+dd561402e594"],
+
+Cell[TextData[{
+ "The sequence provided was inputted into BLAST, and had a 100 percent \
+identity with the protein \[OpenCurlyDoubleQuote]Apolipoprotein E\
+\[CloseCurlyDoubleQuote], which is created by the APOE gene. [13] [14]  \n\n\
+",
+ Cell[BoxData[GridBox[{
+    {
+     RowBox[{"Gene", " ", "Symbol"}], "APOE"},
+    {
+     RowBox[{"Official", " ", "Name"}], 
+     RowBox[{"Apolipoprotein", "-", "E"}]},
+    {
+     RowBox[{"Gene", " ", "Type"}], 
+     RowBox[{"Protein", " ", "Coding"}]},
+    {"Organism", 
+     RowBox[{"Homo", " ", "Sapiens"}]},
+    {"Function", 
+     RowBox[{
+      RowBox[{"Apolipoprotein", "-", 
+       RowBox[{
+       "E", " ", "is", " ", "a", " ", "gene", " ", "that", " ", "is", " ", 
+        "responsible", " ", "for", " ", "the", " ", "metabolism", " ", "of", 
+        " ", "fats", " ", "and", " ", "also", " ", "plays", " ", "a", " ", 
+        "role", " ", "in"}]}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Alzheimer", "'"}], "s", " ", 
+        RowBox[{"disease", ".", "It"}], " ", "creates", " ", "a", " ", 
+        "protein", " ", "that", " ", "transports", " ", "fat", " ", "and", 
+        " ", "vitamins", " ", "into", " ", "blood"}], ",", 
+       RowBox[{"through", " ", "the"}]}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"lymph", " ", 
+        RowBox[{"system", ".", "It"}], " ", "is", " ", "found", " ", "in", 
+        " ", "many", " ", "different", " ", "types", " ", "of", " ", 
+        "tissue"}], ",", 
+       RowBox[{"including", " ", "brain", " ", "and", " ", "liver", " ", 
+        RowBox[{"tissue", ".", "\[IndentingNewLine]", "It"}], " ", "is", " ", 
+        "very", " ", "important", " ", "for", " ", "the", " ", "metabolism", 
+        " ", "of", " ", "cholesterol", " ", "and", " ", 
+        RowBox[{"triglycerides", ".", " "}]}]}]}]},
+    {"Location", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Chromosome", " ", "19"}], ":", "44"}], ",", "905", ",", 
+      RowBox[{"791", "-", "44"}], ",", "909", ",", "393"}]},
+    {"Length", 
+     RowBox[{"299", " ", "amino", " ", "acids"}]},
+    {
+     RowBox[{"Accession", " ", "Number"}], 
+     RowBox[{"6", "NCN_A"}]},
+    {"Homologs", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "gene", " ", "is", " ", "also", " ", "found", " ", "in", 
+        " ", "mice"}], ",", 
+       RowBox[{"and", " ", "zebrafish", " ", "as", " ", "well"}]}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+      "as", " ", "other", " ", "organims", " ", "for", " ", "a", " ", "total",
+        " ", "of", " ", "244", " ", "orthologues", " ", "and", " ", "3", 
+       RowBox[{"paralogues", "."}]}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "The", " ", "allelic", " ", "form", " ", "of", " ", "this", " ", 
+        "gene", " ", "that", " ", "is", " ", "responsible", " ", "for", " ", 
+        RowBox[{"Alzheimer", "'"}], "s", " ", "disease", " ", "is", " ", 
+        "the", " ", "E4", " ", 
+        RowBox[{"variant", ".", "\[IndentingNewLine]", 
+         RowBox[{"Alzheimer", "'"}]}], "s", " ", "disease", " ", "occurs", 
+        " ", "due", " ", "to", " ", "the", " ", "build", " ", "up", " ", "of",
+         " ", "short", " ", "chains", " ", "of", " ", "amino", " ", "acids", 
+        " ", "in", " ", "the", " ", 
+        RowBox[{"brain", ".", "\[IndentingNewLine]", "Specifically"}]}], ",", 
+       
+       RowBox[{
+        RowBox[{"the", " ", "peptide", " ", "beta"}], "-", 
+        RowBox[{
+        "amyloid", " ", "builds", " ", "up", " ", "in", " ", "the", " ", 
+         RowBox[{"brain", ".", "APOE"}], " ", "is", " ", "responsible", " ", 
+         "for", " ", "breaking"}]}]}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "down", " ", "the", " ", "peptide", " ", "into", " ", "shorter", " ", 
+        "amino", " ", "acid", " ", 
+        RowBox[{"strains", ".", "However"}]}], ",", 
+       RowBox[{
+       "the", " ", "isoform", " ", "apoE4", " ", "fails", " ", "to", " ", 
+        "be", " ", "effective"}]}], " ", "\[IndentingNewLine]", 
+      RowBox[{"in", " ", "breaking", " ", "down", " ", "these", " ", 
+       RowBox[{"peptides", ".", "This"}], " ", "causes", " ", "people", " ", 
+       "with", " ", "this", " ", "isoform", " ", "to", " ", "be", " ", "more",
+        " ", "susceptible", " ", "to", " ", 
+       RowBox[{"Alzheimer", "'"}], "s", " ", 
+       RowBox[{"disease", "."}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"b5c28e5b-8a08-4e95-842c-39726643bf48"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.7928742461871433`*^9, 3.792874246187689*^9}, {3.7928742978093367`*^9, 
+   3.79287433504847*^9}, {3.7928743659486113`*^9, 3.792874371791943*^9}, {
+   3.792874501123835*^9, 3.792874528727113*^9}, {3.792874571166079*^9, 
+   3.7928747730096893`*^9}, {3.792874819996871*^9, 3.792874938654256*^9}, {
+   3.792874973471182*^9, 3.7928750160414333`*^9}, {3.792875168423058*^9, 
+   3.792875171986163*^9}, {3.7928752337479467`*^9, 3.792875299334779*^9}, {
+   3.79287539209754*^9, 
+   3.7928754803301477`*^9}},ExpressionUUID->"62b461c7-0d81-4c28-97e7-\
+f1fea283a762"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sequence 5:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+  3.792873180937357*^9, 3.792873181084237*^9}, {3.7928741418821774`*^9, 
+  3.792874141997891*^9}, {3.7928750840415173`*^9, 3.792875084141561*^9}, {
+  3.792875524831191*^9, 
+  3.7928755249940443`*^9}},ExpressionUUID->"ea59cdb5-ccd4-42f4-8019-\
+ae44af0c5598"],
+
+Cell[TextData[{
+ "The sequence provided was inputted into BLAST, and had a 100 percent \
+identity with the protein \[OpenCurlyDoubleQuote]Chain B, Polyubiquitin-b\
+\[CloseCurlyDoubleQuote], which is created by the UBB gene. [15]  \n\n",
+ Cell[BoxData[GridBox[{
+    {
+     RowBox[{"Gene", " ", "Symbol"}], "UBB"},
+    {
+     RowBox[{"Official", " ", "Name"}], 
+     RowBox[{"Ubiquitin", " ", "B"}]},
+    {
+     RowBox[{"Gene", " ", "Type"}], 
+     RowBox[{"Protein", " ", "Coding"}]},
+    {"Organism", 
+     RowBox[{"Homo", " ", "Sapiens"}]},
+    {"Function", 
+     RowBox[{
+      RowBox[{
+      "This", " ", "gene", " ", "creates", " ", "a", " ", "protien", " ", 
+       "that", " ", "is", " ", "responsible", " ", "for", " ", "breaking", 
+       " ", "down", " ", "abnornal", " ", "and", " ", "normal", " ", 
+       "proteins", " ", "at", " ", "a", " ", "fast"}], " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"rate", ".", " ", "This"}], " ", "protein", " ", "binds", " ",
+         "itself", " ", "to", " ", "other", " ", "proteins"}], ",", " ", 
+       RowBox[{"and", " ", "by", " ", "doing", " ", "so"}], ",", " ", 
+       RowBox[{
+       "it", " ", "marks", " ", "the", " ", "other", " ", "protein", " ", 
+        "as", " ", "ready"}]}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"to", " ", "be", " ", 
+        RowBox[{"degraded", ".", " ", "It"}], " ", "also", " ", "plays", " ", 
+        "a", " ", "role", " ", "in", " ", "maintatining", " ", "the", " ", 
+        "structure", " ", "of", " ", "chromatin"}], ",", " ", 
+       RowBox[{"which", " ", "is", " ", "what", " ", "chromosomes"}]}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"are", " ", "made", " ", 
+       RowBox[{"of", ".", " "}]}]}]},
+    {"Location", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Chromosome", " ", "17"}], ":", "16"}], ",", "380", ",", 
+      RowBox[{"798", "-", "16"}], ",", "382", ",", "745"}]},
+    {"Length", 
+     RowBox[{"229", " ", "amino", " ", "acids"}]},
+    {
+     RowBox[{"Accession", " ", "Number"}], 
+     RowBox[{"5", "CVM_B"}]},
+    {"Homologs", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "gene", " ", "is", " ", "also", " ", "found", " ", "in", 
+        " ", "mice"}], ",", "chicken", ",", 
+       RowBox[{
+       "lizards", " ", "and", " ", "zebrafish", " ", "as", " ", "well"}]}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+      "as", " ", "other", " ", "organims", " ", "for", " ", "a", " ", "total",
+        " ", "of", " ", "122", " ", "orthologues", " ", "and", " ", "11", 
+       RowBox[{"paralogues", "."}]}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+      "This", " ", "gene", " ", "is", " ", "actually", " ", "one", " ", "of", 
+       " ", "the", " ", "most", " ", "conserved", " ", "genes", " ", "in", 
+       " ", "eukaryotic", " ", 
+       RowBox[{"organisms", ".", " ", "Mutations"}], " ", "of", " ", "this", 
+       " ", "gene"}], "\[IndentingNewLine]", 
+      RowBox[{
+      "have", " ", "been", " ", "found", " ", "in", " ", "individuals", " ", 
+       "with", " ", "disorders", " ", "such", " ", "as", " ", 
+       RowBox[{"Alzhemier", "'"}], "s", " ", "Disease", " ", "and", " ", 
+       "Down", " ", 
+       RowBox[{"Syndrome", ".", " "}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"efe2f950-4726-4b59-a236-18027baf6d16"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.7928742461871433`*^9, 3.792874246187689*^9}, {3.7928742978093367`*^9, 
+   3.79287433504847*^9}, {3.7928743659486113`*^9, 3.792874371791943*^9}, {
+   3.792874501123835*^9, 3.792874528727113*^9}, {3.792874571166079*^9, 
+   3.7928747730096893`*^9}, {3.792874819996871*^9, 3.792874938654256*^9}, {
+   3.792874973471182*^9, 3.7928750160414333`*^9}, {3.792875168423058*^9, 
+   3.792875171986163*^9}, {3.7928752337479467`*^9, 3.792875299334779*^9}, {
+   3.79287539209754*^9, 3.7928754803301477`*^9}, 3.7928755541899567`*^9, {
+   3.792875588833537*^9, 3.792875612212161*^9}, {3.7928756594649467`*^9, 
+   3.792875744965317*^9}, {3.7928757970559177`*^9, 3.792876003246249*^9}, {
+   3.7928760451451693`*^9, 3.792876050386044*^9}, {3.792876416395776*^9, 
+   3.792876446632393*^9}},ExpressionUUID->"c8edfb07-cd13-47dd-9f3d-\
+7b7292079cd6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sequence 6:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+  3.792873180937357*^9, 3.792873181084237*^9}, {3.7928741418821774`*^9, 
+  3.792874141997891*^9}, {3.7928750840415173`*^9, 3.792875084141561*^9}, {
+  3.792875524831191*^9, 3.7928755249940443`*^9}, {3.792876067814851*^9, 
+  3.792876068141755*^9}},ExpressionUUID->"b5ae187a-a313-4fd5-b91f-\
+1a4b1e032bed"],
+
+Cell[TextData[{
+ "The sequence provided was inputted into BLAST, and had a 100 percent \
+identity with the protein \[OpenCurlyDoubleQuote]Leptin\
+\[CloseCurlyDoubleQuote], which is created by the LEP gene. [16] [17]  \n\n",
+ Cell[BoxData[GridBox[{
+    {
+     RowBox[{"Gene", " ", "Symbol"}], "LEP"},
+    {
+     RowBox[{"Official", " ", "Name"}], "Leptin"},
+    {
+     RowBox[{"Gene", " ", "Type"}], 
+     RowBox[{"Protein", " ", "Coding"}]},
+    {"Organism", 
+     RowBox[{"Homo", " ", "Sapiens"}]},
+    {"Function", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "gene", " ", "is", " ", "responsible", " ", "for", " ", 
+        "creating", " ", "a", " ", "hormone", " ", "known", " ", "as", " ", 
+        "leptin"}], ",", " ", 
+       RowBox[{"which", " ", "plays", " ", "a", " ", "large", " ", "role"}]}],
+       " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"in", " ", "regulating", " ", "body", " ", 
+        RowBox[{"weight", ".", " ", "The"}], " ", "fat", " ", "cells", " ", 
+        "in", " ", "the", " ", "body", " ", "will", " ", "release", " ", 
+        "leptin", " ", "based", " ", "on", " ", "the", " ", "size", " ", "of",
+         " ", "the", " ", "cell"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"so", " ", "the", " ", "more", " ", "elptin", " ", "relased"}],
+        ",", " ", 
+       RowBox[{
+       "the", " ", "more", " ", "fat", " ", "there", " ", "will", " ", "be", 
+        " ", "in", " ", "the", " ", 
+        RowBox[{"body", ".", " ", "This"}], " ", "protein", " ", "orks", " ", 
+        "by", " ", "binding", " ", "to", " ", "a"}]}], "\[IndentingNewLine]", 
+      
+      RowBox[{
+       RowBox[{
+       "receptor", " ", "found", " ", "in", " ", "the", " ", "hypothalamus"}],
+        ",", " ", 
+       RowBox[{
+       "the", " ", "part", " ", "of", " ", "the", " ", "brain", " ", "that", 
+        " ", "deals", " ", "with", " ", "hunger", " ", "and", " ", 
+        RowBox[{"sleep", ".", " ", "When"}], " ", "leptin"}]}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"binds", " ", "to", " ", "the", " ", "receptor"}], ",", " ", 
+       RowBox[{
+       "this", " ", "signals", " ", "to", " ", "the", " ", "hypothalamus", 
+        " ", "that", " ", "the", " ", "body", " ", "is", " ", "full", " ", 
+        "and", " ", "reduces", " ", "feelings", " ", "of"}]}], " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{"hunger", ".", " "}]}]},
+    {"Location", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Chromosome", " ", "7"}], ":", "128"}], ",", "241", ",", 
+      RowBox[{"278", "-", "128"}], ",", "257", ",", "629"}]},
+    {"Length", 
+     RowBox[{"167", " ", "amino", " ", "acids"}]},
+    {
+     RowBox[{"Accession", " ", "Number"}], 
+     RowBox[{"AAH69323", ".1"}]},
+    {"Homologs", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "gene", " ", "is", " ", "also", " ", "found", " ", "in", 
+        " ", "mice"}], ",", " ", 
+       RowBox[{"and", " ", "zebrafish", " ", "as", " ", "well"}]}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+      "as", " ", "other", " ", "organims", " ", "for", " ", "a", " ", "total",
+        " ", "of", " ", "112", " ", 
+       RowBox[{"orthologues", "."}]}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "When", " ", "there", " ", "is", " ", "mutations", " ", "in", " ", 
+        "this", " ", "gene"}], ",", " ", 
+       RowBox[{
+       "this", " ", "can", " ", "lead", " ", "to", " ", "severe", " ", 
+        "weight", " ", "gain", " ", "due", " ", "to", " ", "an", " ", 
+        "increased", " ", 
+        RowBox[{"appetite", ".", " ", "\[IndentingNewLine]", "Since"}], " ", 
+        "an", " ", "indvidual", " ", "would", " ", "not", " ", "feel", " ", 
+        "full", " ", "due", " ", "to", " ", "the", " ", "lack", " ", "of", 
+        " ", "this", " ", "hormone"}], ",", " ", 
+       RowBox[{"it", " ", "would", " ", "increase", " ", "their"}]}], " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+      "appetite", " ", "and", " ", "therefore", " ", "lead", " ", "to", " ", 
+       "weight", " ", 
+       RowBox[{"gain", ".", " ", "The"}], " ", "official", " ", "name", " ", 
+       "for", " ", "this", " ", "condition", " ", "is", " ", "congenital", 
+       " ", "leptin"}], "\[IndentingNewLine]", 
+      RowBox[{"deficiency", ".", " "}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"d65283b6-37db-457b-872d-0ab8668e7067"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.7928742461871433`*^9, 3.792874246187689*^9}, {3.7928742978093367`*^9, 
+   3.79287433504847*^9}, {3.7928743659486113`*^9, 3.792874371791943*^9}, {
+   3.792874501123835*^9, 3.792874528727113*^9}, {3.792874571166079*^9, 
+   3.7928747730096893`*^9}, {3.792874819996871*^9, 3.792874938654256*^9}, {
+   3.792874973471182*^9, 3.7928750160414333`*^9}, {3.792875168423058*^9, 
+   3.792875171986163*^9}, {3.7928752337479467`*^9, 3.792875299334779*^9}, {
+   3.79287539209754*^9, 3.7928754803301477`*^9}, 3.7928755541899567`*^9, {
+   3.792875588833537*^9, 3.792875612212161*^9}, {3.7928756594649467`*^9, 
+   3.792875744965317*^9}, {3.7928757970559177`*^9, 3.792876003246249*^9}, {
+   3.7928760451451693`*^9, 3.792876050386044*^9}, 3.792876103082262*^9, {
+   3.792876164565284*^9, 3.792876187127858*^9}, {3.792876217315439*^9, 
+   3.79287625774861*^9}, {3.7928763223304033`*^9, 3.792876412765648*^9}, {
+   3.792876451904168*^9, 
+   3.792876679449965*^9}},ExpressionUUID->"69ac391d-55f8-470e-9e52-\
+7fca40edfdae"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sequence 7:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+  3.792873180937357*^9, 3.792873181084237*^9}, {3.7928741418821774`*^9, 
+  3.792874141997891*^9}, {3.7928750840415173`*^9, 3.792875084141561*^9}, {
+  3.792875524831191*^9, 3.7928755249940443`*^9}, {3.792876067814851*^9, 
+  3.792876068141755*^9}, {3.792876736030897*^9, 
+  3.792876736324377*^9}},ExpressionUUID->"2619b817-e64a-4b22-865b-\
+ded2aabbcf6a"],
+
+Cell[TextData[{
+ "The sequence provided was inputted into BLAST, and had a 100 percent \
+identity with the protein \[OpenCurlyDoubleQuote]Chain A, Myoglobin\
+\[CloseCurlyDoubleQuote], which is created by the MB gene. [18] [19]  \n\n",
+ Cell[BoxData[GridBox[{
+    {
+     RowBox[{"Gene", " ", "Symbol"}], "MB"},
+    {
+     RowBox[{"Official", " ", "Name"}], "Myoglobin"},
+    {
+     RowBox[{"Gene", " ", "Type"}], 
+     RowBox[{"Protein", " ", "Coding"}]},
+    {"Organism", 
+     RowBox[{"Physeter", " ", "catodon"}]},
+    {"Function", 
+     RowBox[{
+      RowBox[{
+      "This", " ", "gene", " ", "creates", " ", "a", " ", "protein", " ", 
+       "that", " ", "serves", " ", "as", " ", "a", " ", "source", " ", "of", 
+       " ", "oxygen", " ", "and", " ", "also", " ", "geals", " ", "with", " ",
+        "the", " ", "movement", " ", "of", " ", "oxygen", " ", "in"}], " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"muscles", ".", " ", "It"}], " ", "is", " ", "a", " ", 
+       "muscle", " ", "protien", " ", "with", " ", "the", " ", "molecular", 
+       " ", "funtion", " ", "of", " ", "oxygen", " ", 
+       RowBox[{"transport", ".", " ", "It"}], " ", "is", " ", "oxygen", " ", 
+       "and", " ", "hime"}], " ", "\[IndentingNewLine]", 
+      RowBox[{"binding", ",", " ", 
+       RowBox[{"and", " ", "is", " ", "expressed", " ", "in", " "}]}]}]},
+    {"Location", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Primary_assembly", " ", "ML160926", ".1"}], ":", "28"}], ",", 
+      
+      RowBox[{"809", "-", "39"}], ",", "467"}]},
+    {"Length", 
+     RowBox[{"154", " ", "amino", " ", "acids"}]},
+    {
+     RowBox[{"Accession", " ", "Number"}], 
+     RowBox[{"4", "H07_A"}]},
+    {"Homologs", 
+     RowBox[{
+      RowBox[{
+      "This", " ", "gene", " ", "is", " ", "also", " ", "found", " ", "in", 
+       " ", "other", " ", "organims", " ", "for", " ", "a", " ", "total", " ",
+        "of", " ", "249", " ", "orthologues", " ", "and", " ", "10"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"paralogues", ".", " "}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+      "This", " ", "sequence", " ", "is", " ", "actually", " ", "for", " ", 
+       "the", " ", "gene", " ", "from", " ", "sperm", " ", 
+       RowBox[{"whales", ".", " ", "The"}], " ", "chromosomes", " ", "of", 
+       " ", "sperm", " ", "whales", " ", 
+       RowBox[{"don", "'"}], "t"}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"have", " ", "arms"}], ",", " ", 
+       RowBox[{
+       "which", " ", "is", " ", "why", " ", "the", " ", "cytolocation", " ", 
+        "looks", " ", "different", " ", "than", " ", "the", " ", 
+        "cytolocation", " ", "you", " ", "would", " ", "find"}]}], " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{"for", " ", "human", " ", 
+       RowBox[{"genes", ".", " "}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"2aa799d5-6b1e-4563-9ea3-6268d6fcef8b"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.7928742461871433`*^9, 3.792874246187689*^9}, {3.7928742978093367`*^9, 
+   3.79287433504847*^9}, {3.7928743659486113`*^9, 3.792874371791943*^9}, {
+   3.792874501123835*^9, 3.792874528727113*^9}, {3.792874571166079*^9, 
+   3.7928747730096893`*^9}, {3.792874819996871*^9, 3.792874938654256*^9}, {
+   3.792874973471182*^9, 3.7928750160414333`*^9}, {3.792875168423058*^9, 
+   3.792875171986163*^9}, {3.7928752337479467`*^9, 3.792875299334779*^9}, {
+   3.79287539209754*^9, 3.7928754803301477`*^9}, 3.7928755541899567`*^9, {
+   3.792875588833537*^9, 3.792875612212161*^9}, {3.7928756594649467`*^9, 
+   3.792875744965317*^9}, {3.7928757970559177`*^9, 3.792876003246249*^9}, {
+   3.7928760451451693`*^9, 3.792876050386044*^9}, 3.792876103082262*^9, {
+   3.792876164565284*^9, 3.792876187127858*^9}, {3.792876217315439*^9, 
+   3.79287625774861*^9}, {3.7928763223304033`*^9, 3.792876412765648*^9}, {
+   3.792876451904168*^9, 3.792876679449965*^9}, {3.792876740333959*^9, 
+   3.7928767479467363`*^9}, {3.792876920464221*^9, 3.792876953430215*^9}, {
+   3.792877062320809*^9, 3.792877148675703*^9}, {3.792877210779683*^9, 
+   3.79287736878025*^9}},ExpressionUUID->"06ca7f8a-e073-4027-afd9-\
+9924d8849a84"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sequence 8:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+  3.792873180937357*^9, 3.792873181084237*^9}, {3.7928741418821774`*^9, 
+  3.792874141997891*^9}, {3.7928750840415173`*^9, 3.792875084141561*^9}, {
+  3.792875524831191*^9, 3.7928755249940443`*^9}, {3.792876067814851*^9, 
+  3.792876068141755*^9}, {3.792876736030897*^9, 3.792876736324377*^9}, {
+  3.792877401203608*^9, 
+  3.792877401521017*^9}},ExpressionUUID->"f8f6b51e-f121-4ca1-946b-\
+9d3732a2ea46"],
+
+Cell[TextData[{
+ "The sequence provided was inputted into BLAST, and had a 100 percent \
+identity with the protein \[OpenCurlyDoubleQuote]Chain T, Tissue factor\
+\[CloseCurlyDoubleQuote], which is created by the F3 gene. [20] [21]  \n\n",
+ Cell[BoxData[GridBox[{
+    {
+     RowBox[{"Gene", " ", "Symbol"}], "F3"},
+    {
+     RowBox[{"Official", " ", "Name"}], 
+     RowBox[{
+      RowBox[{"coagulation", " ", "factor", " ", "III"}], ",", 
+      RowBox[{"tissue", " ", "factor"}]}]},
+    {
+     RowBox[{"Gene", " ", "Type"}], 
+     RowBox[{"Protein", " ", "Coding"}]},
+    {"Organism", 
+     RowBox[{"Homo", " ", "Sapiens"}]},
+    {"Function", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "The", " ", "main", " ", "function", " ", "of", " ", "this", " ", 
+        "gene", " ", "is", " ", "to", " ", "produce", " ", "a", " ", 
+        "protein", " ", "known", " ", "as", " ", "coagulation", " ", "factor",
+         " ", "III"}], ",", " ", "\[IndentingNewLine]", 
+       RowBox[{
+       "which", " ", "is", " ", "integral", " ", "to", " ", "the", " ", 
+        "blood", " ", "coagulation", " ", 
+        RowBox[{"process", ".", " ", "It"}], " ", "intiaties", " ", "the", 
+        " ", "entire", " ", "process"}], ",", " ", "and"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+      "also", " ", "serves", " ", "as", " ", "a", " ", "receptor", " ", "for",
+        " ", "coagulation", " ", "factor", " ", 
+       RowBox[{"VII", ".", " ", "This"}], " ", "new", " ", "complex", " ", 
+       "then", " ", "activates", " ", "other"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "coagulation", " ", "factor", " ", "through", " ", "specific", " ", 
+        "limited", " ", "proteolysis"}], ",", " ", 
+       RowBox[{
+       "which", " ", "is", " ", "the", " ", "selective", " ", "breakdown"}]}],
+       " ", "\[IndentingNewLine]", 
+      RowBox[{
+      "of", " ", "proteins", " ", "down", " ", "into", " ", "amino", " ", 
+       RowBox[{"acids", ".", " "}]}]}]},
+    {"Location", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Chromosome", " ", "1"}], ":", "94"}], ",", "529", ",", 
+      RowBox[{"173", "-", "94"}], ",", "541", ",", "759"}]},
+    {"Length", 
+     RowBox[{"295", " ", "amino", " ", "acids"}]},
+    {
+     RowBox[{"Accession", " ", "Number"}], 
+     RowBox[{"4", "M7L_T"}]},
+    {"Homologs", 
+     RowBox[{
+      RowBox[{
+      "This", " ", "gene", " ", "is", " ", "also", " ", "found", " ", "in", 
+       " ", "other", " ", "organims", " ", "for", " ", "a", " ", "total", " ",
+        "of", " ", "294", " ", "orthologues", " ", "and", " ", "12"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"paralogues", ".", " "}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+      "This", " ", "gene", " ", "is", " ", "mainly", " ", "expressed", " ", 
+       "in", " ", "the", " ", "cell", " ", 
+       RowBox[{"membrane", ".", " ", "The"}], " ", "gene", " ", "expression", 
+       " ", "is", " ", "also", " ", "dependent"}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+      "by", " ", "the", " ", "cell", " ", "that", " ", "it", " ", "is", " ", 
+       "located", " ", 
+       RowBox[{"in", ".", "  "}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"3f077733-675e-4192-bb7b-60eb607275ed"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.7928742461871433`*^9, 3.792874246187689*^9}, {3.7928742978093367`*^9, 
+   3.79287433504847*^9}, {3.7928743659486113`*^9, 3.792874371791943*^9}, {
+   3.792874501123835*^9, 3.792874528727113*^9}, {3.792874571166079*^9, 
+   3.7928747730096893`*^9}, {3.792874819996871*^9, 3.792874938654256*^9}, {
+   3.792874973471182*^9, 3.7928750160414333`*^9}, {3.792875168423058*^9, 
+   3.792875171986163*^9}, {3.7928752337479467`*^9, 3.792875299334779*^9}, {
+   3.79287539209754*^9, 3.7928754803301477`*^9}, 3.7928755541899567`*^9, {
+   3.792875588833537*^9, 3.792875612212161*^9}, {3.7928756594649467`*^9, 
+   3.792875744965317*^9}, {3.7928757970559177`*^9, 3.792876003246249*^9}, {
+   3.7928760451451693`*^9, 3.792876050386044*^9}, 3.792876103082262*^9, {
+   3.792876164565284*^9, 3.792876187127858*^9}, {3.792876217315439*^9, 
+   3.79287625774861*^9}, {3.7928763223304033`*^9, 3.792876412765648*^9}, {
+   3.792876451904168*^9, 3.792876679449965*^9}, {3.792876740333959*^9, 
+   3.7928767479467363`*^9}, {3.792876920464221*^9, 3.792876953430215*^9}, {
+   3.792877062320809*^9, 3.792877148675703*^9}, {3.792877210779683*^9, 
+   3.79287736878025*^9}, 3.792877422266498*^9, {3.792877555280761*^9, 
+   3.7928775969773483`*^9}, {3.792877634908442*^9, 3.792877666843586*^9}, {
+   3.792877697192425*^9, 3.792877752980835*^9}, {3.792877801189802*^9, 
+   3.792877875178623*^9}, {3.792877944831615*^9, 3.792878013548024*^9}, {
+   3.792878104563917*^9, 
+   3.792878119847836*^9}},ExpressionUUID->"8876b84d-57df-42f4-87f5-\
+a2a4bb8a4ab6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sequence 9:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+  3.792873180937357*^9, 3.792873181084237*^9}, {3.7928741418821774`*^9, 
+  3.792874141997891*^9}, {3.7928750840415173`*^9, 3.792875084141561*^9}, {
+  3.792875524831191*^9, 3.7928755249940443`*^9}, {3.792876067814851*^9, 
+  3.792876068141755*^9}, {3.792876736030897*^9, 3.792876736324377*^9}, {
+  3.792877401203608*^9, 3.792877401521017*^9}, {3.792878195662984*^9, 
+  3.792878195897128*^9}},ExpressionUUID->"9f3d26cd-b73c-4d2a-90fd-\
+6f079d565e61"],
+
+Cell[TextData[{
+ "The sequence provided was inputted into BLAST, and had a 100 percent \
+identity with the protein \[OpenCurlyDoubleQuote]Chain A, ALPHA T CELL \
+RECEPTOR\[CloseCurlyDoubleQuote], which is created by the Trac gene. [22] \
+[23]  \n\n",
+ Cell[BoxData[GridBox[{
+    {
+     RowBox[{"Gene", " ", "Symbol"}], "Trac"},
+    {
+     RowBox[{"Official", " ", "Name"}], 
+     RowBox[{
+     "T", " ", "cell", " ", "receptor", " ", "alpha", " ", "constant"}]},
+    {
+     RowBox[{"Gene", " ", "Type"}], 
+     RowBox[{"Protein", " ", "Coding"}]},
+    {"Organism", 
+     RowBox[{"Mus", " ", "Musculus"}]},
+    {"Function", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "These", " ", "genes", " ", "make", " ", "proteins", " ", "that", " ", 
+        "are", " ", "integral", " ", "in", " ", "the", " ", "immune", " ", 
+        RowBox[{"response", ".", " ", "\[IndentingNewLine]", "These"}], " ", 
+        "proteins", " ", "act", " ", "as", " ", "receptors", " ", "that", " ",
+         "are", " ", "found", " ", "on", " ", "the", " ", "surface", " ", 
+        "of", " ", "lymphocytes"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+       "which", " ", "is", " ", "a", " ", "form", " ", "of", " ", "a", " ", 
+        "white", " ", "blood", " ", 
+        RowBox[{"cell", ".", " ", "It"}], " ", "is", " ", "necessary", " ", 
+        "for", " ", "the", " ", "T", " ", "cells", " ", "on", " ", "the", " ",
+         "surface"}]}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+      "of", " ", "lymphocytes", " ", "to", " ", "be", " ", "efficient", " ", 
+       "in", " ", "combating", " ", 
+       RowBox[{"pathogens", ".", " "}]}]}]},
+    {"Location", 
+     RowBox[{"Chr14", ":", 
+      RowBox[{"54220521", "-", "54224198"}]}]},
+    {"Length", 
+     RowBox[{"413", "-", 
+      RowBox[{"935", "  ", "base", " ", "pairs"}]}]},
+    {
+     RowBox[{"Accession", " ", "Number"}], 
+     RowBox[{"1", "G6R_A"}]},
+    {"Homologs", 
+     RowBox[{
+      RowBox[{
+      "This", " ", "gene", " ", "is", " ", "also", " ", "found", " ", "in", 
+       " ", "other", " ", "organims", " ", "for", " ", "a", " ", "total", " ",
+        "of", " ", "36", " ", "orthologues", " ", "and", " ", "25"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"paralogues", ".", " "}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+      "Some", " ", "of", " ", "the", " ", "biological", " ", "processes", " ",
+        "that", " ", "this", " ", "gene", " ", "is", " ", "involved", " ", 
+       "includes", " ", "the", " ", "regulation", " ", "of", " ", "the", " ", 
+       "immune"}], "\[IndentingNewLine]", 
+      RowBox[{
+      "response", " ", "and", " ", "it", " ", "is", " ", "mostyl", " ", 
+       "expressed", " ", "in", " ", "the", " ", "cell", " ", 
+       RowBox[{"membrane", "/", 
+        RowBox[{"surface", ".", " ", "Mutations"}]}], " ", "in", " ", "this", 
+       " ", "gene", " ", "can", " ", "cause"}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Immunodeficiency", " ", "7"}], ",", " ", 
+       RowBox[{
+       "which", " ", "results", " ", "in", " ", "symptoms", " ", "like", " ", 
+        "failure", " ", "to", " ", "thrive", " ", "and", " ", "contant", " ", 
+        "respiratory", " ", 
+        RowBox[{"infections", ".", " "}]}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"0d9960fd-1e91-4744-9914-9445e2d8ca15"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.7928742461871433`*^9, 3.792874246187689*^9}, {3.7928742978093367`*^9, 
+   3.79287433504847*^9}, {3.7928743659486113`*^9, 3.792874371791943*^9}, {
+   3.792874501123835*^9, 3.792874528727113*^9}, {3.792874571166079*^9, 
+   3.7928747730096893`*^9}, {3.792874819996871*^9, 3.792874938654256*^9}, {
+   3.792874973471182*^9, 3.7928750160414333`*^9}, {3.792875168423058*^9, 
+   3.792875171986163*^9}, {3.7928752337479467`*^9, 3.792875299334779*^9}, {
+   3.79287539209754*^9, 3.7928754803301477`*^9}, 3.7928755541899567`*^9, {
+   3.792875588833537*^9, 3.792875612212161*^9}, {3.7928756594649467`*^9, 
+   3.792875744965317*^9}, {3.7928757970559177`*^9, 3.792876003246249*^9}, {
+   3.7928760451451693`*^9, 3.792876050386044*^9}, 3.792876103082262*^9, {
+   3.792876164565284*^9, 3.792876187127858*^9}, {3.792876217315439*^9, 
+   3.79287625774861*^9}, {3.7928763223304033`*^9, 3.792876412765648*^9}, {
+   3.792876451904168*^9, 3.792876679449965*^9}, {3.792876740333959*^9, 
+   3.7928767479467363`*^9}, {3.792876920464221*^9, 3.792876953430215*^9}, {
+   3.792877062320809*^9, 3.792877148675703*^9}, {3.792877210779683*^9, 
+   3.79287736878025*^9}, 3.792877422266498*^9, {3.792877555280761*^9, 
+   3.7928775969773483`*^9}, {3.792877634908442*^9, 3.792877666843586*^9}, {
+   3.792877697192425*^9, 3.792877752980835*^9}, {3.792877801189802*^9, 
+   3.792877875178623*^9}, {3.792877944831615*^9, 3.792878013548024*^9}, {
+   3.792878104563917*^9, 3.792878119847836*^9}, 3.792878222086439*^9, {
+   3.792878292584949*^9, 3.7928783275832233`*^9}, {3.792878369464904*^9, 
+   3.792878373934826*^9}, {3.7928784587252197`*^9, 3.7928784735924*^9}, {
+   3.792879166215095*^9, 
+   3.792879412861809*^9}},ExpressionUUID->"f86f5619-3600-43d9-84a7-\
+0b3b2b6ef5c7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sequence 10:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+  3.792873180937357*^9, 3.792873181084237*^9}, {3.7928741418821774`*^9, 
+  3.792874141997891*^9}, {3.7928750840415173`*^9, 3.792875084141561*^9}, {
+  3.792875524831191*^9, 3.7928755249940443`*^9}, {3.792876067814851*^9, 
+  3.792876068141755*^9}, {3.792876736030897*^9, 3.792876736324377*^9}, {
+  3.792877401203608*^9, 3.792877401521017*^9}, {3.792878197814012*^9, 
+  3.79287819807382*^9}},ExpressionUUID->"e2d05bd9-2e9d-48a0-9c3b-\
+56d0378a3ddd"],
+
+Cell[TextData[{
+ "The sequence provided was inputted into BLAST, and had a 100 percent \
+identity with the protein \[OpenCurlyDoubleQuote]prostaglandin G/H synthase 1 \
+isoform 4\[CloseCurlyDoubleQuote], which is created by the PTGS1 gene. [24] \
+[25]  \n[26] \n",
+ Cell[BoxData[GridBox[{
+    {
+     RowBox[{"Gene", " ", "Symbol"}], "PTGS1"},
+    {
+     RowBox[{"Official", " ", "Name"}], 
+     RowBox[{"Prostaglandin", "-", 
+      RowBox[{"Endoperoxide", " ", "Synthase", " ", "1"}]}]},
+    {
+     RowBox[{"Gene", " ", "Type"}], 
+     RowBox[{"Protein", " ", "Coding"}]},
+    {"Organism", 
+     RowBox[{"Homo", " ", "Sapiens"}]},
+    {"Function", 
+     RowBox[{
+      RowBox[{
+      "This", " ", "gene", " ", "creates", " ", "a", " ", "protein", " ", 
+       "that", " ", "take", " ", "arachidonate", " ", "acid", " ", "and", " ",
+        "coverts", " ", "it", " ", "into", " ", "prostaglandin", " ", 
+       RowBox[{"H2", ".", " ", "This"}]}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "conversion", " ", "is", " ", "an", " ", "important", " ", "step", " ",
+         "in", " ", "the", " ", "synthesis", " ", "of", " ", "prostanoids"}], 
+       ",", " ", 
+       RowBox[{"which", " ", "are", " ", "signaling", " ", 
+        RowBox[{"molecules", ".", " ", "This"}]}]}], "\[IndentingNewLine]", 
+      RowBox[{
+      "protein", " ", "also", " ", "plays", " ", "a", " ", "role", " ", "in", 
+       " ", "the", " ", "oxidation", " ", "reduction", " ", 
+       RowBox[{"process", ".", " ", "It"}], " ", "is", " ", "expressed", " ", 
+       "in", " ", "platelets", " ", "as", " ", "well", " ", "as", " ", "in"}],
+       " ", "\[IndentingNewLine]", 
+      RowBox[{"gastric", " ", "epithelial", " ", 
+       RowBox[{"cells", "."}]}]}]},
+    {"Location", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Chromosome", " ", "9"}], ":", "122"}], ",", "370", ",", 
+      RowBox[{"530", "-", "122"}], ",", "395", ",", "703"}]},
+    {"Length", 
+     RowBox[{"599", " ", "amino", " ", "acids"}]},
+    {
+     RowBox[{"Accession", " ", "Number"}], 
+     RowBox[{"NP_", "001258094.1"}]},
+    {"Homologs", 
+     RowBox[{
+      RowBox[{
+      "This", " ", "gene", " ", "is", " ", "also", " ", "found", " ", "in", 
+       " ", "other", " ", "organims", " ", "for", " ", "a", " ", "total", " ",
+        "of", " ", "303", " ", "orthologues", " ", "and", " ", "1"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"paralogue", ".", " "}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+      "Mutations", " ", "in", " ", "this", " ", "gene", " ", "can", " ", 
+       "lead", " ", "to", " ", "disorders", " ", "such", " ", "as", " ", 
+       "gastric", " ", "ulcers", " ", "and", " ", "aspirin", " ", 
+       RowBox[{"resistance", ".", " ", "This"}]}], "\[IndentingNewLine]", 
+      RowBox[{
+      "gene", " ", "is", " ", "mainly", " ", "expressed", " ", "in", " ", 
+       "the", " ", "aforementioned", " ", "platelets", " ", "and", " ", 
+       "epithelial", " ", 
+       RowBox[{"cells", ".", " "}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"ba86dea3-aa6a-41dd-831b-f4ac9a48a041"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.7928742461871433`*^9, 3.792874246187689*^9}, {3.7928742978093367`*^9, 
+   3.79287433504847*^9}, {3.7928743659486113`*^9, 3.792874371791943*^9}, {
+   3.792874501123835*^9, 3.792874528727113*^9}, {3.792874571166079*^9, 
+   3.7928747730096893`*^9}, {3.792874819996871*^9, 3.792874938654256*^9}, {
+   3.792874973471182*^9, 3.7928750160414333`*^9}, {3.792875168423058*^9, 
+   3.792875171986163*^9}, {3.7928752337479467`*^9, 3.792875299334779*^9}, {
+   3.79287539209754*^9, 3.7928754803301477`*^9}, 3.7928755541899567`*^9, {
+   3.792875588833537*^9, 3.792875612212161*^9}, {3.7928756594649467`*^9, 
+   3.792875744965317*^9}, {3.7928757970559177`*^9, 3.792876003246249*^9}, {
+   3.7928760451451693`*^9, 3.792876050386044*^9}, 3.792876103082262*^9, {
+   3.792876164565284*^9, 3.792876187127858*^9}, {3.792876217315439*^9, 
+   3.79287625774861*^9}, {3.7928763223304033`*^9, 3.792876412765648*^9}, {
+   3.792876451904168*^9, 3.792876679449965*^9}, {3.792876740333959*^9, 
+   3.7928767479467363`*^9}, {3.792876920464221*^9, 3.792876953430215*^9}, {
+   3.792877062320809*^9, 3.792877148675703*^9}, {3.792877210779683*^9, 
+   3.79287736878025*^9}, 3.792877422266498*^9, {3.792877555280761*^9, 
+   3.7928775969773483`*^9}, {3.792877634908442*^9, 3.792877666843586*^9}, {
+   3.792877697192425*^9, 3.792877752980835*^9}, {3.792877801189802*^9, 
+   3.792877875178623*^9}, {3.792877944831615*^9, 3.792878013548024*^9}, {
+   3.792878104563917*^9, 3.792878119847836*^9}, {3.79287910725867*^9, 
+   3.7928791138610888`*^9}, {3.792879424531745*^9, 3.7928794245320187`*^9}, {
+   3.792879459129059*^9, 3.792879473385386*^9}, {3.792879555719158*^9, 
+   3.792879574226379*^9}, {3.7928796634094687`*^9, 3.792879714926942*^9}, {
+   3.79287977675002*^9, 3.792879840417673*^9}, {3.792879888915259*^9, 
+   3.792880033463443*^9}},ExpressionUUID->"2a43318b-6ed4-4a37-a422-\
+cb0038a059ab"],
+
+Cell["\<\
+Genez very much appreciates the opportunity to conduct this work and hopes \
+that the results are satisfactory. We look forward to a long working \
+relationship with the Center, and wish your company success in its scientific \
+ventures.\
+\>", "Text",
+ CellChangeTimes->{
+  3.7896836902322187`*^9},ExpressionUUID->"35985f17-24c4-48f0-aa91-\
+357e4d62d231"],
+
+Cell[TextData[{
+ "I certify that this work was completed by me on March 10, 2020.\
+\[NonBreakingSpace] All references and resources are \
+cited.\[NonBreakingSpace] Assistance was provided by NAME OF PERSON(S) (if \
+any)\n\[NonBreakingSpace] Electronic signature:\[NonBreakingSpace]",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJztm3dsTn0Ux2mLIqi9R43asXnFFkTttN6ITfO2VaGlLVUz9gohYhSxYsYI
+4Q8jNiFGrIi99957nLefk9ym4+l4OvLU4/dJLp7n3ud37z33/M75nvO7PP1C
+fAJcsmTJEuYe/YfPwIhWoaEDI309oj/8GxwWFBjs/593cLh/oH/oP36u0V96
+RW9R0Ztb9CYGg8FgMBgMBoPBYDA4iA8fPsjRo0fl3r17jr4Ug5Px6dMnGTp0
+qLi5uQntj/z58zv6kgxOxLVr16R69eri7u4ubdu2lZkzZ8qlS5d03+HDh2P+
+bTCkhoMHD0q+fPmkZcuW8vjx4wT769evL6NGjcqQc3/8+FHOnz+fIWMbMge7
+d++W7Nmzy4ABA+THjx8J9j99+lTzpr+/f7qe99GjRzJy5EjJmzevFChQQH7/
+/p2u46eUnz9/ytWrVx1y7r+Bs2fPam7EvxJ7xlu2bEl3H9u6davkzJlTWrRo
+IX5+fjJ27Nh0G9tezp07Jzly5JBbt2457BqcFWpHT09P1V624pdFZGSk+tik
+SZPS5bzoPhcXFx0Xv46IiHBorvz27ZuUK1dOxowZ47BrcFZGjx4tRYoUkRcv
+XiR6DHmkZMmS6mMnT55M8znx61q1asmIESP085UrV6RYsWLy/fv3NI+dFoYN
+GyaNGzdOl7G4x/379ydp17+Bt2/fSp48eWT16tVJHnfhwgX1rzp16iR6DL5X
+uXJltW1y9OnTR7y9vTV+8Qz43Zw5c+y+/vSGGrpUqVJpGuPhw4cSGhoquXLl
+UpuVLVtWXr9+bfc41EBJ5ZU/hRkzZkjFihU1TiUFeQx77du3z+Z+tHKhQoUk
+d+7c8v79+2TPS9y8f/++XL9+XWrWrKn511FaPzbcp5eXV8znd+/e2fX7nTt3
+au1CP3Hw4MFqryZNmkhUVFSSv8Nmu3btkuHDh6s9qL2wd9OmTeXZs2epupfM
+Av61cuXKJI85ceKEZMuWTQYNGmRzPzYoXbq0avc9e/Yke07WDVxdXbU/Qr48
+dOhQai49Q+jZs6fGWItTp06l6HfEm/79+6u+JIbFjuXdunVT/7EFc3P69OlS
+okQJ9am6detq3YPNsVO9evWkS5cuabspB3Lnzh29r1evXiV6zLFjx3ROctzt
+27dtHtOjRw/dv3379iTPx1wdP3685pCsWbOqDkRnpwZiHtf24MGDVP3eFvhJ
+0aJF9X7sJTw8XG2wbNmyON/TDypevHgCnfnmzRsJCQlRn2R+jhs3LoF9ucc2
+bdrIrFmz7L+ZTAL3j10+f/5sc//y5cs1ZtPT4LiXL1/G2Y/P9OvXT/cFBQXZ
+HAMfYg4zxz08PKRTp07SqlUr9dtfv37Zdb3YnPkdFhYmZcqU0ZxEvyGtkA9X
+rFghNWrU0Hth69u3b4o1lDVX6b3EBh1QsGBB2bBhQ5zvb968KRUqVJDChQvL
+kiVLbOoUtG27du20l2SvnTITaFNy1qpVq/T5MdcOHDigsb5SpUpqN2INcZ8c
+snjxYv0ddQL6nDoQrY6tmIcWxMVNmzapzfElNsakV2HRunVrzQHx/daC9VLq
+DGoRNAp+iY9yTeibRYsWpble4z7oU6Aj6fkRbyZMmKBzonbt2nqelDzftWvX
+6nVhTwvulfhEfIvNkydPtAbo0KGDTZ3FPTFviW9Tp079o/3LYt26depnrB+h
+p7AVuj0wMFD7shY8b2IatkebMT/XrFmj+7AbtRhzk7+tMXr37q3588uXLwnO
+S47jeGxJfiKG4K88Z+s62NjXuXNnrQmIu4n5pL3s3btX5wi5yMpRDRs2jHmm
+VmxKib5kLPSUBfoS+3Ts2DFBjCI/du3aNcEY+Bs6jOfQqFGjOLZ3BnhvZ+nS
+pRqnjh8/Ll+/frV53I0bNzR+YdP4+ZWYQAwkL6CTbflVfLA/+WTbtm3qQ0OG
+DJFp06ap7/KcWLvKCNBx6MHYaxr4Wfx3S6pWrZqitVn0AD3s+fPny5QpU6RB
+gwb67oAtsJ2lf7Ez84a4xZzE34n/zhC7/naI0cRk+k8W3bt3V40Xm/bt26uO
+TA58olq1ajGxF41OT5mYe+bMGdm4caNMnjxZx0JX9OrVS/UH+Znv6GuY9Svn
+YsGCBZrv0frEMWIVvrF58+Y4x6EBAwICEh2HtXw0U/ny5XVtgF6jFZMsf7M2
+NB8alJrH8kOD80Iep2eFhqK24V0PW30X1jTI3bFBI6DxiXHkWzTkkSNH4hxD
+XEO7owPwQ+qX2OCL+Dixk1xpcqNzwnO19GNi9SlxjHr6+fPn2g+lRkTLo9vI
+dzt27Ej1Wg+6rEqVKhrTqJfpU6D50WO8A5qYJjY4F9Z7Jmy8c06eW79+far7
+xvHBz4mfvBfAmhH51DofMZI4Sw6mJ4x/z507V8/P3Lh8+XKSvXN7QTPg19Ru
+1Fp3795VjYhmZc3P3jU1Q8rAl06fPi0XL15MUZ2cHtDXxofozdJrps9BfWut
+X8bf8H3iIO/EsM7KWlSzZs00l/v6+moc9vHx0fnBu1vNmzfX3gg6AJ1Aryi+
+fuQdOsajh0ePm2vKDGvJhoyFZ8z6E+ub9HWoVelDz5s3T+sHeib0j4m9+GZw
+cLCuvfD/fuh/s9ZPLp44caJqzNmzZ+tvFy5cqD1S/JpamDhmMBgMBoPBYDAY
+DAaDwWAwGAyGzMX/5MvDKg==
+     "], {{0, 38}, {153, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{153, 38},
+   PlotRange->{{0, 153}, {0, 38}}]], "Input",ExpressionUUID->
+  "d7e1cda7-d8c6-45cd-a0b9-b29725025174"]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 3}},
+ CellChangeTimes->{
+  3.789248270537753*^9, {3.789248868110652*^9, 3.789248868433384*^9}, {
+   3.789685193549652*^9, 3.789685196394864*^9}, {3.7927875693280582`*^9, 
+   3.7927875706838207`*^9}, {3.79287421011534*^9, 
+   3.7928742104884872`*^9}},ExpressionUUID->"587b7d85-7a51-4fdb-8d40-\
+ed627dea20bf"],
+
+Cell["References:", "Author",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.789248411602501*^9, 
+  3.789248425666044*^9}},ExpressionUUID->"afd2eee2-2f41-4ba8-b551-\
+ff5b39de9c5c"],
+
+Cell["\<\
+\t1.\thttps://en.wikipedia.org/wiki/BLAST_(biotechnology)
+\t2.\thttps://bitesizebio.com/21223/how-does-blast-work/
+\t3.\thttp://www.biology.arizona.edu/biochemistry/problem_sets/aa/aa.html
+\t4.\thttps://bio.libretexts.org/Bookshelves/Microbiology/Book%3A_\
+Microbiology_(Boundless)/7%3A_Microbial_Genetics/7.13%3A_Bioinformatics/7.13C%\
+3A_Homologs%2C_Orthologs%2C_and_Paralogs
+\t5.\t---. \[OpenCurlyDoubleQuote]How Do Geneticists Indicate The Location Of \
+A Gene?\[CloseCurlyDoubleQuote] Genetics Home Reference, \
+https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation. Accessed 8 Feb. 2020.
+\t6.\thttps://www.genecards.org/cgi-bin/carddisp.pl?gene=RXRA#drugs_compounds
+\t7.\thttp://uswest.ensembl.org/Homo_sapiens/Gene/Compara_Tree?db=core;g=\
+ENSG00000186350;r=9:134317098-134440585
+\t8.\thttps://www.genecards.org/cgi-bin/carddisp.pl?gene=G6PD#function
+\t9.\thttp://uswest.ensembl.org/Homo_sapiens/Gene/Ontologies/molecular_\
+function?db=core;g=ENSG00000160211;r=X:154531391-154547572
+\t10.\thttps://ghr.nlm.nih.gov/gene/G6PD#conditions
+\t11. https://ghr.nlm.nih.gov/gene/MYO5A#conditions
+\t12. https://www.genecards.org/cgi-bin/carddisp.pl?gene=MYO5A&keywords=MYO5A#\
+orthologs
+\t13. https://www.genecards.org/cgi-bin/carddisp.pl?gene=APOE&keywords=apoe#\
+orthologs
+\t14. http://uswest.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=\
+ENSG00000130203;r=19:44905791-44909393
+\t15. https://www.genecards.org/cgi-bin/carddisp.pl?gene=UBB&keywords=ubb#\
+orthologs
+\t16. https://ghr.nlm.nih.gov/gene/LEP#conditions
+\t17. https://www.genecards.org/cgi-bin/carddisp.pl?gene=LEP&keywords=LEP#\
+orthologs
+\t18. http://uswest.ensembl.org/Physeter_catodon/Location/Genome?db=core;g=\
+ENSPCTG00005011582;r=ML160926.1:28809-39467;t=ENSPCTT00005017972
+\t19. https://www.genecards.org/cgi-bin/carddisp.pl?gene=MB&keywords=MB
+\t20. https://www.uniprot.org/uniprot/P13726
+\t21.https://www.genecards.org/cgi-bin/carddisp.pl?gene=F3&keywords=F3#\
+pathways_interactions
+\t22. https://www.uniprot.org/uniprot/P01848
+\t23. http://uswest.ensembl.org/Mus_musculus/Gene/Pathway?db=core;g=\
+ENSMUSG00000076928;r=14:54220521-54224206
+\t24. https://www.genecards.org/cgi-bin/carddisp.pl?gene=PTGS1&keywords=PTGS1#\
+proteins
+\t25. http://uswest.ensembl.org/Homo_sapiens/Gene/ExpressionAtlas?db=core;g=\
+ENSG00000095303;r=9:122370530-122395703
+\t26. https://blast.ncbi.nlm.nih.gov/Blast.cgi
+\t
+\t
+\t
+\t
+\t\
+\>", "Text",
+ CellChangeTimes->{{3.7927865835812597`*^9, 3.79278658941359*^9}, {
+  3.792874201420618*^9, 3.7928742055398893`*^9}, {3.7928750220523853`*^9, 
+  3.792875034024365*^9}, {3.792875488702649*^9, 3.792875506456109*^9}, {
+  3.792876425053753*^9, 3.7928764336941633`*^9}, {3.792876685652131*^9, 
+  3.792876694791583*^9}, {3.792877373302389*^9, 3.792877385149102*^9}, {
+  3.7928781520594597`*^9, 3.7928781648721848`*^9}, {3.792879436055126*^9, 
+  3.7928794461279593`*^9}, {3.7928800789143877`*^9, 
+  3.792880102740138*^9}},ExpressionUUID->"34c9afb2-42a8-49da-a673-\
+ff8e55ecc107"]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Working",
+WindowSize->{Full, Full},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PaperSize"->{1224, 1584}},
+Magnification->0.5,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    BoxData[""], "Input", 
+    CellChangeTimes -> {{3.788974678986841*^9, 3.788974680021716*^9}}], 
+   Cell[
+    StyleData["Section"], FontFamily -> "Arial", FontSize -> 28, FontWeight -> 
+    "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Subsubsection"], FontFamily -> "Arial", FontSize -> 19, 
+    FontWeight -> "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Text"], FontFamily -> "Times New Roman", FontSize -> 15, 
+    FontWeight -> "Regular", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Subsubsection"], FontFamily -> "Times New Roman", FontSize -> 
+    19, FontWeight -> "Bold", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Section"], CellFrame -> {{0, 0}, {0, 2}}], 
+   Cell[
+    StyleData["Subsection"], FontFamily -> "Arial", FontSize -> 20, 
+    FontWeight -> "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Subsubsection"], TextAlignment -> Left, FontFamily -> 
+    "Times New Roman", FontSize -> 19, FontWeight -> "Bold", FontSlant -> 
+    "Plain", FontVariations -> {
+     "StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]]}, Visible -> False, FrontEndVersion -> 
+  "12.0 for Mac OS X x86 (64-bit) (April 8, 2019)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 298, 5, 38, "Text",ExpressionUUID->"9cae76f1-ab34-4cd1-a628-1663f50b823e"],
+Cell[859, 27, 691, 11, 59, "Text",ExpressionUUID->"7c9ac64e-9d2f-4141-a798-b3ccd5b39d55"],
+Cell[CellGroupData[{
+Cell[1575, 42, 248, 5, 32, "Section",ExpressionUUID->"c0b381ed-f3b4-4f01-af92-ae8b5753cdcd"],
+Cell[CellGroupData[{
+Cell[1848, 51, 205, 4, 27, "Subsection",ExpressionUUID->"8b4bb4d0-5f47-409f-bad8-cc58ee2970ce"],
+Cell[2056, 57, 833, 14, 20, "Text",ExpressionUUID->"e5e66d67-f637-40b2-a0d9-d75be1cc3735"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2926, 76, 184, 3, 27, "Subsection",ExpressionUUID->"63b971b7-87d3-4fda-8e6e-91604e85fefe"],
+Cell[3113, 81, 4010, 61, 154, "Text",ExpressionUUID->"0647f906-efc0-40d6-8f34-4d5bf54ce16c"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7172, 148, 186, 4, 32, "Section",ExpressionUUID->"d3f9c95f-6921-4641-ac0a-7b5e45aad5f9"],
+Cell[7361, 154, 503, 9, 20, "Text",ExpressionUUID->"ef4f7138-acbf-4c53-8e4f-5e5d69025135"],
+Cell[CellGroupData[{
+Cell[7889, 167, 571, 9, 18, "ItemNumbered",ExpressionUUID->"b9d8317e-c991-4f64-8b41-1986c2351307"],
+Cell[8463, 178, 530, 9, 18, "ItemNumbered",ExpressionUUID->"9a82fb30-6d6c-4e5d-a6d9-bcbbad8dd168"],
+Cell[8996, 189, 495, 8, 18, "ItemNumbered",ExpressionUUID->"002f00bb-30e1-40bb-bbef-7be70aedf468"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9540, 203, 182, 4, 32, "Section",ExpressionUUID->"83e6fbc6-e3e4-46d7-970a-09b8901b8222"],
+Cell[9725, 209, 219, 5, 20, "Text",ExpressionUUID->"3ba4efb2-e1b1-44f5-9eeb-06b985fa31f0"],
+Cell[CellGroupData[{
+Cell[9969, 218, 161, 3, 27, "Subsection",ExpressionUUID->"0525448d-13f9-4c21-842e-0f8cce437caa"],
+Cell[10133, 223, 3626, 80, 198, "Text",ExpressionUUID->"e8654dbe-405b-4937-ba07-cf195a0476e0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13796, 308, 210, 4, 27, "Subsection",ExpressionUUID->"3af313e0-9faf-4c34-bf87-7caf06fa8b28"],
+Cell[14009, 314, 6049, 133, 258, "Text",ExpressionUUID->"866dab4c-2a51-4e7b-bd97-814c3181d397"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20095, 452, 258, 4, 26, "Subsection",ExpressionUUID->"7609dda7-8539-4aad-8055-8c27cb3b7ab2"],
+Cell[20356, 458, 5969, 127, 242, "Text",ExpressionUUID->"fffb9a7f-3202-426c-a081-ffb03c1931ff"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26362, 590, 309, 5, 26, "Subsection",ExpressionUUID->"9325e13a-30aa-4b16-b651-dd561402e594"],
+Cell[26674, 597, 5867, 121, 242, "Text",ExpressionUUID->"62b461c7-0d81-4c28-97e7-f1fea283a762"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32578, 723, 360, 6, 26, "Subsection",ExpressionUUID->"ea59cdb5-ccd4-42f4-8019-ae44af0c5598"],
+Cell[32941, 731, 4994, 103, 206, "Text",ExpressionUUID->"c8edfb07-cd13-47dd-9f3d-7b7292079cd6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37972, 839, 406, 6, 26, "Subsection",ExpressionUUID->"b5ae187a-a313-4fd5-b91f-1a4b1e032bed"],
+Cell[38381, 847, 6216, 128, 254, "Text",ExpressionUUID->"69ac391d-55f8-470e-9e52-7fca40edfdae"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44634, 980, 455, 7, 26, "Subsection",ExpressionUUID->"2619b817-e64a-4b22-865b-ded2aabbcf6a"],
+Cell[45092, 989, 4925, 97, 206, "Text",ExpressionUUID->"06ca7f8a-e073-4027-afd9-9924d8849a84"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50054, 1091, 504, 8, 26, "Subsection",ExpressionUUID->"f8f6b51e-f121-4ca1-946b-9d3732a2ea46"],
+Cell[50561, 1101, 5564, 111, 218, "Text",ExpressionUUID->"8876b84d-57df-42f4-87f5-a2a4bb8a4ab6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56162, 1217, 550, 8, 26, "Subsection",ExpressionUUID->"9f3d26cd-b73c-4d2a-90fd-6f079d565e61"],
+Cell[56715, 1227, 5885, 113, 218, "Text",ExpressionUUID->"f86f5619-3600-43d9-84a7-0b3b2b6ef5c7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62637, 1345, 550, 8, 26, "Subsection",ExpressionUUID->"e2d05bd9-2e9d-48a0-9c3b-56d0378a3ddd"],
+Cell[63190, 1355, 5772, 109, 205, "Text",ExpressionUUID->"2a43318b-6ed4-4a37-a422-cb0038a059ab"],
+Cell[68965, 1466, 365, 8, 27, "Text",ExpressionUUID->"35985f17-24c4-48f0-aa91-357e4d62d231"],
+Cell[69333, 1476, 3769, 69, 42, "Text",ExpressionUUID->"587b7d85-7a51-4fdb-8d40-ed627dea20bf"],
+Cell[73105, 1547, 185, 4, 20, "Author",ExpressionUUID->"afd2eee2-2f41-4ba8-b551-ff5b39de9c5c"],
+Cell[73293, 1553, 2982, 57, 332, "Text",ExpressionUUID->"34c9afb2-42a8-49da-a673-ff8e55ecc107"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,1554 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     77186,       1546]
+NotebookOptionsPosition[     69069,       1400]
+NotebookOutlinePosition[     71656,       1463]
+CellTagsIndexPosition[     71613,       1460]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[StyleBox["Genez, Inc.\n9617 Black Watch Court\nCharlotte, NC \
+28277",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "Text",
+ CellChangeTimes->{{3.7889741914236603`*^9, 3.7889742182836437`*^9}},
+ TextAlignment->Right,ExpressionUUID->"9cae76f1-ab34-4cd1-a628-1663f50b823e"],
+
+Cell[TextData[StyleBox["February 15, 2021\n\nTo: Chief Scientist, Vertextin \
+Inc.\nFrom: Aakriti Lakshmanan\nSubj: Functional Groups and Drug Names",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "Text",
+ CellChangeTimes->{{3.78897427781083*^9, 3.788974370688476*^9}, 
+   3.788974905689847*^9, {3.789217211251758*^9, 3.7892172116547117`*^9}, {
+   3.789217251071721*^9, 3.7892172542205963`*^9}, 3.7892487914446507`*^9, {
+   3.789248840285433*^9, 3.7892488499890747`*^9}, {3.792786632310807*^9, 
+   3.7927866426193323`*^9}, {3.79278729336171*^9, 3.7927872981901903`*^9}, {
+   3.792871484747343*^9, 3.792871490041741*^9}, {3.822399877152906*^9, 
+   3.822399909807412*^9}},ExpressionUUID->"7c9ac64e-9d2f-4141-a798-\
+b3ccd5b39d55"],
+
+Cell[CellGroupData[{
+
+Cell["Summary and Introduction", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.788974884231689*^9, 3.788974888896441*^9}, {
+  3.788974977132062*^9, 
+  3.788974994670714*^9}},ExpressionUUID->"c0b381ed-f3b4-4f01-af92-\
+ae8b5753cdcd"],
+
+Cell[CellGroupData[{
+
+Cell["Abstract:", "Subsection",
+ CellChangeTimes->{{3.788975012471572*^9, 3.78897501488365*^9}, {
+  3.788975112222271*^9, 
+  3.788975125905067*^9}},ExpressionUUID->"8b4bb4d0-5f47-409f-bad8-\
+cc58ee2970ce"],
+
+Cell[TextData[{
+ "As requested in the Scope of Work of ",
+ StyleBox["February 15, 2021",
+  FontFamily->"Times New Roman",
+  FontWeight->"Regular"],
+ ", we have created a drug profile on 10 different drugs, of varying purpose. \
+Each drug was researched to collect general information about the drug \
+structure and purpose. "
+}], "Text",
+ CellChangeTimes->{{3.788975137351959*^9, 3.7889751574128733`*^9}, {
+   3.7892370310566483`*^9, 3.789237066589622*^9}, {3.789237119247281*^9, 
+   3.789237254703236*^9}, {3.789237334288628*^9, 3.7892373472460537`*^9}, {
+   3.789247541420328*^9, 3.789247576454586*^9}, {3.789664700810429*^9, 
+   3.78966481271723*^9}, 3.789685953273097*^9, {3.789840989866272*^9, 
+   3.789841027515491*^9}, {3.7927873001907463`*^9, 3.792787310928953*^9}, {
+   3.792871643430429*^9, 3.792871697768161*^9}, {3.822399913831375*^9, 
+   3.822399923964209*^9}, {3.8223999577277393`*^9, 3.8223999856536427`*^9}, {
+   3.822400037664606*^9, 
+   3.822400062169833*^9}},ExpressionUUID->"e5e66d67-f637-40b2-a0d9-\
+d75be1cc3735"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Introduction/Background Information:", "Subsection",
+ CellChangeTimes->{{3.788975173310213*^9, 
+  3.788975182315978*^9}},ExpressionUUID->"63b971b7-87d3-4fda-8e6e-\
+91604e85fefe"],
+
+Cell["\<\
+Generally, drugs are any compound that can cause a change in the function or \
+behavior of an organism. Drugs can be taken into the body in various methods, \
+including oral pills, patches, inhalation, suppositories and infusions. Most \
+drugs are be helpful and help correct abnormal behavior within the body. \
+However, drugs can also be taken to have a preventative effect for future \
+conditions. Since there are many types of drugs with their own purpose, they \
+can be further split into groups based on their purpose, structure and the \
+way that they work. [1]
+
+While there are many different categories of drugs, there are some categories \
+that are more widely prescribed than other. Antibiotics are drugs that fight \
+against bacterial infection. Based on the type of antibiotic, it may only be \
+effective for one type of bacteria, such as acne bacteria or gram positive \
+bacteria. However, there are also types of antibiotics known as broad \
+spectrum antibiotics that can work against a wide variety of bacteria types. \
+Immunosuppressants are drugs that limit the body\[CloseCurlyQuote]s immune \
+response. These drugs are mainly used when someone has an autoimmune disease, \
+which means that the body\[CloseCurlyQuote]s immune response wrongly attacks \
+the body itself. They are also used when someone goes through an organ \
+transplant in order to decrease the risk of the body rejecting the transplant. 
+
+Another category of drugs are antidepressants, which can be further \
+categorized based on the way that they work. They include tricyclic, \
+monoamine oxidase inhibitors, and selective serotonin reuptake inhibitors. \
+The majority of antidepressants work by presenting the reuptake of \
+neurotransmitters such as serotonin and dopamine in the brain. There are \
+still many more different categories of drugs, including, antivirals, \
+antipsychotics, corticosteroids, diuretics and more. [2]
+
+Many of these drugs have a chemical structure which enables them to be \
+effective. While there are many ways to examine a chemical structure, one way \
+to learn more about a compound is to examine the functional groups found \
+within the structure. Functional groups are parts of molecule that play a \
+role in the way the molecule reacts with other molecules. Despite the \
+structure of the rest of the molecule, functional groups will behave in the \
+same way for different types of molecules. Therefore, analyzing the \
+functional groups of a molecule help scientists learn more about how the \
+molecule could potential react with other substances, which in turn helps \
+design more effective drugs. Functional groups are linked to the rest of the \
+molecule using covalent bonds. In the following memo, the functional groups \
+in each molecule and analyzed and recorded. [3]
+
+The name of a drug can also shed light on the function/use of the drug. The \
+stem of a drug name often describe the use of a drug. For example, drugs \
+ending in the suffix -afil are PDE5 inhibitors while drugs ending in the \
+suffix -dar are multi drug resistance inhibitors. This convenient naming of \
+drugs allows individuals to learn about a drug\[CloseCurlyQuote]s function \
+with merely a drug name. Therefore, in the following memo, the stems of each \
+drug name have been analyzed to find the function. \
+\>", "Text",
+ CellChangeTimes->{{3.788975209667451*^9, 3.78897524395109*^9}, {
+   3.789238459531528*^9, 3.7892384605242558`*^9}, {3.789238758073579*^9, 
+   3.789238760373383*^9}, {3.7892394617053957`*^9, 3.789239521530864*^9}, {
+   3.789239581564006*^9, 3.789239975788505*^9}, {3.7892420427093697`*^9, 
+   3.789242097104473*^9}, {3.7892468285215197`*^9, 3.789246834832388*^9}, {
+   3.789247372503846*^9, 3.789247400416703*^9}, {3.789247438296692*^9, 
+   3.789247464387105*^9}, {3.789248468352271*^9, 3.789248502701426*^9}, {
+   3.789664831288693*^9, 3.789664841182987*^9}, {3.78966666230958*^9, 
+   3.789666680408114*^9}, {3.789670625445136*^9, 3.789670647878334*^9}, 
+   3.789670904946435*^9, 3.7896745341602583`*^9, {3.789766144591722*^9, 
+   3.789766184240261*^9}, {3.7928715722649727`*^9, 3.792871612787443*^9}, {
+   3.822494761700241*^9, 3.822494772873907*^9}, {3.82249501269258*^9, 
+   3.822495014001155*^9}, 
+   3.822495358147703*^9},ExpressionUUID->"0647f906-efc0-40d6-8f34-\
+4d5bf54ce16c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Methodology", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.788975448064522*^9, 
+  3.788975471823615*^9}},ExpressionUUID->"d3f9c95f-6921-4641-ac0a-\
+7b5e45aad5f9"],
+
+Cell["\<\
+For this study, the list of 10 drugs was collected from the NCSSM Canvas \
+website. The following analyses were conducted:\
+\>", "Text",
+ CellChangeTimes->{{3.788975478796629*^9, 3.788975482688313*^9}, {
+   3.789217279557188*^9, 3.7892173525695963`*^9}, {3.7892174516736603`*^9, 
+   3.789217464505946*^9}, 3.7892382693185368`*^9, {3.789670922817335*^9, 
+   3.789670943409995*^9}, {3.792871495633679*^9, 3.792871503914997*^9}, 
+   3.792871555684013*^9, {3.8224000717958727`*^9, 
+   3.822400075338003*^9}},ExpressionUUID->"ef4f7138-acbf-4c53-8e4f-\
+5e5d69025135"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Drug names were matched to entries in the provided \
+drug stem sheet to determine purpose.",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 
+   3.822400183213941*^9}},ExpressionUUID->"b9d8317e-c991-4f64-8b41-\
+1986c2351307"],
+
+Cell[TextData[StyleBox["Mathematica was used to view the structure of the \
+drug.",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.788975520332529*^9}, {
+  3.789238281463563*^9, 3.789238307114318*^9}, {3.789238340494112*^9, 
+  3.7892383441076927`*^9}, {3.789670959143276*^9, 3.7896709756175337`*^9}, {
+  3.789675446550476*^9, 3.789675447036963*^9}, {3.7928715233812838`*^9, 
+  3.792871553667924*^9}, {3.8224001063757277`*^9, 3.822400121352759*^9}, {
+  3.822400188430723*^9, 
+  3.822400199694175*^9}},ExpressionUUID->"9a82fb30-6d6c-4e5d-a6d9-\
+bcbbad8dd168"],
+
+Cell[TextData[StyleBox["The drug structure was analyzed for functional groups \
+and rotatable bonds. ",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.788975520332529*^9}, {
+  3.789238281463563*^9, 3.789238307114318*^9}, {3.789238340494112*^9, 
+  3.7892383441076927`*^9}, {3.789670959143276*^9, 3.7896709756175337`*^9}, {
+  3.789675446550476*^9, 3.789675447036963*^9}, {3.7928715233812838`*^9, 
+  3.792871553667924*^9}, {3.8224001063757277`*^9, 
+  3.822400147502552*^9}},ExpressionUUID->"4bd4b570-a369-42c9-a4e6-\
+3772b4b4d093"],
+
+Cell[TextData[StyleBox["A drug profile was written for each drugs using the \
+collected information.",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897552988211*^9}, {
+  3.7892384299176273`*^9, 3.789238431792481*^9}, {3.789247502092857*^9, 
+  3.78924750565837*^9}, {3.789670988916486*^9, 3.789670989250772*^9}, {
+  3.792787536201047*^9, 3.792787536202037*^9}, {3.792871540215247*^9, 
+  3.7928715447498493`*^9}, {3.822400158440607*^9, 
+  3.82240020735229*^9}},ExpressionUUID->"002f00bb-30e1-40bb-bbef-\
+7be70aedf468"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.789247518574786*^9, 
+  3.789247520215665*^9}},ExpressionUUID->"83e6fbc6-e3e4-46d7-970a-\
+09b8901b8222"],
+
+Cell["\<\
+The results of our analysis are described and displayed as follows:\
+\>", "Text",
+ CellChangeTimes->{{3.789247677511694*^9, 
+  3.7892477314704657`*^9}},ExpressionUUID->"3ba4efb2-e1b1-44f5-9eeb-\
+06b985fa31f0"],
+
+Cell[CellGroupData[{
+
+Cell["Drug 1 - loracarbef:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+   3.8224002138037167`*^9, 3.822400221852355*^9}, 
+   3.822402698053705*^9},ExpressionUUID->"0525448d-13f9-4c21-842e-\
+0f8cce437caa"],
+
+Cell["\<\
+The drug name provided was analyzed to build the following profile. [4]\
+\>", "Text",
+ CellChangeTimes->{
+  3.822494846636917*^9},ExpressionUUID->"92dff8c8-b326-4038-86c1-\
+ff4c56f311a9"],
+
+Cell[TextData[Cell[BoxData[GridBox[{
+   {"Name", "loracarbef"},
+   {
+    RowBox[{"Brand", " ", "Name"}], "Lorabid"},
+   {
+    RowBox[{"List", " ", "of", " ", "Functional", " ", "Groups"}], 
+    RowBox[{"alkane", ",", 
+     RowBox[{"phenyl", " ", "group"}], ",", " ", 
+     RowBox[{"alkyl", " ", "halide"}], ",", " ", 
+     RowBox[{"carboxyclic", " ", "acid"}], ",", "amine", ",", " ", 
+     "amide"}]},
+   {
+    RowBox[{"Number", " ", "of", " ", "Rotatable", " ", "Bonds"}], "4"},
+   {"Function", "antibiotics"},
+   {
+    RowBox[{"Summary", " ", "of", " ", "Function"}], 
+    RowBox[{
+     RowBox[{
+     "Loracarbef", " ", "is", " ", "an", " ", "antibiotic", " ", "used", " ", 
+      "to", " ", "treat", " ", "bacterial", " ", "infections", " ", "in", " ",
+       "the", " ", "lungs"}], ",", " ", "throat", ",", " ", 
+     RowBox[{"skin", " ", "and", " ", "urinary", " ", 
+      RowBox[{"tract", "."}]}]}]},
+   {
+    RowBox[{"Additional", " ", "Information"}], 
+    RowBox[{
+     RowBox[{
+     "This", " ", "drug", " ", "was", " ", "granted", " ", "FDA", " ", 
+      "approval", " ", "in", " ", "1991"}], ",", " ", 
+     RowBox[{
+     "but", " ", "was", " ", "actually", " ", "discontinued", " ", "in", " ", 
+      "2006.", " "}]}]}
+  },
+  GridBoxDividers->{
+   "Columns" -> {{True}}, 
+    "Rows" -> {{
+      True}}}]],ExpressionUUID->"b8d1897e-79a8-404c-ad30-0929190654cf"]], \
+"Text",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQB2IQvd2sSCfE6Y1jV0+6BYhON4+KA9Emrd7ZIHozx+kC
+EH3nm0oRiFaZs6MMRC/bnlsBop+dMuwG0Rr3voDp2oydk0E00+4b80D0i32q
+i0H0vAMQ+tKxn8tA9I7bZXtAdNmKjYdBtJ/T8qMg+uOEmydBtHCPwWkQ3Wdf
+fxVEqzXX3wDTMg8fgOjpx0QfgWj2g7VNy6qA9gWyzAHRBt23V4DoXa/OrwHR
+caxrVJYDaeVoCVUQfYNf1wxEu5z3AtMWYZ89QPQDKO2aOr8IRHNFRpWD6H33
+bWtAtNU3i0YQnbNFvQNEX5EP6gfRUSLL3VYA6R6vT2CaebNN3xUgzfOSYyKI
+niilux5ET+r0ANMA4j25qw==
+  
+  "],ExpressionUUID->"e8654dbe-405b-4937-ba07-cf195a0476e0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Drug 2 - ampicillin:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+  3.792873180937357*^9, 3.792873181084237*^9}, {3.822402702227955*^9, 
+  3.822402711730255*^9}},ExpressionUUID->"3af313e0-9faf-4c34-bf87-\
+7caf06fa8b28"],
+
+Cell[TextData[{
+ "The drug name provided was analyzed to build the following profile. [5]\n\n",
+ Cell[BoxData[GridBox[{
+    {"Name", "Ampicillin"},
+    {
+     RowBox[{"Brand", " ", "Name"}], "Principen"},
+    {
+     RowBox[{"List", " ", "of", " ", "Functional", " ", "Groups"}], 
+     RowBox[{"alkane", ",", 
+      RowBox[{"phenyl", " ", "group"}], ",", " ", 
+      RowBox[{"carboxylic", " ", "acid"}], ",", " ", "amine", ",", " ", 
+      "amide"}]},
+    {
+     RowBox[{"Number", " ", "of", " ", "Rotatable", " ", "Bonds"}], "4"},
+    {"Function", "penicillins"},
+    {
+     RowBox[{"Summary", " ", "of", " ", "Function"}], 
+     RowBox[{
+     "Ampicillin", " ", "is", " ", "an", " ", "antibiotic", " ", "used", " ", 
+      "to", " ", "treat", " ", "bacterial", " ", "infections", " ", "such", 
+      " ", "as", " ", "salmonella", " ", "infections", " ", "and", " ", 
+      "urinary", " ", "tract", " ", 
+      RowBox[{"infections", ".", " ", "\[IndentingNewLine]", "It"}], " ", 
+      "can", " ", "also", " ", "be", " ", "used", " ", "to", " ", "treat", 
+      " ", "strep", " ", "in", " ", 
+      RowBox[{"newborns", ".", " "}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+      "This", " ", "drug", " ", "is", " ", "absorbed", " ", "easily", " ", 
+       "in", " ", "the", " ", "GI", " ", 
+       RowBox[{"tract", ".", " ", "It"}], " ", "takes", " ", "around", " ", 
+       "1"}], "-", 
+      RowBox[{
+      "2", " ", "hours", " ", "for", " ", "the", " ", "drug", " ", "to", " ", 
+       "reach", " ", "the", " ", "highest", " ", "concentrations", " ", 
+       "once", " ", 
+       RowBox[{"taken", ".", "\[IndentingNewLine]", "It"}], " ", "is", " ", 
+       "similar", " ", "to", " ", "amoxicillin", " ", "in", " ", "the", " ", 
+       "way", " ", "they", " ", "behave", " ", "and", " ", "interact", " ", 
+       "with", " ", "different", " ", "parts", " ", "of", " ", "the", " ", 
+       RowBox[{"body", ".", "  "}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"cb18cc71-960b-40e9-a05e-d7c83ef6412f"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.792874508506832*^9, 3.792874514190156*^9}, {3.8224027597506437`*^9, 
+   3.822402793882965*^9}, {3.822402881979443*^9, 3.822402882801887*^9}, {
+   3.822402937171813*^9, 3.822402984499502*^9}, {3.822403116285716*^9, 
+   3.822403137205338*^9}, {3.8224031733936577`*^9, 3.822403188839973*^9}, {
+   3.822403220359641*^9, 3.8224034049193087`*^9}, {3.822404038078251*^9, 
+   3.822404038908348*^9}, {3.822404144409916*^9, 3.822404145162437*^9}, {
+   3.822406172454484*^9, 3.8224061724567337`*^9}, 
+   3.822494863335552*^9},ExpressionUUID->"866dab4c-2a51-4e7b-bd97-\
+814c3181d397"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Drug 3 - minocycline:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+   3.792873180937357*^9, 3.792873181084237*^9}, {3.822402702227955*^9, 
+   3.822402711730255*^9}, 3.82240394069063*^9, {3.822403979913981*^9, 
+   3.822403980057805*^9}},ExpressionUUID->"dbe1f457-6f79-46e7-8f5a-\
+7aa1e72e8307"],
+
+Cell[TextData[{
+ "The drug name provided was analyzed to build the following profile. [6]\n\n",
+ Cell[BoxData[GridBox[{
+    {"Name", "Minocycline"},
+    {
+     RowBox[{"Brand", " ", "Name"}], "Minocin"},
+    {
+     RowBox[{"List", " ", "of", " ", "Functional", " ", "Groups"}], 
+     RowBox[{"alkane", ",", " ", "alkene", ",", 
+      RowBox[{"phenyl", " ", "group"}], ",", " ", "alcohol", ",", " ", 
+      "amine", ",", " ", "ketone"}]},
+    {
+     RowBox[{"Number", " ", "of", " ", "Rotatable", " ", "Bonds"}], "3"},
+    {"Function", 
+     RowBox[{"antibiotics", " ", 
+      RowBox[{"(", 
+       RowBox[{"tetracycline", " ", "derivatives"}], ")"}]}]},
+    {
+     RowBox[{"Summary", " ", "of", " ", "Function"}], 
+     RowBox[{
+     "Minocycline", " ", "is", " ", "an", " ", "antibiotic", " ", "used", " ",
+       "to", " ", "treat", " ", "bacterial", " ", "infections", " ", "such", 
+      " ", "as", " ", 
+      RowBox[{"pneumonia", ".", " ", "It"}], " ", "also", " ", "can", " ", 
+      "be", " ", "applied", " ", "to", " ", "the", " ", "skin", " ", "to", 
+      " ", "treat", " ", 
+      RowBox[{"acne", "."}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "Compared", " ", "to", " ", "similar", " ", "drugs", " ", "such", " ", 
+        "as", " ", "doxycycline"}], ",", " ", 
+       RowBox[{
+        RowBox[{
+        "minocycline", " ", "is", " ", "better", " ", "at", " ", "crossing", 
+         " ", "the", " ", "blood"}], "-", 
+        RowBox[{
+        "brain", " ", "barrier", " ", "and", " ", "can", " ", "reach", " ", 
+         "significant"}]}]}], " ", "\[IndentingNewLine]", 
+      RowBox[{"concentrations", " ", "in", " ", "cerebrospinal", " ", 
+       RowBox[{"fluids", ".", " "}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"fee402a6-718e-4aa4-b12b-f02e8cf21bcf"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.792874508506832*^9, 3.792874514190156*^9}, {3.8224027597506437`*^9, 
+   3.822402793882965*^9}, {3.822402881979443*^9, 3.822402882801887*^9}, {
+   3.822402937171813*^9, 3.822402984499502*^9}, {3.822403116285716*^9, 
+   3.822403137205338*^9}, {3.8224031733936577`*^9, 3.822403188839973*^9}, {
+   3.822403220359641*^9, 3.8224034049193087`*^9}, {3.822403950473097*^9, 
+   3.822403956822692*^9}, {3.8224041413139353`*^9, 3.822404141742915*^9}, {
+   3.822406174417286*^9, 3.822406174417594*^9}, 
+   3.822494874495792*^9},ExpressionUUID->"768ac160-c5ed-4821-a982-\
+9e462bcae746"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Drug 4 - alfentanil:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+  3.792873180937357*^9, 3.792873181084237*^9}, {3.822402702227955*^9, 
+  3.822402711730255*^9}, {3.82240398396754*^9, 
+  3.822403991502833*^9}},ExpressionUUID->"d53e7bb7-1c17-4c64-8cc1-\
+a9f88a184304"],
+
+Cell[TextData[{
+ "The drug name provided was analyzed to build the following profile. [7]\n\n",
+ Cell[BoxData[GridBox[{
+    {"Name", "Alfentanil"},
+    {
+     RowBox[{"Brand", " ", "Name"}], "Alfenta"},
+    {
+     RowBox[{"List", " ", "of", " ", "Functional", " ", "Groups"}], 
+     RowBox[{"alkane", ",", 
+      RowBox[{"phenyl", " ", "group"}], ",", "amine", ",", " ", "amide"}]},
+    {
+     RowBox[{"Number", " ", "of", " ", "Rotatable", " ", "Bonds"}], "9"},
+    {"Function", 
+     RowBox[{"cotic", " ", "analgesics", " ", 
+      RowBox[{"(", 
+       RowBox[{"fentanyl", " ", "derivatives"}], ")"}]}]},
+    {
+     RowBox[{"Summary", " ", "of", " ", "Function"}], 
+     RowBox[{
+      RowBox[{
+      "Alfentanil", " ", "is", " ", "a", " ", "fast", " ", "acting", " ", 
+       "but", " ", "short"}], "-", 
+      RowBox[{
+      "duration", " ", "opiod", " ", "analgesic", " ", "drug", " ", "that", 
+       " ", "is", " ", "commonly", " ", "used", " ", "for", " ", "anaesthia", 
+       " ", "during", " ", 
+       RowBox[{"surgery", "."}]}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Compared", " ", "to", " ", "fentayl"}], ",", " ", 
+       RowBox[{
+       "this", " ", "drug", " ", "takes", " ", "a", " ", "much", " ", 
+        "smaller", " ", "amount", " ", "of", " ", "time", " ", "to", " ", 
+        "take", " ", 
+        RowBox[{"effect", ".", " ", "However"}]}], ",", " ", 
+       RowBox[{
+       "this", " ", "also", " ", "means", " ", "that", " ", "the", " ", 
+        "drug", " ", "wears", " ", "off"}]}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"just", " ", "as", " ", 
+        RowBox[{"quickly", ".", " ", "However"}]}], ",", " ", 
+       RowBox[{
+       "this", " ", "drug", " ", "can", " ", "affect", " ", "the", " ", 
+        "respiratory", " ", "system", " ", "so", " ", "it", " ", "is", " ", 
+        "important", " ", "to", " ", "keep", " ", "a", " ", "close", " ", 
+        "eye", " ", "on", " ", "breathing", " ", "patterns"}]}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"while", " ", "using", " ", "the", " ", 
+       RowBox[{"drug", ".", "  "}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"ea8ad59f-48e2-4cd4-81a3-d2b5af8adcf8"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.792874508506832*^9, 3.792874514190156*^9}, {3.8224027597506437`*^9, 
+   3.822402793882965*^9}, {3.822402881979443*^9, 3.822402882801887*^9}, {
+   3.822402937171813*^9, 3.822402984499502*^9}, {3.822403116285716*^9, 
+   3.822403137205338*^9}, {3.8224031733936577`*^9, 3.822403188839973*^9}, {
+   3.822403220359641*^9, 3.8224034049193087`*^9}, {3.822404007761368*^9, 
+   3.822404007761629*^9}, {3.8224040968076897`*^9, 3.822404098556032*^9}, {
+   3.822404134222534*^9, 3.8224041372410927`*^9}, {3.8224041800726147`*^9, 
+   3.822404243230163*^9}, {3.8224042780491743`*^9, 3.822404408822403*^9}, {
+   3.822404590134583*^9, 3.8224046061676826`*^9}, {3.822406179275318*^9, 
+   3.822406179277491*^9}, 
+   3.822494882863317*^9},ExpressionUUID->"ccca02ea-8dca-4775-b894-\
+80696fc6cec6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Drug 5 - tacrolimus:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+   3.792873180937357*^9, 3.792873181084237*^9}, {3.822402702227955*^9, 
+   3.822402711730255*^9}, 3.82240394069063*^9, {3.822403979913981*^9, 
+   3.822403980057805*^9}, {3.822404422466427*^9, 
+   3.82240442792479*^9}},ExpressionUUID->"34030f33-5fab-4a12-8a43-\
+7f94bb40f00b"],
+
+Cell[TextData[{
+ "The drug name provided was analyzed to build the following profile. [8]\n\n",
+ Cell[BoxData[GridBox[{
+    {"Name", "Tacrolimus"},
+    {
+     RowBox[{"Brand", " ", "Name"}], 
+     RowBox[{"Protopic", "/", "Prograf"}]},
+    {
+     RowBox[{"List", " ", "of", " ", "Functional", " ", "Groups"}], 
+     RowBox[{
+     "alkane", ",", " ", "ketone", ",", "alkene", ",", " ", "alcohol", ",", 
+      " ", "ether", ",", " ", "amine", ",", " ", "amide"}]},
+    {
+     RowBox[{"Number", " ", "of", " ", "Rotatable", " ", "Bonds"}], "7"},
+    {"Function", "immunosuppressives"},
+    {
+     RowBox[{"Summary", " ", "of", " ", "Function"}], 
+     RowBox[{
+     "Tacrolimus", " ", "is", " ", "a", " ", "potent", " ", 
+      "immunosuppressive", " ", "drug", " ", "which", " ", "is", " ", 
+      "mainly", " ", "used", " ", "after", " ", "organ", " ", "transplants", 
+      " ", "to", " ", "reduce", " ", "the", " ", "risk", " ", "of", " ", 
+      "organ", " ", 
+      RowBox[{"rejection", "."}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+      "The", " ", "genotype", " ", "of", " ", "a", " ", "patient", " ", "can",
+        " ", "dictate", " ", "the", " ", "amount", " ", "of", " ", 
+       "tacrolimus", " ", "needed", " ", "to", " ", "be", " ", 
+       RowBox[{"effective", ".", " ", "SNPs"}], " ", "in", " ", "the", " ", 
+       "CYP3A5", " ", "gene", " ", "can", " ", "change", " ", "the", " ", 
+       "amount", " ", "of"}], " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+       "natural", " ", "tacrolimus", " ", "in", " ", "the", " ", "body"}], 
+       ",", " ", 
+       RowBox[{
+       "and", " ", "too", " ", "much", " ", "of", " ", "the", " ", "compound",
+         " ", "in", " ", "the", " ", "body", " ", "can", " ", "lead", " ", 
+        "to", " ", "drug", " ", 
+        RowBox[{"toxicity", ".", " "}]}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"30fe0032-1006-49e6-826e-424f40c75fc2"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.792874508506832*^9, 3.792874514190156*^9}, {3.8224027597506437`*^9, 
+   3.822402793882965*^9}, {3.822402881979443*^9, 3.822402882801887*^9}, {
+   3.822402937171813*^9, 3.822402984499502*^9}, {3.822403116285716*^9, 
+   3.822403137205338*^9}, {3.8224031733936577`*^9, 3.822403188839973*^9}, {
+   3.822403220359641*^9, 3.8224034049193087`*^9}, {3.822403950473097*^9, 
+   3.822403956822692*^9}, {3.8224041413139353`*^9, 3.822404141742915*^9}, {
+   3.82240443012294*^9, 3.8224044539360743`*^9}, {3.822404512691482*^9, 
+   3.8224045321842947`*^9}, {3.822404647209495*^9, 3.822404656430112*^9}, {
+   3.822404692237864*^9, 3.822404728180743*^9}, {3.8224047597113457`*^9, 
+   3.8224047597114363`*^9}, {3.822404804186557*^9, 3.8224048330948*^9}, {
+   3.822404925675015*^9, 3.822404935497306*^9}, {3.8224049924032507`*^9, 
+   3.8224050628371468`*^9}, {3.8224061425091553`*^9, 3.822406155974073*^9}, 
+   3.8224948908658257`*^9},ExpressionUUID->"d38f1a9b-ebb1-4c9c-805a-\
+f4821323401c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Drug 6 - duloxetine:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+   3.792873180937357*^9, 3.792873181084237*^9}, {3.822402702227955*^9, 
+   3.822402711730255*^9}, 3.82240394069063*^9, {3.822403979913981*^9, 
+   3.822403980057805*^9}, {3.822404422466427*^9, 3.82240442792479*^9}, {
+   3.822405330264146*^9, 
+   3.822405337024148*^9}},ExpressionUUID->"39acea7f-9113-4338-856d-\
+21a23f6b048d"],
+
+Cell[TextData[{
+ "The drug name provided was analyzed to build the following profile. [9]\n\n",
+ Cell[BoxData[GridBox[{
+    {"Name", "Duloxetine"},
+    {
+     RowBox[{"Brand", " ", "Name"}], "Cymbalta"},
+    {
+     RowBox[{"List", " ", "of", " ", "Functional", " ", "Groups"}], 
+     RowBox[{"alkane", ",", " ", 
+      RowBox[{"phenyl", " ", "group"}], ",", " ", "amine", ",", " ", 
+      "ether"}]},
+    {
+     RowBox[{"Number", " ", "of", " ", "Rotatable", " ", "Bonds"}], "6"},
+    {"Function", 
+     RowBox[{"antidepressants", " ", 
+      RowBox[{"(", 
+       RowBox[{"fluoxetine", " ", "type"}], ")"}]}]},
+    {
+     RowBox[{"Summary", " ", "of", " ", "Function"}], 
+     RowBox[{
+      RowBox[{
+      "Duloxetine", " ", "is", " ", "used", " ", "to", " ", "treat", " ", 
+       "depression"}], ",", " ", 
+      RowBox[{
+       RowBox[{"anxiety", " ", "and", " ", "neuropathic", " ", 
+        RowBox[{"pain", ".", " ", "It"}], " ", "can", " ", "also", " ", "be", 
+        " ", "used", " ", "to", " ", "treat", " ", "chemotherapy"}], "-", 
+       RowBox[{"induced", " ", 
+        RowBox[{"neuropathy", "."}]}]}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+      "This", " ", "drug", " ", "works", " ", "by", " ", "reducing", " ", 
+       "the", " ", "reuptake", " ", "of", " ", "seratonin", " ", "in", " ", 
+       "the", " ", "CNS", " ", "and", " ", "also", " ", "increases", " ", 
+       "the", " ", "amount", " ", "of", " ", "dopamine", " ", "in", " ", 
+       "specific", " ", "parts", " ", "of", " ", "the"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"brain", ".", " ", "Smoking"}], " ", "can", " ", "lead", " ", 
+       "to", " ", "a", " ", "lower", " ", "concentration", " ", "of", " ", 
+       RowBox[{"duloxetine", ".", " "}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"b9de73c3-358a-4e18-a314-8525bae5ceaf"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.792874508506832*^9, 3.792874514190156*^9}, {3.8224027597506437`*^9, 
+   3.822402793882965*^9}, {3.822402881979443*^9, 3.822402882801887*^9}, {
+   3.822402937171813*^9, 3.822402984499502*^9}, {3.822403116285716*^9, 
+   3.822403137205338*^9}, {3.8224031733936577`*^9, 3.822403188839973*^9}, {
+   3.822403220359641*^9, 3.8224034049193087`*^9}, {3.822403950473097*^9, 
+   3.822403956822692*^9}, {3.8224041413139353`*^9, 3.822404141742915*^9}, {
+   3.82240443012294*^9, 3.8224044539360743`*^9}, {3.822404512691482*^9, 
+   3.8224045321842947`*^9}, {3.822404647209495*^9, 3.822404656430112*^9}, {
+   3.822404692237864*^9, 3.822404728180743*^9}, {3.8224047597113457`*^9, 
+   3.8224047597114363`*^9}, {3.822404804186557*^9, 3.8224048330948*^9}, {
+   3.822404925675015*^9, 3.822404935497306*^9}, {3.8224049924032507`*^9, 
+   3.8224050628371468`*^9}, {3.822405338313159*^9, 3.82240534148569*^9}, {
+   3.822405374962742*^9, 3.822405459950852*^9}, {3.822405588530061*^9, 
+   3.822405614785605*^9}, {3.822405707058791*^9, 3.822405729522209*^9}, {
+   3.822405760411685*^9, 3.822405806957416*^9}, {3.8224058553898478`*^9, 
+   3.822405869537538*^9}, 
+   3.822494902589698*^9},ExpressionUUID->"1e6ed8d1-1fcd-44b5-88b0-\
+b6b074905a00"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Drug 7 - haloperidol:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+   3.792873180937357*^9, 3.792873181084237*^9}, {3.822402702227955*^9, 
+   3.822402711730255*^9}, 3.82240394069063*^9, {3.822403979913981*^9, 
+   3.822403980057805*^9}, {3.822404422466427*^9, 3.82240442792479*^9}, {
+   3.822405330264146*^9, 3.822405337024148*^9}, {3.8224058878738003`*^9, 
+   3.822405893625793*^9}},ExpressionUUID->"4e5a6d83-53e5-4080-a45f-\
+bc99bb682810"],
+
+Cell[TextData[{
+ "The drug name provided was analyzed to build the following profile. [10]\n\n\
+",
+ Cell[BoxData[GridBox[{
+    {"Name", "Haloperidol"},
+    {
+     RowBox[{"Brand", " ", "Name"}], "Haldol"},
+    {
+     RowBox[{"List", " ", "of", " ", "Functional", " ", "Groups"}], 
+     RowBox[{
+      RowBox[{"phenyl", " ", "group"}], ",", " ", "alcohol", ",", " ", 
+      "amine", ",", " ", "ketone", ",", " ", 
+      RowBox[{"alkyl", " ", "halide"}], ",", " ", "alkane"}]},
+    {
+     RowBox[{"Number", " ", "of", " ", "Rotatable", " ", "Bonds"}], "6"},
+    {"Function", 
+     RowBox[{"antipsychotics", " ", 
+      RowBox[{"(", 
+       RowBox[{"haloperidol", " ", "type"}], ")"}]}]},
+    {
+     RowBox[{"Summary", " ", "of", " ", "Function"}], 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "Haloperidol", " ", "is", " ", "an", " ", "antipsychotic", " ", 
+        "medication", " ", "used", " ", "to", " ", "treat", " ", "conditions",
+         " ", "such", " ", "as", " ", "scizophrenia"}], ",", " ", 
+       RowBox[{"halucinations", " ", "from", " ", "withdrawal"}], ",", " ", 
+       "mania"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"from", " ", "biopolar", " ", "disorder"}], ",", " ", 
+       RowBox[{"and", " ", "tics", " ", "from", " ", 
+        RowBox[{"Tourette", "'"}], "s", " ", 
+        RowBox[{"syndrome", "."}]}]}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "drug", " ", "is", " ", "known", " ", "to", " ", 
+        "commonly", " ", "cause", " ", "extrapyramidal", " ", "symptom"}], 
+       ",", " ", 
+       RowBox[{"which", " ", "are", " ", "movement", " ", 
+        RowBox[{"disorders", ".", " ", "A"}], " ", "specific", " ", "one", 
+        " ", "caused", " ", "by", " ", "this", " ", "drug", " ", "is", "  ", 
+        "c"}]}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"alled", " ", "tardive", " ", 
+        RowBox[{"dyskinesia", ".", " ", "This"}], " ", "condition", " ", 
+        "results", " ", "in", " ", "uncontrollable", " ", "tic"}], "-", 
+       RowBox[{"like", " ", 
+        RowBox[{"movements", ".", " "}]}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"eef94bab-30a8-4060-b741-aa12af4a6bc9"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.792874508506832*^9, 3.792874514190156*^9}, {3.8224027597506437`*^9, 
+   3.822402793882965*^9}, {3.822402881979443*^9, 3.822402882801887*^9}, {
+   3.822402937171813*^9, 3.822402984499502*^9}, {3.822403116285716*^9, 
+   3.822403137205338*^9}, {3.8224031733936577`*^9, 3.822403188839973*^9}, {
+   3.822403220359641*^9, 3.8224034049193087`*^9}, {3.822403950473097*^9, 
+   3.822403956822692*^9}, {3.8224041413139353`*^9, 3.822404141742915*^9}, {
+   3.82240443012294*^9, 3.8224044539360743`*^9}, {3.822404512691482*^9, 
+   3.8224045321842947`*^9}, {3.822404647209495*^9, 3.822404656430112*^9}, {
+   3.822404692237864*^9, 3.822404728180743*^9}, {3.8224047597113457`*^9, 
+   3.8224047597114363`*^9}, {3.822404804186557*^9, 3.8224048330948*^9}, {
+   3.822404925675015*^9, 3.822404935497306*^9}, {3.8224049924032507`*^9, 
+   3.8224050628371468`*^9}, {3.822405338313159*^9, 3.82240534148569*^9}, {
+   3.822405374962742*^9, 3.822405459950852*^9}, {3.822405588530061*^9, 
+   3.822405614785605*^9}, {3.822405707058791*^9, 3.822405729522209*^9}, {
+   3.822405760411685*^9, 3.822405806957416*^9}, {3.8224058553898478`*^9, 
+   3.82240591674879*^9}, {3.822405955623659*^9, 3.8224059572612667`*^9}, {
+   3.822406095327415*^9, 3.82240611133047*^9}, {3.822406196128336*^9, 
+   3.822406294384552*^9}, {3.822406497058222*^9, 3.822406636185533*^9}, {
+   3.822494912031043*^9, 
+   3.8224949122144117`*^9}},ExpressionUUID->"08712f2d-63d2-43e9-88ee-\
+8475b216fcfb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Drug 8 - enalapril:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+   3.792873180937357*^9, 3.792873181084237*^9}, {3.822402702227955*^9, 
+   3.822402711730255*^9}, 3.82240394069063*^9, {3.822403979913981*^9, 
+   3.822403980057805*^9}, {3.822404422466427*^9, 3.82240442792479*^9}, {
+   3.822405330264146*^9, 3.822405337024148*^9}, {3.8224058878738003`*^9, 
+   3.822405893625793*^9}, {3.822406646621317*^9, 
+   3.8224066552274446`*^9}},ExpressionUUID->"fb6f55ae-31cf-486b-87e9-\
+7e6beb054d9e"],
+
+Cell[TextData[{
+ "The drug name provided was analyzed to build the following profile. [11]\n\n\
+",
+ Cell[BoxData[GridBox[{
+    {"Name", "Enalapril"},
+    {
+     RowBox[{"Brand", " ", "Name"}], "Vasotec"},
+    {
+     RowBox[{"List", " ", "of", " ", "Functional", " ", "Groups"}], 
+     RowBox[{
+      RowBox[{"phenyl", " ", "group"}], ",", " ", "alcohol", ",", " ", 
+      "amine", ",", " ", "ester", ",", " ", "amide", ",", " ", 
+      RowBox[{"carboxyclic", " ", "acid"}], ",", " ", "alkane"}]},
+    {
+     RowBox[{"Number", " ", "of", " ", "Rotatable", " ", "Bonds"}], "10"},
+    {"Function", 
+     RowBox[{"antihypertensives", " ", 
+      RowBox[{"(", 
+       RowBox[{"ACE", " ", "inhibitors"}], ")"}]}]},
+    {
+     RowBox[{"Summary", " ", "of", " ", "Function"}], 
+     RowBox[{
+      RowBox[{
+      "This", " ", "drug", " ", "is", " ", "an", " ", "ACE", " ", "inhibitor",
+        " ", "that", " ", "can", " ", "treat", " ", "high", " ", "blood", " ",
+        "pressure", " ", "as", " ", "kidney", " ", "disease", " ", "or", " ", 
+       "heart", " ", 
+       RowBox[{"failure", ".", " ", "It"}], " ", "can", " ", "also", " ", 
+       "be", " ", "used", " ", "to"}], " ", "\[IndentingNewLine]", 
+      RowBox[{"treat", " ", 
+       RowBox[{"hypertension", "."}]}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "drug", " ", "works", " ", "by", " ", "inhibiting", " ", 
+        "ACE"}], ",", " ", 
+       RowBox[{
+       "which", " ", "in", " ", "turn", " ", "reduces", " ", "the", " ", 
+        "amount", " ", "of", " ", "angiotensin", " ", 
+        RowBox[{"II", ".", " ", "This"}], " ", "therby", " ", "reduces"}]}], 
+      " ", "\[IndentingNewLine]", 
+      RowBox[{
+      "blood", " ", "pressure", " ", "and", " ", "the", " ", "constriction", 
+       " ", "of", " ", "blood", " ", 
+       RowBox[{"vessels", "."}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"9066b5c8-7ce3-4510-a93f-e5355f9b2943"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.792874508506832*^9, 3.792874514190156*^9}, {3.8224027597506437`*^9, 
+   3.822402793882965*^9}, {3.822402881979443*^9, 3.822402882801887*^9}, {
+   3.822402937171813*^9, 3.822402984499502*^9}, {3.822403116285716*^9, 
+   3.822403137205338*^9}, {3.8224031733936577`*^9, 3.822403188839973*^9}, {
+   3.822403220359641*^9, 3.8224034049193087`*^9}, {3.822403950473097*^9, 
+   3.822403956822692*^9}, {3.8224041413139353`*^9, 3.822404141742915*^9}, {
+   3.82240443012294*^9, 3.8224044539360743`*^9}, {3.822404512691482*^9, 
+   3.8224045321842947`*^9}, {3.822404647209495*^9, 3.822404656430112*^9}, {
+   3.822404692237864*^9, 3.822404728180743*^9}, {3.8224047597113457`*^9, 
+   3.8224047597114363`*^9}, {3.822404804186557*^9, 3.8224048330948*^9}, {
+   3.822404925675015*^9, 3.822404935497306*^9}, {3.8224049924032507`*^9, 
+   3.8224050628371468`*^9}, {3.822405338313159*^9, 3.82240534148569*^9}, {
+   3.822405374962742*^9, 3.822405459950852*^9}, {3.822405588530061*^9, 
+   3.822405614785605*^9}, {3.822405707058791*^9, 3.822405729522209*^9}, {
+   3.822405760411685*^9, 3.822405806957416*^9}, {3.8224058553898478`*^9, 
+   3.82240591674879*^9}, {3.822405955623659*^9, 3.8224059572612667`*^9}, {
+   3.822406095327415*^9, 3.82240611133047*^9}, {3.822406196128336*^9, 
+   3.822406294384552*^9}, {3.822406497058222*^9, 3.822406761339425*^9}, {
+   3.822406823003642*^9, 3.822406852689196*^9}, {3.8224069021142397`*^9, 
+   3.822407004529539*^9}, {3.82240704136124*^9, 3.822407041361485*^9}, {
+   3.822494920639526*^9, 
+   3.822494920772654*^9}},ExpressionUUID->"9c8445f0-b9a4-411a-b5a7-\
+98288779e8b5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Drug 9 - sertraline:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+   3.792873180937357*^9, 3.792873181084237*^9}, {3.822402702227955*^9, 
+   3.822402711730255*^9}, 3.82240394069063*^9, {3.822403979913981*^9, 
+   3.822403980057805*^9}, {3.822404422466427*^9, 3.82240442792479*^9}, {
+   3.822405330264146*^9, 3.822405337024148*^9}, {3.8224058878738003`*^9, 
+   3.822405893625793*^9}, {3.822406646621317*^9, 3.8224066552274446`*^9}, {
+   3.822407017936894*^9, 3.822407018278788*^9}, 
+   3.822407081161193*^9},ExpressionUUID->"48b2c76e-1380-4270-9100-\
+a93f535f329a"],
+
+Cell[TextData[{
+ "The drug name provided was analyzed to build the following profile. [12]\n\n\
+",
+ Cell[BoxData[GridBox[{
+    {"Name", "Sertraline"},
+    {
+     RowBox[{"Brand", " ", "Name"}], "Zoloft"},
+    {
+     RowBox[{"List", " ", "of", " ", "Functional", " ", "Groups"}], 
+     RowBox[{
+      RowBox[{"phenyl", " ", "group"}], ",", "amine", ",", "alkane", ",", 
+      RowBox[{"alkyl", " ", "halide"}]}]},
+    {
+     RowBox[{"Number", " ", "of", " ", "Rotatable", " ", "Bonds"}], "2"},
+    {"Function", 
+     RowBox[{
+     "selective", " ", "serotonin", " ", "reuptake", " ", "inhibitors", " ", 
+      RowBox[{"(", "SSRI", ")"}]}]},
+    {
+     RowBox[{"Summary", " ", "of", " ", "Function"}], 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "This", " ", "drug", " ", "acts", " ", "as", " ", "an", " ", 
+        "antidepressant"}], ",", " ", 
+       RowBox[{
+       "and", " ", "can", " ", "be", " ", "used", " ", "to", " ", "treat", 
+        " ", "depression"}], ",", " ", 
+       RowBox[{"panic", " ", "disorders"}], ",", " ", 
+       RowBox[{"and", " ", 
+        RowBox[{"OCD", ".", " ", "It"}], " ", "is", " ", "approved", " ", 
+        "for", " ", "use", " ", "for"}]}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"anxiety", " ", "and", " ", "PTSD"}], ",", " ", 
+       RowBox[{"but", " ", "is", " ", "not", " ", "a", " ", "common", " ", 
+        RowBox[{"treatment", "."}]}]}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{
+      "Sertaline", " ", "works", " ", "by", " ", "inhibiting", " ", 
+       "selective", " ", "serotonin", " ", 
+       RowBox[{"reuptake", ".", " ", "This"}], " ", "thereby", " ", 
+       "increases", " ", "levels", " ", "of", " ", 
+       RowBox[{"seratonin", ".", " ", "This"}], " ", "drug", " ", "was"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"initially", " ", "discovered", " ", "by", " ", "chance"}], 
+       ",", " ", 
+       RowBox[{
+       "and", " ", "is", " ", "now", " ", "one", " ", "of", " ", "the", " ", 
+        "most", " ", "commonly", " ", "used", " ", 
+        RowBox[{"antidepressants", ".", "  "}]}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"0f7b5f0f-7c96-47b9-86b0-c1cad0408fe5"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.792874508506832*^9, 3.792874514190156*^9}, {3.8224027597506437`*^9, 
+   3.822402793882965*^9}, {3.822402881979443*^9, 3.822402882801887*^9}, {
+   3.822402937171813*^9, 3.822402984499502*^9}, {3.822403116285716*^9, 
+   3.822403137205338*^9}, {3.8224031733936577`*^9, 3.822403188839973*^9}, {
+   3.822403220359641*^9, 3.8224034049193087`*^9}, {3.822403950473097*^9, 
+   3.822403956822692*^9}, {3.8224041413139353`*^9, 3.822404141742915*^9}, {
+   3.82240443012294*^9, 3.8224044539360743`*^9}, {3.822404512691482*^9, 
+   3.8224045321842947`*^9}, {3.822404647209495*^9, 3.822404656430112*^9}, {
+   3.822404692237864*^9, 3.822404728180743*^9}, {3.8224047597113457`*^9, 
+   3.8224047597114363`*^9}, {3.822404804186557*^9, 3.8224048330948*^9}, {
+   3.822404925675015*^9, 3.822404935497306*^9}, {3.8224049924032507`*^9, 
+   3.8224050628371468`*^9}, {3.822405338313159*^9, 3.82240534148569*^9}, {
+   3.822405374962742*^9, 3.822405459950852*^9}, {3.822405588530061*^9, 
+   3.822405614785605*^9}, {3.822405707058791*^9, 3.822405729522209*^9}, {
+   3.822405760411685*^9, 3.822405806957416*^9}, {3.8224058553898478`*^9, 
+   3.82240591674879*^9}, {3.822405955623659*^9, 3.8224059572612667`*^9}, {
+   3.822406095327415*^9, 3.82240611133047*^9}, {3.822406196128336*^9, 
+   3.822406294384552*^9}, {3.822406497058222*^9, 3.822406761339425*^9}, {
+   3.822406823003642*^9, 3.822406852689196*^9}, {3.8224069021142397`*^9, 
+   3.822407004529539*^9}, {3.822407082914484*^9, 3.822407175081324*^9}, {
+   3.8224102697007227`*^9, 3.82241035438253*^9}, {3.822410429825406*^9, 
+   3.822410463415279*^9}, {3.822410827314076*^9, 3.8224108938839912`*^9}, {
+   3.822494928992077*^9, 
+   3.822494929116482*^9}},ExpressionUUID->"aadffcb4-0292-42dd-9aae-\
+b7f4dcff294c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Drug 10 - amitriptyline:", "Subsection",
+ CellChangeTimes->{{3.7928717488639402`*^9, 3.792871752577079*^9}, {
+   3.792873180937357*^9, 3.792873181084237*^9}, {3.822402702227955*^9, 
+   3.822402711730255*^9}, 3.82240394069063*^9, {3.822403979913981*^9, 
+   3.822403980057805*^9}, {3.822404422466427*^9, 3.82240442792479*^9}, {
+   3.822405330264146*^9, 3.822405337024148*^9}, {3.8224058878738003`*^9, 
+   3.822405893625793*^9}, {3.822406646621317*^9, 3.8224066552274446`*^9}, {
+   3.822407017936894*^9, 3.822407018278788*^9}, 3.822407081161193*^9, {
+   3.82241146940889*^9, 
+   3.8224114754427443`*^9}},ExpressionUUID->"090bfbd3-47f3-4665-9ebc-\
+26ec6c2eba3b"],
+
+Cell[TextData[{
+ "The drug name provided was analyzed to build the following profile. [13]\n\n\
+",
+ Cell[BoxData[GridBox[{
+    {"Name", "Amitriptyline"},
+    {
+     RowBox[{"Brand", " ", "Name"}], "Elavil"},
+    {
+     RowBox[{"List", " ", "of", " ", "Functional", " ", "Groups"}], 
+     RowBox[{
+      RowBox[{"phenyl", " ", "group"}], ",", "amine", ",", "alkane", ",", 
+      "alkene"}]},
+    {
+     RowBox[{"Number", " ", "of", " ", "Rotatable", " ", "Bonds"}], "3"},
+    {"Function", 
+     RowBox[{"anitidepressants", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"dibenzo", "[", 
+         RowBox[{"a", ",", "d"}], "]"}], "cycloheptane", " ", "derivatves"}], 
+       ")"}]}]},
+    {
+     RowBox[{"Summary", " ", "of", " ", "Function"}], 
+     RowBox[{
+     "This", " ", "drug", " ", "is", " ", "an", " ", "antidepressant", " ", 
+      "used", " ", "to", " ", "treat", " ", "depression", " ", "and", " ", 
+      "different", " ", "pain", " ", "syndromes", " ", "such", " ", "as", " ", 
+      RowBox[{"fibromyalgia", "."}]}]},
+    {
+     RowBox[{"Additional", " ", "Information"}], 
+     RowBox[{
+      RowBox[{"However", ",", " ", 
+       RowBox[{
+       "this", " ", "drug", " ", "is", " ", "not", " ", "the", " ", "first", 
+        " ", "medication", " ", "given", " ", "to", " ", "patient", " ", 
+        "due", " ", "to", " ", "the", " ", "frequency", " ", "and", " ", 
+        "severity", " ", "of", " ", "side", " ", 
+        RowBox[{"effects", ".", " ", "It"}], " ", "is", " ", "absorbed", " ", 
+        "through"}]}], "\[IndentingNewLine]", 
+      RowBox[{"the", " ", "gastrointestinal", " ", 
+       RowBox[{"tract", "."}]}]}]}
+   },
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}]],
+  ExpressionUUID->"1405e0f6-705b-417d-acad-f9812d7c87e7"]
+}], "Text",
+ CellChangeTimes->{{3.792871779569179*^9, 3.7928718752359056`*^9}, {
+   3.792872178819263*^9, 3.79287228236001*^9}, {3.792872326344812*^9, 
+   3.792872337155134*^9}, {3.79287237376906*^9, 3.792872387428668*^9}, {
+   3.792872537556018*^9, 3.7928725436521187`*^9}, {3.792872605794005*^9, 
+   3.792872694772828*^9}, {3.792872729179554*^9, 3.792872729179763*^9}, {
+   3.79287275980552*^9, 3.792872931714321*^9}, {3.792872989551814*^9, 
+   3.792873005226844*^9}, {3.792873038798943*^9, 3.792873049517099*^9}, {
+   3.792873131976508*^9, 3.7928731559847593`*^9}, 3.792873273729146*^9, {
+   3.7928733644957447`*^9, 3.792873461182619*^9}, {3.792873579218461*^9, 
+   3.792873592581479*^9}, {3.792873695124263*^9, 3.792874094954876*^9}, {
+   3.792874508506832*^9, 3.792874514190156*^9}, {3.8224027597506437`*^9, 
+   3.822402793882965*^9}, {3.822402881979443*^9, 3.822402882801887*^9}, {
+   3.822402937171813*^9, 3.822402984499502*^9}, {3.822403116285716*^9, 
+   3.822403137205338*^9}, {3.8224031733936577`*^9, 3.822403188839973*^9}, {
+   3.822403220359641*^9, 3.8224034049193087`*^9}, {3.822403950473097*^9, 
+   3.822403956822692*^9}, {3.8224041413139353`*^9, 3.822404141742915*^9}, {
+   3.82240443012294*^9, 3.8224044539360743`*^9}, {3.822404512691482*^9, 
+   3.8224045321842947`*^9}, {3.822404647209495*^9, 3.822404656430112*^9}, {
+   3.822404692237864*^9, 3.822404728180743*^9}, {3.8224047597113457`*^9, 
+   3.8224047597114363`*^9}, {3.822404804186557*^9, 3.8224048330948*^9}, {
+   3.822404925675015*^9, 3.822404935497306*^9}, {3.8224049924032507`*^9, 
+   3.8224050628371468`*^9}, {3.822405338313159*^9, 3.82240534148569*^9}, {
+   3.822405374962742*^9, 3.822405459950852*^9}, {3.822405588530061*^9, 
+   3.822405614785605*^9}, {3.822405707058791*^9, 3.822405729522209*^9}, {
+   3.822405760411685*^9, 3.822405806957416*^9}, {3.8224058553898478`*^9, 
+   3.82240591674879*^9}, {3.822405955623659*^9, 3.8224059572612667`*^9}, {
+   3.822406095327415*^9, 3.82240611133047*^9}, {3.822406196128336*^9, 
+   3.822406294384552*^9}, {3.822406497058222*^9, 3.822406761339425*^9}, {
+   3.822406823003642*^9, 3.822406852689196*^9}, {3.8224069021142397`*^9, 
+   3.822407004529539*^9}, {3.822407082914484*^9, 3.822407175081324*^9}, {
+   3.8224102697007227`*^9, 3.82241035438253*^9}, {3.822410429825406*^9, 
+   3.822410463415279*^9}, {3.822410827314076*^9, 3.8224108938839912`*^9}, {
+   3.822411476805293*^9, 3.8224115580148153`*^9}, {3.82241162160537*^9, 
+   3.82241169353732*^9}, {3.8224117721034184`*^9, 3.822411807622789*^9}, {
+   3.822494935780615*^9, 3.822494936031475*^9}, {3.822494999293445*^9, 
+   3.822494999295586*^9}},ExpressionUUID->"c6592226-3d16-4b59-b5da-\
+30286f106625"],
+
+Cell[TextData[{
+ "Genez very much appreciates the opportunity to conduct this work and hopes \
+that the results are satisfactory. We look forward to a long working \
+relationship with ",
+ StyleBox["Vertextin",
+  FontFamily->"Times New Roman",
+  FontWeight->"Regular"],
+ ", and wish your company success in its scientific ventures."
+}], "Text",
+ CellChangeTimes->{
+  3.7896836902322187`*^9, {3.822494952314452*^9, 
+   3.82249495602846*^9}},ExpressionUUID->"35985f17-24c4-48f0-aa91-\
+357e4d62d231"],
+
+Cell[TextData[{
+ "I certify that this work was completed by me on February 15, 2021.\
+\[NonBreakingSpace] All references and resources are \
+cited.\[NonBreakingSpace] Assistance was provided by NAME OF PERSON(S) (if \
+any)\n\[NonBreakingSpace] Electronic signature:\[NonBreakingSpace]",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJztm3dsTn0Ux2mLIqi9R43asXnFFkTttN6ITfO2VaGlLVUz9gohYhSxYsYI
+4Q8jNiFGrIi99957nLefk9ym4+l4OvLU4/dJLp7n3ud37z33/M75nvO7PP1C
+fAJcsmTJEuYe/YfPwIhWoaEDI309oj/8GxwWFBjs/593cLh/oH/oP36u0V96
+RW9R0Ztb9CYGg8FgMBgMBoPBYDA4iA8fPsjRo0fl3r17jr4Ug5Px6dMnGTp0
+qLi5uQntj/z58zv6kgxOxLVr16R69eri7u4ubdu2lZkzZ8qlS5d03+HDh2P+
+bTCkhoMHD0q+fPmkZcuW8vjx4wT769evL6NGjcqQc3/8+FHOnz+fIWMbMge7
+d++W7Nmzy4ABA+THjx8J9j99+lTzpr+/f7qe99GjRzJy5EjJmzevFChQQH7/
+/p2u46eUnz9/ytWrVx1y7r+Bs2fPam7EvxJ7xlu2bEl3H9u6davkzJlTWrRo
+IX5+fjJ27Nh0G9tezp07Jzly5JBbt2457BqcFWpHT09P1V624pdFZGSk+tik
+SZPS5bzoPhcXFx0Xv46IiHBorvz27ZuUK1dOxowZ47BrcFZGjx4tRYoUkRcv
+XiR6DHmkZMmS6mMnT55M8znx61q1asmIESP085UrV6RYsWLy/fv3NI+dFoYN
+GyaNGzdOl7G4x/379ydp17+Bt2/fSp48eWT16tVJHnfhwgX1rzp16iR6DL5X
+uXJltW1y9OnTR7y9vTV+8Qz43Zw5c+y+/vSGGrpUqVJpGuPhw4cSGhoquXLl
+UpuVLVtWXr9+bfc41EBJ5ZU/hRkzZkjFihU1TiUFeQx77du3z+Z+tHKhQoUk
+d+7c8v79+2TPS9y8f/++XL9+XWrWrKn511FaPzbcp5eXV8znd+/e2fX7nTt3
+au1CP3Hw4MFqryZNmkhUVFSSv8Nmu3btkuHDh6s9qL2wd9OmTeXZs2epupfM
+Av61cuXKJI85ceKEZMuWTQYNGmRzPzYoXbq0avc9e/Yke07WDVxdXbU/Qr48
+dOhQai49Q+jZs6fGWItTp06l6HfEm/79+6u+JIbFjuXdunVT/7EFc3P69OlS
+okQJ9am6detq3YPNsVO9evWkS5cuabspB3Lnzh29r1evXiV6zLFjx3ROctzt
+27dtHtOjRw/dv3379iTPx1wdP3685pCsWbOqDkRnpwZiHtf24MGDVP3eFvhJ
+0aJF9X7sJTw8XG2wbNmyON/TDypevHgCnfnmzRsJCQlRn2R+jhs3LoF9ucc2
+bdrIrFmz7L+ZTAL3j10+f/5sc//y5cs1ZtPT4LiXL1/G2Y/P9OvXT/cFBQXZ
+HAMfYg4zxz08PKRTp07SqlUr9dtfv37Zdb3YnPkdFhYmZcqU0ZxEvyGtkA9X
+rFghNWrU0Hth69u3b4o1lDVX6b3EBh1QsGBB2bBhQ5zvb968KRUqVJDChQvL
+kiVLbOoUtG27du20l2SvnTITaFNy1qpVq/T5MdcOHDigsb5SpUpqN2INcZ8c
+snjxYv0ddQL6nDoQrY6tmIcWxMVNmzapzfElNsakV2HRunVrzQHx/daC9VLq
+DGoRNAp+iY9yTeibRYsWpble4z7oU6Aj6fkRbyZMmKBzonbt2nqelDzftWvX
+6nVhTwvulfhEfIvNkydPtAbo0KGDTZ3FPTFviW9Tp079o/3LYt26depnrB+h
+p7AVuj0wMFD7shY8b2IatkebMT/XrFmj+7AbtRhzk7+tMXr37q3588uXLwnO
+S47jeGxJfiKG4K88Z+s62NjXuXNnrQmIu4n5pL3s3btX5wi5yMpRDRs2jHmm
+VmxKib5kLPSUBfoS+3Ts2DFBjCI/du3aNcEY+Bs6jOfQqFGjOLZ3BnhvZ+nS
+pRqnjh8/Ll+/frV53I0bNzR+YdP4+ZWYQAwkL6CTbflVfLA/+WTbtm3qQ0OG
+DJFp06ap7/KcWLvKCNBx6MHYaxr4Wfx3S6pWrZqitVn0AD3s+fPny5QpU6RB
+gwb67oAtsJ2lf7Ez84a4xZzE34n/zhC7/naI0cRk+k8W3bt3V40Xm/bt26uO
+TA58olq1ajGxF41OT5mYe+bMGdm4caNMnjxZx0JX9OrVS/UH+Znv6GuY9Svn
+YsGCBZrv0frEMWIVvrF58+Y4x6EBAwICEh2HtXw0U/ny5XVtgF6jFZMsf7M2
+NB8alJrH8kOD80Iep2eFhqK24V0PW30X1jTI3bFBI6DxiXHkWzTkkSNH4hxD
+XEO7owPwQ+qX2OCL+Dixk1xpcqNzwnO19GNi9SlxjHr6+fPn2g+lRkTLo9vI
+dzt27Ej1Wg+6rEqVKhrTqJfpU6D50WO8A5qYJjY4F9Z7Jmy8c06eW79+far7
+xvHBz4mfvBfAmhH51DofMZI4Sw6mJ4x/z507V8/P3Lh8+XKSvXN7QTPg19Ru
+1Fp3795VjYhmZc3P3jU1Q8rAl06fPi0XL15MUZ2cHtDXxofozdJrps9BfWut
+X8bf8H3iIO/EsM7KWlSzZs00l/v6+moc9vHx0fnBu1vNmzfX3gg6AJ1Aryi+
+fuQdOsajh0ePm2vKDGvJhoyFZ8z6E+ub9HWoVelDz5s3T+sHeib0j4m9+GZw
+cLCuvfD/fuh/s9ZPLp44caJqzNmzZ+tvFy5cqD1S/JpamDhmMBgMBoPBYDAY
+DAaDwWAwGAyGzMX/5MvDKg==
+     "], {{0, 38}, {153, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{153, 38},
+   PlotRange->{{0, 153}, {0, 38}}]], "Input",ExpressionUUID->
+  "d7e1cda7-d8c6-45cd-a0b9-b29725025174"]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 3}},
+ CellChangeTimes->{
+  3.789248270537753*^9, {3.789248868110652*^9, 3.789248868433384*^9}, {
+   3.789685193549652*^9, 3.789685196394864*^9}, {3.7927875693280582`*^9, 
+   3.7927875706838207`*^9}, {3.79287421011534*^9, 3.7928742104884872`*^9}, {
+   3.82241181677135*^9, 
+   3.822411821336666*^9}},ExpressionUUID->"587b7d85-7a51-4fdb-8d40-\
+ed627dea20bf"],
+
+Cell["References:", "Author",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.789248411602501*^9, 
+  3.789248425666044*^9}},ExpressionUUID->"afd2eee2-2f41-4ba8-b551-\
+ff5b39de9c5c"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/Drug",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.82249481585987*^9}},ExpressionUUID->"2e66bd45-3bfe-4e82-b070-\
+0ead6def3a34"],
+
+Cell[TextData[StyleBox["https://www.fda.gov/drugs/investigational-new-drug-\
+ind-application/general-drug-categories",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.822494824888493*^9}},ExpressionUUID->"ea837410-f803-4812-929b-\
+53082e57bb28"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/Functional_group",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.8224948279978857`*^9}},ExpressionUUID->"ce901bb3-2164-41d4-844b-\
+4423fa5a8388"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/Loracarbef",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.8224948286908293`*^9}},ExpressionUUID->"b7a0ca7b-6821-4e8f-8fca-\
+380884cd543d"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/Ampicillin",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.8224948282276382`*^9}, {3.82249486593489*^9, 
+   3.822494866214438*^9}},ExpressionUUID->"4af3316a-250f-4790-8fed-\
+b8a3a9d301d6"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/Minocycline",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.8224948282276382`*^9}, {3.82249486593489*^9, 
+   3.822494877954052*^9}},ExpressionUUID->"362daacf-9417-463c-bd5a-\
+954d9bcc3b07"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/Alfentanil",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.8224948282276382`*^9}, {3.82249486593489*^9, 
+   3.8224948936470013`*^9}},ExpressionUUID->"f329b68d-f5aa-4df4-9312-\
+e415ca1bc54e"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/Tacrolimus",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.8224948282276382`*^9}, {3.82249486593489*^9, 
+   3.822494904870714*^9}},ExpressionUUID->"aa3372bd-0ca6-4ada-9b73-\
+52dcdf338e6d"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/duloxetine",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.8224948282276382`*^9}, {3.82249486593489*^9, 
+   3.822494914996269*^9}},ExpressionUUID->"e6bd73c4-0b1a-457a-83f1-\
+36c413c66531"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/haloperidol",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.8224948282276382`*^9}, {3.82249486593489*^9, 
+   3.822494923479735*^9}},ExpressionUUID->"d4ec47c3-f7e6-47b8-bf47-\
+1c3da8c4cd23"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/Enalapril",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.8224948282276382`*^9}, {3.82249486593489*^9, 
+   3.8224949311631804`*^9}},ExpressionUUID->"89a6b4ab-da51-486f-ab88-\
+df16e10c86ab"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/sertraline",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.8224948282276382`*^9}, {3.82249486593489*^9, 
+   3.8224949382877293`*^9}},ExpressionUUID->"6b5addbb-d602-45c5-abb6-\
+670b1ab2c645"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/Amitriptyline",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.8224948155055532`*^9, 
+   3.8224948282276382`*^9}, {3.82249486593489*^9, 
+   3.822494938795558*^9}},ExpressionUUID->"493c7e69-301e-4329-885c-\
+597e8c2835de"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Working",
+WindowSize->{Full, Full},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PaperSize"->{1224, 1584}},
+Magnification->0.75,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    BoxData[""], "Input", 
+    CellChangeTimes -> {{3.788974678986841*^9, 3.788974680021716*^9}}], 
+   Cell[
+    StyleData["Section"], FontFamily -> "Arial", FontSize -> 28, FontWeight -> 
+    "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Subsubsection"], FontFamily -> "Arial", FontSize -> 19, 
+    FontWeight -> "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Text"], FontFamily -> "Times New Roman", FontSize -> 15, 
+    FontWeight -> "Regular", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Subsubsection"], FontFamily -> "Times New Roman", FontSize -> 
+    19, FontWeight -> "Bold", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Section"], CellFrame -> {{0, 0}, {0, 2}}], 
+   Cell[
+    StyleData["Subsection"], FontFamily -> "Arial", FontSize -> 20, 
+    FontWeight -> "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Subsubsection"], TextAlignment -> Left, FontFamily -> 
+    "Times New Roman", FontSize -> 19, FontWeight -> "Bold", FontSlant -> 
+    "Plain", FontVariations -> {
+     "StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]]}, Visible -> False, FrontEndVersion -> 
+  "12.0 for Mac OS X x86 (64-bit) (April 8, 2019)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 298, 5, 58, "Text",ExpressionUUID->"9cae76f1-ab34-4cd1-a628-1663f50b823e"],
+Cell[859, 27, 739, 11, 90, "Text",ExpressionUUID->"7c9ac64e-9d2f-4141-a798-b3ccd5b39d55"],
+Cell[CellGroupData[{
+Cell[1623, 42, 248, 5, 50, "Section",ExpressionUUID->"c0b381ed-f3b4-4f01-af92-ae8b5753cdcd"],
+Cell[CellGroupData[{
+Cell[1896, 51, 205, 4, 39, "Subsection",ExpressionUUID->"8b4bb4d0-5f47-409f-bad8-cc58ee2970ce"],
+Cell[2104, 57, 1035, 19, 25, "Text",ExpressionUUID->"e5e66d67-f637-40b2-a0d9-d75be1cc3735"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3176, 81, 184, 3, 39, "Subsection",ExpressionUUID->"63b971b7-87d3-4fda-8e6e-91604e85fefe"],
+Cell[3363, 86, 4322, 65, 269, "Text",ExpressionUUID->"0647f906-efc0-40d6-8f34-4d5bf54ce16c"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7734, 157, 186, 4, 50, "Section",ExpressionUUID->"d3f9c95f-6921-4641-ac0a-7b5e45aad5f9"],
+Cell[7923, 163, 571, 10, 25, "Text",ExpressionUUID->"ef4f7138-acbf-4c53-8e4f-5e5d69025135"],
+Cell[CellGroupData[{
+Cell[8519, 177, 736, 12, 24, "ItemNumbered",ExpressionUUID->"b9d8317e-c991-4f64-8b41-1986c2351307"],
+Cell[9258, 191, 628, 11, 24, "ItemNumbered",ExpressionUUID->"9a82fb30-6d6c-4e5d-a6d9-bcbbad8dd168"],
+Cell[9889, 204, 599, 10, 24, "ItemNumbered",ExpressionUUID->"4bd4b570-a369-42c9-a4e6-3772b4b4d093"],
+Cell[10491, 216, 591, 10, 24, "ItemNumbered",ExpressionUUID->"002f00bb-30e1-40bb-bbef-7be70aedf468"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11131, 232, 182, 4, 50, "Section",ExpressionUUID->"83e6fbc6-e3e4-46d7-970a-09b8901b8222"],
+Cell[11316, 238, 219, 5, 25, "Text",ExpressionUUID->"3ba4efb2-e1b1-44f5-9eeb-06b985fa31f0"],
+Cell[CellGroupData[{
+Cell[11560, 247, 245, 4, 39, "Subsection",ExpressionUUID->"0525448d-13f9-4c21-842e-0f8cce437caa"],
+Cell[11808, 253, 197, 5, 25, "Text",ExpressionUUID->"92dff8c8-b326-4038-86c1-ff4c56f311a9"],
+Cell[12008, 260, 1878, 47, 136, "Text",ExpressionUUID->"e8654dbe-405b-4937-ba07-cf195a0476e0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13923, 312, 265, 4, 39, "Subsection",ExpressionUUID->"3af313e0-9faf-4c34-bf87-7caf06fa8b28"],
+Cell[14191, 318, 3418, 65, 215, "Text",ExpressionUUID->"866dab4c-2a51-4e7b-bd97-814c3181d397"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17646, 388, 339, 5, 39, "Subsection",ExpressionUUID->"dbe1f457-6f79-46e7-8f5a-7aa1e72e8307"],
+Cell[17988, 395, 3212, 65, 191, "Text",ExpressionUUID->"768ac160-c5ed-4821-a982-9e462bcae746"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21237, 465, 313, 5, 39, "Subsection",ExpressionUUID->"d53e7bb7-1c17-4c64-8cc1-a9f88a184304"],
+Cell[21553, 472, 3804, 76, 209, "Text",ExpressionUUID->"ccca02ea-8dca-4775-b894-80696fc6cec6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25394, 553, 387, 6, 39, "Subsection",ExpressionUUID->"34030f33-5fab-4a12-8a43-7f94bb40f00b"],
+Cell[25784, 561, 3731, 70, 191, "Text",ExpressionUUID->"d38f1a9b-ebb1-4c9c-805a-f4821323401c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29552, 636, 437, 7, 39, "Subsection",ExpressionUUID->"39acea7f-9113-4338-856d-21a23f6b048d"],
+Cell[29992, 645, 3900, 74, 191, "Text",ExpressionUUID->"1e6ed8d1-1fcd-44b5-88b0-b6b074905a00"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33929, 724, 486, 7, 39, "Subsection",ExpressionUUID->"4e5a6d83-53e5-4080-a45f-bc99bb682810"],
+Cell[34418, 733, 4473, 86, 213, "Text",ExpressionUUID->"08712f2d-63d2-43e9-88ee-8475b216fcfb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38928, 824, 536, 8, 39, "Subsection",ExpressionUUID->"fb6f55ae-31cf-486b-87e9-7e6beb054d9e"],
+Cell[39467, 834, 4365, 83, 213, "Text",ExpressionUUID->"9c8445f0-b9a4-411a-b5a7-98288779e8b5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43869, 922, 609, 9, 39, "Subsection",ExpressionUUID->"48b2c76e-1380-4270-9100-a93f535f329a"],
+Cell[44481, 933, 4751, 91, 213, "Text",ExpressionUUID->"aadffcb4-0292-42dd-9aae-b7f4dcff294c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49269, 1029, 664, 10, 39, "Subsection",ExpressionUUID->"090bfbd3-47f3-4665-9ebc-26ec6c2eba3b"],
+Cell[49936, 1041, 4455, 81, 207, "Text",ExpressionUUID->"c6592226-3d16-4b59-b5da-30286f106625"],
+Cell[54394, 1124, 496, 12, 25, "Text",ExpressionUUID->"35985f17-24c4-48f0-aa91-357e4d62d231"],
+Cell[54893, 1138, 3821, 70, 65, "Text",ExpressionUUID->"587b7d85-7a51-4fdb-8d40-ed627dea20bf"],
+Cell[58717, 1210, 185, 4, 33, "Author",ExpressionUUID->"afd2eee2-2f41-4ba8-b551-ff5b39de9c5c"],
+Cell[CellGroupData[{
+Cell[58927, 1218, 727, 11, 24, "ItemNumbered",ExpressionUUID->"2e66bd45-3bfe-4e82-b070-0ead6def3a34"],
+Cell[59657, 1231, 786, 12, 24, "ItemNumbered",ExpressionUUID->"ea837410-f803-4812-929b-53082e57bb28"],
+Cell[60446, 1245, 742, 11, 24, "ItemNumbered",ExpressionUUID->"ce901bb3-2164-41d4-844b-4423fa5a8388"],
+Cell[61191, 1258, 736, 11, 24, "ItemNumbered",ExpressionUUID->"b7a0ca7b-6821-4e8f-8fca-380884cd543d"],
+Cell[61930, 1271, 785, 12, 24, "ItemNumbered",ExpressionUUID->"4af3316a-250f-4790-8fed-b8a3a9d301d6"],
+Cell[62718, 1285, 786, 12, 24, "ItemNumbered",ExpressionUUID->"362daacf-9417-463c-bd5a-954d9bcc3b07"],
+Cell[63507, 1299, 787, 12, 24, "ItemNumbered",ExpressionUUID->"f329b68d-f5aa-4df4-9312-e415ca1bc54e"],
+Cell[64297, 1313, 785, 12, 24, "ItemNumbered",ExpressionUUID->"aa3372bd-0ca6-4ada-9b73-52dcdf338e6d"],
+Cell[65085, 1327, 785, 12, 24, "ItemNumbered",ExpressionUUID->"e6bd73c4-0b1a-457a-83f1-36c413c66531"],
+Cell[65873, 1341, 786, 12, 24, "ItemNumbered",ExpressionUUID->"d4ec47c3-f7e6-47b8-bf47-1c3da8c4cd23"],
+Cell[66662, 1355, 786, 12, 24, "ItemNumbered",ExpressionUUID->"89a6b4ab-da51-486f-ab88-df16e10c86ab"],
+Cell[67451, 1369, 787, 12, 24, "ItemNumbered",ExpressionUUID->"6b5addbb-d602-45c5-abb6-670b1ab2c645"],
+Cell[68241, 1383, 788, 12, 24, "ItemNumbered",ExpressionUUID->"493c7e69-301e-4329-885c-597e8c2835de"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

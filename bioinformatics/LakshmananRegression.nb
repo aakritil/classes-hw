@@ -1,0 +1,1319 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     56634,       1311]
+NotebookOptionsPosition[     49213,       1171]
+NotebookOutlinePosition[     51800,       1234]
+CellTagsIndexPosition[     51757,       1231]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[StyleBox["Genez, Inc.\n9617 Black Watch Court\nCharlotte, NC \
+28277",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "Text",
+ CellChangeTimes->{{3.7889741914236603`*^9, 3.7889742182836437`*^9}},
+ TextAlignment->Right,ExpressionUUID->"9cae76f1-ab34-4cd1-a628-1663f50b823e"],
+
+Cell[TextData[StyleBox["March 24, 2021\n\nTo: Chief Scientist, Vertextin Inc.\
+\nFrom: Aakriti Lakshmanan\nSubj: Lead Drug Modification Carbon Anhydrase \
+Inhibitors",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "Text",
+ CellChangeTimes->{{3.78897427781083*^9, 3.788974370688476*^9}, 
+   3.788974905689847*^9, {3.789217211251758*^9, 3.7892172116547117`*^9}, {
+   3.789217251071721*^9, 3.7892172542205963`*^9}, 3.7892487914446507`*^9, {
+   3.789248840285433*^9, 3.7892488499890747`*^9}, {3.792786632310807*^9, 
+   3.7927866426193323`*^9}, {3.79278729336171*^9, 3.7927872981901903`*^9}, {
+   3.792871484747343*^9, 3.792871490041741*^9}, {3.822399877152906*^9, 
+   3.822399909807412*^9}, {3.823005459525222*^9, 3.8230054754604816`*^9}, {
+   3.8237055963068123`*^9, 3.82370562108745*^9}, {3.824055710257406*^9, 
+   3.824055746016755*^9}, {3.82423037547423*^9, 3.8242303864546127`*^9}, {
+   3.825677244427618*^9, 
+   3.825677256043077*^9}},ExpressionUUID->"7c9ac64e-9d2f-4141-a798-\
+b3ccd5b39d55"],
+
+Cell[CellGroupData[{
+
+Cell["Summary and Introduction", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.788974884231689*^9, 3.788974888896441*^9}, {
+  3.788974977132062*^9, 
+  3.788974994670714*^9}},ExpressionUUID->"c0b381ed-f3b4-4f01-af92-\
+ae8b5753cdcd"],
+
+Cell[CellGroupData[{
+
+Cell["Abstract:", "Subsection",
+ CellChangeTimes->{{3.788975012471572*^9, 3.78897501488365*^9}, {
+  3.788975112222271*^9, 
+  3.788975125905067*^9}},ExpressionUUID->"8b4bb4d0-5f47-409f-bad8-\
+cc58ee2970ce"],
+
+Cell["\<\
+As requested in the Scope of Work of March 18, 2021, we evaluated a dataset \
+of 22 compounds that contains the substituent, Hammett constant, logP and \
+logKi values for each of the compounds in order to find the best \
+representative QSAR model for predicting logKi and to determine the optimal \
+parameter combination for a logKi value of 10.45.\
+\>", "Text",
+ CellChangeTimes->{{3.788975137351959*^9, 3.7889751574128733`*^9}, {
+   3.7892370310566483`*^9, 3.789237066589622*^9}, {3.789237119247281*^9, 
+   3.789237254703236*^9}, {3.789237334288628*^9, 3.7892373472460537`*^9}, {
+   3.789247541420328*^9, 3.789247576454586*^9}, {3.789664700810429*^9, 
+   3.78966481271723*^9}, 3.789685953273097*^9, {3.789840989866272*^9, 
+   3.789841027515491*^9}, {3.7927873001907463`*^9, 3.792787310928953*^9}, {
+   3.792871643430429*^9, 3.792871697768161*^9}, {3.822399913831375*^9, 
+   3.822399923964209*^9}, {3.8223999577277393`*^9, 3.8223999856536427`*^9}, {
+   3.822400037664606*^9, 3.822400062169833*^9}, {3.8230054578876877`*^9, 
+   3.823005458030292*^9}, {3.8230894610914173`*^9, 3.823089507272066*^9}, {
+   3.8235308791491613`*^9, 3.82353089123807*^9}, {3.824047294828307*^9, 
+   3.824047345406925*^9}, {3.82405576189979*^9, 3.824055773023273*^9}, {
+   3.824230396849999*^9, 3.824230456594851*^9}, {3.825677246659376*^9, 
+   3.825677333659335*^9}},ExpressionUUID->"e5e66d67-f637-40b2-a0d9-\
+d75be1cc3735"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Introduction/Background Information:", "Subsection",
+ CellChangeTimes->{{3.788975012471572*^9, 3.78897501488365*^9}, {
+  3.788975112222271*^9, 3.788975125905067*^9}, {3.824047362762329*^9, 
+  3.8240473717773113`*^9}},ExpressionUUID->"2c9b9b10-f6c2-4c17-9f96-\
+5dd1086472d8"],
+
+Cell["\<\
+Carbon Anhydrase Inhibitors are a set of drugs used to treat glaucoma, \
+hypertension, altitude sickness, heart failure, epilepsy, and other \
+conditions. As the name suggests, the drug works by inhibiting carbonic \
+anhydrase in a specific location of the kind. Carbon anhydrase converts \
+carbonic acid to water and carbon dioxide in the kidney, which moves around \
+the body through diffusion. The Carbonic anhydrase enzyme does the opposite \
+by taking water and carbon dioxide and converting it into carbonic acid. This \
+carbonic acid later turns into hydrogen ions and bicarbonate molecules. By \
+inhibiting this enzyme, Carbon Anhydrase Inhibitors cause the blood to become \
+more acidic while urine becomes more alkaline. This process causes a decrease \
+in blood pressure. 
+
+Given the mechanism in which the drug works, it follows that it is effective \
+for conditions where there are problems with blood pressure. This drug can be \
+administered in various different ways, include topical, oral or \
+intravenously. Despite the drugs efficiency to work for these conditions, \
+there are also many adverse effects such as fatigue, nausea, tinnitus, \
+headache and pain. [1]
+
+Therefore, scientists are always on the lookout to find better compounds \
+which still exhibit the positive biological activity without the adverse side \
+effects. Currently, most Carbon Anhydrase Inhibitors are sulfonamide \
+compounds. This technical memo analyzes a phenysulfonamide compound with \
+various different substituents to gain a better understanding on which \
+substituents and what location provides the wanted balance of \
+toxicity/biological activity. Substituents are usually added to carbons in \
+different locations along the compound. The positions analyzed in this \
+technical memo are the ortho -, meta -, and para - positions on the phenyl \
+ring. 
+
+Multiple different parameters were examined and used to filter the larger \
+dataset into smaller group. Specifically, the parameters used were logP, the \
+Hammett constant sigma and logKi. LogP measures the lipophilicity of a drug \
+and the Hammett constant sigma measures the electron - withdrawing or \
+electron - donating properties of the added substituent. Finally, logKi \
+measures how well the substituted phenylsulfonamide compounds bind the to the \
+enzyme carbonic hydrase.\
+\>", "Text",
+ CellChangeTimes->{{3.825678461046805*^9, 
+  3.8256785309783983`*^9}},ExpressionUUID->"b1ef5451-c63c-46c8-aa14-\
+502b7cb51881"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Methodology", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.788975448064522*^9, 
+  3.788975471823615*^9}},ExpressionUUID->"d3f9c95f-6921-4641-ac0a-\
+7b5e45aad5f9"],
+
+Cell["\<\
+For this study, the list of 29 substitutions of the lead drug was collected \
+from the NCSSM Canvas website. The following analyses were conducted:\
+\>", "Text",
+ CellChangeTimes->{{3.788975478796629*^9, 3.788975482688313*^9}, {
+   3.789217279557188*^9, 3.7892173525695963`*^9}, {3.7892174516736603`*^9, 
+   3.789217464505946*^9}, 3.7892382693185368`*^9, {3.789670922817335*^9, 
+   3.789670943409995*^9}, {3.792871495633679*^9, 3.792871503914997*^9}, 
+   3.792871555684013*^9, {3.8224000717958727`*^9, 3.822400075338003*^9}, {
+   3.823089514073838*^9, 3.82308951495713*^9}, {3.823530870967712*^9, 
+   3.823530872576065*^9}, 3.823530905158498*^9, {3.8240472400173483`*^9, 
+   3.824047256891459*^9}, 3.824047298711844*^9, {3.82567716995549*^9, 
+   3.825677170363884*^9}},ExpressionUUID->"ef4f7138-acbf-4c53-8e4f-\
+5e5d69025135"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Drug data was imported into Mathematica",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.82308952203572*^9, 
+   3.8230895499784822`*^9}, {3.82353090913128*^9, 
+   3.8235309188561277`*^9}},ExpressionUUID->"b9d8317e-c991-4f64-8b41-\
+1986c2351307"],
+
+Cell[TextData[StyleBox["Data was filtered based on properties such as \
+hyrdrophilicity.",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.788975520332529*^9}, {
+  3.789238281463563*^9, 3.789238307114318*^9}, {3.789238340494112*^9, 
+  3.7892383441076927`*^9}, {3.789670959143276*^9, 3.7896709756175337`*^9}, {
+  3.789675446550476*^9, 3.789675447036963*^9}, {3.7928715233812838`*^9, 
+  3.792871553667924*^9}, {3.8224001063757277`*^9, 3.822400121352759*^9}, {
+  3.822400188430723*^9, 3.822400199694175*^9}, {3.8230895553979588`*^9, 
+  3.823089616904838*^9}, {3.8235309314173326`*^9, 3.8235309458725767`*^9}, {
+  3.825677176513686*^9, 
+  3.82567719703961*^9}},ExpressionUUID->"9a82fb30-6d6c-4e5d-a6d9-\
+bcbbad8dd168"],
+
+Cell[TextData[StyleBox["A multiple regression analysis was performed for each \
+filtered dataset.",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.788975520332529*^9}, {
+  3.789238281463563*^9, 3.789238307114318*^9}, {3.789238340494112*^9, 
+  3.7892383441076927`*^9}, {3.789670959143276*^9, 3.7896709756175337`*^9}, {
+  3.789675446550476*^9, 3.789675447036963*^9}, {3.7928715233812838`*^9, 
+  3.792871553667924*^9}, {3.8224001063757277`*^9, 3.822400121352759*^9}, {
+  3.822400188430723*^9, 3.822400199694175*^9}, {3.8230895553979588`*^9, 
+  3.823089616904838*^9}, {3.8235309314173326`*^9, 3.8235309458725767`*^9}, {
+  3.825677176513686*^9, 
+  3.825677207602433*^9}},ExpressionUUID->"8278fa1f-79d8-4497-b7e8-\
+1c073310139b"],
+
+Cell[TextData[StyleBox["Using the model with the highest R^squared values, \
+the optimal Hammett Constant and logP values were calculated.",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897552988211*^9}, {
+   3.7892384299176273`*^9, 3.789238431792481*^9}, {3.789247502092857*^9, 
+   3.78924750565837*^9}, {3.789670988916486*^9, 3.789670989250772*^9}, {
+   3.792787536201047*^9, 3.792787536202037*^9}, {3.792871540215247*^9, 
+   3.7928715447498493`*^9}, {3.822400158440607*^9, 3.82240020735229*^9}, 
+   3.823530855372251*^9, {3.8235310658324957`*^9, 3.823531086589879*^9}, {
+   3.8240472753655643`*^9, 3.8240472882706947`*^9}, {3.825677210163076*^9, 
+   3.825677235733931*^9}},ExpressionUUID->"b47e2929-f8d8-47db-8399-\
+13646a5a4411"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Data Import and Description:", "Subsection",
+ CellChangeTimes->{{3.823530863261829*^9, 3.823530868463305*^9}, 
+   3.823530902582883*^9},ExpressionUUID->"c696edb9-d459-40c6-9d93-\
+280df863f5c9"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"subData", " ", "=", " ", GridBox[{
+     {"\"\<Sample\>\"", "\"\<X\>\"", "\"\<\[Sigma]\>\"", "\"\<logP\>\"", 
+      "\"\<\!\(\*SubscriptBox[\(I\), \(1\)]\)\>\"", 
+      "\"\<\!\(\*SubscriptBox[\(I\), \(2\)]\)\>\"", 
+      "\"\<\!\(\*SubscriptBox[\(logK\), \(i\)]\)\>\""},
+     {"1", "\"\<H\>\"", "0", "0.21", "0", "0", "6.69"},
+     {"2", "\"\<4-CH3\>\"", 
+      RowBox[{"-", "0.17"}], "0.69", "0", "0", "7.09"},
+     {"3", "\"\<4-C2H5\>\"", 
+      RowBox[{"-", "0.15"}], "1.31", "0", "0", "7.53"},
+     {"4", "\"\<4-C3H7\>\"", 
+      RowBox[{"-", "0.15"}], "1.64", "0", "0", "7.77"},
+     {"5", "\"\<4-C4H9\>\"", 
+      RowBox[{"-", "0.15"}], "2.45", "0", "0", "8.30"},
+     {"6", "\"\<4-C5H11\>\"", 
+      RowBox[{"-", "0.15"}], "2.97", "0", "0", "8.86"},
+     {"7", "\"\<4-CO2CH3\>\"", "0.45", "0.64", "0", "0", "7.98"},
+     {"8", "\"\<4-CO2C2H5\>\"", "0.45", "1.17", "0", "0", "8.50"},
+     {"9", "\"\<4-CO2C3H7\>\"", "0.45", "1.75", "0", "0", "8.77"},
+     {"10", "\"\<4-CO2C4H9\>\"", "0.45", "2.34", "0", "0", "9.11"},
+     {"11", "\"\<4-CO2C5H11\>\"", "0.45", "2.71", "0", "0", "9.39"},
+     {"12", "\"\<4-CO2C6H13\>\"", "0.45", "3.23", "0", "0", "9.39"},
+     {"13", "\"\<4-CONHCH3\>\"", "0.36", 
+      RowBox[{"-", "0.31"}], "0", "0", "7.08"},
+     {"14", "\"\<4-CONHC2H5\>\"", "0.36", "0.03", "0", "0", "7.53"},
+     {"15", "\"\<4-CONHC3H7\>\"", "0.36", "0.51", "0", "0", "8.08"},
+     {"16", "\"\<4-CONHC4H9\>\"", "0.36", "1.05", "0", "0", "8.49"},
+     {"17", "\"\<4-CONHC5H11\>\"", "0.36", "1.54", "0", "0", "8.75"},
+     {"18", "\"\<4-CONHC6H13\>\"", "0.36", "2.05", "0", "0", "8.88"},
+     {"19", "\"\<4-CONHC7H15\>\"", "0.36", "2.57", "0", "0", "8.93"},
+     {"20", "\"\<3-CO2CH3\>\"", "0.37", "0.62", "1", "0", "5.87"},
+     {"21", "\"\<3-CO2C2H6\>\"", "0.37", "1.11", "1", "0", "6.21"},
+     {"22", "\"\<3-CO2C3H7\>\"", "0.37", "1.72", "1", "0", "6.44"},
+     {"23", "\"\<3-CO2C4H9\>\"", "0.37", "2.24", "1", "0", "6.95"},
+     {"24", "\"\<3-CO2C5H11\>\"", "0.37", "2.71", "1", "0", "6.86"},
+     {"25", "\"\<2-CO2CH3\>\"", "0.45", "0.45", "0", "1", "4.41"},
+     {"26", "\"\<2-CO2C2H5\>\"", "0.45", "0.72", "0", "1", "4.80"},
+     {"27", "\"\<2-CO2C3H7\>\"", "0.45", "1.49", "0", "1", "5.28"},
+     {"28", "\"\<2-CO2C4H9\>\"", "0.45", "2.01", "0", "1", "5.76"},
+     {"29", "\"\<2-CO2C5H11\>\"", "0.45", "2.55", "0", "1", "6.18"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"header", " ", "=", " ", 
+   RowBox[{"subData", "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "All"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"subData", " ", "=", " ", 
+   RowBox[{"Delete", "[", 
+    RowBox[{"subData", ",", "1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "sample", ",", "Xsub", ",", "\[Sigma]", ",", " ", "logP", " ", ",", "i1", 
+     ",", " ", "i2", ",", " ", "logki"}], "}"}], " ", "=", " ", 
+   RowBox[{"Transpose", "[", "subData", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.823531120000183*^9, 3.8235311915148*^9}, 
+   3.8235312785679827`*^9, 3.823531312874341*^9, {3.8235475232373457`*^9, 
+   3.823547569067257*^9}, 3.823705582996921*^9, {3.823976817302652*^9, 
+   3.823976844440551*^9}, {3.824131967440061*^9, 3.824131995115499*^9}, {
+   3.8255085201084967`*^9, 3.825508601729664*^9}, {3.825508976411499*^9, 
+   3.825509032993256*^9}, 3.825509071829743*^9},
+ CellLabel->"In[11]:=",ExpressionUUID->"5d1796e1-19e1-4520-a21a-a4f02714fc2f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.789247518574786*^9, 
+  3.789247520215665*^9}},ExpressionUUID->"83e6fbc6-e3e4-46d7-970a-\
+09b8901b8222"],
+
+Cell[CellGroupData[{
+
+Cell["Regression Calculation", "Subsection",
+ CellChangeTimes->{{3.823531759537956*^9, 3.823531761704273*^9}, 
+   3.824046665986711*^9},ExpressionUUID->"18771a3a-c6cf-4334-bb59-\
+8d3d937c2ab2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"alldrugTogetherData", " ", "=", " ", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"\[Sigma]", ",", "logP", ",", " ", "logki"}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"allldrugRegression", " ", "=", " ", 
+    RowBox[{"LinearModelFit", "[", " ", 
+     RowBox[{"alldrugTogetherData", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"hammett1", ",", " ", "logP1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"hammett1", ",", " ", "logP1"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ewithdraw", "=", " ", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"subData", "[", 
+      RowBox[{"[", "All", "]"}], "]"}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "3", "]"}], "]"}], " ", ">", " ", "0"}], " ", "&"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "sampleEW", ",", "XsubEW", ",", "\[Sigma]EW", ",", " ", "logPEW", " ", 
+     ",", "i1EW", ",", " ", "i2EW", ",", " ", "logkiEW"}], "}"}], " ", "=", 
+   " ", 
+   RowBox[{"Transpose", "[", "ewithdraw", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ewithdrawData", " ", "=", " ", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"\[Sigma]EW", ",", "logPEW", ",", " ", "logkiEW"}], "}"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ewithdrawRegression", " ", "=", 
+    RowBox[{"LinearModelFit", "[", " ", 
+     RowBox[{"ewithdrawData", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"hammett2", ",", "logP2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"hammett2", ",", " ", "logP2"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"edonate", "=", " ", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"subData", "[", 
+      RowBox[{"[", "All", "]"}], "]"}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "3", "]"}], "]"}], " ", "<", " ", "0"}], " ", "&"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "sampleED", ",", "XsubED", ",", "\[Sigma]ED", ",", " ", "logPED", " ", 
+     ",", "i1ED", ",", " ", "i2ED", ",", " ", "logkiED"}], "}"}], " ", "=", 
+   " ", 
+   RowBox[{"Transpose", "[", "edonate", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"edonateData", " ", "=", " ", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"\[Sigma]ED", ",", "logPED", ",", " ", "logkiED"}], "}"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"edonateRegression", " ", "=", " ", 
+   RowBox[{"LinearModelFit", "[", " ", 
+    RowBox[{"edonateData", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"hammett3", ",", "logP3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"hammett3", ",", " ", "logP3"}], "}"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.825508846535893*^9, 3.825508893927093*^9}, {
+  3.825508954064931*^9, 3.825508967818178*^9}, {3.825509048230319*^9, 
+  3.825509396440954*^9}, {3.8255094382158537`*^9, 3.8255094457463913`*^9}, {
+  3.825509539798829*^9, 3.82550954140478*^9}, {3.825509580673113*^9, 
+  3.8255095816095123`*^9}, {3.825510133268332*^9, 3.825510148405311*^9}, {
+  3.8256087644196873`*^9, 3.825608803294005*^9}, {3.825608893002902*^9, 
+  3.825608894271866*^9}, {3.8256092467666597`*^9, 3.825609277999175*^9}, {
+  3.825609417881464*^9, 3.825609418852086*^9}},
+ CellLabel->
+  "In[130]:=",ExpressionUUID->"7a6e4c68-c8ca-4d1c-9f3e-12bd82fb1270"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"hydrobad", " ", "=", " ", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"subData", "[", 
+        RowBox[{"[", "All", "]"}], "]"}], ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "4", "]"}], "]"}], "\[GreaterEqual]", " ", "0"}], " ", 
+        "&"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "sampleHB", ",", "XsubHB", ",", "\[Sigma]HB", ",", " ", "logPHB", ",", 
+       "i1HB", ",", " ", "i2HB", ",", " ", "logkiHB"}], "}"}], " ", "=", " ", 
+     
+     RowBox[{"Transpose", "[", "hydrobad", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"hydrobadData", " ", "=", " ", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{"\[Sigma]HB", ",", "logPHB", ",", " ", "logkiHB"}], "}"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"hydrobadRegression", " ", "=", " ", 
+     RowBox[{"LinearModelFit", "[", " ", 
+      RowBox[{"hydrobadData", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"hammett4", ",", "logP4"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"hammett4", ",", " ", "logP4"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"hydrogood", "=", " ", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"subData", "[", 
+        RowBox[{"[", "All", "]"}], "]"}], ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "4", "]"}], "]"}], "\[LessEqual]", " ", "0"}], " ", 
+        "&"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "sampleHG", ",", "XsubHG", ",", "\[Sigma]HG", ",", " ", "logPHG", ",", 
+       "i1HG", ",", " ", "i2HG", ",", " ", "logkiHG"}], "}"}], " ", "=", " ", 
+     
+     RowBox[{"Transpose", "[", "hydrogood", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"hydrogoodData", " ", "=", " ", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{"\[Sigma]HG", ",", "logPHG", ",", " ", "logkiHG"}], "}"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"hydrogoodRegression", " ", "=", " ", 
+     RowBox[{"LinearModelFit", "[", " ", 
+      RowBox[{"hydrogoodData", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"hammett5", ",", "logP5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"hammett5", ",", " ", "logP5"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"paraSub", "=", " ", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"subData", "[", 
+        RowBox[{"[", "All", "]"}], "]"}], ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "5", "]"}], "]"}], "==", " ", "0"}], " ", "&&", "  ", 
+         
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "6", "]"}], "]"}], "==", " ", "0"}]}], " ", "&"}]}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "samplePS", ",", "XsubPS", ",", "\[Sigma]PS", ",", " ", "logPPS", ",", 
+       "i1PS", ",", " ", "i2PS", ",", " ", "logkiPS"}], "}"}], " ", "=", " ", 
+     
+     RowBox[{"Transpose", "[", "paraSub", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"paraSubData", " ", "=", " ", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{"\[Sigma]PS", ",", "logPPS", ",", " ", "logkiPS"}], "}"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"paraSubRegression", " ", "=", " ", 
+     RowBox[{"LinearModelFit", "[", " ", 
+      RowBox[{"paraSubData", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"hammett6", ",", "logP6"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"hammett6", ",", " ", "logP6"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"metaSub", "=", " ", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"subData", "[", 
+        RowBox[{"[", "All", "]"}], "]"}], ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "5", "]"}], "]"}], "==", " ", "1"}], " ", "&&", "  ", 
+         
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "6", "]"}], "]"}], "==", " ", "0"}]}], " ", "&"}]}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "sampleMS", ",", "XsubMS", ",", "\[Sigma]MS", ",", " ", "logPMS", ",", 
+       "i1MS", ",", " ", "i2MS", ",", " ", "logkiMS"}], "}"}], " ", "=", " ", 
+     
+     RowBox[{"Transpose", "[", "metaSub", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"metaSubData", " ", "=", " ", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{"\[Sigma]MS", ",", "logPMS", ",", " ", "logkiMS"}], "}"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"metaSubRegression", " ", "=", " ", 
+     RowBox[{"LinearModelFit", "[", " ", 
+      RowBox[{"metaSubData", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"hammett7", ",", "logP7"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"hammett7", ",", " ", "logP7"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"orthoSub", "=", " ", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"subData", "[", 
+        RowBox[{"[", "All", "]"}], "]"}], ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "5", "]"}], "]"}], "==", " ", "0"}], " ", "&&", "  ", 
+         
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "6", "]"}], "]"}], "==", " ", "1"}]}], " ", "&"}]}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "sampleOS", ",", "XsubOS", ",", "\[Sigma]OS", ",", " ", "logPOS", ",", 
+       "i1OS", ",", " ", "i2OS", ",", " ", "logkiOS"}], "}"}], " ", "=", " ", 
+     
+     RowBox[{"Transpose", "[", "orthoSub", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"orthoSubData", " ", "=", " ", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{"\[Sigma]OS", ",", "logPOS", ",", " ", "logkiOS"}], "}"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"orthoSubRegression", " ", "=", " ", 
+     RowBox[{"LinearModelFit", "[", " ", 
+      RowBox[{"orthoSubData", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"hammett8", ",", "logP8"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"hammett8", ",", " ", "logP8"}], "}"}]}], "]"}]}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.8255094968256407`*^9, 3.8255096663368073`*^9}, {
+  3.825509828136077*^9, 3.825509836741601*^9}, {3.825510041279413*^9, 
+  3.8255103064307537`*^9}, {3.8255107133037653`*^9, 3.825510742699156*^9}},
+ CellLabel->
+  "In[140]:=",ExpressionUUID->"3423a6e7-3732-4095-8672-a40a93a92985"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{GridBox[{
+     {"\"\<Name of Dataset\>\"", "\"\<Regression\>\"", "\"\<R-squared\>\""},
+     {"\"\<Entire Dataset - No filter\>\"", 
+      RowBox[{"\"\<logKi = \>\"", " ", 
+       RowBox[{"Normal", "[", "allldrugRegression", "]"}]}], 
+      RowBox[{"allldrugRegression", "[", "\"\<RSquared\>\"", "]"}]},
+     {"\"\<Electron-withdrawing Samples\>\"", 
+      RowBox[{"\"\<logKi = \>\"", " ", 
+       RowBox[{"Normal", "[", "ewithdrawRegression", "]"}]}], 
+      RowBox[{"ewithdrawRegression", "[", "\"\<RSquared\>\"", "]"}]},
+     {"\"\<Electron-donating Samples\>\"", 
+      RowBox[{"\"\<logKi = \>\"", " ", 
+       RowBox[{"Normal", "[", "edonateRegression", "]"}]}], 
+      RowBox[{"edonateRegression", "[", "\"\<RSquared\>\"", "]"}]},
+     {"\"\<Hydrophobic Samples\>\"", 
+      RowBox[{"\"\<logKi = \>\"", " ", 
+       RowBox[{"Normal", "[", "hydrobadRegression", "]"}]}], 
+      RowBox[{"hydrobadRegression", "[", "\"\<RSquared\>\"", "]"}]},
+     {"\"\<Lipophobic Samples\>\"", 
+      RowBox[{"\"\<logKi = \>\"", " ", 
+       RowBox[{"Normal", "[", "hydrogoodRegression", "]"}]}], 
+      "\"\<Only one sample - value \ncannot be calculated\>\""},
+     {"\"\<Meta Substitution Samples\>\"", 
+      RowBox[{"\"\<logKi = \>\"", " ", 
+       RowBox[{"Normal", "[", "metaSubRegression", "]"}]}], 
+      RowBox[{"metaSubRegression", "[", "\"\<RSquared\>\"", "]"}]},
+     {"\"\<Ortho Substitution Samples\>\"", 
+      RowBox[{"\"\<logKi = \>\"", " ", 
+       RowBox[{"Normal", "[", "orthoSubRegression", "]"}]}], 
+      RowBox[{"orthoSubRegression", "[", "\"\<RSquared\>\"", "]"}]},
+     {"\"\<Para Substitution Samples\>\"", 
+      RowBox[{"\"\<logKi = \>\"", " ", 
+       RowBox[{"Normal", "[", "paraSubRegression", "]"}]}], 
+      RowBox[{"paraSubRegression", "[", "\"\<RSquared\>\"", "]"}]}
+    },
+    GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}], ",", " ", 
+   RowBox[{"Frame", " ", "\[Rule]", " ", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.825510437734228*^9, 3.8255106711158943`*^9}, {
+  3.825510763478787*^9, 3.825510787855691*^9}, {3.8255114824622793`*^9, 
+  3.825511495269495*^9}},
+ CellLabel->
+  "In[160]:=",ExpressionUUID->"118af23c-5f8e-460e-8bf5-5f6fc73ded77"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Name of Dataset\"\>", "\<\"Regression\"\>", "\<\"R-squared\"\>"},
+    {"\<\"Entire Dataset - No filter\"\>", 
+     RowBox[{"\<\"logKi = \"\>", " ", 
+      RowBox[{"(", 
+       RowBox[{"6.712534117397361`", "\[VeryThinSpace]", "-", 
+        RowBox[{"0.8088060161434595`", " ", "hammett1"}], "+", 
+        RowBox[{"0.6368983933326491`", " ", "logP1"}]}], ")"}]}], 
+     "0.2043180148776194`"},
+    {"\<\"Electron-withdrawing Samples\"\>", 
+     RowBox[{"\<\"logKi = \"\>", " ", 
+      RowBox[{"(", 
+       RowBox[{"9.553729903547099`", "\[VeryThinSpace]", "-", 
+        RowBox[{"7.96230280272641`", " ", "hammett2"}], "+", 
+        RowBox[{"0.6909133048660984`", " ", "logP2"}]}], ")"}]}], 
+     "0.19075701464030745`"},
+    {"\<\"Electron-donating Samples\"\>", 
+     RowBox[{"\<\"logKi = \"\>", " ", 
+      RowBox[{"(", 
+       RowBox[{"5.994056418106415`", "\[VeryThinSpace]", "-", 
+        RowBox[{"3.2899628252779567`", " ", "hammett3"}], "+", 
+        RowBox[{"0.7777534805743815`", " ", "logP3"}]}], ")"}]}], 
+     "0.9930347460159107`"},
+    {"\<\"Hydrophobic Samples\"\>", 
+     RowBox[{"\<\"logKi = \"\>", " ", 
+      RowBox[{"(", 
+       RowBox[{"6.578432820115164`", "\[VeryThinSpace]", "-", 
+        RowBox[{"0.8544841179025953`", " ", "hammett4"}], "+", 
+        RowBox[{"0.7104790009531852`", " ", "logP4"}]}], ")"}]}], 
+     "0.21824336901277872`"},
+    {"\<\"Lipophobic Samples\"\>", 
+     RowBox[{"\<\"logKi = \"\>", " ", 
+      RowBox[{"(", 
+       RowBox[{"2.3600000000000003`", "\[VeryThinSpace]", "+", 
+        RowBox[{"6.555555555555556`", " ", "hammett5"}], "-", 
+        RowBox[{"7.612903225806455`", " ", "logP5"}]}], 
+       ")"}]}], "\<\"Only one sample - value \\ncannot be calculated\"\>"},
+    {"\<\"Meta Substitution Samples\"\>", 
+     RowBox[{"\<\"logKi = \"\>", " ", 
+      RowBox[{"(", 
+       RowBox[{"2.800747645684349`", "\[VeryThinSpace]", "+", 
+        RowBox[{"7.569588231579321`", " ", "hammett7"}], "+", 
+        RowBox[{"0.5145861360900654`", " ", "logP7"}]}], ")"}]}], 
+     "0.9223486272467208`"},
+    {"\<\"Ortho Substitution Samples\"\>", 
+     RowBox[{"\<\"logKi = \"\>", " ", 
+      RowBox[{"(", 
+       RowBox[{"2.057598040498115`", "\[VeryThinSpace]", "+", 
+        RowBox[{"4.572440089995812`", " ", "hammett8"}], "+", 
+        RowBox[{"0.8108060380912511`", " ", "logP8"}]}], ")"}]}], 
+     "0.9915050281736738`"},
+    {"\<\"Para Substitution Samples\"\>", 
+     RowBox[{"\<\"logKi = \"\>", " ", 
+      RowBox[{"(", 
+       RowBox[{"6.929027102569034`", "\[VeryThinSpace]", "+", 
+        RowBox[{"1.5518648507212003`", " ", "hammett6"}], "+", 
+        RowBox[{"0.65018166253867`", " ", "logP6"}]}], ")"}]}], 
+     "0.9432475451515334`"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.825510671588539*^9, 3.825510791170025*^9}, {
+   3.825511492594863*^9, 3.82551149658619*^9}, {3.82560925392579*^9, 
+   3.825609281993137*^9}, 3.825609423011351*^9},
+ CellLabel->
+  "Out[160]=",ExpressionUUID->"61eacbc2-0641-4205-9244-eb269ce16a95"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Optimal Parameters", "Subsection",
+ CellChangeTimes->{{3.823531759537956*^9, 3.823531761704273*^9}, 
+   3.824046665986711*^9, {3.825608826422061*^9, 
+   3.825608829153818*^9}},ExpressionUUID->"db47c128-3c54-4e24-94ee-\
+73401e545864"],
+
+Cell["\<\
+Out of all the regression calculations, the one built solely on \
+electron-donating samples had the highest R-squared value at 0.993. The data \
+used to build this regression model is as follows. As seen in the table, all \
+the compounds in this set have a substitution in the para position, as seen \
+by the zero values for I_1 and I_2. Therefore, for the optimal compound, the \
+substitution will occur in the para- position. \
+\>", "Text",
+ CellChangeTimes->{{3.8256088310426083`*^9, 3.825608883166391*^9}, {
+  3.825608970722897*^9, 3.825609088542604*^9}, {3.825609226040249*^9, 
+  3.825609233906756*^9}, {3.825609293893982*^9, 3.825609390654456*^9}, {
+  3.825609432058826*^9, 
+  3.825609473596686*^9}},ExpressionUUID->"9091808e-2f0e-4b42-b78c-\
+6cf3af66da09"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"edonate", " ", "=", " ", 
+   RowBox[{"Insert", "[", 
+    RowBox[{"edonate", ",", "header", ",", "1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"edonate", " ", "//", " ", "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.8256089473686*^9, 3.8256089651003838`*^9}},
+ CellLabel->
+  "In[128]:=",ExpressionUUID->"2f74b0fd-9a5f-4022-ab44-b5aa4c0e9811"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Sample\"\>", "\<\"X\"\>", "\<\"\[Sigma]\"\>", "\<\"logP\"\>", "\<\"\
+\\!\\(\\*SubscriptBox[\\(I\\), \\(1\\)]\\)\"\>", \
+"\<\"\\!\\(\\*SubscriptBox[\\(I\\), \\(2\\)]\\)\"\>", \
+"\<\"\\!\\(\\*SubscriptBox[\\(logK\\), \\(i\\)]\\)\"\>"},
+    {"2", "\<\"4-CH3\"\>", 
+     RowBox[{"-", "0.17`"}], "0.69`", "0", "0", "7.09`"},
+    {"3", "\<\"4-C2H5\"\>", 
+     RowBox[{"-", "0.15`"}], "1.31`", "0", "0", "7.53`"},
+    {"4", "\<\"4-C3H7\"\>", 
+     RowBox[{"-", "0.15`"}], "1.64`", "0", "0", "7.77`"},
+    {"5", "\<\"4-C4H9\"\>", 
+     RowBox[{"-", "0.15`"}], "2.45`", "0", "0", "8.3`"},
+    {"6", "\<\"4-C5H11\"\>", 
+     RowBox[{"-", "0.15`"}], "2.97`", "0", "0", "8.86`"}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.825608902043042*^9, 3.825608965439439*^9, 
+  3.8256092882979*^9},
+ CellLabel->
+  "Out[129]//TableForm=",ExpressionUUID->"294838a5-7c97-4a04-a7e4-\
+8f6592d9c557"]
+}, Open  ]],
+
+Cell["\<\
+In addition, since the compound will be electron-donating, the Hammett \
+constant value must be negative. The average of the Hammett constant values \
+for the set of compounds above is -.154. As seen in the data above, the \
+Hammett Constant value has almost no variation at all. Therefore, it follows \
+that the Hammett Constant does not hold as much important in the regression \
+model. This can be confirmed with the following calculation. The p-value for \
+the Hammett constant is very high at 65%, showing that it doesn\
+\[CloseCurlyQuote]t hold much importance in the model. \
+\>", "Text",
+ CellChangeTimes->{{3.82560947633663*^9, 3.8256095203054733`*^9}, {
+   3.825610539806806*^9, 3.825610592156621*^9}, {3.8256107623983393`*^9, 
+   3.8256108082413483`*^9}, 3.82561114997068*^9, 
+   3.825611748015326*^9},ExpressionUUID->"3a386e3f-5bf2-474c-b2f4-\
+775bb9aa08f3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"importances", " ", "=", 
+  RowBox[{
+  "edonateRegression", "[", "\"\<ParameterTable\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.8256106698658133`*^9, 3.825610673517126*^9}, {
+  3.8256107305716963`*^9, 3.82561073892194*^9}, {3.8256108139419537`*^9, 
+  3.825610823519701*^9}, {3.825611314464471*^9, 3.8256113307366953`*^9}},
+ CellLabel->
+  "In[205]:=",ExpressionUUID->"211b1765-b77d-446c-a391-fc29ad18e8e4"],
+
+Cell[BoxData[
+ StyleBox[
+  TagBox[GridBox[{
+     {"\<\"\"\>", "\<\"Estimate\"\>", "\<\"Standard Error\"\>", "\<\"t\
+\[Hyphen]Statistic\"\>", "\<\"P\[Hyphen]Value\"\>"},
+     {"1", "5.994056418106415`", "1.048891034278904`", "5.714660743789495`", 
+      "0.02928264719828577`"},
+     {"hammett3", 
+      RowBox[{"-", "3.2899628252779567`"}], "6.282111263639791`", 
+      RowBox[{"-", "0.523703367738792`"}], "0.6527319630667878`"},
+     {"logP3", "0.7777534805743815`", "0.06197021611527916`", 
+      "12.550440023116545`", "0.006288834828323542`"}
+    },
+    AutoDelete->False,
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+    GridBoxDividers->{
+     "ColumnsIndexed" -> {2 -> GrayLevel[0.7]}, 
+      "RowsIndexed" -> {2 -> GrayLevel[0.7]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{
+     "ColumnsIndexed" -> {2 -> 1}, "RowsIndexed" -> {2 -> 0.75}}],
+   "Grid"], "DialogStyle",
+  StripOnInput->False]], "Output",
+ CellChangeTimes->{
+  3.825610674070695*^9, 3.8256107393731823`*^9, {3.825610814793557*^9, 
+   3.825610823987094*^9}, {3.825611318951002*^9, 3.825611331302513*^9}},
+ CellLabel->
+  "Out[205]=",ExpressionUUID->"568a4ef2-9318-4df0-a987-25c70cc2aef5"]
+}, Open  ]],
+
+Cell["\<\
+A new regression formula can be examined using solely the logP values. \
+\>", "Text",
+ CellChangeTimes->{{3.825610828689761*^9, 3.825610861442254*^9}, {
+  3.825610970048402*^9, 
+  3.8256109712597847`*^9}},ExpressionUUID->"a377aa65-ef1d-4c4f-832d-\
+101f9dd939d5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"edonateDatasmall", "=", " ", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"logPED", ",", " ", "logkiED"}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"edonateRegressionsmall", " ", "=", " ", 
+   RowBox[{"LinearModelFit", "[", 
+    RowBox[{"edonateDatasmall", ",", " ", 
+     RowBox[{"{", "logPx", "}"}], ",", 
+     RowBox[{"{", "logPx", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<pki = \>\"", ",", " ", 
+   RowBox[{"Normal", "[", "edonateRegressionsmall", "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<R squared value =\>\"", " ", ",", " ", 
+   RowBox[{"edonateRegressionsmall", "[", "\"\<RSquared\>\"", "]"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.825610866768371*^9, 3.825610957530547*^9}},
+ CellLabel->
+  "In[191]:=",ExpressionUUID->"9328c0f7-e241-4c70-9531-dcc2807eb521"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"\<\"pki = \"\>", "\[InvisibleSpace]", "6.5413903079842335`"}], 
+   "\[VeryThinSpace]", "+", 
+   RowBox[{"0.7553033620396062`", " ", "logPx"}]}],
+  SequenceForm[
+  "pki = ", 6.5413903079842335` + 0.7553033620396062 $CellContext`logPx],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.825610958013398*^9},
+ CellLabel->
+  "During evaluation of \
+In[191]:=",ExpressionUUID->"0a6caa12-d74a-449a-bea1-4b5232d9fb70"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"R squared value =\"\>", "\[InvisibleSpace]", 
+   "0.9920795825668804`"}],
+  SequenceForm["R squared value =", 0.9920795825668804],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.825610958016252*^9},
+ CellLabel->
+  "During evaluation of \
+In[191]:=",ExpressionUUID->"81406a92-a557-4bea-90a6-1db25082e65c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Even without taking the Hammett Constant values into consideration, this \
+model built on the electron-donating samples still has the highest R-squared \
+value. Using this equation, we can calculate the logP value needed for a \
+logKi value of 10.45.\
+\>", "Text",
+ CellChangeTimes->{{3.825610973331311*^9, 
+  3.825611031021531*^9}},ExpressionUUID->"8cad090e-d46d-4304-b6c9-\
+0974c401f858"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"logPvalue", " ", "=", " ", 
+   RowBox[{"NSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"edonateRegressionsmall", "[", "logPxx", "]"}], "==", 
+       "10.45"}], "}"}], ",", " ", "logPxx"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"logPvalue", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.825611037689767*^9, 3.82561104026752*^9}, {
+  3.8256116959724913`*^9, 3.825611700824523*^9}},
+ CellLabel->
+  "In[218]:=",ExpressionUUID->"c7d3b203-8d56-4a7a-8e7b-ab42a73b035c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"logPxx", "\[Rule]", "5.174887188984614`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.825611042823028*^9, {3.825611699081974*^9, 3.82561170118708*^9}},
+ CellLabel->
+  "Out[219]=",ExpressionUUID->"3a7bb95a-19c2-4ec7-8ea8-719517dce4fe"]
+}, Open  ]],
+
+Cell["\<\
+We can plug this value of logP into the original regression equation that \
+also included the Hammett Constant to find the Hammett Constant value. \
+\>", "Text",
+ CellChangeTimes->{{3.825611054050685*^9, 
+  3.8256110800165567`*^9}},ExpressionUUID->"da3c4639-9fc0-4aec-bb6b-\
+61121409d53e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hammettvalue", " ", "=", " ", 
+   RowBox[{"NSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"edonateRegression", "[", 
+        RowBox[{"hammettxx", ",", "5.174887188984614"}], "]"}], "==", 
+       "10.45"}], "}"}], ",", " ", "hammettxx"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"hammettvalue", "[", 
+  RowBox[{"[", "1", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"finalpki", " ", "=", 
+   RowBox[{"edonateRegression", "[", 
+    RowBox[{
+     RowBox[{"-", ".1310522586359609"}], ",", "5.174887188984614"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.8256111009404097`*^9, 3.825611134781266*^9}, {
+   3.82561151063138*^9, 3.825611517786767*^9}, 3.825611595549899*^9},
+ CellLabel->
+  "In[211]:=",ExpressionUUID->"0edf84a5-777a-4091-ab77-37e657aaacb1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"hammettxx", "\[Rule]", 
+   RowBox[{"-", "0.1310522586359609`"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.825611125982025*^9, 3.8256111368255043`*^9}, 
+   3.8256115458536386`*^9, 3.82561159755825*^9},
+ CellLabel->
+  "Out[212]=",ExpressionUUID->"406f2130-c8b1-48dd-bfcd-3f38f5d20a9e"]
+}, Open  ]],
+
+Cell["\<\
+Finally, we can confirm that these parameters provide the wanted logKi value. \
+\>", "Text",
+ CellChangeTimes->{{3.82561117096653*^9, 
+  3.82561118387446*^9}},ExpressionUUID->"c79eaeae-5146-4e69-81cc-\
+dbebb7c51fdf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{GridBox[{
+     {"\"\<Hammett Constant Value\>\"", "\"\<logP Value\>\"", 
+      "\"\<I1 Value\>\"", "\"\<I2 Value\>\"", 
+      "\"\<Calculated logKi Value\>\"", "\"\<Percent Error\>\""},
+     {"\"\<-0.1310522586359609\>\"", "\"\<5.174887188984614\>\"", 
+      "\"\<0\>\"", "\"\<0\>\"", "finalpki", 
+      RowBox[{
+       RowBox[{"(", 
+        FractionBox[
+         RowBox[{"10.45", "-", "finalpki"}], "10.45"], ")"}], "*", "100"}]}
+    },
+    GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}], ",", 
+   RowBox[{"Frame", " ", "\[Rule]", " ", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8256111867392282`*^9, 3.825611256433715*^9}, {
+  3.8256114371626587`*^9, 3.825611541118991*^9}, {3.825611593037112*^9, 
+  3.825611654636997*^9}},
+ CellLabel->
+  "In[215]:=",ExpressionUUID->"68833d43-3fb5-4a6c-84a7-2b863e383c4c"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Hammett Constant Value\"\>", "\<\"logP Value\"\>", "\<\"I1 \
+Value\"\>", "\<\"I2 Value\"\>", "\<\"Calculated logKi Value\"\>", \
+"\<\"Percent Error\"\>"},
+    {"\<\"-0.1310522586359609\"\>", "\<\"5.174887188984614\"\>", "\<\"0\"\>", \
+"\<\"0\"\>", "10.45`", "0.`"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.825611542714267*^9, 3.825611547457115*^9}, 
+   3.82561159903938*^9, 3.825611658236532*^9},
+ CellLabel->
+  "Out[215]=",ExpressionUUID->"615d411b-905f-4fe8-bf1b-5cca96da01b7"]
+}, Open  ]],
+
+Cell["\<\
+As based on the above table, the optimal compound with a logKi value of 10.45 \
+would be electron-donating, with a Hammett Constant value of around -.131. \
+The compound will also be hydrophobic and lipophilic, as shown by the \
+positive logP value of 5.17. The substitution will occur at the para- \
+position, since the I1 and I2 values are zero. \
+\>", "Text",
+ CellChangeTimes->{{3.825610764291753*^9, 3.825610765559042*^9}, {
+  3.825611766860824*^9, 3.825611872331213*^9}, {3.825612197524229*^9, 
+  3.825612199599283*^9}},ExpressionUUID->"a653e20e-a007-47b3-98bc-\
+d9748c7ae82c"],
+
+Cell[TextData[{
+ "Genez very much appreciates the opportunity to conduct this work and hopes \
+that the results are satisfactory. We look forward to a long working \
+relationship with ",
+ StyleBox["Vertextin",
+  FontFamily->"Times New Roman",
+  FontWeight->"Regular"],
+ ", and wish your company success in its scientific ventures."
+}], "Text",
+ CellChangeTimes->{
+  3.7896836902322187`*^9, {3.822494952314452*^9, 
+   3.82249495602846*^9}},ExpressionUUID->"35985f17-24c4-48f0-aa91-\
+357e4d62d231"],
+
+Cell[TextData[{
+ "I certify that this work was completed by me on March 25, 2021.\
+\[NonBreakingSpace] All references and resources are \
+cited.\[NonBreakingSpace] Assistance was provided by NAME OF PERSON(S) (if \
+any)\n\[NonBreakingSpace] Electronic signature:\[NonBreakingSpace]",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1: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
+DAaDwWAwGAyGzMX/5MvDKg==
+     "], {{0, 38}, {153, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{153, 38},
+   PlotRange->{{0, 153}, {0, 38}}]], "Input",ExpressionUUID->
+  "d7e1cda7-d8c6-45cd-a0b9-b29725025174"]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 3}},
+ CellChangeTimes->{
+  3.789248270537753*^9, {3.789248868110652*^9, 3.789248868433384*^9}, {
+   3.789685193549652*^9, 3.789685196394864*^9}, {3.7927875693280582`*^9, 
+   3.7927875706838207`*^9}, {3.79287421011534*^9, 3.7928742104884872`*^9}, {
+   3.82241181677135*^9, 3.822411821336666*^9}, {3.823005485880225*^9, 
+   3.823005487076716*^9}, {3.8237056842334957`*^9, 3.823705687950408*^9}, {
+   3.824055815041966*^9, 3.824055815271233*^9}, {3.8242304913768063`*^9, 
+   3.8242304916614847`*^9}, {3.825678552524467*^9, 
+   3.825678553071307*^9}},ExpressionUUID->"587b7d85-7a51-4fdb-8d40-\
+ed627dea20bf"],
+
+Cell["References:", "Author",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.789248411602501*^9, 
+  3.789248425666044*^9}},ExpressionUUID->"afd2eee2-2f41-4ba8-b551-\
+ff5b39de9c5c"],
+
+Cell["https://www.ncbi.nlm.nih.gov/books/NBK557736/", "ItemNumbered",
+ CellChangeTimes->{{3.8240558307342567`*^9, 3.8240558359937572`*^9}, {
+   3.824230499903863*^9, 3.8242305080697117`*^9}, 
+   3.8256785468291483`*^9},ExpressionUUID->"cdfc4b53-1818-4b85-b478-\
+7774860a4247"]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Working",
+WindowSize->{Full, Full},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PaperSize"->{1224, 1584}},
+Magnification->0.75,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    BoxData[""], "Input", 
+    CellChangeTimes -> {{3.788974678986841*^9, 3.788974680021716*^9}}], 
+   Cell[
+    StyleData["Section"], FontFamily -> "Arial", FontSize -> 28, FontWeight -> 
+    "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Subsubsection"], FontFamily -> "Arial", FontSize -> 19, 
+    FontWeight -> "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Text"], FontFamily -> "Times New Roman", FontSize -> 15, 
+    FontWeight -> "Regular", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Subsubsection"], FontFamily -> "Times New Roman", FontSize -> 
+    19, FontWeight -> "Bold", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Section"], CellFrame -> {{0, 0}, {0, 2}}], 
+   Cell[
+    StyleData["Subsection"], FontFamily -> "Arial", FontSize -> 20, 
+    FontWeight -> "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Subsubsection"], TextAlignment -> Left, FontFamily -> 
+    "Times New Roman", FontSize -> 19, FontWeight -> "Bold", FontSlant -> 
+    "Plain", FontVariations -> {
+     "StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]]}, Visible -> False, FrontEndVersion -> 
+  "12.0 for Mac OS X x86 (64-bit) (April 8, 2019)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 298, 5, 58, "Text",ExpressionUUID->"9cae76f1-ab34-4cd1-a628-1663f50b823e"],
+Cell[859, 27, 1006, 16, 90, "Text",ExpressionUUID->"7c9ac64e-9d2f-4141-a798-b3ccd5b39d55"],
+Cell[CellGroupData[{
+Cell[1890, 47, 248, 5, 50, "Section",ExpressionUUID->"c0b381ed-f3b4-4f01-af92-ae8b5753cdcd"],
+Cell[CellGroupData[{
+Cell[2163, 56, 205, 4, 39, "Subsection",ExpressionUUID->"8b4bb4d0-5f47-409f-bad8-cc58ee2970ce"],
+Cell[2371, 62, 1412, 21, 42, "Text",ExpressionUUID->"e5e66d67-f637-40b2-a0d9-d75be1cc3735"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3820, 88, 280, 4, 39, "Subsection",ExpressionUUID->"2c9b9b10-f6c2-4c17-9f96-5dd1086472d8"],
+Cell[4103, 94, 2492, 41, 220, "Text",ExpressionUUID->"b1ef5451-c63c-46c8-aa14-502b7cb51881"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6644, 141, 186, 4, 50, "Section",ExpressionUUID->"d3f9c95f-6921-4641-ac0a-7b5e45aad5f9"],
+Cell[6833, 147, 836, 13, 25, "Text",ExpressionUUID->"ef4f7138-acbf-4c53-8e4f-5e5d69025135"],
+Cell[CellGroupData[{
+Cell[7694, 164, 783, 12, 24, "ItemNumbered",ExpressionUUID->"b9d8317e-c991-4f64-8b41-1986c2351307"],
+Cell[8480, 178, 784, 13, 24, "ItemNumbered",ExpressionUUID->"9a82fb30-6d6c-4e5d-a6d9-bcbbad8dd168"],
+Cell[9267, 193, 794, 13, 24, "ItemNumbered",ExpressionUUID->"8278fa1f-79d8-4497-b7e8-1c073310139b"],
+Cell[10064, 208, 808, 12, 24, "ItemNumbered",ExpressionUUID->"b47e2929-f8d8-47db-8399-13646a5a4411"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10909, 225, 199, 3, 39, "Subsection",ExpressionUUID->"c696edb9-d459-40c6-9d93-280df863f5c9"],
+Cell[11111, 230, 3621, 69, 495, "Input",ExpressionUUID->"5d1796e1-19e1-4520-a21a-a4f02714fc2f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14781, 305, 182, 4, 48, "Section",ExpressionUUID->"83e6fbc6-e3e4-46d7-970a-09b8901b8222"],
+Cell[CellGroupData[{
+Cell[14988, 313, 193, 3, 39, "Subsection",ExpressionUUID->"18771a3a-c6cf-4334-bb59-8d3d937c2ab2"],
+Cell[15184, 318, 3641, 96, 196, "Input",ExpressionUUID->"7a6e4c68-c8ca-4d1c-9f3e-12bd82fb1270"],
+Cell[18828, 416, 7152, 197, 401, "Input",ExpressionUUID->"3423a6e7-3732-4095-8672-a40a93a92985"],
+Cell[CellGroupData[{
+Cell[26005, 617, 2242, 43, 161, "Input",ExpressionUUID->"118af23c-5f8e-460e-8bf5-5f6fc73ded77"],
+Cell[28250, 662, 3188, 68, 164, "Output",ExpressionUUID->"61eacbc2-0641-4205-9244-eb269ce16a95"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31487, 736, 239, 4, 39, "Subsection",ExpressionUUID->"db47c128-3c54-4e24-94ee-73401e545864"],
+Cell[31729, 742, 773, 13, 40, "Text",ExpressionUUID->"9091808e-2f0e-4b42-b78c-6cf3af66da09"],
+Cell[CellGroupData[{
+Cell[32527, 759, 392, 9, 39, "Input",ExpressionUUID->"2f74b0fd-9a5f-4022-ab44-b5aa4c0e9811"],
+Cell[32922, 770, 1262, 31, 97, "Output",ExpressionUUID->"294838a5-7c97-4a04-a7e4-8f6592d9c557"]
+}, Open  ]],
+Cell[34199, 804, 880, 14, 56, "Text",ExpressionUUID->"3a386e3f-5bf2-474c-b2f4-775bb9aa08f3"],
+Cell[CellGroupData[{
+Cell[35104, 822, 432, 8, 22, "Input",ExpressionUUID->"211b1765-b77d-446c-a391-fc29ad18e8e4"],
+Cell[35539, 832, 1244, 27, 56, "Output",ExpressionUUID->"568a4ef2-9318-4df0-a987-25c70cc2aef5"]
+}, Open  ]],
+Cell[36798, 862, 272, 6, 24, "Text",ExpressionUUID->"a377aa65-ef1d-4c4f-832d-101f9dd939d5"],
+Cell[CellGroupData[{
+Cell[37095, 872, 943, 23, 70, "Input",ExpressionUUID->"9328c0f7-e241-4c70-9531-dcc2807eb521"],
+Cell[CellGroupData[{
+Cell[38063, 899, 469, 12, 18, "Print",ExpressionUUID->"0a6caa12-d74a-449a-bea1-4b5232d9fb70"],
+Cell[38535, 913, 357, 9, 18, "Print",ExpressionUUID->"81406a92-a557-4bea-90a6-1db25082e65c"]
+}, Open  ]]
+}, Open  ]],
+Cell[38919, 926, 400, 8, 40, "Text",ExpressionUUID->"8cad090e-d46d-4304-b6c9-0974c401f858"],
+Cell[CellGroupData[{
+Cell[39344, 938, 569, 15, 39, "Input",ExpressionUUID->"c7d3b203-8d56-4a7a-8e7b-ab42a73b035c"],
+Cell[39916, 955, 274, 6, 25, "Output",ExpressionUUID->"3a7bb95a-19c2-4ec7-8ea8-719517dce4fe"]
+}, Open  ]],
+Cell[40205, 964, 299, 6, 24, "Text",ExpressionUUID->"da3c4639-9fc0-4aec-bb6b-61121409d53e"],
+Cell[CellGroupData[{
+Cell[40529, 974, 850, 22, 54, "Input",ExpressionUUID->"0edf84a5-777a-4091-ab77-37e657aaacb1"],
+Cell[41382, 998, 324, 7, 25, "Output",ExpressionUUID->"406f2130-c8b1-48dd-bfcd-3f38f5d20a9e"]
+}, Open  ]],
+Cell[41721, 1008, 226, 5, 24, "Text",ExpressionUUID->"c79eaeae-5146-4e69-81cc-dbebb7c51fdf"],
+Cell[CellGroupData[{
+Cell[41972, 1017, 877, 19, 50, "Input",ExpressionUUID->"68833d43-3fb5-4a6c-84a7-2b863e383c4c"],
+Cell[42852, 1038, 690, 15, 44, "Output",ExpressionUUID->"615d411b-905f-4fe8-bf1b-5cca96da01b7"]
+}, Open  ]],
+Cell[43557, 1056, 593, 10, 40, "Text",ExpressionUUID->"a653e20e-a007-47b3-98bc-d9748c7ae82c"],
+Cell[44153, 1068, 496, 12, 40, "Text",ExpressionUUID->"35985f17-24c4-48f0-aa91-357e4d62d231"],
+Cell[44652, 1082, 4066, 73, 65, "Text",ExpressionUUID->"587b7d85-7a51-4fdb-8d40-ed627dea20bf"],
+Cell[48721, 1157, 185, 4, 30, "Author",ExpressionUUID->"afd2eee2-2f41-4ba8-b551-ff5b39de9c5c"],
+Cell[48909, 1163, 276, 4, 24, "ItemNumbered",ExpressionUUID->"cdfc4b53-1818-4b85-b478-7774860a4247"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

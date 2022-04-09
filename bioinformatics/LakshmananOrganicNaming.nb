@@ -1,0 +1,2127 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    117791,       2119]
+NotebookOptionsPosition[    117363,       2103]
+NotebookOutlinePosition[    117700,       2118]
+CellTagsIndexPosition[    117657,       2115]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Grid", " ", "[", 
+  RowBox[{GridBox[{
+     {"\"\<Name\>\"", "\"\<IUPAC Name\>\"", "\"\<Structure\>\"", 
+      "\"\<SMILES\>\"", "\"\<Description\>\""},
+     {"\"\<octane\>\"", 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<octane\>\"", ",", "\"\<IUPACName\>\""}], "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<octane\>\"", ",", "\"\<BlackStructureDiagram\>\""}], 
+       "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<octane\>\"", ",", "\"\<SMILES\>\""}], "]"}], 
+      "\"\<A simple chain of 8 carbons.\>\""},
+     {"\"\<hexane\>\"", 
+      RowBox[{
+       RowBox[{"ChemicalData", "[", 
+        RowBox[{"\"\<hexane\>\"", ",", "\"\<IUPACName\>\""}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}], 
+      RowBox[{
+       RowBox[{"ChemicalData", "[", 
+        RowBox[{"\"\<hexane\>\"", ",", "\"\<BlackStructureDiagram\>\""}], 
+        "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}], 
+      RowBox[{
+       RowBox[{"ChemicalData", "[", 
+        RowBox[{"\"\<hexane\>\"", ",", "\"\<SMILES\>\""}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}], 
+      "\"\<A simple chain of 6 carbons\>\""},
+     {"\"\<cyclohexane\>\"", 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<cyclohexane\>\"", ",", "\"\<IUPACName\>\""}], "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<cyclohexane\>\"", ",", "\"\<BlackStructureDiagram\>\""}], 
+       "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<cyclohexane\>\"", ",", "\"\<SMILES\>\""}], "]"}], 
+      "\"\<A simple ring of 6 carbons.\>\""},
+     {"\"\<3-ethylhexane\>\"", 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<3-ethylhexane\>\"", ",", "\"\<IUPACName\>\""}], "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{
+       "\"\<3-ethylhexane\>\"", ",", "\"\<BlackStructureDiagram\>\""}], "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<3-ethylhexane\>\"", ",", "\"\<SMILES\>\""}], "]"}], 
+      "\"\<A simple chain of 6 carbons with a chain of 2 carbons attached to \
+the third carbon. \>\""},
+     {"\"\<1,3-dimethylcycloheptane\>\"", "\"\<1,3-dimethylcycloheptane\>\"", 
+      
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1:eJzt2r1OwlAYxvFGF0enLkzuXViIq91caxw60oDEAZqAifEGmu6s3biEXgAL
+S2+BpVfh7uNHiBE0x7ak1fP/JZDyUTi8OefpaQ8XURzcnTiOszjTXTB8vJrP
+h08353pwO1vcT2bj0fXsYTwZzy+jUz05+ri9bj8DAAAAAAAAAAAAAAAAAP6U
+9XrtOI7neWEYJkmS53lZlm03qovSNB0MBtooiiLLsjiOfd9332hDD/WkXmq7
+me0LgmA6nR58SV1LHUzdTJ1NXc7mvx1ut9ter7darQzfH0XRcrk8apO6SSVS
+oVQu8102m02/3z9ek7pJg05Dr8KOqpUq1nh7OksxrjCvtq/GoEZis+3pLOWz
+pgc1P6GpxnRc/V9qT8LXr5U9Cd/ICLIk4RuplSUJ31QyOwYa+aIW0a/MkVfm
+OA6aY35lrn6t/kFoG6p5jmNJqu/UOXe2JNU/q3ZNxp5U/6LCtT57Un2f4TXk
+oiiSJPF9355U/87BtYmyLLMsC8PQdV3P8+I4zvO8leZ1zW7NSwVRWVQclUiF
+UrlYJdz3vpaqgabhxlLgz6w9xlVg2ySzDpvnA79l4YS8MuZOhgh2cwS7OYLd
+HMFujmAHAAAAAAAAAAAAAAAAAKu8AO66MnQ=
+         "], {{0, 100}, {100, 0}}, {0, 
+         255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{100, 100},
+       PlotRange->{{0, 100}, {0, 100}}], "\"\<CC1CCCCC(C1)C\>\"", 
+      "\"\<A simple ring of 7 carbons with two methyl groups attached.\>\""},
+     {"\"\<2-methyl-1-butene\>\"", "\"\<2-methylbut-1-ene\>\"", 
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1:eJzt2zFKw2AYgOGgi6N7Ji8RXB1dIx6gpbE4JEIqiMkFeo8cJPfIPbr7Sxwy
+WPhTUDR9HmhpQz7I98LfrTfrl/zpIkmS3VV4y1dvd3W9en+4Dl8eq93ztio2
+99VrsS3q2/VluLj5en1+PgAAAAAAAAAAAAAAAMAvSpJkv9/PnWrb9rTB/64s
+yzRNu66LuXms1DTN3MHFGIYhz/Msy/q+P3bPtNKswUUK+4atw+6hwPT6t5Vi
+BhcvnKlwssL5OkRUOjZ4Psbf7bHS3P8zjoM/9GB/0HTZs1r8BFrF0yqeVvG0
+iqdVPK3iaRVPq3haxdMKAAAAAAAAAAAAAABm+QA/HKJt
+         "], {{0, 100}, {100, 
+         0}}, {0, 255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{100, 100},
+       PlotRange->{{0, 100}, {0, 100}}], "\"\<CCC(=C)C\>\"", 
+      "\"\<A chain of 4 carbons with a double bonded carbon at the second \
+carbon.\>\""},
+     {"\"\<2,4-heptadiene\>\"", "\"\<(2E,4E)-hepta-2,4-diene\>\"", 
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1: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
+HfuwLtr2uX+zxIVH8HffEutZr1gHmRNmbngk+ej0uzcyci/zKq+l2p5Rzz3i
+ffYVdMlHx6xXrILpfe6Heka9rV6R78Z45VJ6un20rXWb+Wjb86K5d3mR+y+H
+Nv2Mer2v4IyO7dT56PTvYPU701apXjG2tn3uzWfUt2K9Yh205aN5jZrPdI/5
+7o15tT2jXu8rOK5jW/Xzr8189IGYfAZyFeoVq6DtHUl5DZrzP++5jfCev2Vq
+23uZkb83retzP01tczR/m+3zXsPMO2+L2bGy7pyVz1lOvys6Y+zn1Le7zCVz
+X02uO1dh/+XQ2t6ZlvPzSGpG0zIfvW8zVrleMbb6d5qsoeczsNulXrHqcj07
+xn7vZZp+Rr3eV9D1vYY7Y+v8TrZo+ft411wJ5lU/o36wmhGwdbS9G2HV3msI
+DGNXzO5z/8iYHQIWYvqdabtG7Q2wSFlb2z12JwAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhvZ/
+6bYuiA==
+         "], {{0, 250}, {250, 0}}, {0, 255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{250, 250},
+       PlotRange->{{0, 250}, {0, 250}}], "\"\<CCC=CC=CC\>\"", 
+      "\"\<A chain of 7 carbons with double bonds between carbon 3/4 and 5/6.\
+\>\""},
+     {"\"\<methyl propyl ether\>\"", "\"\<1-methoxypropane\>\"", 
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1:eJzt3VusXFUZAODfgpTY09oqKIpaRCwKsUbxUiOJYDSCygum8UkTiIUYk5K0
+JkSfmvjiK/qAPvjCo29WjSZGY+IFbzHiLRgvRfESERVvqIgc1989I3Oma85t
+5uy9Z+b7kp+E07n8e89es/da699rXnjrHTfftisiTl5Y/nPzLXdef+LELR94
+x/7yP0ePn3zv7cePvefG4+8/dvuxE0duPa/88bFBnB8AAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQt3rg
+wNNX9+07srp378kSp0usDuL02b/lv5XHdJ0nsD2lHd800q43ipu6zhfYvNWV
+lWeV8/SHttDGm8jnlOd2nT+wsbHr89Wz1+d79rx89Pr87PV8/q25nh997Oku
+cwc2NtZuT2db3vA5Tf999LvhZBu5Als3OD8/2ca3cA1ezu8vWHNe38T3A9C+
+cl6+e6SvfWTLz19ZeePI8+/eiRyB7Ts79jaDNrrm+t2YHPTKmnPxFHNka+bi
+ymvOMkdgOmvG30pfe4rXOWQ8buldWeLbJb5Q4vkd58KINX3zKerbzs636aMv
+q+yn3VPivyVWB/FYibtK7OswLwZGx8r79FrMhd0l7izx53iyfY/HH0rcUeK8
+jnIktHO27boS34vJ7Xs8vlriVV0kinbOll0dTf970rn7fSU+WOKvEx7z6RKX
+tZ30shudD5vqdUb752pgF9FFJT4eTb97vO3+J5q++DNGHn9pNH32JyqPf7TE
+h0vsbSn3pTez8fa1dXHG2xdH9quzf/3HqJ+fP1fiJes8/9Ulvjbhub8u8e4S
+T9mh3Bkwf846bijx46i30Z+V2Ozxku34aIlfTnitb5V43SwTZy31cFRcHk0/
+utYm/xLN+f2p23jdPSVOlfhn5XXz+j6v858zXepMor6dgZzrzn72v+Pcdvh4
+NP3zWbTDrKG5p/IeGX+P5rvgwhm8DyPG7lfb0vl4zfWA+9XmVfbBbyvx26i3
+va+UeOUOvO91MXlu7lfR9N2ZoW3df958P7j/fL5dW+I7UW9rZ2LzffDt2hVN
+e/79hBy+VMK5Y4Yqa0ZtaT0Z60LOlctich/8b9HUuT2txXz2RzPX9q9KPllP
+m9f5xn1mxPpwC28lmvb0j5g8FnZpZ9lFHIrJ3z9ZX5vfP7s7y26BjM21We91
+MeTcVl4f55x1rQ19vcRrOsvuXG8q8YOo5/qTEm/vLrXOvKHEa2f9ohut3z7r
+9yuuiuX8/HZazk1/M+pt5nfR31qVnLvL8cGsp63lnvW3V3eWXXtGa42znmE7
+c5p9kcfZsG7qG7ED31tL6JKYXHuac9inopnT7rusp835vqyvHd+OrMPN+b6L
+Ostu5+SYRW73eK3x8S6TmtI7oz728uwuk5pTOfd8Kpq56Np58JMlXtRVclPI
++tqss61tU9blLsr9r3nOe1eJ30R9Wz/TXWpT+0TUt+nhaO6BOr+71OZK1pdm
+TWptX95X4vruUpuZHBP6edS3Ma9rb+gutam9JSbXGuc2L8J4WNbFfz/q2/jT
+aI5h6g5HM9dc23c5N5198F2dZTd7F0Rz/s463No255j95Z1lt3WbqTW+oLPs
+Zi/P2zn28lDUt/mLJV7WWXb9U1uzaRhZv5pzaPs7y27nZR1u9s+zLre2/X1f
+u2q9WuP8TGdVa9xXB6I5Rmvbn+Mxuf0Xd5Zd9/K7PeeS/xSTz2eHOsuufddE
+U59b2xdZz5vnjj5dz2QuG9UaX9NZdu3LNUQ/G/V9kcd4HuuLdD2zGW+LZg65
+tk9+GM3c87LK/uuZqO+brO+9trvU/m+9WuMHoumf9nGesw157P4o6vvm/hJv
+7S611qy3ZlPWim33ftFFk/W6+f2f9bvj+ynnGHO+4WAHeR0cvHdtnrOLWuO+
+ymM4j+VHon6sZxu4qrPsds6kedSMx+PcNZtorLd2Vdb9Zr9wpYU8NlNr/LwW
+8pg3z4zm2K6NvQzXDV+Ee2o2WrPp8yVe2ll28yPree+N+j58MHauHnBYa/zg
+hPe+N/pVa9xXryjx5ajvw5x3n+e6iWWYR23TsM1lnW9tn2Zd8CxruY/EfNYa
+91ke87+I+j79bjT1//Ni2eZR27aZtasumeL1h7XGtXnOeao17qth3cR664b3
+uW5i2edR23ZFNGNitWNlO2tX7Y6Na42vmEnmpOdG0yYm1Y1kW+rTuuHmUbuV
+NZhZD1zb95utwTw6eGztNe4bvAc7I3/jJ3/rp7bv8/6APtRNmEfth43Wrsoa
+zMOV5x0e/FvtOQ/F4tUa99Vw3fAHov5Z5G/4vr6DvA6GedQ+Wq8Gc3j/5MWD
+yGvG2n2yw1rjAy3nTtNmTkXzez+1sZc26yZyrcxJ9158qsSLW8qDybJeOO/9
+rH1Gj0b9OFodPOfKDvJlrWxD+dtvtc8oa29OtJDDxyrvbR61n/Ja8EzUj5fR
+OBPupeyjXKumVjfRxm9MZN3aw4P3M4/af+vVYD4Sao37bjj2MqybyLbXVu1o
+HhsfafH9mN6wBvOJQdw1+BvzIdvaR2O+19yiPW8eBAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALfgfhT6f
+cg==
+         "], {{0, 250}, {250, 0}}, {0, 255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{250, 250},
+       PlotRange->{{0, 250}, {0, 250}}], "\"\<CCCOC\>\"", 
+      "\"\<A simple chain of 4 carbons and an oxygen one carbon from the \
+right.\>\""},
+     {"\"\<diphenylcyclopropane\>\"", "\"\<(2-phenylcyclopropyl)benzene\>\"", 
+      
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1: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
+Y/b7tarmo9robVaMna9XEaM6DA/kcZdEyqtp+1h9jSmN0X/B2rUPD3+s6X7u
+qT6S3tV9LYbf5f+8asM/d1zrmKv1VrdPe4EVdbj6tA/g0+au63OBmK2tGKPv
+81xLl8Xq555qFvn6ZH5+SmP1bV0T6msnaey8qu65Pgt8LagFkfKKpVxjav9A
+nP87ooZwO8Xu56JnPb3XPWRFf/921j5srpZBW5rOFPTrQQ4OXM+FeUxf66h9
+wNz1/ciqP+v0DOOfe94WKS+MLkU/9/Su68+H8bUa2tj09xt63tAaUa0N7GuN
+PY23a9z9yaxtG4jTs73u12MxksK0pOjnml+ba8uuq1H9gkXm5mfa0lS/1T+z
+Ht3IneiO3bL2/MD/r3XQft0EZ7O1T+x+rhpEfr5GTftd2zzXpnWr/jtqVuJc
+2uwaK36fXV4n0Vex+rnGc/waEt9vtM+1reNvXnktyKK0qbSWvuv973WXxLlg
+ak33c82baf7MP//+Pv/nqlpqbfR6K+YCOU96WeVaktckzgXVmurn+p7WO+0j
+VnzWaz7tzyb8c2IorwUJ7dccIr//VrUEZyfOBdWa6Ofan3y3Ff1b8zGvneC/
+P4Xyfs3dE+fSFuX9t2clzgVhk+znqvWv+SU/56y1I9oP0cW9mVNZbO66vmv9
+r6cxivJe/OckzgVhk+jnWjux0Ir9yP4Mp6q14F2l/Zp+LcibE+eSmsYpRtmL
+j3YYt59rzLy8xuUr5s4R66tTzF2n6mStkTiXlDROofvQ9jq2cGbaz19s7qwW
+379Va6AL82Tj0rOL1rrrms9LnEsqGp/wz22hvfhoj+n2c62B1N4OXzNFz26q
+ITOkNSTlcxNfmDiX2DQuofEJXT/1Xrtj1H6ueVLtI3/Ciu/wT9pwawvcbu4e
+3Jw4j9g0LuH34nelji1G6+d6TrvPiv79Q+v+PNm4VC/G76Ufyp5rjUf4z/l3
+J84F0xPq51r3cJMV/VvzZPpO53w1R/toh7Tn+lxz16tzW/oyVzoUU/Vz1SXX
+O7c//8/Pk4X2Kw2R9lyPUhe1D8p1bA9JnAumb6rzz/1Z3WpLjLPtQ0api9oH
+/vxzndfC+efd4/v5P5mrS+77t85LHMI82bj0DnO/uXt2fuJcmuJrWmvd7zaJ
+c8HMXGbF71D/rbGli6zf302Ttq8V9+7FiXOZtHJN68sT54KZO9aKOm16NmPf
+5cx81tw9vDV1IhOmcQdfO2vtxLlgPNp/0tUzgtpC9c39PNveiXOZFF8XTtd0
+SuJcgLbwNaD7UvdV4w26Hq3zrarzCgzN86w4d2Z+4lzGpXEG/3xyQOJcgLbx
+57LofXadxLmMQ+MMuo7bE+cBtFH5/MEP1sRub24uM3Y7qSavva2YP+j6eZBA
+U7T23/eTLUeIi90uDuSkcYUH87gPTeeigQEa5fxB1ds5NEF7ZSCn+XneWs/b
+p/MggSaoXr1fD/66xLmMqnw27AmJcwG64gIr9vF2YZ5N6yCVr8YX2JMIjEZn
+vj9uru+8PXEudcrrfPZJnAvQNdqv7/fur5s4lxB/1umnUycCdJDqqd1r7R6/
+1viBr3e3ReJcgK7y+zpVr+MjWTuzRU11B/wavguaugHAQNxhaebKR22qHcQ8
+GjAe1eTRWtLFLWzXZe0dM7oqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAH/
+B8cT7aU=
+         "], {{0, 250}, {250, 0}}, {0, 255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{250, 250},
+       PlotRange->{{0, 250}, {0, 250}}], 
+      RowBox[{"\"\<C1C(C1C2=CC=CC=C2)C3=CC=CC=C3\>\"", "\n"}], 
+      "\"\<Two benzene rings connected by a triangular ring of \
+carbons.\>\""},
+     {"\"\<1,3-cycloheptadiene\>\"", "\"\<cyclohepta-1,3-diene\>\"", 
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1: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
+         "], {{0, 250}, {
+         250, 0}}, {0, 255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{250, 250},
+       PlotRange->{{0, 250}, {0, 250}}], "\"\<C1CC=CC=CC1\>\"", 
+      "\"\<A benzene ring missing one of the double bonds.\>\""},
+     {"\"\<3-methylbutanal\>\"", 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<3-methylbutanal\>\"", ",", "\"\<IUPACName\>\""}], "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{
+       "\"\<3-methylbutanal\>\"", ",", "\"\<BlackStructureDiagram\>\""}], 
+       "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<3-methylbutanal\>\"", ",", "\"\<SMILES\>\""}], "]"}], 
+      "\"\<A chain of four carbons with an extra carbon single bonded to \
+carbon 2 and an oxygen double bonded to carbon 4.\>\""},
+     {"\"\<3-hexanone\>\"", "\"\<hexan-3-one\>\"", 
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1:eJzt3VmsXVUZAODFIKK2haIWFa3FYB0xaiAiDmglTqQvmCYYExPQ0vhSTKsh
+Jppc44PGNx99MvER36oExxCNirNxHiM446woDojW9XfffT13n33udIa99zrf
+l/yEXs6w7mL9Z+9//2ufXnrTLdfffHZK6eT5+R/X33jrS0+cuPFtr7kw/+HI
+8ZNvOnb86BtfdfwtR48dPXHVTefkHz6wGucmAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAACYqcd1PYDCPSvHx3Nc1fVACvfyHB/LcVnXA+mhx+S4
+L8enUrUemZ39OW7L8d8cp1fjwzme1OWgChTrNtZvPccP5nh/jkd3Oaieifmo
+5+c/OT6YY1+nIxq+h+R4c44/pf/P7Wj8Lcc7cjysqwEWYk+O9+b4V2qf53tz
+vCHH2V0NsEfemeMfaf38/DbHzTnO6XBcQ3RWjtfn+FlaP59xfPlCjn82fv6r
+ZJ534rwct+b4Y1o/n3/N8dW0/vwp4vs5Xt3JSPsl6vM4rsfxfHR+fpDjcIfj
+GpJn57gzjR9T7sjxtNXHRN14W8tjYm2+aMHjHarrUpW3o/MX6zbWb32d6coc
+n0vj8/yJHE9f8Hj76Iocn03t8/PMDsfVZxenqtZpfkb+OE3+jDyU4xtpfJ6j
+dj8w3+EO1jNStQ6bcxbr9YqWx8e51ZEcP208/oEc78txwfyH3Gv1/NyT1s/P
+v5NrG6MemmMlVeeKo/P0lxy3pKpG30jUjHGO/5vG8/+e4z05ds1j0AN0Yary
+MvJzdJ7uSdU6PWuT5z8iVf+fmrXp71P1/2nZa6aHp6oGaq7jP6Rqfs7tbmid
+i/X1wzReg8d6fNQ2X2tvqvK6eS3pF6n6HNhsHZcq8i/WWay35ufgSqrW53Y8
+IVXnXc3a/Ws5XjyTEQ/bJal9fpbx2sblOT6Zxs8dP5PjuVO+9sFUnbc3X/tL
+OZ4/5WsPzStzfDetn4dYf7EOHz/la78kx9fT+DzH3F865WuXIK5tfD4t57WN
+qFWiZonaZfR3vzvN/jrltTm+ncbXeFy/2z/j9+qb2FfQ9ll3V47nzfB96prp
+3sb71DXT7hm+1xAt27WNSf2b+1Z/Pq/+d9T20W/7XeN9o+++kuP8Ob1vV6IP
+HuunWbv8OlX5OK/+d9T+kdfNfucvUzX/y953X4ZrG1GTNPs39bnjJQsaw0Wp
+Wv8PNsYR/fkSavdYJ5FPsY9g9PeLvFtJ1TpbhCen9n7nl3O8YEFj6LNJ1zai
+tnpFh+OaRtQgbf2b6Mde2dGYov9+R8uY7kxV336IYr9A7Bto/k6Rb13tT39Z
+jm+m8c/2GNMTOxpTn1yTJl/bGMpe7qg52vo3UaNspX+zCHEtIPryo+Or9ypf
+3OG4tuNAaq/BYz/Boe6GtSb6SHGOEXtCR8d3f6rOMZZ9r/KkaxtRc0X+7Olu
+aBuq+zdRc4yOO2qSlbT9/s28Re0e440+/eh4o/+5kqq+fh/FfoCoheNa1+i4
+Y//APGvwnaprpua115+nMmqmadW1+xD2credh8yqfzNvj01VD6BZu0df/0iH
+42qq9/zHfoDm53/k/d7uhrYlT81xexo//4j7FWbZAxiqPu/lntS/iZy/psNx
+7UT07aN/3/xdos9/eYfjClenqv/fVs8d7HBcOxH9zu+kYddM87TRXu5F70uY
+1L+JWqOP547bEbX73Wn979XVXuW2++4jYl/AtQseyyzVNdOfU3u/s68106Js
+tpd73vsS4v036t+Uspc8rhFFXz/6+6O/Z/T/F7FXOfr6K6la96PvH/sAYv43
+2/M/FI9M7f3OH6V+1Uxd6WJfwgtzfKXxfl33b+Zt0XuVN7rvPvLhojm8Zx88
+J8en0/jaiu+26bpm6oOozea9L+FAaj93jP5oH/o3i7CI+7C3ct996aJm+knq
+R83UR1GrfSuNX++eZl9C3b+5v/G69XfkLNt9dvPaq7yT++5LtlHNFD8/r7uh
+9cJG+xK2cx/20Ps38xb7AFbS9HuVp73vvnSTvpspaqbrOhxXX0Qe7nRfQty3
++cXG8yI+kuMp8xvyIG10H/ZmPcVZ3ndfuviOG99dNVnkZdu+hMjj5n3YsVek
+bc0OvX+zCJHTW92rPM/77ku2bPd37kTbvoR6r9qB1N6/ie9Rdu64ddHfaNtj
+U+9Vjnxvu+8+4kMdjHeoZlUzlSqubbw9jedzs29Z57+/V2b7PpAmz2vzz6P5
+/u4uBjtw0WeKWrL5mXl7l4PqkUn7EiI+mpanfzMPo3l+LLX3O+vP0bcmeT4L
+zZrpWLfD6Z3I5/j7s2LdxZ6MZezfzNpontfzGfdhfy9V8xz3a9T33R9N8nxW
+6j2i8ffuLft5e5u4tvHatLjvGildW56H6Pe+Lq1fg/IchmlSnreR5zBM8hzK
+J8+hfPIcyifPoXzyHMonz6F88hzKJ8+hfPIcyifPoXzyHMonz6F88hzKJ8+h
+fPIcyifPoXzyHMonz6F88hzKJ8+hfPIcyifPoXzyHMonz6F88hzKJ8+hfPIc
+yifPoXzyHMonz6F88hzKd1mOq1dj7yaP3Tfy2P1zHhcAAAAAAAAALNzpvXv3
+n96164bTe/a86/Tu3afXovrz4fzf9nU9RmBncn5fkPP45Lrcnhwnux4vsD1x
+jM65e2o1h0+dOW7n4/q6x8RxPn4++jjHdhiMkdw9usXH18f9U/MeGzC9yO0z
+OZtr8m0+7+ROngcs1mpNvqPj8upzq/OA/O/zGB8wvXwsPrSa55vdhzrp+Tes
+HtMPzXpswGysnXs3rrlt4/kHXX+HfqvPu6d8DdfjoMfqfnjXrwHMjzyH8s0w
+z523Q09NfR2u2iPnOhz02NR9tWofrL4a9Ng0+2TOPN8+GRiEtb0uW9zbvva8
+He6XBboxch/LlurstRx3/Q0Gw32psDxGjtObfs+EmhyGa/XYftj3RgEAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwHD9D8bkyz0=
+         "], {{0, 250}, {250,
+          0}}, {0, 255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{250, 250},
+       PlotRange->{{0, 250}, {0, 250}}], "\"\<CCCC(=O)CC\>\"", 
+      "\"\<A chain of 6 carbons with a ketone at  carbon 3.\>\""},
+     {"\"\<diethyl ether\>\"", "\"\<ethoxyethane\>\"", 
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1:eJzt3VuoXFcZAOBlerE2JzGpVq21ploJtmK9UiMVasSC0tZCSt9EaGhafEkh
+EYpvB3zx1afiq0/iYxQUvFBQvKB4QRGlSota71bFe60e13/2GTMzWXvus9fM
+nO+Dv9CcnNn/Xvtfe2bttWblVacfOfXQgZTS+avyf0498OjJc+ce+PB9R/L/
+3H/2/AcfPnvmwfee/dCZh8+cO3H6svyHz+7F5QkAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBZ7Rw9+sKd
+w4dP7Bw6dD7HhRw7e3Fh98/iZ/nv1M4TmE3ux/f09etxcU/tfIHJ7WxtvSS/
+T39kij7eRPxO/t3a+QPjDX0+39n9fH7w4Bv6P5/vfp6PP2s+z/f/3Qs1cwfG
+G+q3F6Ivj/2dZvzef28430WuwPT23p8v9vEpPoPn9/dXDryvT3B/ALqX35cf
+6xtrn5j697e23tX3+48tI0dgdrvP3hbQRwc+v3smBytl4L14jjmygbm4/JqL
+zBGYz8DztzzWnuN1jnsex55jOV5WOwkuGhibz7G+bXe+zRh9VUWfO9bh8b6U
+4+85Pppjq8Pj0qL/WfkqvRYLEX0s+lr0uS92dMz7cuz0xS9yfCDH8zo6PgX6
++UaKPhV9K/pYf5871cGxvz50zF58IcfrOzg+Bfr5xom+FH2q1Ne+1sHxD+bY
+zvGPwvH/m+MTydi9c/3zYXO9Tv/43BrYGq5LTR+KvjTcv6LPbaemD3blhr18
+Svebv+7lc1WH+exrC3vePrguzvP27kRf2U5N3yn1qehrN9RKLjuZ47uFvCJ+
+lprxBUtm/nytRR+JvlLqQ9G33lkts0EHUpPrb1I513g+b730ElkPt5aiT0Tf
+KPWZ6EvRpw5Uy67dkdQ8//9nujTv/6Tms4faWRLr29dG9IHoC9EnhvtJ9J3o
+Q0eqZTe54zk+ncr3qT/meDTH86tlt6GGvq821fvxwOcB31dblqj5qP3oA6W+
+EX3meLXsZvfuHD9I5XP6cY6766W2mWb6/nlzf/D98+WKWo+aL/WF76emr6yz
+K3I8lON3qXyOn8/xumrZbaDCnlFT7SdjX8iFitqOGi/VfvSJ6BtXVMtu8a7J
+8bEcz6VLz/fZHB/P8eJq2W0Y+8NVF7UcNR21PVzv/05NX7imWnbLd3OOz6by
+/e0POR7JcVm17DbI0Fyb/V67EbUbNRy1XKrxqP3XVsuue1FXP03ltvhhjvfU
+S62aO3O8adEvOm7/9kUfLzXncOcSXnfVRc1G7ZZq+iepqfn96MrU3Pv+nNqf
+P766WnbduTU130OKc/52Ws0500lF7nEOcS5xTrfWTacTUaNt80tR21HjmzQG
+n1Ws6Y2xTGns/q/UjGUOV8tuea5NzXnHeK3/nE/XTGpOkfvwWDTO8dqaSS1J
+1GTUZtTocN1GLcd5X1ctu9X1lhxfTuX74i9T82xyE8bu8Z73YI5fp/K5frJe
+anOL3EvnFOca57zOn1V6ogajFqMmS+caNfzmatmtjxjHPJnKbfitHO+ol9rc
+7srxo1Q+t1hrsO7zqGHUuok497vqpTa3qL2owdK5Rc3u1zH4rK5Ozdqhv6RL
+2zO+s/epHDfWSm4Gt6T2edQ/pc0bw8W5xDnFubWtm7ilWnbTuzG1j8GjRqNW
+r66V3Aa4PrV/H/dvafX3roo1JzGGK82jPrf3sxdVy2754txGrZuIn63yupze
+nk1Ra6X3m6jN66tlt3luy/HVVL6fruLeVb151N+ncs6P53hjreQqiHN9PJXb
+Itpo1dZNtO3Z1IuoxduqZbfZem3/q1Ru+2/kWMZ88LTuyPGdVM4x1gzs5zHc
+qHUT0WZ31Evt/96emloq5Ri1t2rvKZtqVfeummQe9coKea2aVV03ETWzSns2
+0bgpNc/jSrXS5d5Vh1L7PGp8xzjmUV/eQR7rJtok2qb0PezeuolDHeQxbs+m
+qLGbOsiD0WLvqu+l8jV6Isf9SzpuzAXHPOrTLcf+So63LunYmyTaKNqq1IbR
+ttHGy5p3j9p4ouXYUVMnl3RcZjPJ3lWLXIN5e45vthzrqdTUjzHc5KKtos2e
+SuU2jba+fYHHi1pYxz2baBxNzTxI22foefeuOpaaz3GlMVz8exnbyTzqPKLt
+tlPTlqVnL9H2x+Z4/VF7NkXNrMueTTRi/53PpPL9+pnUrGuY5pnYC1JTf6Pm
+UV+xmNRJTVuOWjexnZprMqm41nHNnym8Xu/Z3zru2URj3N5V49Zg9ubyft7y
+GvFvY7xtGYmzK9o22rjU9nFNJpnjimvctmfTpqw15uIazLb999r2rooaa/t3
+puJ7GcZw3eg9e2n73k9co9K9dtSeTVELm7bWmMa4vaviZzE2e2kave/udjKP
+WkNv3cSofcPj2sU1HLfWeJP3bKIRe1d9LpXv8/H8p/QMLyKeAb2mQr4MimvQ
+tm4irl3pGV5EXPObK+RLPTGme39qX7/cHzG/+r46aTJCXJO2ue/+iGsc19o8
+5/41ag3mb1OzRuPyatkxTlybuEZxrYavn7XGDOvtXRXzODGGi3nUo1UzYhq9
+dRNx7eIa2rOJUe5N671fzX4X1+7e2kkAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPT8D9s0nzc=
+         "], {{0, 250}, {
+         250, 0}}, {0, 255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{250, 250},
+       PlotRange->{{0, 250}, {0, 250}}], "\"\<CCOCC\>\"", 
+      "\"\<A simple chain of 4 carbons and an oxygen two carbons from the \
+right.\>\""},
+     {"\"\<2-chloropropane\>\"", 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<2-chloropropane\>\"", ",", "\"\<IUPACName\>\""}], "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{
+       "\"\<2-chloropropane\>\"", ",", "\"\<BlackStructureDiagram\>\""}], 
+       "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<2-chloropropane\>\"", ",", "\"\<SMILES\>\""}], "]"}], 
+      "\"\<A chain of 3 carbons with a chlorine atom single bonded to the \
+middle carbon.\>\""},
+     {"\"\<4,4-dimethylheptane\>\"", 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<4,4-dimethylheptane\>\"", ",", "\"\<IUPACName\>\""}], 
+       "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{
+       "\"\<4,4-dimethylheptane\>\"", ",", "\"\<BlackStructureDiagram\>\""}], 
+       "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<4,4-dimethylheptane\>\"", ",", "\"\<SMILES\>\""}], "]"}], 
+      "\"\<A chain of 7 carbons with 2 methyl groups bonded to the central \
+carbon.\>\""},
+     {"\"\<butanone\>\"", "\"\<butan-2-one\>\"", 
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1:eJzt3VmsJFUZAODDIqLMwrAMbizjMiqoGBUdl5gMmKDovIySoA8mEAckMUPC
+mBDjy02MiT76YIwvPPii8XHcIy5RXOMeVBQX3FBccN9wuZ7fup25dPetqnun
+u0/d09+X/CTcubf6VJ/+u07V+evUvhtuOXzjqSmlY2fm/xy+/raDt956/Zte
+eXb+n2uPHrv5pqNHXveyo288ctORWw/ccFr+4YNrcXoCAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgOW0unPn/hyH
+chzLcTzH6ro4vvbz+Pf9pdsK9Le6Z8/u1R07rpuS111xPP/dlaXbD7Rb3bXr
+wBbyezLf83ZK7wswKefnkZPM74dGHhOU3ifghHz8fUvLWPy6/5+n79ix9yF/
+E+P75ucbj/HzdkvtE3DCWp6e9Ll2/P7UfHdch6LWzscnjsFxrN7S9uIYP21s
+cNZZl8+67UA/U46/R2ay3clcPz6L7QKbszbOXn8cf9cMt7134jvEnBssXOT1
+PMfW8/weAbqtHW/nPq6eckzf2/1XwCxMHGvndE184lq+sTsszERNzJyuh8d2
+x8YNx+bxOsCk1eb+kxP5t2fPRXN5nbxddTNQxvj8di2vBZwgz6F+8hzqJ8+h
+fhM1MlusZ+98nfF5etfhYGEmrrfPad0n82pQzkSdzM6dh+b0OupkoJAp4+m5
+1J6re4WyJs7RZ7ymm/tYoLwpa0wcn9X1uLU1pdyXCgMwkYszuh5unQkYjtXm
+OQzzXzfKOs9Q1NzXgZzRWlTAydkg1x+6rvPYMd66zrD9tOT6VsNxHAZo7Xzd
+c5dgCbSca7fnt7kz2HZW256L3NTZeC4yAAAAAAAAAAAAAAAAm3FVjtePxXlb
+3NaNY9t5zSwaCJy09+ZYHYtnb3Fb/x7bzo9m0UDgpMlzqJ88h/rJc6ifPIf6
+yXOonzyH+slzqJ88h/rJc6ifPIf6yXOonzyH+slzqJ88h/rJc6ifPIf6yXOo
+nzyH+slzqJ88h/rJc6ifPIf6yXOonzyH+slzqJ88h/rJc6ifPIf6yXOonzyH
++slzqJ88h/rJc6ifPIf6yXOonzyH+slzqJ88h/rJc6ifPIf6yXOonzyH+slz
+qJ88h/rJc6ifPIf6yXOonzyH+slzqJ88h/rJc6ifPIf6yXOo32by/Iwcj2rZ
+ljyHYeqT56fkeG2O3+Z4MMdKjodP2ZY8p6/4/FxZuhFLpCvPD+T40pTfuSfH
+tWPbkud0GR0zfp6az8szyjZnaWyU5zE+f0+O/0z59/VxR47L1rYlz2kz7Zjx
+iaItWh7T8vztOX435ecbxd9zvDXJc6a7ILUfMw6Xa9rSmJbnswp5vtxOy3Fz
+aq7rtH1OvlCqgUtkM3n+vhy35/hXz9+X58vrUI7vp+5x4EqOs8o0cWmcn+MH
+qTtfv5Hj4Lq/e3KOD/f4u7/muHgB+8FwxLWaj6fuz8b7czyhUBuXxek5bsnx
+QGrvi/tTc2301A22E9/ZP+zYRuT6So5HzGVPGIrdOd6RmnnXts/Dt5L5tEW4
+Jsfdqb0v/pHjbTnO7rG9qJ2J74w/dWzzZ6n5zqAucQ4e/d91Dv7rHDem5hjD
+/Fya+o2nPpBj/xa2/5jUXFP9b8f2P5XMmdbixTm+ltr7O67lxHF+T6E2Lou+
+46m7crxkBq93RY7Pd7xWzK/Ed8L5M3g9Fu+S1BwPuo4ZH8nxlDJNXBp9x1O/
+Sc146mEzfO1RzdMvO177gbU2GsttDztScz73t9Ter3HN5lChNi6TPuOpqGmJ
+4/w5c2xHzJespOZ8v60t383x0jm2g5Ozvla1rR//mJrv7TPKNHNp7Ev9xlMf
+zfHUBbbrST3bFb/z+AW2i24b3d8wfh727tRco2F+dqbtMZ6K8/+7prRrffwz
+NeOMnYXaSKOrVnUUn8vxnEJtXBaj8dQv0vYZT8V1gGjLH1J7m2OfYt9OKdPM
+pRX3i67k+HNq75+fpOZ+Rf0zXy/I8eXUbzz16EJtbHNuao7b4/e+jEfs4/ML
+tXHZqFUdjotSUzPYNU99Z9r6+k+L9Kwcn03t+xL7GmPICwq1sXZqVYfjzNR8
+j/4ltffFvWn7jaeirdHme1P7vsW+r6Tpa9mweVHvqFZ1OOI89aepvS/iGtxK
+jkeWaeJMRNtXUjM2bNvXGFu+okwTqzCqrehaY0Ct6mJcnpo60T5j2scVauM8
+XJiafeoaR8ZY87INtsF0alWHY2/qN6fxxRzPK9TGRYh7Yb+Z2t+DGHPGZ3J3
+oTZuF5cktapDEeedt+X4fWrvi1+l9vtFaxJjxhg7xhiy7T2J+t4Yi55WppmD
+pVZ1WOJ883upvS+ifnQlLeecRowh47jdtZbNV3O8qFAbh0St6rBsZk7jiYXa
+OCQxpoy63a5rFvF+XVyojaWpVR2O81LzPveZ07iqUBuHLMaYsf5c23s3Wsvm
+zDJNXDi1qsNhTmN2+q5lE3OSNa9lo1Z1WK7O8Z3U3hfmNDav71o2n0z1rWUT
+eatWdRjiXss+cxofSs1aqmzNc1OzFnjX92icL233tWz6XteJ778LC7VxWexK
+zbE57rVs64s4xs9izSaaucYYo8fcY9t7vl3Xsulbqxp1Bwc32AazEZ+1OLe+
+L7X3RdybGZ+1Wa7ZRCPmjVdSv7Vsri7TxE1xXWdYYu72K6m9L0ZrNp1bqI3L
+JNau/WDqHt/GedW+Qm3solZ1OC5O/e4X/Uxq7sVkseK86NupvW+iZixqx4ay
+lk3fdcDi2ThqVecrnjOykpq52ra++HFSV1jaaC2bqAFr66uoISu5lo1a1eEY
+1RXGc0ba+iLmdqNm3XOHhiOe7R7X3LvWsomasgMLbJda1WGJvo97xdr6YnS/
+6GMLtZFusd5OrLvT1o+jZ0rMey2bzdSqDnEdsJr0rSuM55FcUaiNbM5oLZuo
+FWvr07iHMMZls17LZvSZ6rquo1Z1/kZ1hV1rNsXzR6xRuj31Xcsm7il8+Qxe
+r+9nSq3qYsR7fE9q7wt1hfXYzFo2l27xNdSqDsfTc9yRuvtbXWGdYt3DuFew
+re9Ha9ns6rnNpyW1qkMRdc9xraNrPQN1hfUbrWUTz5ps+yzct/Z7G63v0/ce
+ZJ+p+Ys+jbmKqHtu64v70/Ks2UQjnjXZ55kSUQf5wnV/p1Z1WK7JcXdq74u4
+FyVqF84u1EbKi2dPfiy1f05Ga9nEOfjXO35Xreri3J665zQ+neOZhdrH8PRZ
+y6Yr1Kou1pvTxn0Rz/Z0vyjTjJ5R23U/3HhE/eSrk3myRYu1w8a/m6Mmwv2i
+9BH1jn3qXNSqlveq1PTF6H7Rc8o2h20onpcxrRZarepwxBjqnanuZ5swf6O1
+bEZzNlH/rFYV6hQ1GG9Ing0DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAvfwPf9AxDQ==
+         "], {{0, 250}, {250, 0}}, {
+         0, 255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{250, 250},
+       PlotRange->{{0, 250}, {0, 250}}], "\"\<CCC(=O)C\>\"", 
+      "\"\<A chain of 4 carbons with a ketone at the second carbon.\>\""},
+     {"\"\<2,3-dimethyl-1,3-butadiene\>\"", 
+      "\"\<2,3-dimethylbuta-1,3-diene\>\"", 
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1:eJzt3VmMJlUZxvFXZgR0AEdFBRV7BNyCe1QQIYCa6ETkYnC4EwNxmMzNTBxM
+iAkmc2lCNNE7b700Jsa4xEQUREQUcF/iiriCu6KiuJ7Hmgo9n9+cqq+76pzq
+p/6/5DXBQPfb/fVTy6lT5zzz2kN7rjshIq4/Of3PnmtuuOzw4WveceXO9A97
+D15/YP/BfW/dffDt+/bvO3zBtdvS//nw0doeAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAwOycn+qmhbp4g1/rwJKvtWOAHgFszv5U/1mot23wa31uydd60gA9
+Atgccg74I+eAP3IO+CPngD9yDvgj54A/cg74I+eAP3IO+CPngD9yDvgj54A/
+cg74I+eAP3IO+CPngD9yDvgj54A/cg74I+eAP3IO+CPngD9yDvgj54A/cg74
+I+eAP3IO+CPngD9yDvgj54A/cg74I+eAP3IO+CPngD9yDvgj54A/cg74I+eA
+P3IO+CPngD9yDvgj54A/cg74I+eAP3IO+CPngD9yDvgj54A/cg74I+eAP3IO
++CPngD9yDvgj54A/cg74I+eAP3IO+CPngD9yDvgj54A/cg74I+eAP3IO+CPn
+gD9yDvgj54A/co5aXp3qitpNzAQ5R2nPT/WpaP4+fpVqZ912ZoGco5TTU70/
+1T/i2L+Rd9dsaibIOca2PdWhVL+N///7UD2c6jnVupsHco4xXZjqrlie77b+
+lepArQZngpxjDOek+mjk8636eHAuL4GcY0inpXpvNNfiuXx/K9VrK/U4R3qu
+cftCXbXBr0XO52tbqutS/SLy+f5DNPfqj67TJgZAzufp4lT3RD7f/4zmPP/E
+Sj1iOOR8XnZFv3vwz6Z6SZ0WMQJyPg+npHpXqr9GPt8/SvXGSj1iPOTc26NS
+XZ3qZ5HP959S3ZDqMXXaxMjIua9XpvpSdD8H13y3p1bqEWWQcz9npPpAqn9H
+PuOfT/WySj2iLHLu4+RUR1L9OfL5vi/V3miu6TEP5NyD7sF/Evl8PxTNceCx
+dVpERXcGOd/KXpjqM5HPt67fdR3/9EI9aWx/T6HvhbyTojm2ay7E4t/FR1Kt
+VesMfTw5muxqHC2X8a+kuqRQT5pf177jpmPL+YW+L5bTvdn3Iv/38ZdojgM8
+Z5mWE6N5/vX7yH9+90dzLX9Cob5el+rbCz3oWpExgPL0PtKHo3su1PrS8YB5
+E9NwearvRv7z+ls0x+dTCvV0duTn1725UB9o7reXrQmySn0x1QWlG8f/nBeP
+rNmUqw+melahnnSdd2N0j+3fXqifOetaE6StB6I5B9zR8e+14zlnFPwZ5kxr
+sPV5X/TrqV5TqCfdB/CO23TsTvWdyH8Wf49mzvPjj/43upfSvft9Hf+djuFH
+onlei+GtH8/KfQ5aj1GZ216or1elurujJ95xK6PvmiAfS/Xs43yNHdHk+KGO
+r6HntVeP82PM1rLxrMXS/Zey9IRCPa1Fc0/QNb/utlQvLdTTXPVdE+Sb0X9N
+kLOi3/zJW1K9aKCfY666xrPa+kSq5xbqSffgR6J59pLr6d5grHZs7TXer2O8
++6VLonkOm/v6eo6rY8JTNv6jzFJ7fNY9VO73+4Mol6X2HbefdvT0YPCOWwkl
+1wTR+Is++/s7vp+e6+qzP2mT38/dVMezXpzq1o6e2vHYpxXqaa52Rb9rvFuj
++dyGpOeyR6J5Tpv73nruvnfg7+3iopjeeJauw/rMr9MzmZcX6mmuprQmyLnR
+jM10HWtuTvWCkXvZKtZieuNZ7fznBzt6+mU013PMbxvPKmuC6BrvxIK9aV+9
+r3X0pfFhzdOZ6/sx7fF5auNZfeY/t++47SjY1xxthTVB2nv3BzI9qn4Xzb17
+yeNQTX3Hs0qv2aQ9EW/u6Emla49zCvU0V33XBNG8wqmsCaL5Wzpvdd27a472
+5ZV6LEVzhDVXOPd7KD2edbw9ERdL12eXFepprhzWBNH8mz7jhJqzfV6lHsey
+yppNpcaz+s5/1vy6ku+4zZXbmiCaj/ONyP88mtejc8zplXocylSPz6+P1ec/
+YxxTXBNkKDqX6DmxzhW5n0/nmkNRbq72kJTb70e/43Op8Sz2RJyOKa4JMhbN
+xdbz4K57Q517dlfqcVU6Pn86urOkz/isQj2xJ+J0tGuCaPw591mUXhOkBM3N
+1jmkKxs6F011rFfPB/scn7+a6tJCPbEn4rS8Iaa3JkgNOpfonNJ1765z0+Mq
+9bjMW6Lf3F/tU10qS1OcXzdXU1wTpDblQOcWnWNyv5PfHP33ttVp8xjvjPzx
+WeNZOwv1shb95texJ+L4dC7qc7+kcelSa4JMjc4x+h0tW3t2fX056o9TaFz9
+3lh+n3G89/mH1nd+HXsijq99X1TnotxnofdJS64JMmXPS/XJ6HfvfnalHuWq
+db3o+FxqPGuq8+vmSuecrve1S68JspXoHPTDyP/+9MxXv7/TKvX4oWiOz6Xu
+wVeZX8eeiOOa4pogW5WeSeh66I+R/11qfFl5c3omsV7f90VLzq+bq1NjemuC
+uDgzmvlyXffuGm++qFKPY2jfF53a/Lo5atcE+XnkPwudk3hmuTl6H1vvZfe5
+d99Vp8XBTHF+3Vxpjdu7Iv9Z6Bykc9GZlXp0pOshjSPnfu9ah0Pj0adW6nGj
+tB5Hn/dFS86vm6u1mN6aIHOjcWSNJ2tcOfcZaF2OrbAGSt/9cjS/jvdFx8Ua
+t9OjcWXlo2uMSut0XFipx5z2fdGu+c9av8Nt/vPUrLrG7VZ4X9SN1tnQehu5
+z0fXX7oOe0alHhetsl9Oqfl1c8Uat1tHu2fUjyP/edXe73mI/XIwjFXWuH1F
+pR6xnK6ndF3VtX6prs9K3ruPsV8ONoY1bn1oPY4+6zfdGePu91xivxz0xxq3
+nnS91bXfc7tn1ND7PZfcLwd5q6xxe26lHrE57ViqrsNyn/FQ+z3vinr75eBY
+fZ9Zssatj777PWsu6Ub2e57Sfjlz13eNW55Z+mr3e+4632ptzj77PU95v5w5
+WuWZJWvc+rs0Nr/fs/bL6XpftPZ+OXOxyjNL1ridl43u97zKfgxT2S/HFc8s
+0Vff/Z71HpnGZHlfdDp0LO0aX70xWF8Hj+i73/PxSueU9wRzVUt6Uyz/LHhm
+iS5XRPd8ivXVzn/mfdE6boljPw/WuEVfffd7LrkfA5bTcxGdv3lmiY3Ss5f3
+xfJnMzx7nY4rw3tvE4xPe+Et5vwLVTsCMLRlOb+takcAhkbOAX/kHPBHzgF/
+5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5Bzw
+R84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84B
+f+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc
+8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfO
+AX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/k
+HPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBH
+zgF/5BzwtyPVTQt1oGpHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwBb2X3yy
+7sE=
+         "], {{0, 250}, {250, 0}}, {0, 255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{250, 250},
+       PlotRange->{{0, 250}, {0, 250}}], "\"\<CC(=C)C(=C)C\>\"", 
+      "\"\<A chain of four carbons with an additional carbon double bonded to \
+carbon 2 and 3.\>\""},
+     {"\"\<ethyl acetate\>\"", "\"\<ethyl acetate\>\"", 
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1: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
+zNG5q27K8YOev/1u0o9aQmzzrjF1EbGvbmr9bezLvrHGcS1Q61hjGuPmropx
+WvHMvu/c/6e0evPu1ibGxHftm/Y5OvZh15i7QTy+8KwpJfpxPpLGt5l2/X8w
+1fX+9Kr6Sjq9X+JYPa6e29HuP/vpwrOmtBiH2jcGM+KhHC8vlh2j2nUe7yfH
+vnko9e+/wVjjLyR1vu665q56NOlHXUajdT4Q++rR1u9G52xS5wzE+Mb7U9PP
+so7zza6CvjoPsc9i38U+HB2rqs5hdYyr83HUOawOdQ71U+dQP3UO9VPnUD91
+DvVT51A/dQ71U+dQP3UO9VPnUD91DvVT51A/dQ71U+dQP3UO9VPnUD91DvVT
+51A/dQ71U+dQP3UO9VPnUD91DvVT51A/dQ71U+dQP3UO9VPnUD91DvVT51A/
+dQ71U+dQP3UO9VPnUD91DvVT51A/dQ71U+dQP3UO9Xt/jod34/4pPndf63Mf
+nkNeAAAAAAAAAAAAsG/bR46cv3348LHt8847mWMrx/ZubO38LH6X/6Z0nsD+
+5Do+3qrrSXG8dL7A3m1vbFycz9P3TlHjTcRn8mdL5w9MNnJ9vr1zfX7o0NXt
+6/Od6/n4WXM93/7brZK5A5ON1O1W1PLEzzT37+1jw8lF5ApMb/f8fLrGp7gG
+z+f3y4fO63s4PgCLl8/Lp1r32sem/vzGxvWtz5+aR47A/u08e5tBjQ5dv3sm
+B0tl6Fx8gD6yob64vMxZ5ggczNDzt3yvfYDlHPU8DpbT0L35Aca37fS3uUeH
+pdR+Vr5MywJmR51D/dQ51K/dH3ag5bTvz42BhaUys+ftw+PiPG+HJaL/HOpn
+PBysB+PboX4j76tNdT4euh7wvhostX29f94cH7x/DiukY86oqeaTMS8krAbz
+w8F6GOlrM98rVGzS/O2l8wMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWEb/B1C7miM=
+         "], {{0, 
+         250}, {250, 0}}, {0, 255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{250, 250},
+       PlotRange->{{0, 250}, {0, 250}}], "\"\<CCOC(=O)C\>\"", 
+      "\"\<A chain of 2 carbons with an ester bonded to the second \
+carbon.\>\""},
+     {"\"\<heptanamide\>\"", 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<heptanamide\>\"", ",", "\"\<IUPACName\>\""}], "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<heptanamide\>\"", ",", "\"\<BlackStructureDiagram\>\""}], 
+       "]"}], 
+      RowBox[{"ChemicalData", "[", 
+       RowBox[{"\"\<heptanamide\>\"", ",", "\"\<SMILES\>\""}], "]"}], 
+      "\"\<A chain of 7 carbons and a nitrogen at end of the chain with a \
+ketone at the first carbon from the left. \>\""},
+     {"\"\<3,5-dimethyl-3-heptanol\>\"", "\"\<3,5-dimethylheptan-3-ol\>\"", 
+      GraphicsBox[
+       TagBox[RasterBox[CompressedData["
+1:eJzt3XvILGUZAPDXa5bnfHpSyyzz2EVNSSvMNEqxhFK7gGKFgaB5NMmOoYL1
+Tx2QQuh+gVCoP4pCiiwU7WqZUVlpmV0sy+xqF1Mr00qz0/u4O87sfns+v90z
+O7Oz+/vBI7hndub5dvbdeW/zzr6nnXPCGdumlM7bKf/nhFMvOPrcc099y4m7
+5v85aeN5Z525ccPpx248f8OZG849/LTt8ov392P7BAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAALNr89q1myPq2u6hbZeWDs/bnle8px/nxetb
+nzEwrjrL+eY1ax6Xt7l8qHwPxtLSh2O7+v4C4JHUVc4HyvjS0oWbd975kIF/
+z///0Ou9/VyurENzaivncZ2Obdasec2K+8n/XlzXJ8kXGF8d5fyha3W/Db6q
+Yxa/CUPXfGA6ainna9duGKfcVn4XNoybLzC+Wsp5cX1et26XVR0zb6fuDs1Z
+sW98RKy0j0mOW89fAaxEOYf5V1P7/PJxyuzD9fb8vnFyBSajHw7mX63jaktL
+F67qmMbVoFHmycD8m9q817Vr9xt6/37mvUI7ar+Ppbiuu48FZkad5fzhbd2X
+CgAAAAAAAIy2XY639WO7lnOZdTvmeE+Os3Ns03IuNOv4HC9pO4kJnZTjlhyb
++3FL/zUGRZk+JcfvUvlZ/TR197wznktS75zfluPRLecyjqfmuCyV39nhiH97
+SmvZzZaDcnwpjf6c/pfj4zme2Fp2NOFlqTznm9pNZVV2z3FxjgdSmfetOV7e
+j1srrz/Q33b3VjJt3545PpZ6Zbn4TH6U45jUq/P8pvL6f3K8P8dSK5nShKtS
+71zfl2N9u6ls0fY5zslxZyq/m3/vv7ZjZbsd+6/9o7Ldnf3Xtm8w3zbtlHq/
+2f9M5WdwR44z0uBnsHN/u39Vtru9v922jWVLUw7IcX/qnedLW85llGNz3JzK
+7+KDqXed3muF9+zV3+bByvtu7u9rnsV1+hdpsE4T1+nHrvCevVPvul+tz1+f
+4wVTzZQ2vDeV5/iolnMpRBv8ijT4/ftmjkPH2Meh/fdU93FFf9/z5OAcV6fB
+v/PzqfcbvlpH5/hh5f1R3/9Ujn1qzZQ27ZrjL6l3fn+Q2h2fijZiXIOKOkZE
+tCXjWjXJWNA2aXl79P40H+3RPdKW+ysmEfX16Jf/c2V/96Ze/b5L/bRs2etT
+eW7PaOH48dsS7eg7KnlE23FTjsfUsP+V2qNdG3ePfogLctyVVu6vmNS6HBel
+Xv9csf8Yk4vfAOPu3Rbf9RtT75zGtX3XBo/9whw3pMF6Z7QZ957CsUa1R2/o
+59AFx+X4WRqvv2JS++e4Mg1+VtflsJ5Bt0XfSzEO8+4Gjrc+LW+DRxvx6AaO
+PdweLdru6xs49iQOzPHltHX9FZOKsbifpMHflvit3LOBYzMdn05lG3b/KR1j
+TerVC+9L5Xcn2oRRL2xyTGdUe/S+fm5rGsxjJfFMrTr7Kya1Q+q1C/5WySPG
+7jbleFSDeVCPqNdG30ucxytr3ncx//L3aXCORpSrdTUfaxyj2qORY5vt0aK/
+4q+VnOrsr5jUbqn3u/PfVOYVY3nmG3dPrAdfnMPjatrnETm+mwbrnfE7Mq06
+wyRGtUcj5yMazuPIHN8fymNa/RWTek6Oa9NgjjG298w2k2Iscb0oxqHit3pr
+6mWj5l9GW++Yrcxxmobbo5F7E+3RfVN7/RWTijG829Ly+cZ7tJkUq/baVJ67
+cyd4/6j5l9G2i7roDvWkOFUrtUd3qvlYa9Ns9FdMKq4LMc53Tyrzv6v/Wh3j
+fExPtEuLelmMzY5zLYvv529Tec6jLRdtut1qzrEJo9qj8bedUsO+owzH+P0f
+Kvuehf6KScV9b8N1txgDrKvtx3REG6yYI37xKraP+ZdfTYP1zmv7++m6Ue3R
++FsPnnB/z8/xvaH9zVp/xaQOy/HtNPi3xZjggW0mxYo+msox0y2N1cZzXj6W
+Bu8biTbbpPMvZ9lwe7QYS17ts26enHrzxrvUXzGJYszyT2n5fONdWsyL0R6f
+yjZqzMuojjMV8y/vTuW5vKf/WptjP9M2qj16d1q5PVr0V9xbeU+X+ismFfMQ
+NuX4dyr/7hgrjL+7a/ON5118f4tz9Or+a7FGxc8rrxd90ou0NsmT0vL2aHwm
+x1e2GbVmU5f7Kyb19NSrx1Tr8jF2eGSbSTEgrlFFmY562HAbPNpih7WWXfue
+l3rzvofboyfmuGbo9Xnpr5jUi1NvXZvh+cb7NnDsuJfpXWn1baxFdHIaPDcR
+sVbLG9PirNWykvgMNqbBe8iq94v+McdpqRvjZNMW8zHenAbbPdc1cNx39I9V
+3Gtb9/holxXzL4s1m4pzE/e5zMoc8FlStEejbh79dTFONu/9FZOKdW6i/RK/
+h03MBYo+ZWN+y40aHyk+p0+2mFcXFGNmX2w7kQ5ociwx2kzfSIPf6a/lOKTB
+HGbFqPmX0aaKttUHUlneu3LPdhuKsfbL2k6EZYo1hn6dJh8f7bJR8y+H1wpd
+l8o1X6K/VHtzNOV89kVbalMa/L4/0vholxVjP9X5l8XYz6i1Qt9Q2e60hnLs
+GuW8O1YzPtp1o+4X/UKOZ6zwnuibuymV91uY37Scct49R6XeOqjD46MHtZnU
+Vhp1v+g4a4W+qPK+i6aRYMcp5900L/N1R90vGs8vmWSt0M+m8h6r/epLcS4o
+590W66DG9auL83Wjj/GXabCPcWvWCo1nFRafw+fqSHCOKOfzIebrDo89zep8
+3VHP66hrrdCLKvv0nN2Scj5f4n7CH6fl83XXt5hTYdTzOupeKzTG4m7v7zue
+qT3P916NQzmfP8UaQ9X7M9tcH7h4vmh1rnWxVujOUzjeqZXjnD2F/XeRcj6/
+ivm61TWGml4fOJ4JWn1eR8S01wqNPsrv9I8Vvy2L+szxKuV8/j0rx9fTYFmL
+cjDN59WMer5ok2uFxjh8MUb3wYaOOcuU88URY9G/SsvXYqhzfeBRzxdta63Q
+T6RyLt2ir+OtnC+WeJ5szJeNMeqiHNbxvJoYw4t550UfWDGO3eZaobGWTDEu
+f3VLOcwK5XwxxRj18PyzSZ9XE887vD4N1tFnZa3Qt6Yyp1e2nEublPPF9twc
+30qDZfQraXX13H3S7K8VGvWXWF+hmEe7qM/YU84p7g+LtYSK8lo8r2ZUX3WU
+nU2pO2uFviqVeV7Qci5tUc4pxFj2ptQb2y7KRazPFOU3xsC7vFboNamcO/+E
+dlNphXLOsKel5WveRt33pqHXurRWaIwtFvMIPtJyLm1QztmSV6Re39zmoejq
+WqGXpPJ+mUVb91k5ZyVRX4/xslhXNcbEu7xWaKy1VTzLJfoem5oTOAuUc1Yj
+1rJ5dttJ1OD8VNZLTm45lyYp5yySWLuimG8fc/2ncR/NLFLOWTTxLLbimr6p
+3VQao5yziK5K5f2669tNpRHKOYvogFTea3Npy7k0QTlnUb0vlfX3o1rOZdqU
+cxZV9VkusU72rK+buTWUcxbZWam8pp/eci7TpJyzyOIafmMq18Po0tr341DO
+WXSxllVxTX9ny7lMi3IOKX0mzfezXJRz6D1jvbgf9/KWc5kG5Rx63p7K+vtL
+W86lbso59MQzLIpnrs/bs1yUcyi9LvXWzIo13+fpHhflHEqxdoZ+OKCLlHOY
+f8o5zD/lHOafcg7z7005PpTm+14dAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAACYOf8H+5ryAQ==
+         "], {{0, 250}, {250, 0}}, {0, 255},
+         ColorFunction->RGBColor],
+        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+        Selectable->False],
+       DefaultBaseStyle->"ImageGraphics",
+       ImageSizeRaw->{250, 250},
+       PlotRange->{{0, 250}, {0, 250}}], "\"\<CCC(C)CC(C)(CC)O\>\"", 
+      "\"\<A chain of 7 carbons with an alchohol and methyl ground bonded to \
+the second carbon from the left and a methyl group bonded to the third carbon \
+from the right.\>\""}
+    },
+    GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}], ",", " ", 
+   RowBox[{"Frame", " ", "\[Rule]", " ", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.822252352608169*^9, 3.822252539529771*^9}, {
+   3.822252585540663*^9, 3.822252680276561*^9}, {3.82225277191084*^9, 
+   3.8222528380609694`*^9}, {3.822252897938911*^9, 3.8222533899946213`*^9}, 
+   3.822253476906163*^9, {3.8222535167104597`*^9, 3.822253593114274*^9}, {
+   3.822253634302442*^9, 3.822253646257936*^9}, {3.822253686359468*^9, 
+   3.822253700865888*^9}, {3.822253758833084*^9, 3.822253826751649*^9}, {
+   3.822313705185425*^9, 3.822313706336894*^9}, {3.8223137420555363`*^9, 
+   3.822313769950775*^9}, {3.8223138376977663`*^9, 3.822313843262246*^9}, {
+   3.822313894377637*^9, 3.822313926458611*^9}, {3.8223149394324303`*^9, 
+   3.8223149596249933`*^9}, {3.8223150135549726`*^9, 3.822315062203505*^9}, {
+   3.822315116461812*^9, 3.8223151799953003`*^9}, {3.822315215906993*^9, 
+   3.822315255129657*^9}, {3.822315339825617*^9, 3.822315373005508*^9}, {
+   3.822315406613337*^9, 3.822315465247291*^9}, {3.8223155179147243`*^9, 
+   3.822315548941594*^9}, {3.822315586521208*^9, 3.822315619924245*^9}, {
+   3.822317263433731*^9, 3.822317326594446*^9}, {3.822317358378496*^9, 
+   3.8223173762986917`*^9}, {3.822317442730708*^9, 3.822317492686105*^9}, {
+   3.8223175236054773`*^9, 3.822317647356584*^9}, {3.8223177089036007`*^9, 
+   3.822317851695004*^9}, {3.822318071624381*^9, 3.822318104645794*^9}, {
+   3.8223181511591988`*^9, 3.822318396173828*^9}, {3.822318493694841*^9, 
+   3.8223185286797543`*^9}, {3.822318564587388*^9, 3.822318571473187*^9}, {
+   3.8223186095828543`*^9, 3.822318626383395*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"6b76ffca-2486-4e47-9094-aab75604b84c"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Name\"\>", "\<\"IUPAC Name\"\>", "\<\"Structure\"\>", "\<\"SMILES\"\
+\>", "\<\"Description\"\>"},
+    {"\<\"octane\"\>", "\<\"octane\"\>", 
+     GraphicsBox[{{
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{459.80999999999995`, -25.}, {503.10999999999996`, 0.}}], 
+         {GrayLevel[0], LineBox[{{503.10999999999996`, 0.}, {546.41, 25.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{459.80999999999995`, -25.}, {416.51, 0.}}], 
+         {GrayLevel[0], LineBox[{{416.51, 0.}, {373.21, 25.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{546.41, 25.}, {589.71, 0.}}], 
+         {GrayLevel[0], LineBox[{{589.71, 0.}, {633.01, -25.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.21, 25.}, {329.905, 0.}}], 
+         {GrayLevel[0], LineBox[{{329.905, 0.}, {286.6, -25.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{633.01, -25.}, {676.315, 0.}}], 
+         {GrayLevel[0], LineBox[{{676.315, 0.}, {719.62, 25.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, -25.}, {243.3, 0.}}], 
+         {GrayLevel[0], LineBox[{{243.3, 0.}, {200., 25.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{719.62, 25.}, {762.9200000000001, 0.}}], 
+         {GrayLevel[0], 
+          LineBox[{{762.9200000000001, 0.}, {806.22, -25.}}]}}}, {}, {}},
+      ImageSize->{{0., 257.03727999999995`}, {0., 
+       21.2}}], "\<\"CCCCCCCC\"\>", "\<\"A simple chain of 8 carbons.\"\>"},
+    {"\<\"hexane\"\>", "\<\"hexane\"\>", 
+     GraphicsBox[{{
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.21, -25.}, {416.51, 0.}}], 
+         {GrayLevel[0], LineBox[{{416.51, 0.}, {459.80999999999995`, 25.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.21, -25.}, {329.905, 0.}}], 
+         {GrayLevel[0], LineBox[{{329.905, 0.}, {286.6, 25.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{459.80999999999995`, 25.}, {503.10999999999996`, 0.}}], 
+         {GrayLevel[0], 
+          LineBox[{{503.10999999999996`, 0.}, {546.41, -25.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, 25.}, {243.3, 0.}}], 
+         {GrayLevel[0], LineBox[{{243.3, 0.}, {200., -25.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{546.41, -25.}, {589.71, 0.}}], 
+         {GrayLevel[0], LineBox[{{589.71, 0.}, {633.01, 25.}}]}}}, {}, {}},
+      ImageSize->{{0., 183.59624}, {0., 
+       21.2}}], "\<\"CCCCCC\"\>", "\<\"A simple chain of 6 carbons\"\>"},
+    {"\<\"cyclohexane\"\>", "\<\"cyclohexane\"\>", 
+     GraphicsBox[{{
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, 100.}, {243.3, 75.}}], 
+         {GrayLevel[0], LineBox[{{243.3, 75.}, {200., 50.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, 100.}, {329.905, 75.}}], 
+         {GrayLevel[0], LineBox[{{329.905, 75.}, {373.21, 50.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{200., 50.}, {200., 0.}}], 
+         {GrayLevel[0], LineBox[{{200., 0.}, {200., -50.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.21, 50.}, {373.21, 0.}}], 
+         {GrayLevel[0], LineBox[{{373.21, 0.}, {373.21, -50.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{200., -50.}, {243.3, -75.}}], 
+         {GrayLevel[0], LineBox[{{243.3, -75.}, {286.6, -100.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.21, -50.}, {329.905, -75.}}], 
+         {GrayLevel[0], LineBox[{{329.905, -75.}, {286.6, -100.}}]}}}, {}, {}},
+      ImageSize->{{0., 61.20086666666666}, {0., 
+       70.66666666666666}}], "\<\"C1CCCCC1\"\>", "\<\"A simple ring of 6 \
+carbons.\"\>"},
+    {"\<\"3-ethylhexane\"\>", "\<\"3-ethylhexane\"\>", 
+     GraphicsBox[{{
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.21, 50.}, {416.51, 75.}}], 
+         {GrayLevel[0], 
+          LineBox[{{416.51, 75.}, {459.80999999999995`, 100.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.21, 50.}, {329.905, 75.}}], 
+         {GrayLevel[0], LineBox[{{329.905, 75.}, {286.6, 100.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.21, 50.}, {373.21, 0.}}], 
+         {GrayLevel[0], LineBox[{{373.21, 0.}, {373.21, -50.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{459.80999999999995`, 100.}, {503.10999999999996`, 75.}}], 
+         {GrayLevel[0], 
+          LineBox[{{503.10999999999996`, 75.}, {546.41, 50.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, 100.}, {243.3, 75.}}], 
+         {GrayLevel[0], LineBox[{{243.3, 75.}, {200., 50.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.21, -50.}, {329.905, -75.}}], 
+         {GrayLevel[0], LineBox[{{329.905, -75.}, {286.6, -100.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{546.41, 50.}, {589.71, 75.}}], 
+         {GrayLevel[0], LineBox[{{589.71, 75.}, {633.01, 100.}}]}}}, {}, {}},
+      ImageSize->{{0., 165.6007519526214}, {0., 
+       76.48818824166712}}], "\<\"CCCC(CC)CC\"\>", "\<\"A simple chain of 6 \
+carbons with a chain of 2 carbons attached to the third carbon. \"\>"},
+    {"\<\"1,3-dimethylcycloheptane\"\>", "\<\"1,3-dimethylcycloheptane\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1:eJzt2r1OwlAYxvFGF0enLkzuXViIq91caxw60oDEAZqAifEGmu6s3biEXgAL
+S2+BpVfh7uNHiBE0x7ak1fP/JZDyUTi8OefpaQ8XURzcnTiOszjTXTB8vJrP
+h08353pwO1vcT2bj0fXsYTwZzy+jUz05+ri9bj8DAAAAAAAAAAAAAAAAAP6U
+9XrtOI7neWEYJkmS53lZlm03qovSNB0MBtooiiLLsjiOfd9332hDD/WkXmq7
+me0LgmA6nR58SV1LHUzdTJ1NXc7mvx1ut9ter7darQzfH0XRcrk8apO6SSVS
+oVQu8102m02/3z9ek7pJg05Dr8KOqpUq1nh7OksxrjCvtq/GoEZis+3pLOWz
+pgc1P6GpxnRc/V9qT8LXr5U9Cd/ICLIk4RuplSUJ31QyOwYa+aIW0a/MkVfm
+OA6aY35lrn6t/kFoG6p5jmNJqu/UOXe2JNU/q3ZNxp5U/6LCtT57Un2f4TXk
+oiiSJPF9355U/87BtYmyLLMsC8PQdV3P8+I4zvO8leZ1zW7NSwVRWVQclUiF
+UrlYJdz3vpaqgabhxlLgz6w9xlVg2ySzDpvnA79l4YS8MuZOhgh2cwS7OYLd
+HMFujmAHAAAAAAAAAAAAAAAAAKu8AO66MnQ=
+        "], {{0, 100}, {100, 0}}, {0, 
+        255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{100, 100},
+      PlotRange->{{0, 100}, {0, 
+       100}}], "\<\"CC1CCCCC(C1)C\"\>", "\<\"A simple ring of 7 carbons with \
+two methyl groups attached.\"\>"},
+    {"\<\"2-methyl-1-butene\"\>", "\<\"2-methylbut-1-ene\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1:eJzt2zFKw2AYgOGgi6N7Ji8RXB1dIx6gpbE4JEIqiMkFeo8cJPfIPbr7Sxwy
+WPhTUDR9HmhpQz7I98LfrTfrl/zpIkmS3VV4y1dvd3W9en+4Dl8eq93ztio2
+99VrsS3q2/VluLj5en1+PgAAAAAAAAAAAAAAAMAvSpJkv9/PnWrb9rTB/64s
+yzRNu66LuXms1DTN3MHFGIYhz/Msy/q+P3bPtNKswUUK+4atw+6hwPT6t5Vi
+BhcvnKlwssL5OkRUOjZ4Psbf7bHS3P8zjoM/9GB/0HTZs1r8BFrF0yqeVvG0
+iqdVPK3iaRVPq3haxdMKAAAAAAAAAAAAAABm+QA/HKJt
+        "], {{0, 100}, {100, 
+        0}}, {0, 255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{100, 100},
+      PlotRange->{{0, 100}, {0, 
+       100}}], "\<\"CCC(=C)C\"\>", "\<\"A chain of 4 carbons with a double \
+bonded carbon at the second carbon.\"\>"},
+    {"\<\"2,4-heptadiene\"\>", "\<\"(2E,4E)-hepta-2,4-diene\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1: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
+HfuwLtr2uX+zxIVH8HffEutZr1gHmRNmbngk+ej0uzcyci/zKq+l2p5Rzz3i
+ffYVdMlHx6xXrILpfe6Heka9rV6R78Z45VJ6un20rXWb+Wjb86K5d3mR+y+H
+Nv2Mer2v4IyO7dT56PTvYPU701apXjG2tn3uzWfUt2K9Yh205aN5jZrPdI/5
+7o15tT2jXu8rOK5jW/Xzr8189IGYfAZyFeoVq6DtHUl5DZrzP++5jfCev2Vq
+23uZkb83retzP01tczR/m+3zXsPMO2+L2bGy7pyVz1lOvys6Y+zn1Le7zCVz
+X02uO1dh/+XQ2t6ZlvPzSGpG0zIfvW8zVrleMbb6d5qsoeczsNulXrHqcj07
+xn7vZZp+Rr3eV9D1vYY7Y+v8TrZo+ft411wJ5lU/o36wmhGwdbS9G2HV3msI
+DGNXzO5z/8iYHQIWYvqdabtG7Q2wSFlb2z12JwAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhvZ/
+6bYuiA==
+        "], {{0, 250}, {250, 0}}, {0, 255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{250, 250},
+      PlotRange->{{0, 250}, {0, 
+       250}}], "\<\"CCC=CC=CC\"\>", "\<\"A chain of 7 carbons with double \
+bonds between carbon 3/4 and 5/6.\"\>"},
+    {"\<\"methyl propyl ether\"\>", "\<\"1-methoxypropane\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1:eJzt3VusXFUZAODfgpTY09oqKIpaRCwKsUbxUiOJYDSCygum8UkTiIUYk5K0
+JkSfmvjiK/qAPvjCo29WjSZGY+IFbzHiLRgvRfESERVvqIgc1989I3Oma85t
+5uy9Z+b7kp+E07n8e89es/da699rXnjrHTfftisiTl5Y/nPzLXdef+LELR94
+x/7yP0ePn3zv7cePvefG4+8/dvuxE0duPa/88bFBnB8AAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQt3rg
+wNNX9+07srp378kSp0usDuL02b/lv5XHdJ0nsD2lHd800q43ipu6zhfYvNWV
+lWeV8/SHttDGm8jnlOd2nT+wsbHr89Wz1+d79rx89Pr87PV8/q25nh997Oku
+cwc2NtZuT2db3vA5Tf999LvhZBu5Als3OD8/2ca3cA1ezu8vWHNe38T3A9C+
+cl6+e6SvfWTLz19ZeePI8+/eiRyB7Ts79jaDNrrm+t2YHPTKmnPxFHNka+bi
+ymvOMkdgOmvG30pfe4rXOWQ8buldWeLbJb5Q4vkd58KINX3zKerbzs636aMv
+q+yn3VPivyVWB/FYibtK7OswLwZGx8r79FrMhd0l7izx53iyfY/HH0rcUeK8
+jnIktHO27boS34vJ7Xs8vlriVV0kinbOll0dTf970rn7fSU+WOKvEx7z6RKX
+tZ30shudD5vqdUb752pgF9FFJT4eTb97vO3+J5q++DNGHn9pNH32JyqPf7TE
+h0vsbSn3pTez8fa1dXHG2xdH9quzf/3HqJ+fP1fiJes8/9Ulvjbhub8u8e4S
+T9mh3Bkwf846bijx46i30Z+V2Ozxku34aIlfTnitb5V43SwTZy31cFRcHk0/
+utYm/xLN+f2p23jdPSVOlfhn5XXz+j6v858zXepMor6dgZzrzn72v+Pcdvh4
+NP3zWbTDrKG5p/IeGX+P5rvgwhm8DyPG7lfb0vl4zfWA+9XmVfbBbyvx26i3
+va+UeOUOvO91MXlu7lfR9N2ZoW3df958P7j/fL5dW+I7UW9rZ2LzffDt2hVN
+e/79hBy+VMK5Y4Yqa0ZtaT0Z60LOlctich/8b9HUuT2txXz2RzPX9q9KPllP
+m9f5xn1mxPpwC28lmvb0j5g8FnZpZ9lFHIrJ3z9ZX5vfP7s7y26BjM21We91
+MeTcVl4f55x1rQ19vcRrOsvuXG8q8YOo5/qTEm/vLrXOvKHEa2f9ohut3z7r
+9yuuiuX8/HZazk1/M+pt5nfR31qVnLvL8cGsp63lnvW3V3eWXXtGa42znmE7
+c5p9kcfZsG7qG7ED31tL6JKYXHuac9inopnT7rusp835vqyvHd+OrMPN+b6L
+Ostu5+SYRW73eK3x8S6TmtI7oz728uwuk5pTOfd8Kpq56Np58JMlXtRVclPI
++tqss61tU9blLsr9r3nOe1eJ30R9Wz/TXWpT+0TUt+nhaO6BOr+71OZK1pdm
+TWptX95X4vruUpuZHBP6edS3Ma9rb+gutam9JSbXGuc2L8J4WNbFfz/q2/jT
+aI5h6g5HM9dc23c5N5198F2dZTd7F0Rz/s463No255j95Z1lt3WbqTW+oLPs
+Zi/P2zn28lDUt/mLJV7WWXb9U1uzaRhZv5pzaPs7y27nZR1u9s+zLre2/X1f
+u2q9WuP8TGdVa9xXB6I5Rmvbn+Mxuf0Xd5Zd9/K7PeeS/xSTz2eHOsuufddE
+U59b2xdZz5vnjj5dz2QuG9UaX9NZdu3LNUQ/G/V9kcd4HuuLdD2zGW+LZg65
+tk9+GM3c87LK/uuZqO+brO+9trvU/m+9WuMHoumf9nGesw157P4o6vvm/hJv
+7S611qy3ZlPWim33ftFFk/W6+f2f9bvj+ynnGHO+4WAHeR0cvHdtnrOLWuO+
+ymM4j+VHon6sZxu4qrPsds6kedSMx+PcNZtorLd2Vdb9Zr9wpYU8NlNr/LwW
+8pg3z4zm2K6NvQzXDV+Ee2o2WrPp8yVe2ll28yPree+N+j58MHauHnBYa/zg
+hPe+N/pVa9xXryjx5ajvw5x3n+e6iWWYR23TsM1lnW9tn2Zd8CxruY/EfNYa
+91ke87+I+j79bjT1//Ni2eZR27aZtasumeL1h7XGtXnOeao17qth3cR664b3
+uW5i2edR23ZFNGNitWNlO2tX7Y6Na42vmEnmpOdG0yYm1Y1kW+rTuuHmUbuV
+NZhZD1zb95utwTw6eGztNe4bvAc7I3/jJ3/rp7bv8/6APtRNmEfth43Wrsoa
+zMOV5x0e/FvtOQ/F4tUa99Vw3fAHov5Z5G/4vr6DvA6GedQ+Wq8Gc3j/5MWD
+yGvG2n2yw1rjAy3nTtNmTkXzez+1sZc26yZyrcxJ9158qsSLW8qDybJeOO/9
+rH1Gj0b9OFodPOfKDvJlrWxD+dtvtc8oa29OtJDDxyrvbR61n/Ja8EzUj5fR
+OBPupeyjXKumVjfRxm9MZN3aw4P3M4/af+vVYD4Sao37bjj2MqybyLbXVu1o
+HhsfafH9mN6wBvOJQdw1+BvzIdvaR2O+19yiPW8eBAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALfgfhT6f
+cg==
+        "], {{0, 250}, {250, 0}}, {0, 255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{250, 250},
+      PlotRange->{{0, 250}, {0, 
+       250}}], "\<\"CCCOC\"\>", "\<\"A simple chain of 4 carbons and an \
+oxygen one carbon from the right.\"\>"},
+    {"\<\"diphenylcyclopropane\"\>", "\<\"(2-phenylcyclopropyl)benzene\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1: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
+Y/b7tarmo9robVaMna9XEaM6DA/kcZdEyqtp+1h9jSmN0X/B2rUPD3+s6X7u
+qT6S3tV9LYbf5f+8asM/d1zrmKv1VrdPe4EVdbj6tA/g0+au63OBmK2tGKPv
+81xLl8Xq555qFvn6ZH5+SmP1bV0T6msnaey8qu65Pgt8LagFkfKKpVxjav9A
+nP87ooZwO8Xu56JnPb3XPWRFf/921j5srpZBW5rOFPTrQQ4OXM+FeUxf66h9
+wNz1/ciqP+v0DOOfe94WKS+MLkU/9/Su68+H8bUa2tj09xt63tAaUa0N7GuN
+PY23a9z9yaxtG4jTs73u12MxksK0pOjnml+ba8uuq1H9gkXm5mfa0lS/1T+z
+Ht3IneiO3bL2/MD/r3XQft0EZ7O1T+x+rhpEfr5GTftd2zzXpnWr/jtqVuJc
+2uwaK36fXV4n0Vex+rnGc/waEt9vtM+1reNvXnktyKK0qbSWvuv973WXxLlg
+ak33c82baf7MP//+Pv/nqlpqbfR6K+YCOU96WeVaktckzgXVmurn+p7WO+0j
+VnzWaz7tzyb8c2IorwUJ7dccIr//VrUEZyfOBdWa6Ofan3y3Ff1b8zGvneC/
+P4Xyfs3dE+fSFuX9t2clzgVhk+znqvWv+SU/56y1I9oP0cW9mVNZbO66vmv9
+r6cxivJe/OckzgVhk+jnWjux0Ir9yP4Mp6q14F2l/Zp+LcibE+eSmsYpRtmL
+j3YYt59rzLy8xuUr5s4R66tTzF2n6mStkTiXlDROofvQ9jq2cGbaz19s7qwW
+379Va6AL82Tj0rOL1rrrms9LnEsqGp/wz22hvfhoj+n2c62B1N4OXzNFz26q
+ITOkNSTlcxNfmDiX2DQuofEJXT/1Xrtj1H6ueVLtI3/Ciu/wT9pwawvcbu4e
+3Jw4j9g0LuH34nelji1G6+d6TrvPiv79Q+v+PNm4VC/G76Ufyp5rjUf4z/l3
+J84F0xPq51r3cJMV/VvzZPpO53w1R/toh7Tn+lxz16tzW/oyVzoUU/Vz1SXX
+O7c//8/Pk4X2Kw2R9lyPUhe1D8p1bA9JnAumb6rzz/1Z3WpLjLPtQ0api9oH
+/vxzndfC+efd4/v5P5mrS+77t85LHMI82bj0DnO/uXt2fuJcmuJrWmvd7zaJ
+c8HMXGbF71D/rbGli6zf302Ttq8V9+7FiXOZtHJN68sT54KZO9aKOm16NmPf
+5cx81tw9vDV1IhOmcQdfO2vtxLlgPNp/0tUzgtpC9c39PNveiXOZFF8XTtd0
+SuJcgLbwNaD7UvdV4w26Hq3zrarzCgzN86w4d2Z+4lzGpXEG/3xyQOJcgLbx
+57LofXadxLmMQ+MMuo7bE+cBtFH5/MEP1sRub24uM3Y7qSavva2YP+j6eZBA
+U7T23/eTLUeIi90uDuSkcYUH87gPTeeigQEa5fxB1ds5NEF7ZSCn+XneWs/b
+p/MggSaoXr1fD/66xLmMqnw27AmJcwG64gIr9vF2YZ5N6yCVr8YX2JMIjEZn
+vj9uru+8PXEudcrrfPZJnAvQNdqv7/fur5s4lxB/1umnUycCdJDqqd1r7R6/
+1viBr3e3ReJcgK7y+zpVr+MjWTuzRU11B/wavguaugHAQNxhaebKR22qHcQ8
+GjAe1eTRWtLFLWzXZe0dM7oqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAH/
+B8cT7aU=
+        "], {{0, 250}, {250, 0}}, {0, 255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{250, 250},
+      PlotRange->{{0, 250}, {0, 
+       250}}], "\<\"C1C(C1C2=CC=CC=C2)C3=CC=CC=C3\"\>", "\<\"Two benzene \
+rings connected by a triangular ring of carbons.\"\>"},
+    {"\<\"1,3-cycloheptadiene\"\>", "\<\"cyclohepta-1,3-diene\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1: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
+        "], {{0, 250}, {
+        250, 0}}, {0, 255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{250, 250},
+      PlotRange->{{0, 250}, {0, 
+       250}}], "\<\"C1CC=CC=CC1\"\>", "\<\"A benzene ring missing one of the \
+double bonds.\"\>"},
+    {"\<\"3-methylbutanal\"\>", "\<\"3-methylbutanal\"\>", 
+     GraphicsBox[{{
+        {GrayLevel[0], AbsoluteThickness[0.55], InsetBox[
+          StyleBox["\<\"O\"\>",
+           StripOnInput->False,
+           ScriptSizeMultipliers->0.8,
+           ScriptMinSize->8,
+           FontSize->Scaled[0.10893301563624506`],
+           FontWeight->Plain], {459.80999999999995, -75.}], 
+         LineBox[{{{454.80999999999995`, -53.349999999999994`}, {
+          454.80999999999995`, -25.}}, {{
+          464.80999999999995`, -53.349999999999994`}, {
+          464.80999999999995`, -25.}}}], 
+         {GrayLevel[0], 
+          LineBox[{{{454.80999999999995`, -25.}, {454.80999999999995`, 
+           25.}}, {{464.80999999999995`, -25.}, {464.80999999999995`, 
+           25.}}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, 25.}, {329.905, 50.}}], 
+         {GrayLevel[0], LineBox[{{329.905, 50.}, {373.21, 75.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, 25.}, {243.3, 50.}}], 
+         {GrayLevel[0], LineBox[{{243.3, 50.}, {200., 75.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, 25.}, {286.6, -25.}}], 
+         {GrayLevel[0], LineBox[{{286.6, -25.}, {286.6, -75.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.21, 75.}, {416.51, 50.}}], 
+         {GrayLevel[0], 
+          LineBox[{{416.51, 50.}, {459.80999999999995`, 25.}}]}}}, {}, {}},
+      ImageSize->{{0., 95.33334368314257}, {0., 61.161203548106776`}},
+      PlotRange->{{192.2057, 479.78999999999996`}, {-105., 
+       79.5}}], "\<\"CC(C)CC=O\"\>", "\<\"A chain of four carbons with an \
+extra carbon single bonded to carbon 2 and an oxygen double bonded to carbon \
+4.\"\>"},
+    {"\<\"3-hexanone\"\>", "\<\"hexan-3-one\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1:eJzt3VmsXVUZAODFIKK2haIWFa3FYB0xaiAiDmglTqQvmCYYExPQ0vhSTKsh
+Jppc44PGNx99MvER36oExxCNirNxHiM446woDojW9XfffT13n33udIa99zrf
+l/yEXs6w7mL9Z+9//2ufXnrTLdfffHZK6eT5+R/X33jrS0+cuPFtr7kw/+HI
+8ZNvOnb86BtfdfwtR48dPXHVTefkHz6wGucmAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAACYqcd1PYDCPSvHx3Nc1fVACvfyHB/LcVnXA+mhx+S4
+L8enUrUemZ39OW7L8d8cp1fjwzme1OWgChTrNtZvPccP5nh/jkd3Oaieifmo
+5+c/OT6YY1+nIxq+h+R4c44/pf/P7Wj8Lcc7cjysqwEWYk+O9+b4V2qf53tz
+vCHH2V0NsEfemeMfaf38/DbHzTnO6XBcQ3RWjtfn+FlaP59xfPlCjn82fv6r
+ZJ534rwct+b4Y1o/n3/N8dW0/vwp4vs5Xt3JSPsl6vM4rsfxfHR+fpDjcIfj
+GpJn57gzjR9T7sjxtNXHRN14W8tjYm2+aMHjHarrUpW3o/MX6zbWb32d6coc
+n0vj8/yJHE9f8Hj76Iocn03t8/PMDsfVZxenqtZpfkb+OE3+jDyU4xtpfJ6j
+dj8w3+EO1jNStQ6bcxbr9YqWx8e51ZEcP208/oEc78txwfyH3Gv1/NyT1s/P
+v5NrG6MemmMlVeeKo/P0lxy3pKpG30jUjHGO/5vG8/+e4z05ds1j0AN0Yary
+MvJzdJ7uSdU6PWuT5z8iVf+fmrXp71P1/2nZa6aHp6oGaq7jP6Rqfs7tbmid
+i/X1wzReg8d6fNQ2X2tvqvK6eS3pF6n6HNhsHZcq8i/WWay35ufgSqrW53Y8
+IVXnXc3a/Ws5XjyTEQ/bJal9fpbx2sblOT6Zxs8dP5PjuVO+9sFUnbc3X/tL
+OZ4/5WsPzStzfDetn4dYf7EOHz/la78kx9fT+DzH3F865WuXIK5tfD4t57WN
+qFWiZonaZfR3vzvN/jrltTm+ncbXeFy/2z/j9+qb2FfQ9ll3V47nzfB96prp
+3sb71DXT7hm+1xAt27WNSf2b+1Z/Pq/+d9T20W/7XeN9o+++kuP8Ob1vV6IP
+HuunWbv8OlX5OK/+d9T+kdfNfucvUzX/y953X4ZrG1GTNPs39bnjJQsaw0Wp
+Wv8PNsYR/fkSavdYJ5FPsY9g9PeLvFtJ1TpbhCen9n7nl3O8YEFj6LNJ1zai
+tnpFh+OaRtQgbf2b6Mde2dGYov9+R8uY7kxV336IYr9A7Bto/k6Rb13tT39Z
+jm+m8c/2GNMTOxpTn1yTJl/bGMpe7qg52vo3UaNspX+zCHEtIPryo+Or9ypf
+3OG4tuNAaq/BYz/Boe6GtSb6SHGOEXtCR8d3f6rOMZZ9r/KkaxtRc0X+7Olu
+aBuq+zdRc4yOO2qSlbT9/s28Re0e440+/eh4o/+5kqq+fh/FfoCoheNa1+i4
+Y//APGvwnaprpua115+nMmqmadW1+xD2credh8yqfzNvj01VD6BZu0df/0iH
+42qq9/zHfoDm53/k/d7uhrYlT81xexo//4j7FWbZAxiqPu/lntS/iZy/psNx
+7UT07aN/3/xdos9/eYfjClenqv/fVs8d7HBcOxH9zu+kYddM87TRXu5F70uY
+1L+JWqOP547bEbX73Wn979XVXuW2++4jYl/AtQseyyzVNdOfU3u/s68106Js
+tpd73vsS4v036t+Uspc8rhFFXz/6+6O/Z/T/F7FXOfr6K6la96PvH/sAYv43
+2/M/FI9M7f3OH6V+1Uxd6WJfwgtzfKXxfl33b+Zt0XuVN7rvPvLhojm8Zx88
+J8en0/jaiu+26bpm6oOozea9L+FAaj93jP5oH/o3i7CI+7C3ct996aJm+knq
+R83UR1GrfSuNX++eZl9C3b+5v/G69XfkLNt9dvPaq7yT++5LtlHNFD8/r7uh
+9cJG+xK2cx/20Ps38xb7AFbS9HuVp73vvnSTvpspaqbrOhxXX0Qe7nRfQty3
++cXG8yI+kuMp8xvyIG10H/ZmPcVZ3ndfuviOG99dNVnkZdu+hMjj5n3YsVek
+bc0OvX+zCJHTW92rPM/77ku2bPd37kTbvoR6r9qB1N6/ie9Rdu64ddHfaNtj
+U+9Vjnxvu+8+4kMdjHeoZlUzlSqubbw9jedzs29Z57+/V2b7PpAmz2vzz6P5
+/u4uBjtw0WeKWrL5mXl7l4PqkUn7EiI+mpanfzMPo3l+LLX3O+vP0bcmeT4L
+zZrpWLfD6Z3I5/j7s2LdxZ6MZezfzNpontfzGfdhfy9V8xz3a9T33R9N8nxW
+6j2i8ffuLft5e5u4tvHatLjvGildW56H6Pe+Lq1fg/IchmlSnreR5zBM8hzK
+J8+hfPIcyifPoXzyHMonz6F88hzKJ8+hfPIcyifPoXzyHMonz6F88hzKJ8+h
+fPIcyifPoXzyHMonz6F88hzKJ8+hfPIcyifPoXzyHMonz6F88hzKJ8+hfPIc
+yifPoXzyHMonz6F88hzKd1mOq1dj7yaP3Tfy2P1zHhcAAAAAAAAALNzpvXv3
+n96164bTe/a86/Tu3afXovrz4fzf9nU9RmBncn5fkPP45Lrcnhwnux4vsD1x
+jM65e2o1h0+dOW7n4/q6x8RxPn4++jjHdhiMkdw9usXH18f9U/MeGzC9yO0z
+OZtr8m0+7+ROngcs1mpNvqPj8upzq/OA/O/zGB8wvXwsPrSa55vdhzrp+Tes
+HtMPzXpswGysnXs3rrlt4/kHXX+HfqvPu6d8DdfjoMfqfnjXrwHMjzyH8s0w
+z523Q09NfR2u2iPnOhz02NR9tWofrL4a9Ng0+2TOPN8+GRiEtb0uW9zbvva8
+He6XBboxch/LlurstRx3/Q0Gw32psDxGjtObfs+EmhyGa/XYftj3RgEAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwHD9D8bkyz0=
+        "], {{0, 250}, {250, 
+        0}}, {0, 255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{250, 250},
+      PlotRange->{{0, 250}, {0, 
+       250}}], "\<\"CCCC(=O)CC\"\>", "\<\"A chain of 6 carbons with a ketone \
+at  carbon 3.\"\>"},
+    {"\<\"diethyl ether\"\>", "\<\"ethoxyethane\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1:eJzt3VuoXFcZAOBlerE2JzGpVq21ploJtmK9UiMVasSC0tZCSt9EaGhafEkh
+EYpvB3zx1afiq0/iYxQUvFBQvKB4QRGlSota71bFe60e13/2GTMzWXvus9fM
+nO+Dv9CcnNn/Xvtfe2bttWblVacfOfXQgZTS+avyf0498OjJc+ce+PB9R/L/
+3H/2/AcfPnvmwfee/dCZh8+cO3H6svyHz+7F5QkAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBZ7Rw9+sKd
+w4dP7Bw6dD7HhRw7e3Fh98/iZ/nv1M4TmE3ux/f09etxcU/tfIHJ7WxtvSS/
+T39kij7eRPxO/t3a+QPjDX0+39n9fH7w4Bv6P5/vfp6PP2s+z/f/3Qs1cwfG
+G+q3F6Ivj/2dZvzef28430WuwPT23p8v9vEpPoPn9/dXDryvT3B/ALqX35cf
+6xtrn5j697e23tX3+48tI0dgdrvP3hbQRwc+v3smBytl4L14jjmygbm4/JqL
+zBGYz8DztzzWnuN1jnsex55jOV5WOwkuGhibz7G+bXe+zRh9VUWfO9bh8b6U
+4+85Pppjq8Pj0qL/WfkqvRYLEX0s+lr0uS92dMz7cuz0xS9yfCDH8zo6PgX6
++UaKPhV9K/pYf5871cGxvz50zF58IcfrOzg+Bfr5xom+FH2q1Ne+1sHxD+bY
+zvGPwvH/m+MTydi9c/3zYXO9Tv/43BrYGq5LTR+KvjTcv6LPbaemD3blhr18
+Svebv+7lc1WH+exrC3vePrguzvP27kRf2U5N3yn1qehrN9RKLjuZ47uFvCJ+
+lprxBUtm/nytRR+JvlLqQ9G33lkts0EHUpPrb1I513g+b730ElkPt5aiT0Tf
+KPWZ6EvRpw5Uy67dkdQ8//9nujTv/6Tms4faWRLr29dG9IHoC9EnhvtJ9J3o
+Q0eqZTe54zk+ncr3qT/meDTH86tlt6GGvq821fvxwOcB31dblqj5qP3oA6W+
+EX3meLXsZvfuHD9I5XP6cY6766W2mWb6/nlzf/D98+WKWo+aL/WF76emr6yz
+K3I8lON3qXyOn8/xumrZbaDCnlFT7SdjX8iFitqOGi/VfvSJ6BtXVMtu8a7J
+8bEcz6VLz/fZHB/P8eJq2W0Y+8NVF7UcNR21PVzv/05NX7imWnbLd3OOz6by
+/e0POR7JcVm17DbI0Fyb/V67EbUbNRy1XKrxqP3XVsuue1FXP03ltvhhjvfU
+S62aO3O8adEvOm7/9kUfLzXncOcSXnfVRc1G7ZZq+iepqfn96MrU3Pv+nNqf
+P766WnbduTU130OKc/52Ws0500lF7nEOcS5xTrfWTacTUaNt80tR21HjmzQG
+n1Ws6Y2xTGns/q/UjGUOV8tuea5NzXnHeK3/nE/XTGpOkfvwWDTO8dqaSS1J
+1GTUZtTocN1GLcd5X1ctu9X1lhxfTuX74i9T82xyE8bu8Z73YI5fp/K5frJe
+anOL3EvnFOca57zOn1V6ogajFqMmS+caNfzmatmtjxjHPJnKbfitHO+ol9rc
+7srxo1Q+t1hrsO7zqGHUuok497vqpTa3qL2owdK5Rc3u1zH4rK5Ozdqhv6RL
+2zO+s/epHDfWSm4Gt6T2edQ/pc0bw8W5xDnFubWtm7ilWnbTuzG1j8GjRqNW
+r66V3Aa4PrV/H/dvafX3roo1JzGGK82jPrf3sxdVy2754txGrZuIn63yupze
+nk1Ra6X3m6jN66tlt3luy/HVVL6fruLeVb151N+ncs6P53hjreQqiHN9PJXb
+Itpo1dZNtO3Z1IuoxduqZbfZem3/q1Ru+2/kWMZ88LTuyPGdVM4x1gzs5zHc
+qHUT0WZ31Evt/96emloq5Ri1t2rvKZtqVfeummQe9coKea2aVV03ETWzSns2
+0bgpNc/jSrXS5d5Vh1L7PGp8xzjmUV/eQR7rJtok2qb0PezeuolDHeQxbs+m
+qLGbOsiD0WLvqu+l8jV6Isf9SzpuzAXHPOrTLcf+So63LunYmyTaKNqq1IbR
+ttHGy5p3j9p4ouXYUVMnl3RcZjPJ3lWLXIN5e45vthzrqdTUjzHc5KKtos2e
+SuU2jba+fYHHi1pYxz2baBxNzTxI22foefeuOpaaz3GlMVz8exnbyTzqPKLt
+tlPTlqVnL9H2x+Z4/VF7NkXNrMueTTRi/53PpPL9+pnUrGuY5pnYC1JTf6Pm
+UV+xmNRJTVuOWjexnZprMqm41nHNnym8Xu/Z3zru2URj3N5V49Zg9ubyft7y
+GvFvY7xtGYmzK9o22rjU9nFNJpnjimvctmfTpqw15uIazLb999r2rooaa/t3
+puJ7GcZw3eg9e2n73k9co9K9dtSeTVELm7bWmMa4vaviZzE2e2kave/udjKP
+WkNv3cSofcPj2sU1HLfWeJP3bKIRe1d9LpXv8/H8p/QMLyKeAb2mQr4MimvQ
+tm4irl3pGV5EXPObK+RLPTGme39qX7/cHzG/+r46aTJCXJO2ue/+iGsc19o8
+5/41ag3mb1OzRuPyatkxTlybuEZxrYavn7XGDOvtXRXzODGGi3nUo1UzYhq9
+dRNx7eIa2rOJUe5N671fzX4X1+7e2kkAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPT8D9s0nzc=
+        "], {{0, 250}, {
+        250, 0}}, {0, 255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{250, 250},
+      PlotRange->{{0, 250}, {0, 
+       250}}], "\<\"CCOCC\"\>", "\<\"A simple chain of 4 carbons and an \
+oxygen two carbons from the right.\"\>"},
+    {"\<\"2-chloropropane\"\>", "\<\"2-chloropropane\"\>", 
+     GraphicsBox[{{
+        {GrayLevel[0], AbsoluteThickness[0.55], InsetBox[
+          StyleBox["\<\"Cl\"\>",
+           StripOnInput->False,
+           ScriptSizeMultipliers->0.8,
+           ScriptMinSize->8,
+           FontSize->Scaled[0.1634058128894505],
+           FontWeight->Plain], {373.2, 75.}], 
+         LineBox[{{350.1638932000755, 61.69970739034385}, {329.9, 50.}}], 
+         {GrayLevel[0], LineBox[{{329.9, 50.}, {286.6, 25.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, 25.}, {243.3, 50.}}], 
+         {GrayLevel[0], LineBox[{{243.3, 50.}, {200., 75.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, 25.}, {286.6, -25.}}], 
+         {GrayLevel[0], LineBox[{{286.6, -25.}, {286.6, -75.}}]}}}, {}, {}},
+      ImageSize->{{0., 62.36237780948511}, {0., 54.0248481385641}},
+      PlotRange->{{194.804, 399.12}, {-79.5, 
+       97.5}}], "\<\"CC(C)Cl\"\>", "\<\"A chain of 3 carbons with a chlorine \
+atom single bonded to the middle carbon.\"\>"},
+    {"\<\"4,4-dimethylheptane\"\>", "\<\"4,4-dimethylheptane\"\>", 
+     GraphicsBox[{{
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{459.81, 0.}, {503.11, 25.}}], 
+         {GrayLevel[0], LineBox[{{503.11, 25.}, {546.41, 50.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{459.81, 0.}, {416.505, -25.}}], 
+         {GrayLevel[0], LineBox[{{416.505, -25.}, {373.2, -50.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{459.81, 0.}, {434.81, 43.3}}], 
+         {GrayLevel[0], LineBox[{{434.81, 43.3}, {409.81, 86.6}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{459.81, 0.}, {484.81, -43.3}}], 
+         {GrayLevel[0], LineBox[{{484.81, -43.3}, {509.81, -86.6}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{546.41, 50.}, {589.71, 25.}}], 
+         {GrayLevel[0], LineBox[{{589.71, 25.}, {633.01, 0.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.2, -50.}, {329.9, -25.}}], 
+         {GrayLevel[0], LineBox[{{329.9, -25.}, {286.6, 0.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{633.01, 0.}, {676.315, 25.}}], 
+         {GrayLevel[0], LineBox[{{676.315, 25.}, {719.62, 50.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, 0.}, {243.3, -25.}}], 
+         {GrayLevel[0], LineBox[{{243.3, -25.}, {200., -50.}}]}}}, {}, {}},
+      ImageSize->{{0., 216.37753541992956`}, {0., 
+       72.12306904032138}}], "\<\"CCCC(C)(C)CCC\"\>", "\<\"A chain of 7 \
+carbons with 2 methyl groups bonded to the central carbon.\"\>"},
+    {"\<\"butanone\"\>", "\<\"butan-2-one\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1:eJzt3VmsJFUZAODDIqLMwrAMbizjMiqoGBUdl5gMmKDovIySoA8mEAckMUPC
+mBDjy02MiT76YIwvPPii8XHcIy5RXOMeVBQX3FBccN9wuZ7fup25dPetqnun
+u0/d09+X/CTcubf6VJ/+u07V+evUvhtuOXzjqSmlY2fm/xy+/raDt956/Zte
+eXb+n2uPHrv5pqNHXveyo288ctORWw/ccFr+4YNrcXoCAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgOW0unPn/hyH
+chzLcTzH6ro4vvbz+Pf9pdsK9Le6Z8/u1R07rpuS111xPP/dlaXbD7Rb3bXr
+wBbyezLf83ZK7wswKefnkZPM74dGHhOU3ifghHz8fUvLWPy6/5+n79ix9yF/
+E+P75ucbj/HzdkvtE3DCWp6e9Ll2/P7UfHdch6LWzscnjsFxrN7S9uIYP21s
+cNZZl8+67UA/U46/R2ay3clcPz6L7QKbszbOXn8cf9cMt7134jvEnBssXOT1
+PMfW8/weAbqtHW/nPq6eckzf2/1XwCxMHGvndE184lq+sTsszERNzJyuh8d2
+x8YNx+bxOsCk1eb+kxP5t2fPRXN5nbxddTNQxvj8di2vBZwgz6F+8hzqJ8+h
+fhM1MlusZ+98nfF5etfhYGEmrrfPad0n82pQzkSdzM6dh+b0OupkoJAp4+m5
+1J6re4WyJs7RZ7ymm/tYoLwpa0wcn9X1uLU1pdyXCgMwkYszuh5unQkYjtXm
+OQzzXzfKOs9Q1NzXgZzRWlTAydkg1x+6rvPYMd66zrD9tOT6VsNxHAZo7Xzd
+c5dgCbSca7fnt7kz2HZW256L3NTZeC4yAAAAAAAAAAAAAAAAm3FVjtePxXlb
+3NaNY9t5zSwaCJy09+ZYHYtnb3Fb/x7bzo9m0UDgpMlzqJ88h/rJc6ifPIf6
+yXOonzyH+slzqJ88h/rJc6ifPIf6yXOonzyH+slzqJ88h/rJc6ifPIf6yXOo
+nzyH+slzqJ88h/rJc6ifPIf6yXOonzyH+slzqJ88h/rJc6ifPIf6yXOonzyH
++slzqJ88h/rJc6ifPIf6yXOonzyH+slzqJ88h/rJc6ifPIf6yXOonzyH+slz
+qJ88h/rJc6ifPIf6yXOonzyH+slzqJ88h/rJc6ifPIf6yXOo32by/Iwcj2rZ
+ljyHYeqT56fkeG2O3+Z4MMdKjodP2ZY8p6/4/FxZuhFLpCvPD+T40pTfuSfH
+tWPbkud0GR0zfp6az8szyjZnaWyU5zE+f0+O/0z59/VxR47L1rYlz2kz7Zjx
+iaItWh7T8vztOX435ecbxd9zvDXJc6a7ILUfMw6Xa9rSmJbnswp5vtxOy3Fz
+aq7rtH1OvlCqgUtkM3n+vhy35/hXz9+X58vrUI7vp+5x4EqOs8o0cWmcn+MH
+qTtfv5Hj4Lq/e3KOD/f4u7/muHgB+8FwxLWaj6fuz8b7czyhUBuXxek5bsnx
+QGrvi/tTc2301A22E9/ZP+zYRuT6So5HzGVPGIrdOd6RmnnXts/Dt5L5tEW4
+Jsfdqb0v/pHjbTnO7rG9qJ2J74w/dWzzZ6n5zqAucQ4e/d91Dv7rHDem5hjD
+/Fya+o2nPpBj/xa2/5jUXFP9b8f2P5XMmdbixTm+ltr7O67lxHF+T6E2Lou+
+46m7crxkBq93RY7Pd7xWzK/Ed8L5M3g9Fu+S1BwPuo4ZH8nxlDJNXBp9x1O/
+Sc146mEzfO1RzdMvO177gbU2GsttDztScz73t9Ter3HN5lChNi6TPuOpqGmJ
+4/w5c2xHzJespOZ8v60t383x0jm2g5Ozvla1rR//mJrv7TPKNHNp7Ev9xlMf
+zfHUBbbrST3bFb/z+AW2i24b3d8wfh727tRco2F+dqbtMZ6K8/+7prRrffwz
+NeOMnYXaSKOrVnUUn8vxnEJtXBaj8dQv0vYZT8V1gGjLH1J7m2OfYt9OKdPM
+pRX3i67k+HNq75+fpOZ+Rf0zXy/I8eXUbzz16EJtbHNuao7b4/e+jEfs4/ML
+tXHZqFUdjotSUzPYNU99Z9r6+k+L9Kwcn03t+xL7GmPICwq1sXZqVYfjzNR8
+j/4ltffFvWn7jaeirdHme1P7vsW+r6Tpa9mweVHvqFZ1OOI89aepvS/iGtxK
+jkeWaeJMRNtXUjM2bNvXGFu+okwTqzCqrehaY0Ct6mJcnpo60T5j2scVauM8
+XJiafeoaR8ZY87INtsF0alWHY2/qN6fxxRzPK9TGRYh7Yb+Z2t+DGHPGZ3J3
+oTZuF5cktapDEeedt+X4fWrvi1+l9vtFaxJjxhg7xhiy7T2J+t4Yi55WppmD
+pVZ1WOJ883upvS+ifnQlLeecRowh47jdtZbNV3O8qFAbh0St6rBsZk7jiYXa
+OCQxpoy63a5rFvF+XVyojaWpVR2O81LzPveZ07iqUBuHLMaYsf5c23s3Wsvm
+zDJNXDi1qsNhTmN2+q5lE3OSNa9lo1Z1WK7O8Z3U3hfmNDav71o2n0z1rWUT
+eatWdRjiXss+cxofSs1aqmzNc1OzFnjX92icL233tWz6XteJ778LC7VxWexK
+zbE57rVs64s4xs9izSaaucYYo8fcY9t7vl3Xsulbqxp1Bwc32AazEZ+1OLe+
+L7X3RdybGZ+1Wa7ZRCPmjVdSv7Vsri7TxE1xXWdYYu72K6m9L0ZrNp1bqI3L
+JNau/WDqHt/GedW+Qm3solZ1OC5O/e4X/Uxq7sVkseK86NupvW+iZixqx4ay
+lk3fdcDi2ThqVecrnjOykpq52ra++HFSV1jaaC2bqAFr66uoISu5lo1a1eEY
+1RXGc0ba+iLmdqNm3XOHhiOe7R7X3LvWsomasgMLbJda1WGJvo97xdr6YnS/
+6GMLtZFusd5OrLvT1o+jZ0rMey2bzdSqDnEdsJr0rSuM55FcUaiNbM5oLZuo
+FWvr07iHMMZls17LZvSZ6rquo1Z1/kZ1hV1rNsXzR6xRuj31Xcsm7il8+Qxe
+r+9nSq3qYsR7fE9q7wt1hfXYzFo2l27xNdSqDsfTc9yRuvtbXWGdYt3DuFew
+re9Ha9ns6rnNpyW1qkMRdc9xraNrPQN1hfUbrWUTz5ps+yzct/Z7G63v0/ce
+ZJ+p+Ys+jbmKqHtu64v70/Ks2UQjnjXZ55kSUQf5wnV/p1Z1WK7JcXdq74u4
+FyVqF84u1EbKi2dPfiy1f05Ga9nEOfjXO35Xreri3J665zQ+neOZhdrH8PRZ
+y6Yr1Kou1pvTxn0Rz/Z0vyjTjJ5R23U/3HhE/eSrk3myRYu1w8a/m6Mmwv2i
+9BH1jn3qXNSqlveq1PTF6H7Rc8o2h20onpcxrRZarepwxBjqnanuZ5swf6O1
+bEZzNlH/rFYV6hQ1GG9Ing0DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAvfwPf9AxDQ==
+        "], {{0, 250}, {250, 0}}, {0,
+         255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{250, 250},
+      PlotRange->{{0, 250}, {0, 
+       250}}], "\<\"CCC(=O)C\"\>", "\<\"A chain of 4 carbons with a ketone at \
+the second carbon.\"\>"},
+    {"\<\"2,3-dimethyl-1,3-butadiene\"\>", \
+"\<\"2,3-dimethylbuta-1,3-diene\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1:eJzt3VmMJlUZxvFXZgR0AEdFBRV7BNyCe1QQIYCa6ETkYnC4EwNxmMzNTBxM
+iAkmc2lCNNE7b700Jsa4xEQUREQUcF/iiriCu6KiuJ7Hmgo9n9+cqq+76pzq
+p/6/5DXBQPfb/fVTy6lT5zzz2kN7rjshIq4/Of3PnmtuuOzw4WveceXO9A97
+D15/YP/BfW/dffDt+/bvO3zBtdvS//nw0doeAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAwOycn+qmhbp4g1/rwJKvtWOAHgFszv5U/1mot23wa31uydd60gA9
+Atgccg74I+eAP3IO+CPngD9yDvgj54A/cg74I+eAP3IO+CPngD9yDvgj54A/
+cg74I+eAP3IO+CPngD9yDvgj54A/cg74I+eAP3IO+CPngD9yDvgj54A/cg74
+I+eAP3IO+CPngD9yDvgj54A/cg74I+eAP3IO+CPngD9yDvgj54A/cg74I+eA
+P3IO+CPngD9yDvgj54A/cg74I+eAP3IO+CPngD9yDvgj54A/cg74I+eAP3IO
++CPngD9yDvgj54A/cg74I+eAP3IO+CPngD9yDvgj54A/cg74I+eAP3IO+CPn
+gD9yDvgj54A/co5aXp3qitpNzAQ5R2nPT/WpaP4+fpVqZ912ZoGco5TTU70/
+1T/i2L+Rd9dsaibIOca2PdWhVL+N///7UD2c6jnVupsHco4xXZjqrlie77b+
+lepArQZngpxjDOek+mjk8636eHAuL4GcY0inpXpvNNfiuXx/K9VrK/U4R3qu
+cftCXbXBr0XO52tbqutS/SLy+f5DNPfqj67TJgZAzufp4lT3RD7f/4zmPP/E
+Sj1iOOR8XnZFv3vwz6Z6SZ0WMQJyPg+npHpXqr9GPt8/SvXGSj1iPOTc26NS
+XZ3qZ5HP959S3ZDqMXXaxMjIua9XpvpSdD8H13y3p1bqEWWQcz9npPpAqn9H
+PuOfT/WySj2iLHLu4+RUR1L9OfL5vi/V3miu6TEP5NyD7sF/Evl8PxTNceCx
+dVpERXcGOd/KXpjqM5HPt67fdR3/9EI9aWx/T6HvhbyTojm2ay7E4t/FR1Kt
+VesMfTw5muxqHC2X8a+kuqRQT5pf177jpmPL+YW+L5bTvdn3Iv/38ZdojgM8
+Z5mWE6N5/vX7yH9+90dzLX9Cob5el+rbCz3oWpExgPL0PtKHo3su1PrS8YB5
+E9NwearvRv7z+ls0x+dTCvV0duTn1725UB9o7reXrQmySn0x1QWlG8f/nBeP
+rNmUqw+melahnnSdd2N0j+3fXqifOetaE6StB6I5B9zR8e+14zlnFPwZ5kxr
+sPV5X/TrqV5TqCfdB/CO23TsTvWdyH8Wf49mzvPjj/43upfSvft9Hf+djuFH
+onlei+GtH8/KfQ5aj1GZ216or1elurujJ95xK6PvmiAfS/Xs43yNHdHk+KGO
+r6HntVeP82PM1rLxrMXS/Zey9IRCPa1Fc0/QNb/utlQvLdTTXPVdE+Sb0X9N
+kLOi3/zJW1K9aKCfY666xrPa+kSq5xbqSffgR6J59pLr6d5grHZs7TXer2O8
++6VLonkOm/v6eo6rY8JTNv6jzFJ7fNY9VO73+4Mol6X2HbefdvT0YPCOWwkl
+1wTR+Is++/s7vp+e6+qzP2mT38/dVMezXpzq1o6e2vHYpxXqaa52Rb9rvFuj
++dyGpOeyR6J5Tpv73nruvnfg7+3iopjeeJauw/rMr9MzmZcX6mmuprQmyLnR
+jM10HWtuTvWCkXvZKtZieuNZ7fznBzt6+mU013PMbxvPKmuC6BrvxIK9aV+9
+r3X0pfFhzdOZ6/sx7fF5auNZfeY/t++47SjY1xxthTVB2nv3BzI9qn4Xzb17
+yeNQTX3Hs0qv2aQ9EW/u6Emla49zCvU0V33XBNG8wqmsCaL5Wzpvdd27a472
+5ZV6LEVzhDVXOPd7KD2edbw9ERdL12eXFepprhzWBNH8mz7jhJqzfV6lHsey
+yppNpcaz+s5/1vy6ku+4zZXbmiCaj/ONyP88mtejc8zplXocylSPz6+P1ec/
+YxxTXBNkKDqX6DmxzhW5n0/nmkNRbq72kJTb70e/43Op8Sz2RJyOKa4JMhbN
+xdbz4K57Q517dlfqcVU6Pn86urOkz/isQj2xJ+J0tGuCaPw591mUXhOkBM3N
+1jmkKxs6F011rFfPB/scn7+a6tJCPbEn4rS8Iaa3JkgNOpfonNJ1765z0+Mq
+9bjMW6Lf3F/tU10qS1OcXzdXU1wTpDblQOcWnWNyv5PfHP33ttVp8xjvjPzx
+WeNZOwv1shb95texJ+L4dC7qc7+kcelSa4JMjc4x+h0tW3t2fX056o9TaFz9
+3lh+n3G89/mH1nd+HXsijq99X1TnotxnofdJS64JMmXPS/XJ6HfvfnalHuWq
+db3o+FxqPGuq8+vmSuecrve1S68JspXoHPTDyP/+9MxXv7/TKvX4oWiOz6Xu
+wVeZX8eeiOOa4pogW5WeSeh66I+R/11qfFl5c3omsV7f90VLzq+bq1NjemuC
+uDgzmvlyXffuGm++qFKPY2jfF53a/Lo5atcE+XnkPwudk3hmuTl6H1vvZfe5
+d99Vp8XBTHF+3Vxpjdu7Iv9Z6Bykc9GZlXp0pOshjSPnfu9ah0Pj0adW6nGj
+tB5Hn/dFS86vm6u1mN6aIHOjcWSNJ2tcOfcZaF2OrbAGSt/9cjS/jvdFx8Ua
+t9OjcWXlo2uMSut0XFipx5z2fdGu+c9av8Nt/vPUrLrG7VZ4X9SN1tnQehu5
+z0fXX7oOe0alHhetsl9Oqfl1c8Uat1tHu2fUjyP/edXe73mI/XIwjFXWuH1F
+pR6xnK6ndF3VtX6prs9K3ruPsV8ONoY1bn1oPY4+6zfdGePu91xivxz0xxq3
+nnS91bXfc7tn1ND7PZfcLwd5q6xxe26lHrE57ViqrsNyn/FQ+z3vinr75eBY
+fZ9Zssatj777PWsu6Ub2e57Sfjlz13eNW55Z+mr3e+4632ptzj77PU95v5w5
+WuWZJWvc+rs0Nr/fs/bL6XpftPZ+OXOxyjNL1ridl43u97zKfgxT2S/HFc8s
+0Vff/Z71HpnGZHlfdDp0LO0aX70xWF8Hj+i73/PxSueU9wRzVUt6Uyz/LHhm
+iS5XRPd8ivXVzn/mfdE6boljPw/WuEVfffd7LrkfA5bTcxGdv3lmiY3Ss5f3
+xfJnMzx7nY4rw3tvE4xPe+Et5vwLVTsCMLRlOb+takcAhkbOAX/kHPBHzgF/
+5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5Bzw
+R84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84B
+f+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc
+8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfO
+AX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/k
+HPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBHzgF/5BzwR84Bf+Qc8EfOAX/kHPBH
+zgF/5BzwtyPVTQt1oGpHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwBb2X3yy
+7sE=
+        "], {{0, 250}, {250, 0}}, {0, 255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{250, 250},
+      PlotRange->{{0, 250}, {0, 
+       250}}], "\<\"CC(=C)C(=C)C\"\>", "\<\"A chain of four carbons with an \
+additional carbon double bonded to carbon 2 and 3.\"\>"},
+    {"\<\"ethyl acetate\"\>", "\<\"ethyl acetate\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1:eJzt3VmMZFUZAOAjiyLTDAwRFBHEJaNEkYhRxqgxEBKUOC9jeDWBCMQXSBgT
+4lsnvJjoi08Tor7omzwYWxETowZX3OISN6Ii4hZ3jTsu7fn7dmVuFfdWdXVX
+1ak69X3JT0J3163/3nv+u51zzzzv1rtO3H5GSunkOfk/J26557q7777lHW++
+IP/PzXeefNsdd9721jfe+fbb7rjt7mO3npl/+MRunJUAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAFg320eOnL99+PCx7fPOO5ljK8f2bmzt/Cx+l/+mdJ7A/uQ6Pt6q60lx
+vHS+wN5tb2xcnM/T905R403EZ/JnS+cPTDZyfb69c31+6NDV7evznev5+Flz
+Pd/+262SuQOTjdTtVtTyxM809+/tY8PJReQKTG/3/Hy6xqe4Bs/n98uHzut7
+OD4Ai5fPy6da99rHpv78xsb1rc+fmkeOwP7tPHubQY0OXb97JgdLZehcfIA+
+sqG+uLzMWeYIHMzQ87d8r32A5Rz1PI5dZ5ZOgGFD9+YHGN+209/mHn2ZLbL2
+3p3j0zk8k10S7Wfly7QsZiZq7TM53rWg73tRjidyRBv4b44P5PC8pjB1Xq2o
+raixqLXYH/9KTQ3O2wO739eOP+a4J8fTFvD9dFDn1YlaipqK2hqttwcW8P0n
+cvy447sjvpnjugXkwIh2f9iBltO+PzcGtpSooW+l7hqL2juxoDzOznF7jt/2
+5PLJHC9ZUC6kGT5vHx4X53n7Yr00NbXTVVNRa1FzZxXI68Ic78nx74684h7+
+vhzPKJDX2tF/vtKiRqJWBs+92hG1FTV2YbHsTntxjgdT93Ho9znuSvri5sp4
+uJUU5+aojaiRrtr5eGpqa9nEeeRHqTvn7+V4Q7nU6md8+0qJWvh+6q6VqKFl
+n/cj7t3jGPXn1L0OH83x/GLZVWzkfbWpzsdD1wPeV5unF6SmBrpqI2omaufs
+YtlN75LU3HP8Jz15faIPMO45DhfLrlL7ev+8OT54/3y+oq1Hm++6B48aiVq5
+pFh2B3dNjs+m7uPXL1PzDNG9+wx1zBk11Xwy5oWcqWjb0cajrXfVQNTGNcWy
+m7243/hJ6l7Xr+V4bbnU6mN+uKXwuhxfT91tPmph2e/B9+vc1Izx+Uvqv3e/
+olRytRnpazPf6+JckfrvwaPtRw08vVRyC3Rpasbs/i89eTv8Lcc7c2wUy66c
+Qzlmfs08af72WX9fatbh0ByWu+yizUbbjTY82q6jrUebv7RYduW8KscXU/dx
+7+c53pLjKcWyW5y4hxv0o763cC6z8L4cv0vrM24i2mi01WizXW052vgri2W3
+HAbb6Fepext9Oceri2U3fzemZmzBYH3jvaRVbhNx7B68WxXxjRyvL5rRfEXb
+jDba1XajTa/LuWqv4jpvM8c/Uv81z7NKJTcH4+5dHiyY10F9Iq3HNWu0xb79
+F214M63nvcteXZaa7dd1fPxrarbfOaWSm4FBP2qMIRhdvzgPrno/6rNTsw7t
+c3pN4yai7W2mpi12tdFou5eVSm4FjXs3L8YF3lwutX05I43vR/18jlcUy272
+Yl1inbrW9Rep2RZnFMtuf+Ia/PHUvU7eyd6/aAexbX+durdtzF31smLZ7d1r
+UjNGoGsdHkvNMavGe7hYp1i3x1L3un81Ndtm2UUbi7bWtQ7RNqONrtoxaxld
+kJr+ir5r3WWdu+q5OT6Uuu/hBv2o5xbLbnFiHTdz/D1137vHNnpuqeTGGJ2z
+qR3/TE2bvKBYdvU6mvrHHwzmrnpqsexOizEQm2l8P+pzSiVXUKzzuHETm2k5
+xo9EG+qbsyki2uDRYtmtjxtyfCd174NHcrypUF6DPsKf9eT2pdT0O627a1Oz
+Lbq2UWy7kn1R0XYe6ckt2twNhfJaV4P3X/uOuYueuyrGlT3ck8ugH9U93GmD
+Zy994yZiW167wHyirUyas2mV3hetzWDuqq73X5/Y/d0876EG/ah993CbST/q
+OINxE7Gt+p69PHOO3z9uzqZoU8syZxONK1P3GI2IecxdFfPubqb+ftR4tvTC
+GX5f7WJbxTbr2paDcROznDe8Pda46ztjrNKVM/w+Ziveu+qbdzrGl944g++I
+vqIf9nxH9PmbP3H/Ytt9O3Vv29jmsxg3EXM2tccatyPajnf3VkM8L53H3FVX
+5fhUzzJ/k8rNu1ub2IaxLWObdm3r2AdX7WO5sc8nzdm0DP01TGcwd9VBx2Be
+tLucrvmrYznRj3pkxrnTbNO+cROxL2KfXLSH5Ywba1zDnE00Ygzm51L3cXww
+d1XXs/BBP+ofej77sbSYf+tq3cU27vr3viJi38R5uOs6atJY42gTNY01ZvIY
+zNG5q27K8YOev/1u0o9aQmzzrjF1EbGvbmr9bezLvrHGcS1Q61hjGuPmropx
+WvHMvu/c/6e0evPu1ibGxHftm/Y5OvZh15i7QTy+8KwpJfpxPpLGt5l2/X8w
+1fX+9Kr6Sjq9X+JYPa6e29HuP/vpwrOmtBiH2jcGM+KhHC8vlh2j2nUe7yfH
+vnko9e+/wVjjLyR1vu665q56NOlHXUajdT4Q++rR1u9G52xS5wzE+Mb7U9PP
+so7zza6CvjoPsc9i38U+HB2rqs5hdYyr83HUOawOdQ71U+dQP3UO9VPnUD91
+DvVT51A/dQ71U+dQP3UO9VPnUD91DvVT51A/dQ71U+dQP3UO9VPnUD91DvVT
+51A/dQ71U+dQP3UO9VPnUD91DvVT51A/dQ71U+dQP3UO9VPnUD91DvVT51A/
+dQ71U+dQP3UO9VPnUD91DvVT51A/dQ71U+dQP3UO9Xt/jod34/4pPndf63Mf
+nkNeAAAAAAAAAAAAsG/bR46cv3348LHt8847mWMrx/ZubO38LH6X/6Z0nsD+
+5Do+3qrrSXG8dL7A3m1vbFycz9P3TlHjTcRn8mdL5w9MNnJ9vr1zfX7o0NXt
+6/Od6/n4WXM93/7brZK5A5ON1O1W1PLEzzT37+1jw8lF5ApMb/f8fLrGp7gG
+z+f3y4fO63s4PgCLl8/Lp1r32sem/vzGxvWtz5+aR47A/u08e5tBjQ5dv3sm
+B0tl6Fx8gD6yob64vMxZ5ggczNDzt3yvfYDlHPU8DpbT0L35Aca37fS3uUeH
+pdR+Vr5MywJmR51D/dQ51K/dH3ag5bTvz42BhaUys+ftw+PiPG+HJaL/HOpn
+PBysB+PboX4j76tNdT4euh7wvhostX29f94cH7x/DiukY86oqeaTMS8krAbz
+w8F6GOlrM98rVGzS/O2l8wMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWEb/B1C7miM=
+        "], {{0, 
+        250}, {250, 0}}, {0, 255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{250, 250},
+      PlotRange->{{0, 250}, {0, 
+       250}}], "\<\"CCOC(=O)C\"\>", "\<\"A chain of 2 carbons with an ester \
+bonded to the second carbon.\"\>"},
+    {"\<\"heptanamide\"\>", "\<\"heptanamide\"\>", 
+     GraphicsBox[{{
+        {GrayLevel[0], AbsoluteThickness[0.55], InsetBox[
+          StyleBox["\<\"O\"\>",
+           StripOnInput->False,
+           ScriptSizeMultipliers->0.8,
+           ScriptMinSize->8,
+           FontSize->Scaled[0.04431486508806064],
+           FontWeight->Plain], {719.62, -106.}], 
+         LineBox[{{{714.62, -83.79585915249982}, {714.62, -56.}}, {{
+          724.62, -83.79585915249982}, {724.62, -56.}}}], 
+         {GrayLevel[0], 
+          LineBox[{{{714.62, -56.}, {714.62, -6.}}, {{724.62, -56.}, {
+           724.62, -6.}}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], InsetBox[
+          StyleBox["\<\"N\"\>",
+           StripOnInput->False,
+           ScriptSizeMultipliers->0.8,
+           ScriptMinSize->8,
+           FontSize->Scaled[0.04431486508806064],
+           FontWeight->Plain], {806.22, 44.}], 
+         LineBox[{{788.4672797296099, 33.75016150670317}, {762.9200000000001, 
+          19.}}], 
+         {GrayLevel[0], 
+          LineBox[{{762.9200000000001, 19.}, {719.62, -6.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], InsetBox[
+          StyleBox["\<\"N\"\>",
+           StripOnInput->False,
+           ScriptSizeMultipliers->0.8,
+           ScriptMinSize->8,
+           FontSize->Scaled[0.04431486508806064],
+           FontWeight->Plain], {806.22, 44.}], 
+         LineBox[{{823.9725549362117, 33.74987515323966}, {833.065, 28.5}}], 
+         {GrayLevel[0], InsetBox[
+           StyleBox["\<\"H\"\>",
+            StripOnInput->False,
+            ScriptSizeMultipliers->0.8,
+            ScriptMinSize->8,
+            FontSize->Scaled[0.04431486508806064],
+            FontWeight->Plain], {859.91, 13.}], 
+          LineBox[{{833.065, 28.5}, {842.1574450637883, 
+           23.25012484676037}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], InsetBox[
+          StyleBox["\<\"N\"\>",
+           StripOnInput->False,
+           ScriptSizeMultipliers->0.8,
+           ScriptMinSize->8,
+           FontSize->Scaled[0.04431486508806064],
+           FontWeight->Plain], {806.22, 44.}], 
+         LineBox[{{806.22, 64.49922598873891}, {806.22, 75.}}], 
+         {GrayLevel[0], InsetBox[
+           StyleBox["\<\"H\"\>",
+            StripOnInput->False,
+            ScriptSizeMultipliers->0.8,
+            ScriptMinSize->8,
+            FontSize->Scaled[0.04431486508806064],
+            FontWeight->Plain], {806.22, 106.}], 
+          LineBox[{{806.22, 75.}, {806.22, 85.50077401126109}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{459.81, 44.}, {416.505, 19.}}], 
+         {GrayLevel[0], LineBox[{{416.505, 19.}, {373.2, -6.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{459.81, 44.}, {503.11, 19.}}], 
+         {GrayLevel[0], LineBox[{{503.11, 19.}, {546.41, -6.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{373.2, -6.}, {329.9, 19.}}], 
+         {GrayLevel[0], LineBox[{{329.9, 19.}, {286.6, 44.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{546.41, -6.}, {589.71, 19.}}], 
+         {GrayLevel[0], LineBox[{{589.71, 19.}, {633.01, 44.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{286.6, 44.}, {243.3, 19.}}], 
+         {GrayLevel[0], LineBox[{{243.3, 19.}, {200., -6.}}]}}, 
+        {GrayLevel[0], AbsoluteThickness[0.55], 
+         LineBox[{{633.01, 44.}, {676.315, 19.}}], 
+         {GrayLevel[0], LineBox[{{676.315, 19.}, {719.62, -6.}}]}}}, {}, {}},
+      ImageSize->{{0., 266.47191969641216`}, {0., 101.42524686218876`}},
+      PlotRange->{{180.2027, 879.7072999999999}, {-136.99845197747783`, 
+       129.24883898310836`}}], "\<\"CCCCCCC(=O)N\"\>", "\<\"A chain of 7 \
+carbons and a nitrogen at end of the chain with a ketone at the first carbon \
+from the left. \"\>"},
+    {"\<\"3,5-dimethyl-3-heptanol\"\>", "\<\"3,5-dimethylheptan-3-ol\"\>", 
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1:eJzt3XvILGUZAPDXa5bnfHpSyyzz2EVNSSvMNEqxhFK7gGKFgaB5NMmOoYL1
+Tx2QQuh+gVCoP4pCiiwU7WqZUVlpmV0sy+xqF1Mr00qz0/u4O87sfns+v90z
+O7Oz+/vBI7hndub5dvbdeW/zzr6nnXPCGdumlM7bKf/nhFMvOPrcc099y4m7
+5v85aeN5Z525ccPpx248f8OZG849/LTt8ov392P7BAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAALNr89q1myPq2u6hbZeWDs/bnle8px/nxetb
+nzEwrjrL+eY1ax6Xt7l8qHwPxtLSh2O7+v4C4JHUVc4HyvjS0oWbd975kIF/
+z///0Ou9/VyurENzaivncZ2Obdasec2K+8n/XlzXJ8kXGF8d5fyha3W/Db6q
+Yxa/CUPXfGA6ainna9duGKfcVn4XNoybLzC+Wsp5cX1et26XVR0zb6fuDs1Z
+sW98RKy0j0mOW89fAaxEOYf5V1P7/PJxyuzD9fb8vnFyBSajHw7mX63jaktL
+F67qmMbVoFHmycD8m9q817Vr9xt6/37mvUI7ar+Ppbiuu48FZkad5fzhbd2X
+CgAAAAAAAIy2XY639WO7lnOZdTvmeE+Os3Ns03IuNOv4HC9pO4kJnZTjlhyb
++3FL/zUGRZk+JcfvUvlZ/TR197wznktS75zfluPRLecyjqfmuCyV39nhiH97
+SmvZzZaDcnwpjf6c/pfj4zme2Fp2NOFlqTznm9pNZVV2z3FxjgdSmfetOV7e
+j1srrz/Q33b3VjJt3545PpZ6Zbn4TH6U45jUq/P8pvL6f3K8P8dSK5nShKtS
+71zfl2N9u6ls0fY5zslxZyq/m3/vv7ZjZbsd+6/9o7Ldnf3Xtm8w3zbtlHq/
+2f9M5WdwR44z0uBnsHN/u39Vtru9v922jWVLUw7IcX/qnedLW85llGNz3JzK
+7+KDqXed3muF9+zV3+bByvtu7u9rnsV1+hdpsE4T1+nHrvCevVPvul+tz1+f
+4wVTzZQ2vDeV5/iolnMpRBv8ijT4/ftmjkPH2Meh/fdU93FFf9/z5OAcV6fB
+v/PzqfcbvlpH5/hh5f1R3/9Ujn1qzZQ27ZrjL6l3fn+Q2h2fijZiXIOKOkZE
+tCXjWjXJWNA2aXl79P40H+3RPdKW+ysmEfX16Jf/c2V/96Ze/b5L/bRs2etT
+eW7PaOH48dsS7eg7KnlE23FTjsfUsP+V2qNdG3ePfogLctyVVu6vmNS6HBel
+Xv9csf8Yk4vfAOPu3Rbf9RtT75zGtX3XBo/9whw3pMF6Z7QZ957CsUa1R2/o
+59AFx+X4WRqvv2JS++e4Mg1+VtflsJ5Bt0XfSzEO8+4Gjrc+LW+DRxvx6AaO
+PdweLdru6xs49iQOzPHltHX9FZOKsbifpMHflvit3LOBYzMdn05lG3b/KR1j
+TerVC+9L5Xcn2oRRL2xyTGdUe/S+fm5rGsxjJfFMrTr7Kya1Q+q1C/5WySPG
+7jbleFSDeVCPqNdG30ucxytr3ncx//L3aXCORpSrdTUfaxyj2qORY5vt0aK/
+4q+VnOrsr5jUbqn3u/PfVOYVY3nmG3dPrAdfnMPjatrnETm+mwbrnfE7Mq06
+wyRGtUcj5yMazuPIHN8fymNa/RWTek6Oa9NgjjG298w2k2Iscb0oxqHit3pr
+6mWj5l9GW++Yrcxxmobbo5F7E+3RfVN7/RWTijG829Ly+cZ7tJkUq/baVJ67
+cyd4/6j5l9G2i7roDvWkOFUrtUd3qvlYa9Ns9FdMKq4LMc53Tyrzv6v/Wh3j
+fExPtEuLelmMzY5zLYvv529Tec6jLRdtut1qzrEJo9qj8bedUsO+owzH+P0f
+Kvuehf6KScV9b8N1txgDrKvtx3REG6yYI37xKraP+ZdfTYP1zmv7++m6Ue3R
++FsPnnB/z8/xvaH9zVp/xaQOy/HtNPi3xZjggW0mxYo+msox0y2N1cZzXj6W
+Bu8biTbbpPMvZ9lwe7QYS17ts26enHrzxrvUXzGJYszyT2n5fONdWsyL0R6f
+yjZqzMuojjMV8y/vTuW5vKf/WptjP9M2qj16d1q5PVr0V9xbeU+X+ismFfMQ
+NuX4dyr/7hgrjL+7a/ON5118f4tz9Or+a7FGxc8rrxd90ou0NsmT0vL2aHwm
+x1e2GbVmU5f7Kyb19NSrx1Tr8jF2eGSbSTEgrlFFmY562HAbPNpih7WWXfue
+l3rzvofboyfmuGbo9Xnpr5jUi1NvXZvh+cb7NnDsuJfpXWn1baxFdHIaPDcR
+sVbLG9PirNWykvgMNqbBe8iq94v+McdpqRvjZNMW8zHenAbbPdc1cNx39I9V
+3Gtb9/holxXzL4s1m4pzE/e5zMoc8FlStEejbh79dTFONu/9FZOKdW6i/RK/
+h03MBYo+ZWN+y40aHyk+p0+2mFcXFGNmX2w7kQ5ociwx2kzfSIPf6a/lOKTB
+HGbFqPmX0aaKttUHUlneu3LPdhuKsfbL2k6EZYo1hn6dJh8f7bJR8y+H1wpd
+l8o1X6K/VHtzNOV89kVbalMa/L4/0vholxVjP9X5l8XYz6i1Qt9Q2e60hnLs
+GuW8O1YzPtp1o+4X/UKOZ6zwnuibuymV91uY37Scct49R6XeOqjD46MHtZnU
+Vhp1v+g4a4W+qPK+i6aRYMcp5900L/N1R90vGs8vmWSt0M+m8h6r/epLcS4o
+590W66DG9auL83Wjj/GXabCPcWvWCo1nFRafw+fqSHCOKOfzIebrDo89zep8
+3VHP66hrrdCLKvv0nN2Scj5f4n7CH6fl83XXt5hTYdTzOupeKzTG4m7v7zue
+qT3P916NQzmfP8UaQ9X7M9tcH7h4vmh1rnWxVujOUzjeqZXjnD2F/XeRcj6/
+ivm61TWGml4fOJ4JWn1eR8S01wqNPsrv9I8Vvy2L+szxKuV8/j0rx9fTYFmL
+cjDN59WMer5ok2uFxjh8MUb3wYaOOcuU88URY9G/SsvXYqhzfeBRzxdta63Q
+T6RyLt2ir+OtnC+WeJ5szJeNMeqiHNbxvJoYw4t550UfWDGO3eZaobGWTDEu
+f3VLOcwK5XwxxRj18PyzSZ9XE887vD4N1tFnZa3Qt6Yyp1e2nEublPPF9twc
+30qDZfQraXX13H3S7K8VGvWXWF+hmEe7qM/YU84p7g+LtYSK8lo8r2ZUX3WU
+nU2pO2uFviqVeV7Qci5tUc4pxFj2ptQb2y7KRazPFOU3xsC7vFboNamcO/+E
+dlNphXLOsKel5WveRt33pqHXurRWaIwtFvMIPtJyLm1QztmSV6Re39zmoejq
+WqGXpPJ+mUVb91k5ZyVRX4/xslhXNcbEu7xWaKy1VTzLJfoem5oTOAuUc1Yj
+1rJ5dttJ1OD8VNZLTm45lyYp5yySWLuimG8fc/2ncR/NLFLOWTTxLLbimr6p
+3VQao5yziK5K5f2669tNpRHKOYvogFTea3Npy7k0QTlnUb0vlfX3o1rOZdqU
+cxZV9VkusU72rK+buTWUcxbZWam8pp/eci7TpJyzyOIafmMq18Po0tr341DO
+WXSxllVxTX9ny7lMi3IOKX0mzfezXJRz6D1jvbgf9/KWc5kG5Rx63p7K+vtL
+W86lbso59MQzLIpnrs/bs1yUcyi9LvXWzIo13+fpHhflHEqxdoZ+OKCLlHOY
+f8o5zD/lHOafcg7z7005PpTm+14dAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAACYOf8H+5ryAQ==
+        "], {{0, 250}, {250, 0}}, {0, 255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      DefaultBaseStyle->"ImageGraphics",
+      ImageSizeRaw->{250, 250},
+      PlotRange->{{0, 250}, {0, 
+       250}}], "\<\"CCC(C)CC(C)(CC)O\"\>", "\<\"A chain of 7 carbons with an \
+alchohol and methyl ground bonded to the second carbon from the left and a \
+methyl group bonded to the third carbon from the right.\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.822318642374694*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"fb673cc5-8edc-4d41-bc9a-e8325afb711c"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 54362, 959, 1075, "Input",ExpressionUUID->"6b76ffca-2486-4e47-9094-aab75604b84c"],
+Cell[54945, 983, 62402, 1117, 2147, "Output",ExpressionUUID->"fb673cc5-8edc-4d41-bc9a-e8325afb711c"]
+}, Open  ]]
+}
+]
+*)
+

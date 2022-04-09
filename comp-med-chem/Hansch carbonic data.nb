@@ -1,0 +1,97 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3957,         89]
+NotebookOptionsPosition[      3438,         72]
+NotebookOutlinePosition[      4003,         91]
+CellTagsIndexPosition[      3960,         88]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", GridBox[{
+     {"\"\<Sample\>\"", "\"\<X\>\"", "\"\<\[Sigma]\>\"", "\"\<logP\>\"", 
+      "\"\<\!\(\*SubscriptBox[\(I\), \(1\)]\)\>\"", 
+      "\"\<\!\(\*SubscriptBox[\(I\), \(2\)]\)\>\"", 
+      "\"\<\!\(\*SubscriptBox[\(logK\), \(i\)]\)\>\""},
+     {"1", "\"\<H\>\"", "0", "0.21", "0", "0", "6.69"},
+     {"2", "\"\<4-CH3\>\"", 
+      RowBox[{"-", "0.17"}], "0.69", "0", "0", "7.09"},
+     {"3", "\"\<4-C2H5\>\"", 
+      RowBox[{"-", "0.15"}], "1.31", "0", "0", "7.53"},
+     {"4", "\"\<4-C3H7\>\"", 
+      RowBox[{"-", "0.15"}], "1.64", "0", "0", "7.77"},
+     {"5", "\"\<4-C4H9\>\"", 
+      RowBox[{"-", "0.15"}], "2.45", "0", "0", "8.30"},
+     {"6", "\"\<4-C5H11\>\"", 
+      RowBox[{"-", "0.15"}], "2.97", "0", "0", "8.86"},
+     {"7", "\"\<4-CO2CH3\>\"", "0.45", "0.64", "0", "0", "7.98"},
+     {"8", "\"\<4-CO2C2H5\>\"", "0.45", "1.17", "0", "0", "8.50"},
+     {"9", "\"\<4-CO2C3H7\>\"", "0.45", "1.75", "0", "0", "8.77"},
+     {"10", "\"\<4-CO2C4H9\>\"", "0.45", "2.34", "0", "0", "9.11"},
+     {"11", "\"\<4-CO2C5H11\>\"", "0.45", "2.71", "0", "0", "9.39"},
+     {"12", "\"\<4-CO2C6H13\>\"", "0.45", "3.23", "0", "0", "9.39"},
+     {"13", "\"\<4-CONHCH3\>\"", "0.36", 
+      RowBox[{"-", "0.31"}], "0", "0", "7.08"},
+     {"14", "\"\<4-CONHC2H5\>\"", "0.36", "0.03", "0", "0", "7.53"},
+     {"15", "\"\<4-CONHC3H7\>\"", "0.36", "0.51", "0", "0", "8.08"},
+     {"16", "\"\<4-CONHC4H9\>\"", "0.36", "1.05", "0", "0", "8.49"},
+     {"17", "\"\<4-CONHC5H11\>\"", "0.36", "1.54", "0", "0", "8.75"},
+     {"18", "\"\<4-CONHC6H13\>\"", "0.36", "2.05", "0", "0", "8.88"},
+     {"19", "\"\<4-CONHC7H15\>\"", "0.36", "2.57", "0", "0", "8.93"},
+     {"20", "\"\<3-CO2CH3\>\"", "0.37", "0.62", "1", "0", "5.87"},
+     {"21", "\"\<3-CO2C2H6\>\"", "0.37", "1.11", "1", "0", "6.21"},
+     {"22", "\"\<3-CO2C3H7\>\"", "0.37", "1.72", "1", "0", "6.44"},
+     {"23", "\"\<3-CO2C4H9\>\"", "0.37", "2.24", "1", "0", "6.95"},
+     {"24", "\"\<3-CO2C5H11\>\"", "0.37", "2.71", "1", "0", "6.86"},
+     {"25", "\"\<2-CO2CH3\>\"", "0.45", "0.45", "0", "1", "4.41"},
+     {"26", "\"\<2-CO2C2H5\>\"", "0.45", "0.72", "0", "1", "4.80"},
+     {"27", "\"\<2-CO2C3H7\>\"", "0.45", "1.49", "0", "1", "5.28"},
+     {"28", "\"\<2-CO2C4H9\>\"", "0.45", "2.01", "0", "1", "5.76"},
+     {"29", "\"\<2-CO2C5H11\>\"", "0.45", "2.55", "0", "1", "6.18"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6031313162058496`*^9, 3.603131877322277*^9}, {
+  3.6031319379746447`*^9, 3.6031319529474573`*^9}, {3.603132003869995*^9, 
+  3.6031325553750343`*^9}, {3.603365007019312*^9, 3.603365007174203*^9}, {
+  3.825065737198102*^9, 3.825065747375201*^9}},
+ CellLabel->"In[90]:=",ExpressionUUID->"a714ebce-5ec5-4f72-9c7f-76d20f6af878"]
+},
+WindowSize->{1184, 665},
+WindowMargins->{{Automatic, 5}, {Automatic, -100}},
+Magnification->1.25,
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (March 13, 2020)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Library", "Mathematica",
+    "SystemFiles", "FrontEnd", "StyleSheets"}, "BobStyleSheet.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"fafdbd8f-082e-4817-90d8-959f227ffa53"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 2877, 50, 712, "Input",ExpressionUUID->"a714ebce-5ec5-4f72-9c7f-76d20f6af878"]
+}
+]
+*)
+

@@ -1,0 +1,1599 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     69405,       1591]
+NotebookOptionsPosition[     62656,       1460]
+NotebookOutlinePosition[     65243,       1523]
+CellTagsIndexPosition[     65200,       1520]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[StyleBox["Genez, Inc.\n9617 Black Watch Court\nCharlotte, NC \
+28277",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "Text",
+ CellChangeTimes->{{3.7889741914236603`*^9, 3.7889742182836437`*^9}},
+ TextAlignment->Right,ExpressionUUID->"9cae76f1-ab34-4cd1-a628-1663f50b823e"],
+
+Cell[TextData[StyleBox["March 6, 2021\n\nTo: Chief Scientist, Vertextin Inc.\n\
+From: Aakriti Lakshmanan\nSubj: Case Study: QSAR Study of an Antiadrenergic \
+Amine",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "Text",
+ CellChangeTimes->{{3.78897427781083*^9, 3.788974370688476*^9}, 
+   3.788974905689847*^9, {3.789217211251758*^9, 3.7892172116547117`*^9}, {
+   3.789217251071721*^9, 3.7892172542205963`*^9}, 3.7892487914446507`*^9, {
+   3.789248840285433*^9, 3.7892488499890747`*^9}, {3.792786632310807*^9, 
+   3.7927866426193323`*^9}, {3.79278729336171*^9, 3.7927872981901903`*^9}, {
+   3.792871484747343*^9, 3.792871490041741*^9}, {3.822399877152906*^9, 
+   3.822399909807412*^9}, {3.823005459525222*^9, 3.8230054754604816`*^9}, {
+   3.8237055963068123`*^9, 3.82370562108745*^9}, {3.824055710257406*^9, 
+   3.824055746016755*^9}},ExpressionUUID->"7c9ac64e-9d2f-4141-a798-\
+b3ccd5b39d55"],
+
+Cell[CellGroupData[{
+
+Cell["Summary and Introduction", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.788974884231689*^9, 3.788974888896441*^9}, {
+  3.788974977132062*^9, 
+  3.788974994670714*^9}},ExpressionUUID->"c0b381ed-f3b4-4f01-af92-\
+ae8b5753cdcd"],
+
+Cell[CellGroupData[{
+
+Cell["Abstract:", "Subsection",
+ CellChangeTimes->{{3.788975012471572*^9, 3.78897501488365*^9}, {
+  3.788975112222271*^9, 
+  3.788975125905067*^9}},ExpressionUUID->"8b4bb4d0-5f47-409f-bad8-\
+cc58ee2970ce"],
+
+Cell["\<\
+As requested in the Scope of Work of March 4, 2021, we evaluated a dataset of \
+22 substitutions of the lead drug that contains the log(1/C), the \
+Lipophilicity constant \[Pi], and the Hammett Constant, the Taft\
+\[CloseCurlyQuote]s Steric Parameter and the logP values for each of the \
+compounds.\
+\>", "Text",
+ CellChangeTimes->{{3.788975137351959*^9, 3.7889751574128733`*^9}, {
+   3.7892370310566483`*^9, 3.789237066589622*^9}, {3.789237119247281*^9, 
+   3.789237254703236*^9}, {3.789237334288628*^9, 3.7892373472460537`*^9}, {
+   3.789247541420328*^9, 3.789247576454586*^9}, {3.789664700810429*^9, 
+   3.78966481271723*^9}, 3.789685953273097*^9, {3.789840989866272*^9, 
+   3.789841027515491*^9}, {3.7927873001907463`*^9, 3.792787310928953*^9}, {
+   3.792871643430429*^9, 3.792871697768161*^9}, {3.822399913831375*^9, 
+   3.822399923964209*^9}, {3.8223999577277393`*^9, 3.8223999856536427`*^9}, {
+   3.822400037664606*^9, 3.822400062169833*^9}, {3.8230054578876877`*^9, 
+   3.823005458030292*^9}, {3.8230894610914173`*^9, 3.823089507272066*^9}, {
+   3.8235308791491613`*^9, 3.82353089123807*^9}, {3.824047294828307*^9, 
+   3.824047345406925*^9}, {3.82405576189979*^9, 
+   3.824055773023273*^9}},ExpressionUUID->"e5e66d67-f637-40b2-a0d9-\
+d75be1cc3735"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Introduction/Background Information:", "Subsection",
+ CellChangeTimes->{{3.788975012471572*^9, 3.78897501488365*^9}, {
+  3.788975112222271*^9, 3.788975125905067*^9}, {3.824047362762329*^9, 
+  3.8240473717773113`*^9}},ExpressionUUID->"2c9b9b10-f6c2-4c17-9f96-\
+5dd1086472d8"],
+
+Cell["\<\
+In the following technical memo, we will primarily be examining a dataset of \
+22 substitutions of the lead drug, dimethylbromophenethylamine. The lead \
+compound has a similar structure to compounds in the family of antiadrenergic \
+drugs such as Norepinephrine. Anti-adrenergic drugs work by inhibiting the \
+processes of the sympathetic nervous system. Beta receptors are receptors \
+located in various parts of the body that are activated by a set of \
+neurotransmitters known as catecholamines. Neurotransmitters that fall under \
+the category of catecholamines include norepinephrine, epinephrine and \
+dopamine. These neurotransmitters increase blood pressure and heart rate when \
+the body undergoes a fight-or-flight response. [1] 
+
+While this can be helpful in cases of danger or when the body needs to be \
+alert, some people have an imbalance in the natural amounts of catecholamines \
+within their body. This can lead to chronically increased blood pressure and \
+heart rate, which can negatively affect heart health and can lead to heart \
+failure. Therefore, antiadrenergics work by inhibiting the beta receptors for \
+catecholamines in the body. When these drugs bind to the receptor before the \
+neurotransmitters, the receptor is not activated and therefore the patient \
+does not experience any fight-or-flight symptoms. [2]
+
+Developed these drugs usually follows a specific process. After a lead drug \
+has been established, researchers will try different substituents, including \
+specific elements or functional groups, to see how they can change the \
+function or qualities of the drug to make it better suited for a specific use \
+within the body. Using these parameters and a set of experimental values, \
+regression or statistical models can built and be used to predict the \
+performance of novel parameter combinations. This process is more formally \
+known as QSAR. [3] 
+
+In the following tech memo, three specific parameters will be used to build a \
+QSAR model for the lead drug. These parameters are the Lipophilicity \
+constant, the Hammett Constant, the Taft\[CloseCurlyQuote]s Steric Parameter. \
+Each of these parameters examine a different property of the compound: the \
+Lipophilicity constant measures how well a compound can pass through lipid \
+membranes, the Hammett Constant measures how likely a compound is to ionize, \
+and Taft\[CloseCurlyQuote]s Steric Parameter measures steric hindrance, which \
+is how much a specific substituent changes the shape of the overall molecule. \
+Each of these parameters has their own effect on the drug, making it either \
+less or more effective at inducing the biological activity it was designed \
+for. 
+
+These parameters will be used to predict the log(1/C). When a drug is used \
+within the body, researchers can calculate the smallest concentration of the \
+drug needed to be effective and have the directed biological activity. The \
+way that this concentration is measured is standardized throughout the study \
+to ensure optimal results. The concentration is then transformed into \
+log(1/C), which also standardizes the value and allows for direct comparison \
+between different combinations of substituents. \
+\>", "Text",
+ CellChangeTimes->{{3.824055343284545*^9, 3.824055356689528*^9}, 
+   3.8240556718039503`*^9},ExpressionUUID->"053a1411-11eb-438b-929f-\
+1e621e96d984"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Methodology", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.788975448064522*^9, 
+  3.788975471823615*^9}},ExpressionUUID->"d3f9c95f-6921-4641-ac0a-\
+7b5e45aad5f9"],
+
+Cell["\<\
+For this study, the list of 22 substitutions of the lead drug was collected \
+from the NCSSM Canvas website. The following analyses were conducted:\
+\>", "Text",
+ CellChangeTimes->{{3.788975478796629*^9, 3.788975482688313*^9}, {
+   3.789217279557188*^9, 3.7892173525695963`*^9}, {3.7892174516736603`*^9, 
+   3.789217464505946*^9}, 3.7892382693185368`*^9, {3.789670922817335*^9, 
+   3.789670943409995*^9}, {3.792871495633679*^9, 3.792871503914997*^9}, 
+   3.792871555684013*^9, {3.8224000717958727`*^9, 3.822400075338003*^9}, {
+   3.823089514073838*^9, 3.82308951495713*^9}, {3.823530870967712*^9, 
+   3.823530872576065*^9}, 3.823530905158498*^9, {3.8240472400173483`*^9, 
+   3.824047256891459*^9}, 
+   3.824047298711844*^9},ExpressionUUID->"ef4f7138-acbf-4c53-8e4f-\
+5e5d69025135"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Drug data was imported into Mathematica",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897551562859*^9}, {
+   3.7892173064851027`*^9, 3.789217311091241*^9}, {3.7892382726403*^9, 
+   3.789238278741563*^9}, {3.7892383132321978`*^9, 3.78923833835078*^9}, {
+   3.7892479531093197`*^9, 3.789247968128079*^9}, {3.7896709458827972`*^9, 
+   3.789670956031746*^9}, {3.792871508504909*^9, 3.792871513236491*^9}, 
+   3.792871551097992*^9, {3.822400078807728*^9, 3.82240010276297*^9}, {
+   3.8224001826480217`*^9, 3.822400183213941*^9}, {3.82308952203572*^9, 
+   3.8230895499784822`*^9}, {3.82353090913128*^9, 
+   3.8235309188561277`*^9}},ExpressionUUID->"b9d8317e-c991-4f64-8b41-\
+1986c2351307"],
+
+Cell[TextData[StyleBox["Data was summarized through descriptive statistics",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.788975520332529*^9}, {
+  3.789238281463563*^9, 3.789238307114318*^9}, {3.789238340494112*^9, 
+  3.7892383441076927`*^9}, {3.789670959143276*^9, 3.7896709756175337`*^9}, {
+  3.789675446550476*^9, 3.789675447036963*^9}, {3.7928715233812838`*^9, 
+  3.792871553667924*^9}, {3.8224001063757277`*^9, 3.822400121352759*^9}, {
+  3.822400188430723*^9, 3.822400199694175*^9}, {3.8230895553979588`*^9, 
+  3.823089616904838*^9}, {3.8235309314173326`*^9, 
+  3.8235309458725767`*^9}},ExpressionUUID->"9a82fb30-6d6c-4e5d-a6d9-\
+bcbbad8dd168"],
+
+Cell[TextData[StyleBox["A multiple regression analysis was performed",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.788975520332529*^9}, {
+   3.789238281463563*^9, 3.789238307114318*^9}, {3.789238340494112*^9, 
+   3.7892383441076927`*^9}, {3.789670959143276*^9, 3.7896709756175337`*^9}, {
+   3.789675446550476*^9, 3.789675447036963*^9}, {3.7928715233812838`*^9, 
+   3.792871553667924*^9}, {3.8224001063757277`*^9, 3.822400147502552*^9}, {
+   3.823089619864863*^9, 3.823089643811398*^9}, {3.8231179709898653`*^9, 
+   3.8231179844650908`*^9}, 3.823530947742556*^9, {3.823531047350193*^9, 
+   3.82353106393198*^9}, 3.823548497401375*^9, {3.824047262385192*^9, 
+   3.824047271158393*^9}},ExpressionUUID->"4bd4b570-a369-42c9-a4e6-\
+3772b4b4d093"],
+
+Cell[TextData[StyleBox["The optimal Hammett Constant value was calculated",
+ FontFamily->"Times New Roman",
+ FontWeight->"Regular"]], "ItemNumbered",
+ CellChangeTimes->{{3.788975510952202*^9, 3.78897552988211*^9}, {
+   3.7892384299176273`*^9, 3.789238431792481*^9}, {3.789247502092857*^9, 
+   3.78924750565837*^9}, {3.789670988916486*^9, 3.789670989250772*^9}, {
+   3.792787536201047*^9, 3.792787536202037*^9}, {3.792871540215247*^9, 
+   3.7928715447498493`*^9}, {3.822400158440607*^9, 3.82240020735229*^9}, 
+   3.823530855372251*^9, {3.8235310658324957`*^9, 3.823531086589879*^9}, {
+   3.8240472753655643`*^9, 
+   3.8240472882706947`*^9}},ExpressionUUID->"b47e2929-f8d8-47db-8399-\
+13646a5a4411"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Data Import and Description:", "Subsection",
+ CellChangeTimes->{{3.823530863261829*^9, 3.823530868463305*^9}, 
+   3.823530902582883*^9},ExpressionUUID->"c696edb9-d459-40c6-9d93-\
+280df863f5c9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"aaDrug", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\</Users/aakritilakshmanan/Downloads/datalab1week4.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"viableDrug", "=", "aaDrug"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"aaDrug", " ", "//", " ", "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.823531120000183*^9, 3.8235311915148*^9}, 
+   3.8235312785679827`*^9, 3.823531312874341*^9, {3.8235475232373457`*^9, 
+   3.823547569067257*^9}, 3.823705582996921*^9, {3.823976817302652*^9, 
+   3.823976844440551*^9}},
+ CellLabel->
+  "In[483]:=",ExpressionUUID->"5d1796e1-19e1-4520-a21a-a4f02714fc2f"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"X\"\>", "\<\"Y\"\>", "\<\"Log 1/C Observed\"\>", "\<\"Lipophilicity \
+constant \[Pi]\"\>", "\<\"Hammett Constant\"\>", "\<\"Taft's Steric Parameter\
+\"\>", "\<\"logP\"\>"},
+    {"\<\"H\"\>", "\<\"H\"\>", "7.46`", "0.`", "0.`", "1.24`", "1.87`"},
+    {"\<\"H\"\>", "\<\"F\"\>", "8.16`", "0.15`", 
+     RowBox[{"-", "0.07`"}], "1.24`", "2.41`"},
+    {"\<\"H\"\>", "\<\"Cl\"\>", "8.68`", "0.7`", "0.11`", "1.24`", "1.68`"},
+    {"\<\"H\"\>", "\<\"Br\"\>", "8.89`", "1.02`", "0.15`", "1.24`", "2.2`"},
+    {"\<\"H\"\>", "\<\"I\"\>", "9.25`", "1.26`", "0.14`", "1.24`", 
+     RowBox[{"-", "0.14`"}]},
+    {"\<\"H\"\>", "\<\"Me\"\>", "9.3`", "0.52`", 
+     RowBox[{"-", "0.31`"}], "1.24`", "2.2`"},
+    {"\<\"F\"\>", "\<\"H\"\>", "7.52`", "0.13`", "0.35`", "0.78`", "2.33`"},
+    {"\<\"Cl\"\>", "\<\"H\"\>", "8.16`", "0.76`", "0.4`", "0.27`", "1.64`"},
+    {"\<\"Br\"\>", "\<\"H\"\>", "8.3`", "0.94`", "0.41`", "0.08`", "2.17`"},
+    {"\<\"I\"\>", "\<\"H\"\>", "8.4`", "1.15`", "0.36`", 
+     RowBox[{"-", "0.16`"}], 
+     RowBox[{"-", "0.17`"}]},
+    {"\<\"Me\"\>", "\<\"H\"\>", "8.46`", "0.51`", 
+     RowBox[{"-", "0.07`"}], "0.`", "2.17`"},
+    {"\<\"Cl\"\>", "\<\"F\"\>", "8.19`", "0.91`", "0.33`", "0.27`", "2.06`"},
+    {"\<\"Br\"\>", "\<\"F\"\>", "8.57`", "1.09`", "0.34`", "0.08`", "2.76`"},
+    {"\<\"Me\"\>", "\<\"F\"\>", "8.82`", "0.66`", 
+     RowBox[{"-", "0.14`"}], "0.`", "2.62`"},
+    {"\<\"Cl\"\>", "\<\"Cl\"\>", "8.89`", "1.46`", "0.51`", "0.27`", 
+     "2.79`"},
+    {"\<\"Br\"\>", "\<\"Cl\"\>", "8.92`", "1.64`", "0.52`", "0.08`", 
+     "2.05`"},
+    {"\<\"Me\"\>", "\<\"Cl\"\>", "8.96`", "1.21`", "0.04`", "0.`", "2.21`"},
+    {"\<\"Cl\"\>", "\<\"Br\"\>", "9.`", "1.78`", "0.55`", "0.27`", "2.05`"},
+    {"\<\"Br\"\>", "\<\"Br\"\>", "9.35`", "1.96`", "0.56`", "0.08`", 
+     "2.78`"},
+    {"\<\"Me\"\>", "\<\"Br\"\>", "9.22`", "1.53`", "0.08`", "0.`", "2.78`"},
+    {"\<\"Me\"\>", "\<\"Me\"\>", "9.3`", "1.03`", 
+     RowBox[{"-", "0.38`"}], "0.`", "2.85`"},
+    {"\<\"Br\"\>", "\<\"Me\"\>", "9.52`", "1.46`", "0.1`", "0.08`", "2.78`"}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.8237055836743183`*^9, {3.823976839735446*^9, 3.823976845052588*^9}, 
+   3.8239776786300507`*^9},
+ CellLabel->
+  "Out[485]//TableForm=",ExpressionUUID->"03a76319-fc8d-4839-9cf0-\
+da33cf22c611"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.789247518574786*^9, 
+  3.789247520215665*^9}},ExpressionUUID->"83e6fbc6-e3e4-46d7-970a-\
+09b8901b8222"],
+
+Cell[CellGroupData[{
+
+Cell["Descriptive Statistics", "Subsection",
+ CellChangeTimes->{{3.8235312095981503`*^9, 
+  3.823531218039132*^9}},ExpressionUUID->"c028b53f-1335-494e-bf42-\
+9eba5d269992"],
+
+Cell["\<\
+We determined the mean, median, standard deviation, and quartiles for \
+specific parameters within our data set, and produced a box/whisker plot for \
+each of the variables. As seen in these plots, Taft\[CloseCurlyQuote]s Steric \
+Parameter has the highest range of values when compared to the other \
+parameters. The \[OpenCurlyDoubleQuote]standard\[CloseCurlyDoubleQuote] range \
+for Taft\[CloseCurlyQuote]s Steric Parameter, which is defined as between the \
+1st and 3rd quartiles, would be between 0 and 1.24, as shown in the \
+\[OpenCurlyDoubleQuote]Quartiles\[CloseCurlyDoubleQuote] row in the table \
+below. Therefore, it would be acceptable for further substitutions of the \
+lead drug to have steric parameters within this range. \
+\>", "Text",
+ CellChangeTimes->{{3.823531706799279*^9, 3.823531708892234*^9}, {
+   3.8235476236846313`*^9, 3.823547634881136*^9}, {3.823547693753078*^9, 
+   3.823547889954781*^9}, 3.823977061411055*^9, {3.824046256762817*^9, 
+   3.824046442919457*^9}},ExpressionUUID->"3493c4bc-923d-43e1-89b7-\
+b507f05202b4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"header", " ", "=", " ", 
+   RowBox[{"aaDrug", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"aaDrug", " ", "=", " ", 
+   RowBox[{"Delete", "[", 
+    RowBox[{"aaDrug", ",", "1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "x1", ",", " ", "y1", ",", " ", "log1c", ",", " ", "lipo", ",", "hammett",
+      ",", "taft", ",", "logP"}], "}"}], " ", "=", " ", 
+   RowBox[{"Transpose", "[", "aaDrug", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"descriptiveStats", " ", "=", " ", 
+  RowBox[{"Grid", "[", 
+   RowBox[{GridBox[{
+      {"\"\<\>\"", 
+       RowBox[{"header", "[", 
+        RowBox[{"[", "3", "]"}], "]"}], 
+       RowBox[{"header", "[", 
+        RowBox[{"[", "4", "]"}], "]"}], 
+       RowBox[{"header", "[", 
+        RowBox[{"[", "5", "]"}], "]"}], 
+       RowBox[{"header", "[", 
+        RowBox[{"[", "6", "]"}], "]"}], 
+       RowBox[{"header", "[", 
+        RowBox[{"[", "7", "]"}], "]"}]},
+      {"\"\<Mean\>\"", 
+       RowBox[{"Mean", "[", "log1c", "]"}], 
+       RowBox[{"Mean", "[", "lipo", "]"}], 
+       RowBox[{"Mean", "[", "hammett", "]"}], 
+       RowBox[{"Mean", "[", "taft", "]"}], 
+       RowBox[{"Mean", "[", "logP", "]"}]},
+      {"\"\<Median\>\"", 
+       RowBox[{"Median", "[", "log1c", "]"}], 
+       RowBox[{"Median", "[", "lipo", "]"}], 
+       RowBox[{"Median", "[", "hammett", "]"}], 
+       RowBox[{"Median", "[", "taft", "]"}], 
+       RowBox[{"Median", "[", "logP", "]"}]},
+      {"\"\<Standard Deviation\>\"", 
+       RowBox[{"StandardDeviation", "[", "log1c", "]"}], 
+       RowBox[{"StandardDeviation", "[", "lipo", "]"}], 
+       RowBox[{"StandardDeviation", "[", "hammett", "]"}], 
+       RowBox[{"StandardDeviation", "[", "taft", "]"}], 
+       RowBox[{"StandardDeviation", "[", "logP", "]"}]},
+      {"\"\<Quartiles\>\"", 
+       RowBox[{"Quartiles", "[", "log1c", "]"}], 
+       RowBox[{"Quartiles", "[", "lipo", "]"}], 
+       RowBox[{"Quartiles", "[", "hammett", "]"}], 
+       RowBox[{"Quartiles", "[", "taft", "]"}], 
+       RowBox[{"Quartiles", "[", "logP", "]"}]},
+      {"\"\<BoxWhisker Plot\>\"", 
+       RowBox[{"BoxWhiskerChart", "[", "log1c", "]"}], 
+       RowBox[{"BoxWhiskerChart", "[", "lipo", "]"}], 
+       RowBox[{"BoxWhiskerChart", "[", "hammett", "]"}], 
+       RowBox[{"BoxWhiskerChart", "[", "taft", "]"}], 
+       RowBox[{"BoxWhiskerChart", "[", "logP", "]"}]}
+     },
+     GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}}], ",", " ", 
+    
+    RowBox[{"Frame", " ", "\[Rule]", " ", "All"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.823531287945983*^9, 3.8235313064544983`*^9}, {
+  3.8235313513765993`*^9, 3.823531384562661*^9}, {3.823531464126903*^9, 
+  3.823531670436481*^9}, {3.823539760931425*^9, 3.823539761665745*^9}, {
+  3.823547764223344*^9, 3.8235477708287487`*^9}, {3.823548466836829*^9, 
+  3.8235484678008823`*^9}, {3.823976880508458*^9, 3.8239770468419847`*^9}},
+ CellLabel->
+  "In[486]:=",ExpressionUUID->"024ac890-b102-4b59-b634-bb9fc6c30b83"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"\"\>", "\<\"Log 1/C Observed\"\>", "\<\"Lipophilicity constant \
+\[Pi]\"\>", "\<\"Hammett Constant\"\>", "\<\"Taft's Steric Parameter\"\>", \
+"\<\"logP\"\>"},
+    {"\<\"Mean\"\>", "8.696363636363635`", "0.9940909090909092`", 
+     "0.1809090909090909`", "0.4336363636363636`", "2.095`"},
+    {"\<\"Median\"\>", "8.855`", "1.025`", "0.14500000000000002`", 
+     "0.17500000000000002`", "2.2`"},
+    {"\<\"Standard Deviation\"\>", "0.5681343356783002`", 
+     "0.5350270050230138`", "0.27372055772802983`", "0.5365812897590453`", 
+     "0.8147494502401745`"},
+    {"\<\"Quartiles\"\>", 
+     RowBox[{"{", 
+      RowBox[{"8.3`", ",", "8.855`", ",", "9.22`"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"0.66`", ",", "1.025`", ",", "1.46`"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"0.`", ",", "0.14500000000000002`", ",", "0.4`"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"0.`", ",", "0.175`", ",", "1.24`"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"2.05`", ",", "2.2`", ",", "2.76`"}], "}"}]},
+    {"\<\"BoxWhisker Plot\"\>", 
+     GraphicsBox[{
+       {Opacity[0], 
+        PointBox[{{-0.19605693430634064`, 7.357}, {2.1960569343063403`, 
+         9.623}}]}, 
+       {RGBColor[0.982864, 0.7431472, 0.3262672], CapForm[None], {}, 
+        {RGBColor[0.982864, 0.7431472, 0.3262672], 
+         {RGBColor[0.982864, 0.7431472, 0.3262672], 
+          TagBox[
+           TooltipBox[
+            TagBox[
+             DynamicBox[{
+               FEPrivate`If[
+                CurrentValue["MouseOver"], 
+                EdgeForm[{
+                  GrayLevel[0.5], 
+                  AbsoluteThickness[1.5], 
+                  Opacity[0.66]}], {}, {}], 
+               GraphicsGroupBox[{Antialiasing -> False, 
+                 
+                 PolygonBox[{{0.8039430656936596, 9.22}, {1.1960569343063403`,
+                   9.22}, {1.1960569343063403`, 8.3}, {0.8039430656936596, 
+                  8.3}}], {}, {{}, {}}, {}, {
+                  GrayLevel[0], 
+                  GrayLevel[1], 
+                  
+                  LineBox[{{1.1960569343063403`, 8.855}, {0.8039430656936597, 
+                   8.855}}]}, {}, {
+                  GrayLevel[0], 
+                  GrayLevel[0.5], 
+                  
+                  LineBox[{{{1., 8.3}, {1., 7.46}}, {{1., 9.22}, {1., 
+                   9.52}}}]}, {
+                  GrayLevel[0], 
+                  GrayLevel[0.5], 
+                  
+                  LineBox[{{{1.0980284671531702`, 7.46}, {0.9019715328468298, 
+                   7.46}}, {{1.0980284671531702`, 9.52}, {0.9019715328468298, 
+                   9.52}}}]}, {}}]},
+              
+              ImageSizeCache->{{61.58578643762691, 
+               82.4142135623731}, {-34.41421356237309, 30.41421356237309}}],
+             "DelayedMouseEffectStyle"],
+            StyleBox[
+             TagBox[
+              GridBox[{{
+                 StyleBox["\"max\"", Bold, StripOnInput -> False], "9.52`"}, {
+                
+                 StyleBox["\"75%\"", Bold, StripOnInput -> False], "9.22`"}, {
+                
+                 StyleBox["\"median\"", Bold, StripOnInput -> False], 
+                 "8.855`"}, {
+                 StyleBox["\"25%\"", Bold, StripOnInput -> False], "8.3`"}, {
+                 StyleBox["\"min\"", Bold, StripOnInput -> False], "7.46`"}}, 
+               GridBoxAlignment -> {"Columns" -> {Center, ".", {Left}}}, 
+               AutoDelete -> False, GridBoxDividers -> {"Columns" -> {
+                   Directive[
+                    GrayLevel[0.3]], {
+                    Directive[
+                    GrayLevel[0.3]]}, 
+                   Directive[
+                    GrayLevel[0.3]]}, "Rows" -> {
+                   Directive[
+                    GrayLevel[0.3]], {
+                    Directive[
+                    GrayLevel[0.3]]}, 
+                   Directive[
+                    GrayLevel[0.3]]}}, 
+               GridBoxFrame -> {
+                "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> GrayLevel[0]}}, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaseStyle -> Directive[
+                 AbsoluteThickness[1], 
+                 Dashing[{}]]], "Grid"], {}, StripOnInput -> False]],
+           Annotation[#, 
+            Style[
+             Grid[{{
+                Style["max", Bold], 9.52}, {
+                Style["75%", Bold], 9.22}, {
+                Style["median", Bold], 8.855}, {
+                Style["25%", Bold], 8.3}, {
+                Style["min", Bold], 7.46}}, Dividers -> {{
+                 Directive[
+                  GrayLevel[0.3]], {
+                  Directive[
+                   GrayLevel[0.3]]}, 
+                 Directive[
+                  GrayLevel[0.3]]}, {
+                 Directive[
+                  GrayLevel[0.3]], {
+                  Directive[
+                   GrayLevel[0.3]]}, 
+                 Directive[
+                  GrayLevel[0.3]]}}, Alignment -> {{Center, ".", {Left}}}, 
+              Frame -> GrayLevel[0], BaseStyle -> Directive[
+                AbsoluteThickness[1], 
+                Dashing[{}]]], {}], 
+            "Tooltip"]& ]}}, {}, {}}, {{{{{{}, {}}, {}}, {}}, {}}, {}}, {}},
+      AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+      Axes->{False, False},
+      AxesLabel->{None, None},
+      AxesOrigin->{0.7843373722630256, 7.357},
+      DisplayFunction->Identity,
+      Frame->True,
+      FrameLabel->{{None, None}, {None, None}},
+      FrameTicks->{{Automatic, Automatic}, {{{1., 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+          0.8039430656936596, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+          1.1960569343063403`, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}, {{1., 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+          0.8039430656936596, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+          1.1960569343063403`, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}}},
+      GridLinesStyle->Directive[
+        GrayLevel[0.5, 0.4]],
+      PlotRangePadding->{{
+         Scaled[0.05], 
+         Scaled[0.05]}, {
+         Scaled[0.05], 
+         Scaled[0.05]}},
+      Ticks->{{{1., 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+         0.8039430656936596, 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+         1.1960569343063403`, 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}, 
+        Automatic}], 
+     GraphicsBox[{
+       {Opacity[0], 
+        PointBox[{{-0.19605693430634064`, -0.098}, {2.1960569343063403`, 
+         2.058}}]}, 
+       {RGBColor[0.982864, 0.7431472, 0.3262672], CapForm[None], {}, 
+        {RGBColor[0.982864, 0.7431472, 0.3262672], 
+         {RGBColor[0.982864, 0.7431472, 0.3262672], 
+          TagBox[
+           TooltipBox[
+            TagBox[
+             DynamicBox[{
+               FEPrivate`If[
+                CurrentValue["MouseOver"], 
+                EdgeForm[{
+                  GrayLevel[0.5], 
+                  AbsoluteThickness[1.5], 
+                  Opacity[0.66]}], {}, {}], 
+               GraphicsGroupBox[{Antialiasing -> False, 
+                 
+                 PolygonBox[{{0.8039430656936596, 1.46}, {1.1960569343063403`,
+                   1.46}, {1.1960569343063403`, 0.66}, {0.8039430656936596, 
+                  0.66}}], {}, {{}, {}}, {}, {
+                  GrayLevel[0], 
+                  GrayLevel[1], 
+                  
+                  LineBox[{{1.1960569343063403`, 1.025}, {0.8039430656936597, 
+                   1.025}}]}, {}, {
+                  GrayLevel[0], 
+                  GrayLevel[0.5], 
+                  
+                  LineBox[{{{1., 0.66}, {1., 0.}}, {{1., 1.46}, {1., 
+                   1.96}}}]}, {
+                  GrayLevel[0], 
+                  GrayLevel[0.5], 
+                  LineBox[{{{1.0980284671531702`, 0.}, {0.9019715328468298, 
+                   0.}}, {{1.0980284671531702`, 1.96}, {0.9019715328468298, 
+                   1.96}}}]}, {}}]},
+              
+              ImageSizeCache->{{61.58578643762691, 
+               82.4142135623731}, {-34.41421356237309, 30.41421356237309}}],
+             "DelayedMouseEffectStyle"],
+            StyleBox[
+             TagBox[
+              GridBox[{{
+                 StyleBox["\"max\"", Bold, StripOnInput -> False], "1.96`"}, {
+                
+                 StyleBox["\"75%\"", Bold, StripOnInput -> False], "1.46`"}, {
+                
+                 StyleBox["\"median\"", Bold, StripOnInput -> False], 
+                 "1.025`"}, {
+                 StyleBox["\"25%\"", Bold, StripOnInput -> False], "0.66`"}, {
+                
+                 StyleBox["\"min\"", Bold, StripOnInput -> False], "0.`"}}, 
+               GridBoxAlignment -> {"Columns" -> {Center, ".", {Left}}}, 
+               AutoDelete -> False, GridBoxDividers -> {"Columns" -> {
+                   Directive[
+                    GrayLevel[0.3]], {
+                    Directive[
+                    GrayLevel[0.3]]}, 
+                   Directive[
+                    GrayLevel[0.3]]}, "Rows" -> {
+                   Directive[
+                    GrayLevel[0.3]], {
+                    Directive[
+                    GrayLevel[0.3]]}, 
+                   Directive[
+                    GrayLevel[0.3]]}}, 
+               GridBoxFrame -> {
+                "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> GrayLevel[0]}}, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaseStyle -> Directive[
+                 AbsoluteThickness[1], 
+                 Dashing[{}]]], "Grid"], {}, StripOnInput -> False]],
+           Annotation[#, 
+            Style[
+             Grid[{{
+                Style["max", Bold], 1.96}, {
+                Style["75%", Bold], 1.46}, {
+                Style["median", Bold], 1.025}, {
+                Style["25%", Bold], 0.66}, {
+                Style["min", Bold], 0.}}, Dividers -> {{
+                 Directive[
+                  GrayLevel[0.3]], {
+                  Directive[
+                   GrayLevel[0.3]]}, 
+                 Directive[
+                  GrayLevel[0.3]]}, {
+                 Directive[
+                  GrayLevel[0.3]], {
+                  Directive[
+                   GrayLevel[0.3]]}, 
+                 Directive[
+                  GrayLevel[0.3]]}}, Alignment -> {{Center, ".", {Left}}}, 
+              Frame -> GrayLevel[0], BaseStyle -> Directive[
+                AbsoluteThickness[1], 
+                Dashing[{}]]], {}], 
+            "Tooltip"]& ]}}, {}, {}}, {{{{{{}, {}}, {}}, {}}, {}}, {}}, {}},
+      AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+      Axes->{False, False},
+      AxesLabel->{None, None},
+      AxesOrigin->{0.7843373722630256, -0.098},
+      DisplayFunction->Identity,
+      Frame->True,
+      FrameLabel->{{None, None}, {None, None}},
+      FrameTicks->{{Automatic, Automatic}, {{{1., 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+          0.8039430656936596, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+          1.1960569343063403`, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}, {{1., 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+          0.8039430656936596, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+          1.1960569343063403`, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}}},
+      GridLinesStyle->Directive[
+        GrayLevel[0.5, 0.4]],
+      PlotRangePadding->{{
+         Scaled[0.05], 
+         Scaled[0.05]}, {
+         Scaled[0.05], 
+         Scaled[0.05]}},
+      Ticks->{{{1., 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+         0.8039430656936596, 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+         1.1960569343063403`, 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}, 
+        Automatic}], 
+     GraphicsBox[{
+       {Opacity[0], 
+        PointBox[{{-0.19605693430634064`, -0.427}, {2.1960569343063403`, 
+         0.6070000000000001}}]}, 
+       {RGBColor[0.982864, 0.7431472, 0.3262672], CapForm[None], {}, 
+        {RGBColor[0.982864, 0.7431472, 0.3262672], 
+         {RGBColor[0.982864, 0.7431472, 0.3262672], 
+          TagBox[
+           TooltipBox[
+            TagBox[
+             DynamicBox[{
+               FEPrivate`If[
+                CurrentValue["MouseOver"], 
+                EdgeForm[{
+                  GrayLevel[0.5], 
+                  AbsoluteThickness[1.5], 
+                  Opacity[0.66]}], {}, {}], 
+               GraphicsGroupBox[{Antialiasing -> False, 
+                 
+                 PolygonBox[{{0.8039430656936596, 0.4}, {1.1960569343063403`, 
+                  0.4}, {1.1960569343063403`, 0.}, {0.8039430656936596, 
+                  0.}}], {}, {{}, {}}, {}, {
+                  GrayLevel[0], 
+                  GrayLevel[1], 
+                  
+                  LineBox[{{1.1960569343063403`, 0.14500000000000002`}, {
+                   0.8039430656936597, 0.14500000000000002`}}]}, {}, {
+                  GrayLevel[0], 
+                  GrayLevel[0.5], 
+                  
+                  LineBox[{{{1., 0.}, {1., -0.38}}, {{1., 0.4}, {1., 
+                   0.56}}}]}, {
+                  GrayLevel[0], 
+                  GrayLevel[0.5], 
+                  
+                  LineBox[{{{1.0980284671531702`, -0.38}, {
+                   0.9019715328468298, -0.38}}, {{1.0980284671531702`, 
+                   0.56}, {0.9019715328468298, 0.56}}}]}, {}}]},
+              
+              ImageSizeCache->{{64.58578643762691, 
+               85.4142135623731}, {-33.41421356237309, 29.4142135623731}}],
+             "DelayedMouseEffectStyle"],
+            StyleBox[
+             TagBox[
+              GridBox[{{
+                 StyleBox["\"max\"", Bold, StripOnInput -> False], "0.56`"}, {
+                
+                 StyleBox["\"75%\"", Bold, StripOnInput -> False], "0.4`"}, {
+                 StyleBox["\"median\"", Bold, StripOnInput -> False], 
+                 "0.14500000000000002`"}, {
+                 StyleBox["\"25%\"", Bold, StripOnInput -> False], "0.`"}, {
+                 StyleBox["\"min\"", Bold, StripOnInput -> False], 
+                 RowBox[{"-", "0.38`"}]}}, 
+               GridBoxAlignment -> {"Columns" -> {Center, ".", {Left}}}, 
+               AutoDelete -> False, GridBoxDividers -> {"Columns" -> {
+                   Directive[
+                    GrayLevel[0.3]], {
+                    Directive[
+                    GrayLevel[0.3]]}, 
+                   Directive[
+                    GrayLevel[0.3]]}, "Rows" -> {
+                   Directive[
+                    GrayLevel[0.3]], {
+                    Directive[
+                    GrayLevel[0.3]]}, 
+                   Directive[
+                    GrayLevel[0.3]]}}, 
+               GridBoxFrame -> {
+                "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> GrayLevel[0]}}, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaseStyle -> Directive[
+                 AbsoluteThickness[1], 
+                 Dashing[{}]]], "Grid"], {}, StripOnInput -> False]],
+           Annotation[#, 
+            Style[
+             Grid[{{
+                Style["max", Bold], 0.56}, {
+                Style["75%", Bold], 0.4}, {
+                Style["median", Bold], 0.14500000000000002`}, {
+                Style["25%", Bold], 0.}, {
+                Style["min", Bold], -0.38}}, Dividers -> {{
+                 Directive[
+                  GrayLevel[0.3]], {
+                  Directive[
+                   GrayLevel[0.3]]}, 
+                 Directive[
+                  GrayLevel[0.3]]}, {
+                 Directive[
+                  GrayLevel[0.3]], {
+                  Directive[
+                   GrayLevel[0.3]]}, 
+                 Directive[
+                  GrayLevel[0.3]]}}, Alignment -> {{Center, ".", {Left}}}, 
+              Frame -> GrayLevel[0], BaseStyle -> Directive[
+                AbsoluteThickness[1], 
+                Dashing[{}]]], {}], 
+            "Tooltip"]& ]}}, {}, {}}, {{{{{{}, {}}, {}}, {}}, {}}, {}}, {}},
+      AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+      Axes->{False, False},
+      AxesLabel->{None, None},
+      AxesOrigin->{0.7843373722630256, -0.427},
+      DisplayFunction->Identity,
+      Frame->True,
+      FrameLabel->{{None, None}, {None, None}},
+      FrameTicks->{{Automatic, Automatic}, {{{1., 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+          0.8039430656936596, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+          1.1960569343063403`, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}, {{1., 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+          0.8039430656936596, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+          1.1960569343063403`, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}}},
+      GridLinesStyle->Directive[
+        GrayLevel[0.5, 0.4]],
+      PlotRangePadding->{{
+         Scaled[0.05], 
+         Scaled[0.05]}, {
+         Scaled[0.05], 
+         Scaled[0.05]}},
+      Ticks->{{{1., 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+         0.8039430656936596, 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+         1.1960569343063403`, 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}, 
+        Automatic}], 
+     GraphicsBox[{
+       {Opacity[0], 
+        PointBox[{{-0.19605693430634064`, -0.22999999999999998`}, {
+         2.1960569343063403`, 1.31}}]}, 
+       {RGBColor[0.982864, 0.7431472, 0.3262672], CapForm[None], {}, 
+        {RGBColor[0.982864, 0.7431472, 0.3262672], 
+         {RGBColor[0.982864, 0.7431472, 0.3262672], 
+          TagBox[
+           TooltipBox[
+            TagBox[
+             DynamicBox[{
+               FEPrivate`If[
+                CurrentValue["MouseOver"], 
+                EdgeForm[{
+                  GrayLevel[0.5], 
+                  AbsoluteThickness[1.5], 
+                  Opacity[0.66]}], {}, {}], 
+               GraphicsGroupBox[{Antialiasing -> False, 
+                 
+                 PolygonBox[{{0.8039430656936596, 1.24}, {1.1960569343063403`,
+                   1.24}, {1.1960569343063403`, 0.}, {0.8039430656936596, 
+                  0.}}], {}, {{}, {}}, {}, {
+                  GrayLevel[0], 
+                  GrayLevel[1], 
+                  
+                  LineBox[{{1.1960569343063403`, 0.175}, {0.8039430656936597, 
+                   0.175}}]}, {}, {
+                  GrayLevel[0], 
+                  GrayLevel[0.5], 
+                  
+                  LineBox[{{{1., 0.}, {1., -0.16}}, {{1., 1.24}, {1., 
+                   1.24}}}]}, {
+                  GrayLevel[0], 
+                  GrayLevel[0.5], 
+                  
+                  LineBox[{{{1.0980284671531702`, -0.16}, {
+                   0.9019715328468298, -0.16}}, {{1.0980284671531702`, 
+                   1.24}, {0.9019715328468298, 1.24}}}]}, {}}]},
+              
+              ImageSizeCache->{{61.58578643762691, 
+               82.4142135623731}, {-34.41421356237309, 30.41421356237309}}],
+             "DelayedMouseEffectStyle"],
+            StyleBox[
+             TagBox[
+              GridBox[{{
+                 StyleBox["\"max\"", Bold, StripOnInput -> False], "1.24`"}, {
+                
+                 StyleBox["\"75%\"", Bold, StripOnInput -> False], "1.24`"}, {
+                
+                 StyleBox["\"median\"", Bold, StripOnInput -> False], 
+                 "0.175`"}, {
+                 StyleBox["\"25%\"", Bold, StripOnInput -> False], "0.`"}, {
+                 StyleBox["\"min\"", Bold, StripOnInput -> False], 
+                 RowBox[{"-", "0.16`"}]}}, 
+               GridBoxAlignment -> {"Columns" -> {Center, ".", {Left}}}, 
+               AutoDelete -> False, GridBoxDividers -> {"Columns" -> {
+                   Directive[
+                    GrayLevel[0.3]], {
+                    Directive[
+                    GrayLevel[0.3]]}, 
+                   Directive[
+                    GrayLevel[0.3]]}, "Rows" -> {
+                   Directive[
+                    GrayLevel[0.3]], {
+                    Directive[
+                    GrayLevel[0.3]]}, 
+                   Directive[
+                    GrayLevel[0.3]]}}, 
+               GridBoxFrame -> {
+                "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> GrayLevel[0]}}, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaseStyle -> Directive[
+                 AbsoluteThickness[1], 
+                 Dashing[{}]]], "Grid"], {}, StripOnInput -> False]],
+           Annotation[#, 
+            Style[
+             Grid[{{
+                Style["max", Bold], 1.24}, {
+                Style["75%", Bold], 1.24}, {
+                Style["median", Bold], 0.175}, {
+                Style["25%", Bold], 0.}, {
+                Style["min", Bold], -0.16}}, Dividers -> {{
+                 Directive[
+                  GrayLevel[0.3]], {
+                  Directive[
+                   GrayLevel[0.3]]}, 
+                 Directive[
+                  GrayLevel[0.3]]}, {
+                 Directive[
+                  GrayLevel[0.3]], {
+                  Directive[
+                   GrayLevel[0.3]]}, 
+                 Directive[
+                  GrayLevel[0.3]]}}, Alignment -> {{Center, ".", {Left}}}, 
+              Frame -> GrayLevel[0], BaseStyle -> Directive[
+                AbsoluteThickness[1], 
+                Dashing[{}]]], {}], 
+            "Tooltip"]& ]}}, {}, {}}, {{{{{{}, {}}, {}}, {}}, {}}, {}}, {}},
+      AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+      Axes->{False, False},
+      AxesLabel->{None, None},
+      AxesOrigin->{0.7843373722630256, -0.22999999999999998`},
+      DisplayFunction->Identity,
+      Frame->True,
+      FrameLabel->{{None, None}, {None, None}},
+      FrameTicks->{{Automatic, Automatic}, {{{1., 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+          0.8039430656936596, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+          1.1960569343063403`, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}, {{1., 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+          0.8039430656936596, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+          1.1960569343063403`, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}}},
+      GridLinesStyle->Directive[
+        GrayLevel[0.5, 0.4]],
+      PlotRangePadding->{{
+         Scaled[0.05], 
+         Scaled[0.05]}, {
+         Scaled[0.05], 
+         Scaled[0.05]}},
+      Ticks->{{{1., 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+         0.8039430656936596, 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+         1.1960569343063403`, 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}, 
+        Automatic}], 
+     GraphicsBox[{
+       {Opacity[0], 
+        PointBox[{{-0.19605693430634064`, -0.32100000000000006`}, {
+         2.1960569343063403`, 3.0010000000000003`}}]}, 
+       {RGBColor[0.982864, 0.7431472, 0.3262672], CapForm[None], {}, 
+        {RGBColor[0.982864, 0.7431472, 0.3262672], 
+         {RGBColor[0.982864, 0.7431472, 0.3262672], 
+          TagBox[
+           TooltipBox[
+            TagBox[
+             DynamicBox[{
+               FEPrivate`If[
+                CurrentValue["MouseOver"], 
+                EdgeForm[{
+                  GrayLevel[0.5], 
+                  AbsoluteThickness[1.5], 
+                  Opacity[0.66]}], {}, {}], 
+               GraphicsGroupBox[{Antialiasing -> False, 
+                 
+                 PolygonBox[{{0.8039430656936596, 2.76}, {1.1960569343063403`,
+                   2.76}, {1.1960569343063403`, 2.05}, {0.8039430656936596, 
+                  2.05}}], {}, {{}, {}}, {}, {
+                  GrayLevel[0], 
+                  GrayLevel[1], 
+                  
+                  LineBox[{{1.1960569343063403`, 2.2}, {0.8039430656936597, 
+                   2.2}}]}, {}, {
+                  GrayLevel[0], 
+                  GrayLevel[0.5], 
+                  
+                  LineBox[{{{1., 2.05}, {1., -0.17}}, {{1., 2.76}, {1., 
+                   2.85}}}]}, {
+                  GrayLevel[0], 
+                  GrayLevel[0.5], 
+                  
+                  LineBox[{{{1.0980284671531702`, -0.17}, {
+                   0.9019715328468298, -0.17}}, {{1.0980284671531702`, 
+                   2.85}, {0.9019715328468298, 2.85}}}]}, {}}]},
+              
+              ImageSizeCache->{{64.58578643762691, 
+               85.4142135623731}, {-33.41421356237309, 29.4142135623731}}],
+             "DelayedMouseEffectStyle"],
+            StyleBox[
+             TagBox[
+              GridBox[{{
+                 StyleBox["\"max\"", Bold, StripOnInput -> False], "2.85`"}, {
+                
+                 StyleBox["\"75%\"", Bold, StripOnInput -> False], "2.76`"}, {
+                
+                 StyleBox["\"median\"", Bold, StripOnInput -> False], 
+                 "2.2`"}, {
+                 StyleBox["\"25%\"", Bold, StripOnInput -> False], "2.05`"}, {
+                
+                 StyleBox["\"min\"", Bold, StripOnInput -> False], 
+                 RowBox[{"-", "0.17`"}]}}, 
+               GridBoxAlignment -> {"Columns" -> {Center, ".", {Left}}}, 
+               AutoDelete -> False, GridBoxDividers -> {"Columns" -> {
+                   Directive[
+                    GrayLevel[0.3]], {
+                    Directive[
+                    GrayLevel[0.3]]}, 
+                   Directive[
+                    GrayLevel[0.3]]}, "Rows" -> {
+                   Directive[
+                    GrayLevel[0.3]], {
+                    Directive[
+                    GrayLevel[0.3]]}, 
+                   Directive[
+                    GrayLevel[0.3]]}}, 
+               GridBoxFrame -> {
+                "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> GrayLevel[0]}}, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaseStyle -> Directive[
+                 AbsoluteThickness[1], 
+                 Dashing[{}]]], "Grid"], {}, StripOnInput -> False]],
+           Annotation[#, 
+            Style[
+             Grid[{{
+                Style["max", Bold], 2.85}, {
+                Style["75%", Bold], 2.76}, {
+                Style["median", Bold], 2.2}, {
+                Style["25%", Bold], 2.05}, {
+                Style["min", Bold], -0.17}}, Dividers -> {{
+                 Directive[
+                  GrayLevel[0.3]], {
+                  Directive[
+                   GrayLevel[0.3]]}, 
+                 Directive[
+                  GrayLevel[0.3]]}, {
+                 Directive[
+                  GrayLevel[0.3]], {
+                  Directive[
+                   GrayLevel[0.3]]}, 
+                 Directive[
+                  GrayLevel[0.3]]}}, Alignment -> {{Center, ".", {Left}}}, 
+              Frame -> GrayLevel[0], BaseStyle -> Directive[
+                AbsoluteThickness[1], 
+                Dashing[{}]]], {}], 
+            "Tooltip"]& ]}}, {}, {}}, {{{{{{}, {}}, {}}, {}}, {}}, {}}, {}},
+      AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+      Axes->{False, False},
+      AxesLabel->{None, None},
+      AxesOrigin->{0.7843373722630256, -0.32100000000000006`},
+      DisplayFunction->Identity,
+      Frame->True,
+      FrameLabel->{{None, None}, {None, None}},
+      FrameTicks->{{Automatic, Automatic}, {{{1., 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+          0.8039430656936596, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+          1.1960569343063403`, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}, {{1., 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+          0.8039430656936596, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+          1.1960569343063403`, 
+           FormBox[
+            TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}}},
+      GridLinesStyle->Directive[
+        GrayLevel[0.5, 0.4]],
+      PlotRangePadding->{{
+         Scaled[0.05], 
+         Scaled[0.05]}, {
+         Scaled[0.05], 
+         Scaled[0.05]}},
+      Ticks->{{{1., 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0.008, 0}}, {
+         0.8039430656936596, 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}, {
+         1.1960569343063403`, 
+          FormBox[
+           TemplateBox[{0}, "Spacer1"], TraditionalForm], {0, 0}}}, 
+        Automatic}]}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.823531648473948*^9, 3.823531673778458*^9}, 
+   3.823539766554051*^9, {3.823548462966714*^9, 3.8235484776931*^9}, 
+   3.823977048454258*^9, 3.8239776809526997`*^9},
+ CellLabel->
+  "Out[489]=",ExpressionUUID->"899fd6a8-cfc7-4f5f-9923-b2b0998cccc7"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Regression Calculation", "Subsection",
+ CellChangeTimes->{{3.823531759537956*^9, 3.823531761704273*^9}, 
+   3.824046665986711*^9},ExpressionUUID->"18771a3a-c6cf-4334-bb59-\
+8d3d937c2ab2"],
+
+Cell["\<\
+We have used a multiple regression model using the parameters above to \
+estimate log (1/C). Specifically, the parameters used for this multiple \
+regression model are the lipophilicity constant, the Hammett constant and \
+Taft\[CloseCurlyQuote]s Steric Parameter.  The calculated regression formula \
+is as follows:\
+\>", "Text",
+ CellChangeTimes->{
+  3.8235317939994698`*^9, 3.823531956423335*^9, {3.823547934438541*^9, 
+   3.823548055271103*^9}, {3.823548217106798*^9, 3.8235482172398157`*^9}, {
+   3.823705637310008*^9, 3.82370564606227*^9}, {3.823977131621213*^9, 
+   3.823977165231555*^9}, {3.82404646872369*^9, 3.8240465433256483`*^9}, {
+   3.8240465859996347`*^9, 
+   3.824046589030756*^9}},ExpressionUUID->"17fdfb94-1d9f-4ffb-8759-\
+2d224855f858"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"parametersTogethers", " ", "=", " ", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"lipo", ",", "hammett", ",", "taft", ",", "log1c"}], "}"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"myFit", " ", "=", " ", 
+    RowBox[{"LinearModelFit", "[", 
+     RowBox[{"parametersTogethers", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"lipoA", ",", "hammettA", ",", "taftA"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"lipoA", ",", "hammettA", ",", "taftA"}], "}"}]}], " ", 
+     "]"}]}], ";"}], " "}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<log(1/C) =\>\"", ",", " ", 
+   RowBox[{"TraditionalForm", "[", 
+    RowBox[{"Normal", "[", "myFit", "]"}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.823531986737587*^9, {3.823538154351915*^9, 3.823538179979879*^9}, {
+   3.823538441935836*^9, 3.823538446189226*^9}, {3.823547920106161*^9, 
+   3.823547927393217*^9}, 3.823548057968409*^9, {3.8239771918063107`*^9, 
+   3.823977208084298*^9}, {3.823977310833538*^9, 3.823977416667737*^9}, {
+   3.823977453323818*^9, 3.823977472598505*^9}, {3.823977566225607*^9, 
+   3.823977628647634*^9}, {3.823977708104837*^9, 3.823977711004922*^9}, {
+   3.823977755476633*^9, 3.823977822113462*^9}, {3.8240465488695*^9, 
+   3.8240465492051573`*^9}, {3.824055797574666*^9, 
+   3.824055798883485*^9}},ExpressionUUID->"73826e77-c84f-4921-a95b-\
+1a4b4ff9520c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"log(1/C) =\"\>", "\[InvisibleSpace]", 
+   TagBox[
+    FormBox[
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"1.4596118021597821`", " ", "hammettA"}]}], "+", 
+      RowBox[{"1.2586408088282264`", " ", "lipoA"}], "+", 
+      RowBox[{"0.2079176624524192`", " ", "taftA"}], "+", 
+      "7.6190566356239335`"}],
+     TraditionalForm],
+    TraditionalForm,
+    Editable->True]}],
+  SequenceForm["log(1/C) =", 
+   TraditionalForm[
+   7.6190566356239335` - 1.4596118021597821` $CellContext`hammettA + 
+    1.2586408088282264` $CellContext`lipoA + 
+    0.2079176624524192 $CellContext`taftA]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.823977612589821*^9, 3.823977629416964*^9}, {
+   3.823977684925943*^9, 3.823977712185978*^9}, {3.823977759945356*^9, 
+   3.8239778225812483`*^9}, 3.824046550556288*^9},
+ TextAlignment->Center,
+ CellLabel->
+  "During evaluation of \
+In[562]:=",ExpressionUUID->"b88109d5-102e-41ff-9cc1-1f6ed227f7b4"]
+}, Open  ]],
+
+Cell["\<\
+We also calculated the R^2 value for this regression to see how well the \
+model predicts the log (1/C) value. In medicinal chemistry, R^2 values must \
+be above. 0.9 to be acceptable. The closer the R^2 is to 1, the more accurate \
+the model.\
+\>", "Text",
+ CellChangeTimes->{{3.824046555396758*^9, 
+  3.824046640882698*^9}},ExpressionUUID->"a64879c0-9216-4cba-9ac9-\
+e7d395b60264"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<R Squared Value = \>\"", ",", " ", 
+   RowBox[{"myFit", "[", "\"\<RSquared\>\"", "]"}]}], "]"}]], "Input",
+ CellLabel->
+  "In[566]:=",ExpressionUUID->"2da6a571-33c4-4ced-a45d-ea6363dc14be"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"R Squared Value = \"\>", "\[InvisibleSpace]", 
+   "0.9202544148970518`"}],
+  SequenceForm["R Squared Value = ", 0.9202544148970518],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8240466433043823`*^9},
+ TextAlignment->Center,
+ CellLabel->
+  "During evaluation of \
+In[566]:=",ExpressionUUID->"5c3fbb1d-a9fe-46d5-a964-f17b0177e9a0"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Optimal Drug Design", "Subsection"]], "Subsection",
+ CellChangeTimes->{{3.82353177165882*^9, 3.823531780891531*^9}, {
+  3.823977123709743*^9, 3.823977127736676*^9}, {3.824046702595748*^9, 
+  3.8240467057847*^9}},ExpressionUUID->"ef6a9e79-7e53-4963-b28e-d7a2cfd54ceb"],
+
+Cell["\<\
+Preliminary studies of the lead drug have shown that a lipophilicity of 1.15 \
+would make sure that the drug can go through lipid membranes in order to \
+travel to the target receptor. In addition, these studies have also shown \
+that the drug must have no steric hindrance to be effective. The optimal log \
+(1/C) value is also given at 10.25. Therefore, given these values, we can use \
+the previously calculated regression model to find the Hammett constant value \
+needed to create the environment for the optimal drug. By substituting in the \
+values of 1.15 for the lipophilicity constant, 0 for Taft\[CloseCurlyQuote]s \
+Steric Parameter, and 10.25 for log(1/C), we find the value for Hammett \
+Constant to be as follows:\
+\>", "Text",
+ CellChangeTimes->{{3.824046707902153*^9, 
+  3.8240470283881903`*^9}},ExpressionUUID->"424b4f6d-69ea-47f1-980d-\
+a3e6f9155e1e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hammetValue", " ", "=", " ", 
+   RowBox[{"NSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"myFit", "[", 
+        RowBox[{"1.15", ",", "hammettAB", ",", "0"}], "]"}], "==", "10.25"}], 
+      "}"}], ",", " ", "hammettAB"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"hammetValue", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8239778441406803`*^9, 3.82397790980165*^9}, {
+  3.823977966316329*^9, 3.823978048885743*^9}, {3.823978254288781*^9, 
+  3.823978297892645*^9}, {3.8239820670366497`*^9, 3.823982074735458*^9}, {
+  3.8240471012532473`*^9, 3.824047107156616*^9}},
+ CellLabel->
+  "In[569]:=",ExpressionUUID->"94e96f1c-4694-4817-8d6f-d7cc5f151eb3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"hammettAB", "\[Rule]", 
+   RowBox[{"-", "0.8108364377928268`"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.823977993431034*^9, 3.8239780500378513`*^9}, {
+   3.82397825692487*^9, 3.823978298366069*^9}, 3.824045927621194*^9, {
+   3.824047102897588*^9, 3.824047107663804*^9}},
+ TextAlignment->Center,
+ CellLabel->
+  "Out[570]=",ExpressionUUID->"dab33ed5-189d-40db-a8a2-3427bcd5c6aa"]
+}, Open  ]],
+
+Cell["\<\
+Since the Hammett Constant value is negative, we can conclude that the new, \
+most optimal drug would need substituents that are electron-donor groups. \
+Therefore, the lead drug would perform better if it dissociates into ions.\
+\>", "Text",
+ CellChangeTimes->{{3.8240471160523367`*^9, 
+  3.824047208856051*^9}},ExpressionUUID->"f6369c7c-20df-4158-afd1-\
+95f7fe607fe4"],
+
+Cell[TextData[{
+ "Genez very much appreciates the opportunity to conduct this work and hopes \
+that the results are satisfactory. We look forward to a long working \
+relationship with ",
+ StyleBox["Vertextin",
+  FontFamily->"Times New Roman",
+  FontWeight->"Regular"],
+ ", and wish your company success in its scientific ventures."
+}], "Text",
+ CellChangeTimes->{
+  3.7896836902322187`*^9, {3.822494952314452*^9, 
+   3.82249495602846*^9}},ExpressionUUID->"35985f17-24c4-48f0-aa91-\
+357e4d62d231"],
+
+Cell[TextData[{
+ "I certify that this work was completed by me on March 6, 2021.\
+\[NonBreakingSpace] All references and resources are \
+cited.\[NonBreakingSpace] Assistance was provided by NAME OF PERSON(S) (if \
+any)\n\[NonBreakingSpace] Electronic signature:\[NonBreakingSpace]",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJztm3dsTn0Ux2mLIqi9R43asXnFFkTttN6ITfO2VaGlLVUz9gohYhSxYsYI
+4Q8jNiFGrIi99957nLefk9ym4+l4OvLU4/dJLp7n3ud37z33/M75nvO7PP1C
+fAJcsmTJEuYe/YfPwIhWoaEDI309oj/8GxwWFBjs/593cLh/oH/oP36u0V96
+RW9R0Ztb9CYGg8FgMBgMBoPBYDA4iA8fPsjRo0fl3r17jr4Ug5Px6dMnGTp0
+qLi5uQntj/z58zv6kgxOxLVr16R69eri7u4ubdu2lZkzZ8qlS5d03+HDh2P+
+bTCkhoMHD0q+fPmkZcuW8vjx4wT769evL6NGjcqQc3/8+FHOnz+fIWMbMge7
+d++W7Nmzy4ABA+THjx8J9j99+lTzpr+/f7qe99GjRzJy5EjJmzevFChQQH7/
+/p2u46eUnz9/ytWrVx1y7r+Bs2fPam7EvxJ7xlu2bEl3H9u6davkzJlTWrRo
+IX5+fjJ27Nh0G9tezp07Jzly5JBbt2457BqcFWpHT09P1V624pdFZGSk+tik
+SZPS5bzoPhcXFx0Xv46IiHBorvz27ZuUK1dOxowZ47BrcFZGjx4tRYoUkRcv
+XiR6DHmkZMmS6mMnT55M8znx61q1asmIESP085UrV6RYsWLy/fv3NI+dFoYN
+GyaNGzdOl7G4x/379ydp17+Bt2/fSp48eWT16tVJHnfhwgX1rzp16iR6DL5X
+uXJltW1y9OnTR7y9vTV+8Qz43Zw5c+y+/vSGGrpUqVJpGuPhw4cSGhoquXLl
+UpuVLVtWXr9+bfc41EBJ5ZU/hRkzZkjFihU1TiUFeQx77du3z+Z+tHKhQoUk
+d+7c8v79+2TPS9y8f/++XL9+XWrWrKn511FaPzbcp5eXV8znd+/e2fX7nTt3
+au1CP3Hw4MFqryZNmkhUVFSSv8Nmu3btkuHDh6s9qL2wd9OmTeXZs2epupfM
+Av61cuXKJI85ceKEZMuWTQYNGmRzPzYoXbq0avc9e/Yke07WDVxdXbU/Qr48
+dOhQai49Q+jZs6fGWItTp06l6HfEm/79+6u+JIbFjuXdunVT/7EFc3P69OlS
+okQJ9am6detq3YPNsVO9evWkS5cuabspB3Lnzh29r1evXiV6zLFjx3ROctzt
+27dtHtOjRw/dv3379iTPx1wdP3685pCsWbOqDkRnpwZiHtf24MGDVP3eFvhJ
+0aJF9X7sJTw8XG2wbNmyON/TDypevHgCnfnmzRsJCQlRn2R+jhs3LoF9ucc2
+bdrIrFmz7L+ZTAL3j10+f/5sc//y5cs1ZtPT4LiXL1/G2Y/P9OvXT/cFBQXZ
+HAMfYg4zxz08PKRTp07SqlUr9dtfv37Zdb3YnPkdFhYmZcqU0ZxEvyGtkA9X
+rFghNWrU0Hth69u3b4o1lDVX6b3EBh1QsGBB2bBhQ5zvb968KRUqVJDChQvL
+kiVLbOoUtG27du20l2SvnTITaFNy1qpVq/T5MdcOHDigsb5SpUpqN2INcZ8c
+snjxYv0ddQL6nDoQrY6tmIcWxMVNmzapzfElNsakV2HRunVrzQHx/daC9VLq
+DGoRNAp+iY9yTeibRYsWpble4z7oU6Aj6fkRbyZMmKBzonbt2nqelDzftWvX
+6nVhTwvulfhEfIvNkydPtAbo0KGDTZ3FPTFviW9Tp079o/3LYt26depnrB+h
+p7AVuj0wMFD7shY8b2IatkebMT/XrFmj+7AbtRhzk7+tMXr37q3588uXLwnO
+S47jeGxJfiKG4K88Z+s62NjXuXNnrQmIu4n5pL3s3btX5wi5yMpRDRs2jHmm
+VmxKib5kLPSUBfoS+3Ts2DFBjCI/du3aNcEY+Bs6jOfQqFGjOLZ3BnhvZ+nS
+pRqnjh8/Ll+/frV53I0bNzR+YdP4+ZWYQAwkL6CTbflVfLA/+WTbtm3qQ0OG
+DJFp06ap7/KcWLvKCNBx6MHYaxr4Wfx3S6pWrZqitVn0AD3s+fPny5QpU6RB
+gwb67oAtsJ2lf7Ez84a4xZzE34n/zhC7/naI0cRk+k8W3bt3V40Xm/bt26uO
+TA58olq1ajGxF41OT5mYe+bMGdm4caNMnjxZx0JX9OrVS/UH+Znv6GuY9Svn
+YsGCBZrv0frEMWIVvrF58+Y4x6EBAwICEh2HtXw0U/ny5XVtgF6jFZMsf7M2
+NB8alJrH8kOD80Iep2eFhqK24V0PW30X1jTI3bFBI6DxiXHkWzTkkSNH4hxD
+XEO7owPwQ+qX2OCL+Dixk1xpcqNzwnO19GNi9SlxjHr6+fPn2g+lRkTLo9vI
+dzt27Ej1Wg+6rEqVKhrTqJfpU6D50WO8A5qYJjY4F9Z7Jmy8c06eW79+far7
+xvHBz4mfvBfAmhH51DofMZI4Sw6mJ4x/z507V8/P3Lh8+XKSvXN7QTPg19Ru
+1Fp3795VjYhmZc3P3jU1Q8rAl06fPi0XL15MUZ2cHtDXxofozdJrps9BfWut
+X8bf8H3iIO/EsM7KWlSzZs00l/v6+moc9vHx0fnBu1vNmzfX3gg6AJ1Aryi+
+fuQdOsajh0ePm2vKDGvJhoyFZ8z6E+ub9HWoVelDz5s3T+sHeib0j4m9+GZw
+cLCuvfD/fuh/s9ZPLp44caJqzNmzZ+tvFy5cqD1S/JpamDhmMBgMBoPBYDAY
+DAaDwWAwGAyGzMX/5MvDKg==
+     "], {{0, 38}, {153, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{153, 38},
+   PlotRange->{{0, 153}, {0, 38}}]], "Input",ExpressionUUID->
+  "d7e1cda7-d8c6-45cd-a0b9-b29725025174"]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 3}},
+ CellChangeTimes->{
+  3.789248270537753*^9, {3.789248868110652*^9, 3.789248868433384*^9}, {
+   3.789685193549652*^9, 3.789685196394864*^9}, {3.7927875693280582`*^9, 
+   3.7927875706838207`*^9}, {3.79287421011534*^9, 3.7928742104884872`*^9}, {
+   3.82241181677135*^9, 3.822411821336666*^9}, {3.823005485880225*^9, 
+   3.823005487076716*^9}, {3.8237056842334957`*^9, 3.823705687950408*^9}, {
+   3.824055815041966*^9, 
+   3.824055815271233*^9}},ExpressionUUID->"587b7d85-7a51-4fdb-8d40-\
+ed627dea20bf"],
+
+Cell["References:", "Author",
+ CellFrame->{{0, 0}, {0, 2}},
+ CellChangeTimes->{{3.789248411602501*^9, 
+  3.789248425666044*^9}},ExpressionUUID->"afd2eee2-2f41-4ba8-b551-\
+ff5b39de9c5c"],
+
+Cell[CellGroupData[{
+
+Cell["https://en.wikipedia.org/wiki/Catecholamine", "ItemNumbered",
+ CellChangeTimes->{{3.8240558307342567`*^9, 
+  3.8240558359937572`*^9}},ExpressionUUID->"cdfc4b53-1818-4b85-b478-\
+7774860a4247"],
+
+Cell["https://en.wikipedia.org/wiki/Adrenergic_antagonist", "ItemNumbered",
+ CellChangeTimes->{{3.8240558307342567`*^9, 
+  3.824055844916417*^9}},ExpressionUUID->"13013b12-785b-4abf-88a1-\
+4667711f4d98"],
+
+Cell["\<\
+https://en.wikipedia.org/wiki/Quantitative_structure\[Dash]activity_\
+relationship
+
+
+\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.8240558307342567`*^9, 
+  3.824055852355077*^9}},ExpressionUUID->"4de58aa0-7367-4312-a1e2-\
+f76d5e69fa8f"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Working",
+WindowSize->{Full, Full},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PaperSize"->{1224, 1584}},
+Magnification->0.75,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    BoxData[""], "Input", 
+    CellChangeTimes -> {{3.788974678986841*^9, 3.788974680021716*^9}}], 
+   Cell[
+    StyleData["Section"], FontFamily -> "Arial", FontSize -> 28, FontWeight -> 
+    "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Subsubsection"], FontFamily -> "Arial", FontSize -> 19, 
+    FontWeight -> "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Text"], FontFamily -> "Times New Roman", FontSize -> 15, 
+    FontWeight -> "Regular", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Subsubsection"], FontFamily -> "Times New Roman", FontSize -> 
+    19, FontWeight -> "Bold", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Section"], CellFrame -> {{0, 0}, {0, 2}}], 
+   Cell[
+    StyleData["Subsection"], FontFamily -> "Arial", FontSize -> 20, 
+    FontWeight -> "Bold", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Subsubsection"], TextAlignment -> Left, FontFamily -> 
+    "Times New Roman", FontSize -> 19, FontWeight -> "Bold", FontSlant -> 
+    "Plain", FontVariations -> {
+     "StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]]}, Visible -> False, FrontEndVersion -> 
+  "12.0 for Mac OS X x86 (64-bit) (April 8, 2019)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 298, 5, 58, "Text",ExpressionUUID->"9cae76f1-ab34-4cd1-a628-1663f50b823e"],
+Cell[859, 27, 903, 14, 90, "Text",ExpressionUUID->"7c9ac64e-9d2f-4141-a798-b3ccd5b39d55"],
+Cell[CellGroupData[{
+Cell[1787, 45, 248, 5, 50, "Section",ExpressionUUID->"c0b381ed-f3b4-4f01-af92-ae8b5753cdcd"],
+Cell[CellGroupData[{
+Cell[2060, 54, 205, 4, 39, "Subsection",ExpressionUUID->"8b4bb4d0-5f47-409f-bad8-cc58ee2970ce"],
+Cell[2268, 60, 1267, 20, 25, "Text",ExpressionUUID->"e5e66d67-f637-40b2-a0d9-d75be1cc3735"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3572, 85, 280, 4, 39, "Subsection",ExpressionUUID->"2c9b9b10-f6c2-4c17-9f96-5dd1086472d8"],
+Cell[3855, 91, 3373, 52, 269, "Text",ExpressionUUID->"053a1411-11eb-438b-929f-1e621e96d984"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7277, 149, 186, 4, 50, "Section",ExpressionUUID->"d3f9c95f-6921-4641-ac0a-7b5e45aad5f9"],
+Cell[7466, 155, 791, 13, 25, "Text",ExpressionUUID->"ef4f7138-acbf-4c53-8e4f-5e5d69025135"],
+Cell[CellGroupData[{
+Cell[8282, 172, 783, 12, 24, "ItemNumbered",ExpressionUUID->"b9d8317e-c991-4f64-8b41-1986c2351307"],
+Cell[9068, 186, 722, 11, 24, "ItemNumbered",ExpressionUUID->"9a82fb30-6d6c-4e5d-a6d9-bcbbad8dd168"],
+Cell[9793, 199, 814, 12, 24, "ItemNumbered",ExpressionUUID->"4bd4b570-a369-42c9-a4e6-3772b4b4d093"],
+Cell[10610, 213, 697, 11, 24, "ItemNumbered",ExpressionUUID->"b47e2929-f8d8-47db-8399-13646a5a4411"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11344, 229, 199, 3, 39, "Subsection",ExpressionUUID->"c696edb9-d459-40c6-9d93-280df863f5c9"],
+Cell[CellGroupData[{
+Cell[11568, 236, 666, 15, 57, "Input",ExpressionUUID->"5d1796e1-19e1-4520-a21a-a4f02714fc2f"],
+Cell[12237, 253, 2681, 54, 343, "Output",ExpressionUUID->"03a76319-fc8d-4839-9cf0-da33cf22c611"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14979, 314, 182, 4, 50, "Section",ExpressionUUID->"83e6fbc6-e3e4-46d7-970a-09b8901b8222"],
+Cell[CellGroupData[{
+Cell[15186, 322, 172, 3, 39, "Subsection",ExpressionUUID->"c028b53f-1335-494e-bf42-9eba5d269992"],
+Cell[15361, 327, 1060, 16, 58, "Text",ExpressionUUID->"3493c4bc-923d-43e1-89b7-b507f05202b4"],
+Cell[CellGroupData[{
+Cell[16446, 347, 3080, 71, 156, "Input",ExpressionUUID->"024ac890-b102-4b59-b634-bb9fc6c30b83"],
+Cell[19529, 420, 30403, 731, 180, "Output",ExpressionUUID->"899fd6a8-cfc7-4f5f-9923-b2b0998cccc7"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49981, 1157, 193, 3, 39, "Subsection",ExpressionUUID->"18771a3a-c6cf-4334-bb59-8d3d937c2ab2"],
+Cell[50177, 1162, 766, 14, 25, "Text",ExpressionUUID->"17fdfb94-1d9f-4ffb-8759-2d224855f858"],
+Cell[CellGroupData[{
+Cell[50968, 1180, 1450, 31, 57, "Input",ExpressionUUID->"73826e77-c84f-4921-a95b-1a4b4ff9520c"],
+Cell[52421, 1213, 987, 26, 18, "Print",ExpressionUUID->"b88109d5-102e-41ff-9cc1-1f6ed227f7b4"]
+}, Open  ]],
+Cell[53423, 1242, 393, 8, 25, "Text",ExpressionUUID->"a64879c0-9216-4cba-9ac9-e7d395b60264"],
+Cell[CellGroupData[{
+Cell[53841, 1254, 242, 5, 24, "Input",ExpressionUUID->"2da6a571-33c4-4ced-a45d-ea6363dc14be"],
+Cell[54086, 1261, 385, 10, 18, "Print",ExpressionUUID->"5c3fbb1d-a9fe-46d5-a964-f17b0177e9a0"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54520, 1277, 291, 3, 39, "Subsection",ExpressionUUID->"ef6a9e79-7e53-4963-b28e-d7a2cfd54ceb"],
+Cell[54814, 1282, 880, 14, 58, "Text",ExpressionUUID->"424b4f6d-69ea-47f1-980d-a3e6f9155e1e"],
+Cell[CellGroupData[{
+Cell[55719, 1300, 748, 17, 41, "Input",ExpressionUUID->"94e96f1c-4694-4817-8d6f-d7cc5f151eb3"],
+Cell[56470, 1319, 420, 9, 27, "Output",ExpressionUUID->"dab33ed5-189d-40db-a8a2-3427bcd5c6aa"]
+}, Open  ]],
+Cell[56905, 1331, 380, 7, 25, "Text",ExpressionUUID->"f6369c7c-20df-4158-afd1-95f7fe607fe4"],
+Cell[57288, 1340, 496, 12, 25, "Text",ExpressionUUID->"35985f17-24c4-48f0-aa91-357e4d62d231"],
+Cell[57787, 1354, 3965, 72, 65, "Text",ExpressionUUID->"587b7d85-7a51-4fdb-8d40-ed627dea20bf"],
+Cell[61755, 1428, 185, 4, 33, "Author",ExpressionUUID->"afd2eee2-2f41-4ba8-b551-ff5b39de9c5c"],
+Cell[CellGroupData[{
+Cell[61965, 1436, 197, 3, 25, "ItemNumbered",ExpressionUUID->"cdfc4b53-1818-4b85-b478-7774860a4247"],
+Cell[62165, 1441, 203, 3, 25, "ItemNumbered",ExpressionUUID->"13013b12-785b-4abf-88a1-4667711f4d98"],
+Cell[62371, 1446, 245, 9, 76, "ItemNumbered",ExpressionUUID->"4de58aa0-7367-4312-a1e2-f76d5e69fa8f"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
